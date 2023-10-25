@@ -1,0 +1,136 @@
+% Written by Anders Sjoqvist and Ulf Lundstrom, 2009
+% The main sources are: tinyKACTL, Beta and Wikipedia
+
+\chapter{Sound \& Light}
+
+\newcommand\meter[0]{\text{m}}
+\newcommand\watt[0]{\text{W}}
+\newcommand\Joule[0]{\text{J}}
+\newcommand\second[0]{\text{s}}
+\newcommand\decibel[0]{\text{dB}}
+
+\section{Miscellaneous}
+
+\[
+	\text{\% error} = \frac{\text{observed} - \text{theoretical}}{\text{theoretical}} * 100\%
+\]
+
+\section{Kinematics}
+
+\[
+	x = \frac{a}{2}(\Delta t)^2 + v_0\Delta t + x_0 \qquad
+	v = v_0 + a\Delta t
+\]\[
+	v^2 = v_0^2 + 2a\Delta x \qquad
+	\Delta x = \frac{v_0 + v}{2} * \Delta t
+\]
+
+\section{Simple Harmonic Motion}
+
+\[
+	x = A \cos(\omega t + \varphi) \qquad
+	v = -\omega A \cos(\omega t + \varphi) \qquad
+	a = -\omega^2 A \cos(\omega t + \varphi)
+\]
+\[
+	x_{\max} = A \qquad
+	v_{\max} = \omega A \qquad
+	a_{\max} = \omega^2 A \qquad
+	F_{\max} = m\omega^2 A
+\]
+
+\subsection{Springs and Slinkies}
+
+\[
+	F_s = kx \qquad
+	F_{s_{\max}} = kx_0 = mg
+\]
+\[
+	f = \frac{1}{2\pi}\sqrt{\frac{k}{m}} \qquad 
+	T = 2\pi\sqrt{\frac{m}{k}} \qquad 
+	\omega = 2\pi f = \sqrt{\frac{m}{k}}
+\]
+\[
+	SPE = \frac{1}{2} kx^2 \qquad
+	KE = \frac{1}{2} mv^2
+\]
+\[
+	TME = \frac{1}{2} kx^2 + \frac{1}{2} mv^2 = \frac{1}{2} kA^2 = \frac{1}{2} mv_{\max}^2
+\]
+
+\subsection{Pendulums}
+
+\[
+	f = \frac{1}{2\pi}\sqrt{\frac{g}{L}} \qquad 
+	T = 2\pi \sqrt{\frac{L}{g}}
+\]
+
+\section{Waves}
+
+\[
+	T = \frac{1}{f} \qquad
+	v = \lambda f \qquad
+	v = \frac{\Delta x}{\Delta t}
+\]
+
+\subsection{Slinkies and strings with fixed ends}
+
+\[
+	F_T = F_s = kx \qquad
+	\mu = \frac{m}{L} \qquad
+	v = \sqrt{\frac{F_T}{\mu}}
+\]
+
+Given mass $m_T$ hanging below a pulley, $F_T = m_T g$.
+
+\section{Standing waves}
+
+\subsection{Open-open, closed-closed}
+
+$n$ is the number of antinodes, or the $n^\text{th}$ harmonic.
+
+\[
+	f_n = f_1 n = \frac{nv}{2L} \qquad f_1 = \frac{v}{2L} \qquad \lambda_n = \frac{2L}{n}
+\]
+
+\subsection{Open-closed}
+
+\[
+	f_n = f_1 n = \frac{nv}{4L} \qquad f_1 = \frac{v}{4L} \qquad \lambda_n = \frac{2L}{n}
+\]
+
+\section{Sound}
+
+\subsection{Speed of sound}
+
+\[
+	v = 331 \sqrt{\frac{T_{\text{°C}}+273}{273}} \qquad v \approx 331 + 0.59T
+\]
+
+\subsection{Sound intensity}
+
+\[
+	I = \frac{\text{Power (\watt)}}{\text{Area}} = \frac{\text{Power (\watt)}}{4 \pi r^2} \qquad
+\]
+
+\[
+	I_\decibel = 10 \log_{10} (\frac{I}{10^{-12}}) \qquad
+	I = 10^{\frac{I_\decibel}{10} - 12}
+\]
+
+\subsection{Doppler effect}
+
+\[
+	\boxed{S}\smash{\rightarrow} \enspace \boxed{O} \quad f_o = f_s \frac{v}{v - v_s} \qquad
+	\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v}{v + v_s}
+\]
+
+\[
+	\boxed{S}\smash{\rightarrow} \enspace \smash{\leftarrow}\boxed{O} \quad f_o = f_s \frac{v + v_o}{v - v_s} \qquad
+	\boxed{O}\smash{\rightarrow} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v + v_o}{v + v_s}
+\]
+
+\[
+	\boxed{S}\smash{\rightarrow} \enspace \boxed{O}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v - v_s} \qquad
+	\smash{\leftarrow}\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v + v_s}
+\]
