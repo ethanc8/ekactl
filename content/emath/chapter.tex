@@ -1,136 +1,84 @@
 % Written by Anders Sjoqvist and Ulf Lundstrom, 2009
 % The main sources are: tinyKACTL, Beta and Wikipedia
 
-\chapter{Sound \& Light}
+\chapter{Mathematics}
 
-\newcommand\meter[0]{\text{m}}
-\newcommand\watt[0]{\text{W}}
-\newcommand\Joule[0]{\text{J}}
-\newcommand\second[0]{\text{s}}
-\newcommand\decibel[0]{\text{dB}}
+\section{Notation}
 
-\section{Miscellaneous}
+$\deg~p(x)$ means the degree of polynomial $p$.
 
-\[
-	\text{\% error} = \frac{\text{observed} - \text{theoretical}}{\text{theoretical}} * 100\%
-\]
+$\text{LC}~p(x)$ means the leading coefficient of polynomial $p$.
 
-\section{Kinematics}
+\section{Rational functions}
 
-\[
-	x = \frac{a}{2}(\Delta t)^2 + v_0\Delta t + x_0 \qquad
-	v = v_0 + a\Delta t
-\]\[
-	v^2 = v_0^2 + 2a\Delta x \qquad
-	\Delta x = \frac{v_0 + v}{2} * \Delta t
-\]
+For a rational function $f(x) = \frac{p(x)}{q(x)}$, cancel out any common factors, then:
 
-\section{Simple Harmonic Motion}
+\begin{itemize}
+	\item When $\deg~p(x) = \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = \frac{\text{LC}~p(x)}{\text{LC}~q(x)}$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) < \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = 0$
+		\item x-intercept: roots of $p(x)$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) > \deg~q(x)$:
+	\begin{itemize}
+		\item HA: none
+		\item slant asymptote: $\frac{p(x)}{q(x)}$ excluding remainder
+		\item VA: roots of $q(x)$
+	\end{itemize}
+\end{itemize}
 
-\[
-	x = A \cos(\omega t + \varphi) \qquad
-	v = -\omega A \cos(\omega t + \varphi) \qquad
-	a = -\omega^2 A \cos(\omega t + \varphi)
-\]
-\[
-	x_{\max} = A \qquad
-	v_{\max} = \omega A \qquad
-	a_{\max} = \omega^2 A \qquad
-	F_{\max} = m\omega^2 A
-\]
+\section{Common functions}
 
-\subsection{Springs and Slinkies}
+\subsection{Linear equations}
 
-\[
-	F_s = kx \qquad
-	F_{s_{\max}} = kx_0 = mg
-\]
-\[
-	f = \frac{1}{2\pi}\sqrt{\frac{k}{m}} \qquad 
-	T = 2\pi\sqrt{\frac{m}{k}} \qquad 
-	\omega = 2\pi f = \sqrt{\frac{m}{k}}
-\]
-\[
-	SPE = \frac{1}{2} kx^2 \qquad
-	KE = \frac{1}{2} mv^2
-\]
-\[
-	TME = \frac{1}{2} kx^2 + \frac{1}{2} mv^2 = \frac{1}{2} kA^2 = \frac{1}{2} mv_{\max}^2
-\]
+\[\begin{aligned}
+	\text{Slope-intercept form:}&~y = mx + b \\
+	\text{Point-slope form:}&~y - y_1 = m(x - x_1)~\text{for point $(x, y)$} \\
+	\text{Standard form:}&~ax + by = c
+\end{aligned}\]
 
-\subsection{Pendulums}
 
-\[
-	f = \frac{1}{2\pi}\sqrt{\frac{g}{L}} \qquad 
-	T = 2\pi \sqrt{\frac{L}{g}}
-\]
+\subsection{Quadratic equations}
 
-\section{Waves}
+\[\begin{aligned}
+	\text{Standard form:}&~y = ax^2 + bx + c \\
+	\text{Vertex form:}&~y = a(x-h)^2 + k~\text{for vertex $(h, k)$}
+\end{aligned}\]
 
-\[
-	T = \frac{1}{f} \qquad
-	v = \lambda f \qquad
-	v = \frac{\Delta x}{\Delta t}
-\]
+\section{Sequences and Series}
 
-\subsection{Slinkies and strings with fixed ends}
+\subsection{Explicit formulas}
+\[\begin{aligned}
+	\text{Aritmetic sequence:}~a_n &= a_1 + r(n - 1) \\
+	\text{Geometric sequence:}~a_n &= a_1 * r^{n - 1} \\
+	\text{Harmonic sequence:}~a_n &= \frac{1}{a_1 + r(n - 1)}
+\end{aligned}\]
+
+\subsection{Arithmetic and Geometric Series}
+
+\[\begin{aligned}
+	\sum_{j=1}^{n} (a_1 + r(n-1)) &= \frac{n}{2}(2a_1 + (n - 1) d) \\
+	\sum_{j=1}^{n} (a_1 * r^{n - 1}) &= \frac{a_1 (1-r^n)}{1-r} \\
+	\sum_{j=1}^{\infty} (a_1 * r^{n - 1}) &= \frac{a_1}{1-r} ~\text{for}~ r \in [-1, 1] \\
+\end{aligned}\]
+
+\subsection{Special Sums}
 
 \[
-	F_T = F_s = kx \qquad
-	\mu = \frac{m}{L} \qquad
-	v = \sqrt{\frac{F_T}{\mu}}
+\begin{aligned}
+	\sum_{j=1}^{n} c &= nc \\
+	\sum_{j=1}^{n} ca_j &= c \sum_{j=1}^{n} a_j \\
+	\sum_{j=1}^{n} (a_j + b_j) &= \sum_{j=1}^{n} a_j + \sum_{j=1}^{n} b_j \\
+	\sum_{j=1}^{n} j &= \frac{n(n+1)}{2} \\
+	\sum_{j=1}^{n} j^2 &= \frac{n(n+\frac{1}{2})(n+1)}{3} = \frac{n(2n+1)(n+1)}{6} \\
+	\sum_{j=1}^{n} j^3 &= \frac{n^2(n+1)^2}{4} \\
+	\sum_{j=1}^{n} j^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
+\end{aligned}
 \]
 
-Given mass $m_T$ hanging below a pulley, $F_T = m_T g$.
-
-\section{Standing waves}
-
-\subsection{Open-open, closed-closed}
-
-$n$ is the number of antinodes, or the $n^\text{th}$ harmonic.
-
-\[
-	f_n = f_1 n = \frac{nv}{2L} \qquad f_1 = \frac{v}{2L} \qquad \lambda_n = \frac{2L}{n}
-\]
-
-\subsection{Open-closed}
-
-\[
-	f_n = f_1 n = \frac{nv}{4L} \qquad f_1 = \frac{v}{4L} \qquad \lambda_n = \frac{2L}{n}
-\]
-
-\section{Sound}
-
-\subsection{Speed of sound}
-
-\[
-	v = 331 \sqrt{\frac{T_{\text{°C}}+273}{273}} \qquad v \approx 331 + 0.59T
-\]
-
-\subsection{Sound intensity}
-
-\[
-	I = \frac{\text{Power (\watt)}}{\text{Area}} = \frac{\text{Power (\watt)}}{4 \pi r^2} \qquad
-\]
-
-\[
-	I_\decibel = 10 \log_{10} (\frac{I}{10^{-12}}) \qquad
-	I = 10^{\frac{I_\decibel}{10} - 12}
-\]
-
-\subsection{Doppler effect}
-
-\[
-	\boxed{S}\smash{\rightarrow} \enspace \boxed{O} \quad f_o = f_s \frac{v}{v - v_s} \qquad
-	\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v}{v + v_s}
-\]
-
-\[
-	\boxed{S}\smash{\rightarrow} \enspace \smash{\leftarrow}\boxed{O} \quad f_o = f_s \frac{v + v_o}{v - v_s} \qquad
-	\boxed{O}\smash{\rightarrow} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v + v_o}{v + v_s}
-\]
-
-\[
-	\boxed{S}\smash{\rightarrow} \enspace \boxed{O}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v - v_s} \qquad
-	\smash{\leftarrow}\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v + v_s}
-\]
