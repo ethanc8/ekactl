@@ -83,6 +83,8 @@
 
 Given mass $m_T$ hanging below a pulley, $F_T = m_T g$.
 
+\columnbreak
+
 \section{Standing waves}
 
 \subsection{Open-open, closed-closed}
@@ -97,6 +99,22 @@ $n$ is the number of antinodes, or the $n^\text{th}$ harmonic.
 
 \[
 	f_n = f_1 n = \frac{nv}{4L} \qquad f_1 = \frac{v}{4L} \qquad \lambda_n = \frac{2L}{n}
+\]
+
+\subsection{End correction}
+
+Although a theoretical air column will have a frequency only dependent on the velocity and length of the column, the diameter of the air column plays an effect in the real world.
+
+In an open-open pipe with diameter $d$:
+
+\[
+	f_n = f_1 n = \frac{nv}{2(L + 0.6d)} \qquad f_1 = \frac{v}{2(L + 0.6d)} \qquad \lambda_n = \frac{2(L + 0.6d)}{n}
+\]
+
+In an open-closed pipe with diameter $d$:
+
+\[
+	f_n = f_1 n = \frac{nv}{4(L + 0.6d)} \qquad f_1 = \frac{v}{4(L + 0.6d)} \qquad \lambda_n = \frac{4(L + 0.6d)}{n}
 \]
 
 \section{Sound}
@@ -120,17 +138,37 @@ $n$ is the number of antinodes, or the $n^\text{th}$ harmonic.
 
 \subsection{Doppler effect}
 
-\[
-	\boxed{S}\smash{\rightarrow} \enspace \boxed{O} \quad f_o = f_s \frac{v}{v - v_s} \qquad
-	\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v}{v + v_s}
-\]
+\[\begin{aligned}
+	\boxed{O}\smash{\rightarrow} \enspace \boxed{S} \quad f_o &= f_s \frac{v + v_o}{v} \qquad &
+	\smash{\leftarrow}\boxed{O} \enspace \boxed{S} \quad f_o &= f_s \frac{v - v_o}{v}
+	\\
+	\boxed{O} \enspace \smash{\leftarrow}\boxed{S}  \quad f_o &= f_s \frac{v}{v - v_s} \qquad &
+	\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o &= f_s \frac{v}{v + v_s}
+	\\
+	\boxed{O}\smash{\rightarrow} \enspace \smash{\leftarrow}\boxed{S} \quad f_o &= f_s \frac{v + v_o}{v - v_s} \qquad &
+	\boxed{O}\smash{\rightarrow} \enspace \boxed{S}\smash{\rightarrow} \quad f_o &= f_s \frac{v + v_o}{v + v_s}
+	\\
+	\smash{\leftarrow}\boxed{O} \enspace \smash{\leftarrow}\boxed{S} \quad f_o &= f_s \frac{v - v_o}{v - v_s} \qquad &
+	\smash{\leftarrow}\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o &= f_s \frac{v - v_o}{v + v_s}
+\end{aligned}\]
+
+\subsection{Constructive and Destructive Interference (2 dimensions)}
+
+For a point on the $m^\text{th}$ antinodal/nodal line playing the same frequency with the same phase:
 
 \[
-	\boxed{S}\smash{\rightarrow} \enspace \smash{\leftarrow}\boxed{O} \quad f_o = f_s \frac{v + v_o}{v - v_s} \qquad
-	\boxed{O}\smash{\rightarrow} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v + v_o}{v + v_s}
+	PD = m \lambda
 \]
 
+where $PD$ is the path length difference.
+
+\subsection{Beats}
+
 \[
-	\boxed{S}\smash{\rightarrow} \enspace \boxed{O}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v - v_s} \qquad
-	\smash{\leftarrow}\boxed{O} \enspace \boxed{S}\smash{\rightarrow} \quad f_o = f_s \frac{v - v_o}{v + v_s}
+	f_B = \Delta f
 \]
+
+\section{Light}
+
+\subsection{Two-slit experiment}
+
