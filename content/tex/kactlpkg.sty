@@ -27,6 +27,48 @@
 % Requires texlive-science
 \usepackage{nicematrix}					% For nice matrices with column and row headers
 \usepackage{gensymb}
+
+% % XeTeX fonts - comment this whole thing out for Computer Modern
+% \ifxetex
+% 	\usepackage{unicode-math}
+% 	%% STIX Two - like Times New Roman 10-pt metal type
+% 	% \setmathfont{STIXTwoMath-Regular}
+% 	% \setmainfont{STIXTwoText-Regular}
+% 	%% Palatino - Domitian and Asana-Math
+% 	\setmathfont{Asana-Math}
+% 	\setmainfont{Domitian-Roman}
+% 	%% Garamond - EB Garamond (Pardo) and Garamond-Math
+% 	% \setmainfont{EBGaramond-Regular}
+% 	% \setmathfont{Garamond-Math}[StylisticSet={3,9,10,11}]
+% 	%% FF Meta - FiraGO and FiraMath
+% 	% \setmathfont{FiraMath-Regular}
+% 	% \setmainfont{FiraGO-Regular}
+% 	% \setmonofont{FiraMono-Regular}
+% 	%% Noto Sans (because Noto Sans Math is a serif font)
+% 	% \setmainfont{Noto Sans}
+% 	% \setmonofont{Noto Sans Mono}
+% 	% \setmathfont{FiraMath-Regular}[Scale=MatchLowercase]
+% 	% \setmathfont{NotoSansMath-Regular}[ range={"00-"FF, "2100-"214F, "2190-"23FF, "25A0-"25FF,
+% 	% 	"27C0-"27FF, "2900-"295F, "2980-"2BFF,
+% 	% 	cal, bfcal, sfup, bfsfup, sfit, bfsfit, frak, bffrak, bb, bbit}]
+% 	% \setmathfont{NotoSans-Regular}[range={up,"2000-"206F}]
+% 	% \setmathfont{NotoSans-Italic}[range=it]
+% 	% \setmathfont{NotoSans-Bold}[range=bfup]
+% 	% \setmathfont{NotoSans-BoldItalic}[range=bfit]
+% 	% \setmathfont{NotoSansMono-Regular}[range=tt]
+% 	%% Noto Serif
+% 	% \setmainfont{Noto Serif}
+% 	% \setmonofont{Noto Sans Mono}
+% 	% \setmathfont{STIXTwoMath-Regular}[Scale=MatchLowercase]
+% 	% \setmathfont{NotoSansMath-Regular}[ range={"00-"FF, "2100-"214F, "2190-"23FF, "25A0-"25FF,
+% 	% 	"27C0-"27FF, "2900-"295F, "2980-"2BFF,
+% 	% 	cal, bfcal, sfup, bfsfup, sfit, bfsfit, frak, bffrak, bb, bbit}]
+% 	% \setmathfont{NotoSerif-Regular}[range={up,"2000-"206F}]
+% 	% \setmathfont{NotoSerif-Italic}[range=it]
+% 	% \setmathfont{NotoSerif-Bold}[range=bfup]
+% 	% \setmathfont{NotoSerif-BoldItalic}[range=bfit]
+% 	% \setmathfont{NotoSansMono-Regular}[range=tt]
+% \fi
 %   END Packages added by Ethan
 
 % Config commands
@@ -220,7 +262,9 @@
 \setlength{\columnsep}{10pt} % Multicol separation margin
 \setcounter{tocdepth}{1} % Table of contents depth
 
+\ifpdf
 \pdfsuppresswarningpagegroup=1
+\fi
 
 \newcommand{\maketeampage}{
 	\pagestyle{empty}
