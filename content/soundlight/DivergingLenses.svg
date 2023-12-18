@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="25mm"
+   height="10mm"
+   viewBox="0 0 25 10"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.1 (1:1.3.1+202311172155+91b66b0783)"
+   sodipodi:docname="DivergingLenses.svg"
+   inkscape:export-filename="DivergingLenses.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="14.93"
+     inkscape:cx="48.425988"
+     inkscape:cy="19.25653"
+     inkscape:window-width="1920"
+     inkscape:window-height="1006"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1-2-2"
+       style="fill:none;stroke:#000000;stroke-width:0.25577;stroke-opacity:1"
+       d="M 4.2586533,9.2043353 C 2.15085,6.7902385 2.174419,3.1832623 4.3135898,0.79691637 L 0.38837476,0.79629055 C 2.5275455,3.1826365 2.5511145,6.7896127 0.44331126,9.2037095 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path1"
+       style="fill:none;stroke:#000000;stroke-width:0.256;stroke-opacity:1"
+       d="M 10.833169,9.1124446 C 8.6441095,9.0083711 6.9200513,7.2080607 6.9107546,5.0165482 6.9014579,2.825036 8.6101796,1.0101634 10.798277,0.88752105 L 7.504498,0.79691637 C 5.3653272,3.1832623 5.3417582,6.7902385 7.4495615,9.2043353 Z"
+       sodipodi:nodetypes="cscccc" />
+    <path
+       id="path1-2"
+       style="fill:none;stroke:#000000;stroke-width:0.256;stroke-opacity:1"
+       d="M 12.002179,9.1118154 C 14.191238,9.0077419 15.915298,7.2074315 15.924595,5.015919 15.933895,2.8244068 14.225168,1.0095342 12.037071,0.88689185 l 3.29378,-0.090605 c 2.139172,2.38634595 2.162741,5.99332215 0.05494,8.40741895 z"
+       sodipodi:nodetypes="cscccc" />
+    <path
+       id="path1-2-2-7"
+       style="fill:none;stroke:#000000;stroke-width:0.25577;stroke-opacity:1"
+       d="m 20.275478,9.2040221 0.05494,-8.40741895 -2.337715,-6.258e-4 c 2.13917,2.38634595 2.162739,5.99332215 0.05494,8.40741895 z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path1-2-2-7-2"
+       style="fill:none;stroke:#000000;stroke-width:0.25577;stroke-opacity:1"
+       d="m 22.328824,9.2040429 -0.05494,-8.407419 2.337715,-6.258e-4 c -2.13917,2.386346 -2.162739,5.9933222 -0.05494,8.407419 z"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>

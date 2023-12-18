@@ -184,10 +184,6 @@ where $PD$ is the path length difference.
 
 \subsection{Mirror}
 
-The \textbf{normal line} is the line perpendicular to the mirror surface which touches the intersection of the surface and the light ray.
-
-The \textbf{incident angle} is the angle between the ray of light and the normal line.
-
 \newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 \newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
 
@@ -215,14 +211,6 @@ The \textbf{incident angle} is the angle between the ray of light and the normal
 
 In a plane mirror, $p = -q$.
 
-\subsection{Refraction / Snell's Law}
-
-% The \textbf{index of refraction} ($n$, $\frac{\meter / \second}{\meter / \second}$) is the ratio of the speed of light in a vacuum over the speed of light in the medium.
-Refraction occurs when the speed of light in two media are different and light hits the boundary of the two media. The frequency of the light will stay the same, but the speed, wavelength, and direction will change.
-\[
-	n = \frac{c}{v} \qquad n_1 \sin \theta_1 = n_2 \sin \theta_2
-\]
-
 \subsection{Lenses}
 
 converging () with wider middle $\Rightarrow$ positive focal length, diverging )( with thinner middle $\Rightarrow$ negative focal length.
@@ -238,3 +226,58 @@ converging () with wider middle $\Rightarrow$ positive focal length, diverging )
 \[
 	p_2 = \Delta x - q_1
 \]
+
+\subsection{Mirrors and Lenses}
+
+% \begin{center}
+% \begin{tabular}{R l L | L L L} 
+% 	% \hline
+% 		& \text{Meaning} & & *) & *| & *( \\ 
+% 	\hline
+% 	r   & radius                     & m & + & \inf & - \\
+% 	f   & focal length               & m & + & \inf & - \\
+% 	p   & object distance            & m & + & + & +\\
+% 	q   & image distance             & m & \pm & - & - \\
+% 	h_o & object height   			 & m & + & + & + \\
+% 	h_i & image height    			 & m & \pm & - & -  \\
+% 	M   & magnification & \frac{m}{m}& \pm & - & - \\
+% 	% \hline
+% \end{tabular}
+% \end{center}
+
+Real $\iff$ inverted, virtual $\iff$ upright.
+
+\begin{center}
+	\begin{tabular}{r | l l} 
+		 & Converging & Diverging \\
+		\hline
+		Mirror & \includegraphics[width=2cm]{content/soundlight/ConvergingMirror.jpg} & \includegraphics[width=2cm]{content/soundlight/DivergingMirror.jpg} \\
+		Lens & \includegraphics[width=2.25cm]{content/soundlight/ConvergingLenses.pdf} & \includegraphics[width=2.5cm]{content/soundlight/DivergingLenses.pdf} \\
+		focal length & + & - \\
+		\hline
+		object distance & image & image \\
+		\hline
+		$\infty$ to $2f$ & Real smaller & Virtual smaller \\
+		$2f$ to $f$ & Real larger & \\
+		$f$ to $0$ & Virtual larger & \\
+		\hline
+		$0$ to $-f$ & Virtual smaller & Virtual larger \\
+		$-f$ to $-2f$ & & Real larger \\
+		$-2f$ to $-\infty$ & & Real smaller \\
+	\end{tabular}
+\end{center}
+
+\subsection{Refraction / Snell's Law}
+
+The \textbf{normal line} is the line perpendicular to the surface which touches the intersection of the surface and the light ray.
+
+The \textbf{incident angle} is the angle between the ray of light and the normal line.
+
+$\theta_1$ and $\theta_2$ are both measured from the normal line, not the surface.
+
+% The \textbf{index of refraction} ($n$, $\frac{\meter / \second}{\meter / \second}$) is the ratio of the speed of light in a vacuum over the speed of light in the medium.
+Refraction occurs when the speed of light in two media are different and light hits the boundary of the two media. The frequency of the light will stay the same, but the speed, wavelength, and direction will change.
+\[
+	n = \frac{c}{v} \qquad n_1 \sin \theta_1 = n_2 \sin \theta_2
+\]
+

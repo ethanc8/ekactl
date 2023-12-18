@@ -1,70 +1,5 @@
 \chapter{Mathematics}
 
-\section{Notation}
-
-$\deg~p(x)$ means the degree of polynomial $p$.
-
-$\text{LC}~p(x)$ means the leading coefficient of polynomial $p$.
-
-\section{Rational functions}
-
-For a rational function $f(x) = \frac{p(x)}{q(x)}$, cancel out any common factors, then:
-
-\begin{itemize}
-	\item When $\deg~p(x) = \deg~q(x)$:
-	\begin{itemize}
-		\item HA: $y = \frac{\text{LC}~p(x)}{\text{LC}~q(x)}$
-		\item VA: roots of $q(x)$
-	\end{itemize}
-	\item When $\deg~p(x) < \deg~q(x)$:
-	\begin{itemize}
-		\item HA: $y = 0$
-		\item x-intercept: roots of $p(x)$
-		\item VA: roots of $q(x)$
-	\end{itemize}
-	\item When $\deg~p(x) > \deg~q(x)$:
-	\begin{itemize}
-		\item HA: none
-		\item slant asymptote: $\frac{p(x)}{q(x)}$ excluding remainder
-		\item VA: roots of $q(x)$
-	\end{itemize}
-\end{itemize}
-
-\section{Polynomials}
-
-\subsection{Linear equations}
-
-\[\begin{aligned}
-	\text{Slope-intercept form:}&~y = mx + b \\
-	\text{Point-slope form:}&~y - y_1 = m(x - x_1)~\text{for point $(x, y)$} \\
-	\text{Standard form:}&~ax + by = c
-\end{aligned}\]
-
-
-\subsection{Quadratic equations}
-
-\[\begin{aligned}
-	\text{Standard form:}&~y = ax^2 + bx + c \\
-	\text{Vertex form:}&~y = a(x-h)^2 + k~\text{for vertex $(h, k)$} \\
-	\text{Sum of roots:}&~\frac{-b}{a} \\
-	\text{Product of roots:}&~\frac{c}{a} \\
-\end{aligned}\]
-
-\subsection{Higher-degree polynomials}
-In a polynomial
-\[
-	a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
-\]
-, with roots
-\[
-	r_1, r_2, r_3, \dotsc , r_n
-\]
-then:
-\[\begin{aligned}
-	r_1 + r_2 + r_3 + \dotsb + r_n = \sum_{k=1}{n} r_k = -\frac{a_{n-1}}{a_n}
-\end{aligned}\]
-
-\columnbreak
 
 \section{Sequences and Series}
 
@@ -77,27 +12,30 @@ then:
 
 \subsection{Arithmetic and Geometric Series}
 
+In the following equations, substituting $j=1$ with $j=0$, $j-1$ with $j$, and $a_1$ with $a_0$ will produce the same result.
+
 \[\begin{aligned}
-	\sum_{j=1}^{n} (a_1 + r(n-1)) &= \frac{n}{2}(2a_1 + (n - 1) d) \\
-	\sum_{j=1}^{n} (a_1 * r^{n - 1}) &= \frac{a_1 (1-r^n)}{1-r} \\
-	\sum_{j=1}^{\infty} (a_1 * r^{n - 1}) &= \frac{a_1}{1-r} ~\text{for}~ r \in [-1, 1] \\
+	\sum_{j=1}^{n} (a_1 + r(j-1)) &= \frac{n}{2}(2a_1 + (n - 1) d) \\
+	\sum_{j=1}^{n} (a_1 * r^{j - 1}) &= \frac{a_1 (1-r^n)}{1-r} \\
+	\sum_{j=1}^{\infty} (a_1 * r^{j - 1}) &= \frac{a_1}{1-r} ~\text{for}~ r \in [-1, 1] \\
 \end{aligned}\]
 
 \subsection{Special Sums}
 
 \[
 \begin{aligned}
-	\sum_{j=1}^{n} c &= nc \\
+	\sum_{j=1}^{n} c &= nc &
 	\sum_{j=1}^{n} ca_j &= c \sum_{j=1}^{n} a_j \\
-	\sum_{j=1}^{n} (a_j + b_j) &= \sum_{j=1}^{n} a_j + \sum_{j=1}^{n} b_j \\
+	\sum_{j=1}^{n} (a_j + b_j) &= \sum_{j=1}^{n} a_j + \sum_{j=1}^{n} b_j &
 	\sum_{j=1}^{n} j &= \frac{n(n+1)}{2} \\
-	\sum_{j=1}^{n} j^2 &= \frac{n(n+\frac{1}{2})(n+1)}{3} = \frac{n(2n+1)(n+1)}{6} \\
+	\sum_{j=1}^{n} j^2 &= \frac{n(n+\frac{1}{2})(n+1)}{3} &
+	% = \frac{n(2n+1)(n+1)}{6} \\
 	\sum_{j=1}^{n} j^3 &= \frac{n^2(n+1)^2}{4} \\
-	\sum_{j=1}^{n} j^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
+	% \sum_{j=1}^{n} j^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
 \end{aligned}
 \]
 
-\columnbreak
+% \columnbreak
 
 \section{Trigonometry}
 
@@ -112,82 +50,114 @@ then:
 	30\degree & \frac{\pi}{6} & \frac{1}{2} & \frac{\sqrt{3}}{2} & \frac{1}{\sqrt{3}} \\
 	45\degree & \frac{\pi}{4} & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 1 \\
 	60\degree & \frac{\pi}{3} & \frac{\sqrt{3}}{2} & \frac{1}{2} & \sqrt{3} \\
-	90\degree & \frac{\pi}{2} & 1 & 0 & undef \\
+	90\degree & \frac{\pi}{2} & 1 & 0 & \text{undef} \\
 	% \hline
 \end{tabular}
 \end{center}
 
-\subsection{Double-Angle and Related Identities}
-
-% https://math.libretexts.org/Courses/Reedley_College/Trigonometry/03%3A_Trigonometric_Identities_and_Equations/3.04%3A_Sum-to-Product_and_Product-to-Sum_Formulas
-\subsubsection{Product-to-Sum Formulas}
+\subsection{Law of Sines and Cosines}
+\[
+	\frac{\sin(A)}{a} = \frac{\sin(B)}{b} = \frac{\sin(C)}{c} \qquad
+	c^2 = a^2 + b^2 - 2ab\cos(C)
+\]
+\subsection{Triangle area}
+\[
+	K = \frac{1}{2}bh \qquad
+	K = \frac{1}{2}bc \sin(A) \qquad
+	K = \sqrt{s(s-a)(s-b)(s-c)}
+\]
+\subsection{Pythagorean identities}
 \[\begin{aligned}
-	\cos \alpha \cos \beta &= \dfrac{1}{2}[\cos(\alpha-\beta)+\cos(\alpha+\beta)] \\
-	\sin \alpha \cos \beta &= \dfrac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)] \\
-	\sin \alpha \sin \beta &= \dfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha+\beta)] \\
-	\cos \alpha \sin \beta &= \dfrac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)] \\
+	(\sin A)^2 + (\cos A)^2 = 1 \qquad
+	(\tan A)^2 + 1 = (\sec A)^2 \\
+	(\cot A)^2 + 1 = (\csc A)^2
+\end{aligned}\]
+% OPTIONAL
+\subsection{Odd and even functions}
+\[
+	\cos(-x) = \cos(x) \quad
+	\sin(-x) = \sin(x) \quad
+	\tan(-x) = \tan(x)
+\]
+% OPTIONAL
+\subsection{Co-functions}
+\[
+	\sin(\frac{\pi}{2} - x) = \cos(x)
+\]
+\subsection{Slope}
+Where $\alpha$ is the angle between the line and the x-axis, and $m$ is the slope of the line:
+\[
+	\alpha = \tan m
+\]
+\subsection{Sum and difference formulas}
+\[\begin{aligned}
+	\sin(A + B) &= \sin(A)\cos(B) + \cos(A)\sin(B) \\
+	\sin(A - B) &= \sin(A)\cos(B) - \cos(A)\sin(B) \\
+	\cos(A + B) &= \cos(A)\cos(B) - \sin(A)\sin(B) \\
+	\cos(A + B) &= \cos(A)\cos(B) - \sin(A)\sin(B) \\
+	\tan(A + B) &= \frac{\tan(A) + \tan(B)}{1-\tan(A)\tan(B)} \\
+	\tan(A - B) &= \frac{\tan(A) - \tan(B)}{1+\tan(A)\tan(B)} \\
+\end{aligned}\]
+\subsection{Double-angle formulas}
+\[\begin{aligned}
+	\sin(2A) &= 2\sin(A)\cos(A) \\
+	\cos(2A) &= (\cos A)^2 - (\sin A)^2 = 2(\cos A)^2 - 1 = 1 - 2(\sin A)^2 \\
+	\tan(2A) &= \frac{2\tan(A)}{1 - (\tan A)^2}
 \end{aligned}\]
 
-\subsubsection{Sum-to-Product Formulas}
+\section{Vectors}
+\newcommand{\dotp}{\boldsymbol{\cdot}}
+\newcommand{\crossp}{\times}
+\newcommand{\proj}{\text{proj}}
+\subsection{Vector arithmetic}
 \[\begin{aligned}
-	\sin \alpha+\sin \beta &= 2\sin(\dfrac{\alpha+\beta}{2})\cos(\dfrac{\alpha-\beta}{2}) \nonumber \\
-	\sin \alpha-\sin \beta &= 2\sin(\dfrac{\alpha-\beta}{2})\cos(\dfrac{\alpha+\beta}{2}) \nonumber \\
-	\cos \alpha-\cos \beta &= -2\sin(\dfrac{\alpha+\beta}{2})\sin(\dfrac{\alpha-\beta}{2}) \nonumber \\
-	\cos \alpha+\cos \beta &= 2\cos(\dfrac{\alpha+\beta}{2})\cos(\dfrac{\alpha-\beta}{2}) \nonumber \\
+	\vec{v} + \vec{w} &= \begin{bmatrix}
+		v_x + w_x \\
+		v_y + w_y \\
+		v_z + w_z \\
+	\end{bmatrix} \qquad
+	c * \vec{v} = \begin{bmatrix}
+		c * v_x \\
+		c * v_y \\
+		c * v_z \\
+	\end{bmatrix} \\
+	\vec{v} \dotp \vec{w} &= v_x + v_y + v_z = |\vec{v}||\vec{w}| \cos(\theta) \\
+	\vec{v} \crossp \vec{w} &= \begin{vmatrix}
+		\hat{i} & \hat{j} & \hat{k} \\
+		v_x & v_y & v_z \\
+		w_x & w_y & w_z
+	\end{vmatrix} \qquad |\vec{v} \crossp \vec{w}| = |\vec{v}||\vec{w}| \sin(\theta) \\
+	\vec{v} \crossp \vec{w} &\perp \vec{v} \qquad \vec{v} \crossp \vec{w} \perp \vec{w} \qquad \vec{v} \parallel \vec{w} \iff \vec{v} \dotp \vec{w} = 0 \\
+	\hat{v} &= \frac{\vec{v}}{|\vec{v}|} \qquad
+	\text{proj}_{\vec{b}} \vec{v} = \frac{\vec{b} \dotp \vec{v}}{\vec{b} \dotp \vec{b}} * \vec{b} = (|\vec{v}| \cos(\theta))
 \end{aligned}\]
+\subsubsection{Right-hand rule}
+To determine the direction of $\vec{v} \crossp \vec{w}$, put the pinky of the right hand on $\vec{v}$ and curl it toward $\vec{w}$.
+\section{Polar}
+\subsection{Polar and Cartesian sytems}
+With point $(x, y) = (r; \theta) = (r; \beta)$, where $\theta$ is CCW from the $x$-axis and $\beta$ is a bearing, CW from the $y$-axis:
+\[\begin{aligned}
+	x &= r \cos(\theta) = r \sin(\beta) & y &= r \sin(\theta) = r \cos(\beta) \\
+	r &= \sqrt{x^2 + y^2} & \theta &\equiv \arctan(\frac{y}{x}) \quad \beta \equiv \arctan(\frac{x}{y})
+\end{aligned}\]
+\subsection{Limaçons and Petals}
 
-\columnbreak
+The function $y = A \cos(B(\theta + C)) + D$ is equivalent to $y = A \cos(B\theta) + D$ rotated $C$ degrees/radians clockwise.
 
-\section{Geometric Transformations}
+When $C$ is 0 and $B$ is 1, the x-intercepts are $A \pm D$ and the y-intercepts are $\pm D$, and it forms a limaçon.
 
-\subsection{Vertex matrices}
+When $C$ is 0, but $B \neq 1$, then this sometimes still holds. The x-intercepts may also be $\pm A \pm D$.
 
-A \textbf{vertex matrix} is a matrix in which the columns represent points in a shape and the rows represent the components.
+There are $B$ petals, with the axis of the first petal on the positive x-axis.
 
-For example, the triangle $\triangle ABC$, with points $A(-8, 7)$, $B(-4, 10)$, and $C(-1, -3)$ is represented by the following vertex matrix:
-\[\begin{bNiceMatrix}[first-col, first-row]
-	  & A  & B  & C \\
-	x & -8 & -4 & -1 \\
-	y & 7  & 10 & -3
-\end{bNiceMatrix}\]
+When $B$ is even and $|D| < 1$, then the number of petals is $2B$.
 
-\subsection{Translations}
+Using $\sin$ instead of $\cos$, limaçons have their axes on the positive y-axis, while for petals, the first petal starts from the positive x-axis and curves upwards.
 
-To translate a figure $h$ units right and $k$ units up, add an appropriate matrix.
+\section{Complex}
 
-For example, to translate $\triangle ABC$:
-\[\begin{bNiceMatrix}
-  	A_x & B_x & C_x \\
-  	A_y & B_y & C_y
-\end{bNiceMatrix} + \begin{bNiceMatrix}
-	h & h & h \\
-	k & k & k
-\end{bNiceMatrix}\]
-
-To translate $f(x)$:
 \[
-	f'(x) = f(x-h) + k
+	\cis(\theta) = e^{i\theta} = \cos(\theta) + i \sin(\theta)
 \]
 
-\subsection{Dilations}
-
-To dilate a figure by a factor of $k$, multiply the figure's vertex matrix by $k$.
-
-For example, to dilate $\triangle ABC$:
-\[
-	k * 
-	\begin{bNiceMatrix}
-  		A_x & B_x & C_x \\
-  		A_y & B_y & C_y
-	\end{bNiceMatrix}
-\]
-
-To dilate a function by a factor of $m$ in the $x$-direction and $n$ in the $y$-direction:
-\[
-	f'(x) = n * f(\frac{x}{m})
-\]
-
-\subsection{Reflections}
-
-\subsubsection{Over the $x$-axis}
-
+To find the $n^{\text{th}}$ root of $x_r \cis(x_{\theta})$, solve the equation $z_r^n \cis(nz_{\theta}) = x_r \cis(x_{\theta} + 360\deg k)$ for $k \in \Real$.

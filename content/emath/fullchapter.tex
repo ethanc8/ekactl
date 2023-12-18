@@ -1,0 +1,193 @@
+\chapter{Mathematics}
+
+\section{Notation}
+
+$\deg~p(x)$ means the degree of polynomial $p$.
+
+$\text{LC}~p(x)$ means the leading coefficient of polynomial $p$.
+
+\section{Rational functions}
+
+For a rational function $f(x) = \frac{p(x)}{q(x)}$, cancel out any common factors, then:
+
+\begin{itemize}
+	\item When $\deg~p(x) = \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = \frac{\text{LC}~p(x)}{\text{LC}~q(x)}$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) < \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = 0$
+		\item x-intercept: roots of $p(x)$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) > \deg~q(x)$:
+	\begin{itemize}
+		\item HA: none
+		\item slant asymptote: $\frac{p(x)}{q(x)}$ excluding remainder
+		\item VA: roots of $q(x)$
+	\end{itemize}
+\end{itemize}
+
+\section{Polynomials}
+
+\subsection{Linear equations}
+
+\[\begin{aligned}
+	\text{Slope-intercept form:}&~y = mx + b \\
+	\text{Point-slope form:}&~y - y_1 = m(x - x_1)~\text{for point $(x, y)$} \\
+	\text{Standard form:}&~ax + by = c
+\end{aligned}\]
+
+
+\subsection{Quadratic equations}
+
+\[\begin{aligned}
+	\text{Standard form:}&~y = ax^2 + bx + c \\
+	\text{Vertex form:}&~y = a(x-h)^2 + k~\text{for vertex $(h, k)$} \\
+	\text{Sum of roots:}&~\frac{-b}{a} \\
+	\text{Product of roots:}&~\frac{c}{a} \\
+\end{aligned}\]
+
+\subsection{Higher-degree polynomials}
+In a polynomial
+\[
+	a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
+\]
+, with roots
+\[
+	r_1, r_2, r_3, \dotsc , r_n
+\]
+then:
+\[\begin{aligned}
+	r_1 + r_2 + r_3 + \dotsb + r_n = \sum_{k=1}{n} r_k = -\frac{a_{n-1}}{a_n}
+\end{aligned}\]
+
+\columnbreak
+
+\section{Sequences and Series}
+
+\subsection{Explicit formulas}
+\[\begin{aligned}
+	\text{Aritmetic sequence:}~a_n &= a_1 + r(n - 1) \\
+	\text{Geometric sequence:}~a_n &= a_1 * r^{n - 1} \\
+	\text{Harmonic sequence:}~a_n &= \frac{1}{a_1 + r(n - 1)}
+\end{aligned}\]
+
+\subsection{Arithmetic and Geometric Series}
+
+\[\begin{aligned}
+	\sum_{j=1}^{n} (a_1 + r(n-1)) &= \frac{n}{2}(2a_1 + (n - 1) d) \\
+	\sum_{j=1}^{n} (a_1 * r^{n - 1}) &= \frac{a_1 (1-r^n)}{1-r} \\
+	\sum_{j=1}^{\infty} (a_1 * r^{n - 1}) &= \frac{a_1}{1-r} ~\text{for}~ r \in [-1, 1] \\
+\end{aligned}\]
+
+\subsection{Special Sums}
+
+\[
+\begin{aligned}
+	\sum_{j=1}^{n} c &= nc \\
+	\sum_{j=1}^{n} ca_j &= c \sum_{j=1}^{n} a_j \\
+	\sum_{j=1}^{n} (a_j + b_j) &= \sum_{j=1}^{n} a_j + \sum_{j=1}^{n} b_j \\
+	\sum_{j=1}^{n} j &= \frac{n(n+1)}{2} \\
+	\sum_{j=1}^{n} j^2 &= \frac{n(n+\frac{1}{2})(n+1)}{3} = \frac{n(2n+1)(n+1)}{6} \\
+	\sum_{j=1}^{n} j^3 &= \frac{n^2(n+1)^2}{4} \\
+	\sum_{j=1}^{n} j^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
+\end{aligned}
+\]
+
+\columnbreak
+
+\section{Trigonometry}
+
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+\begin{center}
+\begin{tabular}{L L | L L L} 
+	% \hline
+	\degree & \text{rad} & \sin & \cos & \tan \\ 
+	\hline
+	0\degree & 0 & 0 & 1 & 0 \\
+	30\degree & \frac{\pi}{6} & \frac{1}{2} & \frac{\sqrt{3}}{2} & \frac{1}{\sqrt{3}} \\
+	45\degree & \frac{\pi}{4} & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 1 \\
+	60\degree & \frac{\pi}{3} & \frac{\sqrt{3}}{2} & \frac{1}{2} & \sqrt{3} \\
+	90\degree & \frac{\pi}{2} & 1 & 0 & undef \\
+	% \hline
+\end{tabular}
+\end{center}
+
+\subsection{Double-Angle and Related Identities}
+
+% https://math.libretexts.org/Courses/Reedley_College/Trigonometry/03%3A_Trigonometric_Identities_and_Equations/3.04%3A_Sum-to-Product_and_Product-to-Sum_Formulas
+\subsubsection{Product-to-Sum Formulas}
+\[\begin{aligned}
+	\cos \alpha \cos \beta &= \dfrac{1}{2}[\cos(\alpha-\beta)+\cos(\alpha+\beta)] \\
+	\sin \alpha \cos \beta &= \dfrac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)] \\
+	\sin \alpha \sin \beta &= \dfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha+\beta)] \\
+	\cos \alpha \sin \beta &= \dfrac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)] \\
+\end{aligned}\]
+
+\subsubsection{Sum-to-Product Formulas}
+\[\begin{aligned}
+	\sin \alpha+\sin \beta &= 2\sin(\dfrac{\alpha+\beta}{2})\cos(\dfrac{\alpha-\beta}{2}) \nonumber \\
+	\sin \alpha-\sin \beta &= 2\sin(\dfrac{\alpha-\beta}{2})\cos(\dfrac{\alpha+\beta}{2}) \nonumber \\
+	\cos \alpha-\cos \beta &= -2\sin(\dfrac{\alpha+\beta}{2})\sin(\dfrac{\alpha-\beta}{2}) \nonumber \\
+	\cos \alpha+\cos \beta &= 2\cos(\dfrac{\alpha+\beta}{2})\cos(\dfrac{\alpha-\beta}{2}) \nonumber \\
+\end{aligned}\]
+
+\columnbreak
+
+\section{Geometric Transformations}
+
+\subsection{Vertex matrices}
+
+A \textbf{vertex matrix} is a matrix in which the columns represent points in a shape and the rows represent the components.
+
+For example, the triangle $\triangle ABC$, with points $A(-8, 7)$, $B(-4, 10)$, and $C(-1, -3)$ is represented by the following vertex matrix:
+\[\begin{bNiceMatrix}[first-col, first-row]
+	  & A  & B  & C \\
+	x & -8 & -4 & -1 \\
+	y & 7  & 10 & -3
+\end{bNiceMatrix}\]
+
+\subsection{Translations}
+
+To translate a figure $h$ units right and $k$ units up, add an appropriate matrix.
+
+For example, to translate $\triangle ABC$:
+\[\begin{bNiceMatrix}
+  	A_x & B_x & C_x \\
+  	A_y & B_y & C_y
+\end{bNiceMatrix} + \begin{bNiceMatrix}
+	h & h & h \\
+	k & k & k
+\end{bNiceMatrix}\]
+
+To translate $f(x)$:
+\[
+	f'(x) = f(x-h) + k
+\]
+
+\subsection{Dilations}
+
+To dilate a figure by a factor of $k$, multiply the figure's vertex matrix by $k$.
+
+For example, to dilate $\triangle ABC$:
+\[
+	k * 
+	\begin{bNiceMatrix}
+  		A_x & B_x & C_x \\
+  		A_y & B_y & C_y
+	\end{bNiceMatrix}
+\]
+
+To dilate a function by a factor of $m$ in the $x$-direction and $n$ in the $y$-direction:
+\[
+	f'(x) = n * f(\frac{x}{m})
+\]
+
+\subsection{Reflections}
+
+\subsubsection{Over the $x$-axis}
+
