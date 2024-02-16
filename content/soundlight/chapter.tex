@@ -38,9 +38,13 @@
 
 \subsection{Springs and Slinkies}
 
+$x$ represents the distance from the equilibrium.
+
+If you put a mass on top of the slinky, $\Delta x_\text{eq}$ represents the difference between the original equilibrium and the new equilibrium.
+
 \[
-	F_s = kx \qquad
-	F_{s_{\max}} = kx_0 = mg
+	F_s = kx = ma \qquad
+	F_{s_{\max}} = k\Delta x_\text{eq} = 9.8 \Delta m
 \]
 \[
 	f = \frac{1}{2\pi}\sqrt{\frac{k}{m}} \qquad 
@@ -54,6 +58,20 @@
 \[
 	TME = \frac{1}{2} kx^2 + \frac{1}{2} mv^2 = \frac{1}{2} kA^2 = \frac{1}{2} mv_{\max}^2
 \]
+
+\subsection{Springs in parallel and series}
+
+% Converted from https://en.wikipedia.org/wiki/Series_and_parallel_springs using https://mediawiki2latex.wmflabs.org/
+
+\begin{tabular}{|>{\RaggedRight}p{0.38225\linewidth}|>{\RaggedRight}p{0.23286\linewidth}|>{\RaggedRight}p{0.23286\linewidth}|} \hline 
+	{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Quantity}&{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}In Series}&{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}In Parallel} %\endhead  
+	% \\ \hline \multicolumn{4}{|>{\RaggedRight}p{0.97143\linewidth}|}{\hspace*{0pt}\ignorespaces{}\hspace*{0pt}}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Equivalent spring constant&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle {\frac {1}{k_{\mathrm {eq} }}}={\frac {1}{k_{1}}}+{\frac {1}{k_{2}}}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle k_{\mathrm {eq} }=k_{1}+k_{2}}$}
+	% \\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Equivalent compliance&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle c_{\mathrm {eq} }=c_{1}+c_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle {\frac {1}{c_{\mathrm {eq} }}}={\frac {1}{c_{1}}}+{\frac {1}{c_{2}}}}$}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Deflection (elongation)&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{\itshape {${\displaystyle x_{\mathrm {eq} }=x_{1}+x_{2}}$}}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{\itshape {${\displaystyle x_{\mathrm {eq} }=x_{1}=x_{2}}$}}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Force&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle F_{\mathrm {eq} }=F_{1}=F_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle F_{\mathrm {eq} }=F_{1}+F_{2}}$}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Stored energy&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle E_{\mathrm {eq} }=E_{1}+E_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle E_{\mathrm {eq} }=E_{1}+E_{2}}$}\\ \hline 
+\end{tabular}
 
 \subsection{Pendulums}
 
@@ -113,7 +131,7 @@ $n$ is the number of antinodes, or the $n^\text{th}$ harmonic.
 % \[
 % 	f_1 = \frac{v}{4(L + 0.6d)} \qquad \lambda_n = \frac{4(L + 0.6d)}{n}
 % \]
-\columnbreak
+% \columnbreak
 
 \section{Sound}
 
@@ -166,6 +184,7 @@ where $PD$ is the path length difference.
 	f_B = \Delta f
 \]
 % \columnbreak
+\pagebreak
 \section{Light}
 
 \subsection{Speed of light}
@@ -187,21 +206,21 @@ where $PD$ is the path length difference.
 \newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 \newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
 
-\begin{center}
-\begin{tabular}{R l L | L L L} 
-	% \hline
-	 & \text{Meaning} & & *) & *| & *( \\ 
-	\hline
-	r   & radius                     & m & + & \inf & - \\
-	f   & focal length               & m & + & \inf & - \\
-	p   & object distance            & m & + & + & +\\
-	q   & image distance             & m & \pm & - & - \\
-	h_o & object height   			 & m & + & + & + \\
-	h_i & image height    			 & m & \pm & - & -  \\
-	M   & magnification & \frac{m}{m}& \pm & - & - \\
-	% \hline
-\end{tabular}
-\end{center}
+% \begin{center}
+% \begin{tabular}{R l L | L L L} 
+% 	% \hline
+% 	 & \text{Meaning} & & *) & *| & *( \\ 
+% 	\hline
+% 	r   & radius                     & m & + & \inf & - \\
+% 	f   & focal length               & m & + & \inf & - \\
+% 	p   & object distance            & m & + & + & +\\
+% 	q   & image distance             & m & \pm & - & - \\
+% 	h_o & object height   			 & m & + & + & + \\
+% 	h_i & image height    			 & m & \pm & - & -  \\
+% 	M   & magnification & \frac{m}{m}& \pm & - & - \\
+% 	% \hline
+% \end{tabular}
+% \end{center}
 
 \[
 	r = 2f \qquad
@@ -213,7 +232,7 @@ In a plane mirror, $p = -q$.
 
 \subsection{Lenses}
 
-converging () with wider middle $\Rightarrow$ positive focal length, diverging )( with thinner middle $\Rightarrow$ negative focal length.
+% converging () with wider middle $\Rightarrow$ positive focal length, diverging )( with thinner middle $\Rightarrow$ negative focal length.
 
 \[
 	\frac{1}{f} = (n-1)(\frac{1}{r_1} - \frac{1}{r_2}) \qquad
@@ -280,4 +299,7 @@ Refraction occurs when the speed of light in two media are different and light h
 \[
 	n = \frac{c}{v} \qquad n_1 \sin \theta_1 = n_2 \sin \theta_2
 \]
+
+\subsection{Ray diagrams}
+
 

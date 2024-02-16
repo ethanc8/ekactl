@@ -66,28 +66,21 @@ In the following equations, substituting $j=1$ with $j=0$, $j-1$ with $j$, and $
 	K = \frac{1}{2}bc \sin(A) \qquad
 	K = \sqrt{s(s-a)(s-b)(s-c)}
 \]
-\subsection{Pythagorean identities}
+\subsection{More identities}
 \[\begin{aligned}
-	(\sin A)^2 + (\cos A)^2 = 1 \qquad
-	(\tan A)^2 + 1 = (\sec A)^2 \\
-	(\cot A)^2 + 1 = (\csc A)^2
-\end{aligned}\]
-% OPTIONAL
-\subsection{Odd and even functions}
-\[
-	\cos(-x) = \cos(x) \quad
-	\sin(-x) = \sin(x) \quad
+	(\sin A)^2 + (\cos A)^2 &= 1 &
+	(\tan A)^2 + 1 &= (\sec A)^2 \\
+	\sin(\frac{\pi}{2} - x) &= \cos(x) &
+	(\cot A)^2 + 1 &= (\csc A)^2 \\
+\end{aligned}\]\[
+	\cos(-x) = \cos(x) \qquad
+	\sin(-x) = \sin(x) \qquad
 	\tan(-x) = \tan(x)
-\]
-% OPTIONAL
-\subsection{Co-functions}
-\[
-	\sin(\frac{\pi}{2} - x) = \cos(x)
 \]
 \subsection{Slope}
 Where $\alpha$ is the angle between the line and the x-axis, and $m$ is the slope of the line:
 \[
-	\alpha = \tan m
+	m = \tan \alpha
 \]
 \subsection{Sum and difference formulas}
 \[\begin{aligned}
@@ -97,9 +90,7 @@ Where $\alpha$ is the angle between the line and the x-axis, and $m$ is the slop
 	\cos(A + B) &= \cos(A)\cos(B) - \sin(A)\sin(B) \\
 	\tan(A + B) &= \frac{\tan(A) + \tan(B)}{1-\tan(A)\tan(B)} \\
 	\tan(A - B) &= \frac{\tan(A) - \tan(B)}{1+\tan(A)\tan(B)} \\
-\end{aligned}\]
-\subsection{Double-angle formulas}
-\[\begin{aligned}
+\end{aligned}\]\[\begin{aligned}
 	\sin(2A) &= 2\sin(A)\cos(A) \\
 	\cos(2A) &= (\cos A)^2 - (\sin A)^2 = 2(\cos A)^2 - 1 = 1 - 2(\sin A)^2 \\
 	\tan(2A) &= \frac{2\tan(A)}{1 - (\tan A)^2}
@@ -109,7 +100,8 @@ Where $\alpha$ is the angle between the line and the x-axis, and $m$ is the slop
 \newcommand{\dotp}{\boldsymbol{\cdot}}
 \newcommand{\crossp}{\times}
 \newcommand{\proj}{\text{proj}}
-\subsection{Vector arithmetic}
+% \subsection{Vector arithmetic}
+
 \[\begin{aligned}
 	\vec{v} + \vec{w} &= \begin{bmatrix}
 		v_x + w_x \\
@@ -121,18 +113,19 @@ Where $\alpha$ is the angle between the line and the x-axis, and $m$ is the slop
 		c * v_y \\
 		c * v_z \\
 	\end{bmatrix} \\
-	\vec{v} \dotp \vec{w} &= v_x + v_y + v_z = |\vec{v}||\vec{w}| \cos(\theta) \\
+	\vec{v} \dotp \vec{w} &= v_x w_x + v_y w_y + v_z w_z = |\vec{v}||\vec{w}| \cos(\theta) \\
+	|\vec{v} \crossp \vec{w}| &= |\vec{v}||\vec{w}| \sin(\theta) = \text{area of parallelogram}\\
 	\vec{v} \crossp \vec{w} &= \begin{vmatrix}
 		\hat{i} & \hat{j} & \hat{k} \\
 		v_x & v_y & v_z \\
 		w_x & w_y & w_z
-	\end{vmatrix} \qquad |\vec{v} \crossp \vec{w}| = |\vec{v}||\vec{w}| \sin(\theta) \\
-	\vec{v} \crossp \vec{w} &\perp \vec{v} \qquad \vec{v} \crossp \vec{w} \perp \vec{w} \qquad \vec{v} \parallel \vec{w} \iff \vec{v} \dotp \vec{w} = 0 \\
+	\end{vmatrix} \qquad \vec{v} \crossp \vec{w} \perp \vec{v} \qquad \vec{v} \crossp \vec{w} \perp \vec{w} \\
+	\vec{v} \perp \vec{w} &\iff \vec{v} \crossp \vec{w} = \vec{0} \qquad \vec{v} \parallel \vec{w} \iff \vec{v} \dotp \vec{w} = 0 \\
 	\hat{v} &= \frac{\vec{v}}{|\vec{v}|} \qquad
-	\text{proj}_{\vec{b}} \vec{v} = \frac{\vec{b} \dotp \vec{v}}{\vec{b} \dotp \vec{b}} * \vec{b} = (|\vec{v}| \cos(\theta))
+	\text{proj}_{\vec{b}} \vec{v} = \frac{\vec{v} \dotp \vec{b}}{\vec{b} \dotp \vec{b}} * \vec{b} = (|\vec{v}| \cos(\theta))
 \end{aligned}\]
 \subsubsection{Right-hand rule}
-To determine the direction of $\vec{v} \crossp \vec{w}$, put the pinky of the right hand on $\vec{v}$ and curl it toward $\vec{w}$.
+To determine the direction of $\vec{v} \crossp \vec{w}$, put the side of the right hand on $\vec{v}$ and curl the fingers toward $\vec{w}$. The direction the thumb is pointing is the direction of $\vec{v} \crossp \vec{w}$.
 \section{Polar}
 \subsection{Polar and Cartesian sytems}
 With point $(x, y) = (r; \theta) = (r; \beta)$, where $\theta$ is CCW from the $x$-axis and $\beta$ is a bearing, CW from the $y$-axis:
@@ -140,6 +133,13 @@ With point $(x, y) = (r; \theta) = (r; \beta)$, where $\theta$ is CCW from the $
 	x &= r \cos(\theta) = r \sin(\beta) & y &= r \sin(\theta) = r \cos(\beta) \\
 	r &= \sqrt{x^2 + y^2} & \theta &\equiv \arctan(\frac{y}{x}) \quad \beta \equiv \arctan(\frac{x}{y})
 \end{aligned}\]
+\subsection{Converting functions}
+
+Try these substitutions in order:
+\[
+	x^2 = x^2 + y^2 \qquad \tan\theta = \frac{y}{x} \qquad
+	x = r\cos\theta \qquad y = r\sin\theta
+\]
 \subsection{Limaçons and Petals}
 
 The function $y = A \cos(B(\theta + C)) + D$ is equivalent to $y = A \cos(B\theta) + D$ rotated $C$ degrees/radians clockwise.
@@ -160,4 +160,20 @@ Using $\sin$ instead of $\cos$, limaçons have their axes on the positive y-axis
 	\cis(\theta) = e^{i\theta} = \cos(\theta) + i \sin(\theta)
 \]
 
-To find the $n^{\text{th}}$ root of $x_r \cis(x_{\theta})$, solve the equation $z_r^n \cis(nz_{\theta}) = x_r \cis(x_{\theta} + 360\deg k)$ for $k \in \Real$.
+To find the $n^{\text{th}}$ root of $x_r \cis(x_{\theta})$, solve the equation $z_r^n \cis(nz_{\theta}) = x_r \cis(x_{\theta} + 360\degree k)$ for $k \in \Real$.
+
+\section{Function domain}
+
+\begin{center}
+	\begin{tabular}{L L L} 
+		% \hline
+		\text{Function} & \text{Domain $x$} & \text{Range $y$} \\ 
+		\hline
+		\log(x) & (0, \infty) & \Real \\
+		\sqrt{x} & [0, \infty) & [0, \infty) \\
+		\arcsin(x) & [-1, 1] & [-\frac{\pi}{2}, \frac{\pi}{2}] \\
+		\arccos(x) & [-1, 1] & [0, \pi] \\
+		\arctan(x) & \Real & (-\frac{\pi}{2}, \frac{\pi}{2}) \\
+		% \hline
+	\end{tabular}
+\end{center}
