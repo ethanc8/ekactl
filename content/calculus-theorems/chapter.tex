@@ -10,7 +10,17 @@
   { }%                                    % Space after theorem head, ' ', or \newline
   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%    
 
-  \newtheoremstyle{ethandefinition}%                % Name
+\newtheoremstyle{ethannamedtheorem}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmnumber{#2 }\thmnote{#3}}%   
+
+\newtheoremstyle{ethandefinition}%                % Name
   {}%                                     % Space above
   {}%                                     % Space below
   {}%                                     % Body font
@@ -23,6 +33,9 @@
 \theoremstyle{ethantheorem}
 \newtheorem*{theorem}{Theorem}
 
+\theoremstyle{ethannamedtheorem}
+\newtheorem*{namedtheorem}{Theorem}
+
 \theoremstyle{ethandefinition}
 \newtheorem*{definition}{Definition}
 
@@ -30,61 +43,160 @@
 \subsubsection*{1.3 Completeness}
 
 \begin{theorem}[Completeness of the Real Numbers]
-    Every nonempty subset $S$ of $\Real$ which is bounded above has a least upper bound $\sup S$.
+  Every nonempty subset $S$ of $\Real$ which is bounded above has a least upper bound $\sup S$.
 \end{theorem}
 
 \begin{definition}[Supremum ($\sup S$)]
-    A number.
+  A number such that 
+  \begin{enumerate}[(1)]
+    \item $s \leq \sup S$ for every $s \in S$ (which just says that $\sup S$ is an upper bound for $S$)
+    \item If $u$ is any upper bound for S, then $\sup S \leq u$ (which says that $\sup S$ is the least upper bound for $S$).
+  \end{enumerate}
 \end{definition}
+
+\begin{definition}[Infimum ($\inf S$)]
+  A number such that 
+  \begin{enumerate}[(1)]
+    \item $\inf S \leq s$ for every $s \in S$ (i.e. $\inf S$ is an lower bound for $S$)
+    \item If $l$ is any upper bound for $S$, then $l \leq \inf S$ (i.e. $\inf S$ is the greatest lower bound for $S$).
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+  Every nonempty subset $S$ of $\Real$ which is bounded below has a greatest lower bound.
+\end{theorem}
+
+\begin{theorem}
+  If $\min S$ exists, then $\min S = \inf S$.
+\end{theorem}
+
+\begin{theorem}
+  If $A \subset R$ and $c \geq 0$, and $cA := {ca : a \in A}$, $\sup cA = c \sup A$.
+\end{theorem}
+
+\subsubsection*{1.4 Consequences of Completeness}
+
+\begin{theorem}[Rationals between Reals]
+  For every two real numbers $a$ and $b$ with $a < b$, there exists a rational number $r$ satisfying $a < r < b$.
+\end{theorem}
 
 \subsection*{2 Limits}
 
 \subsubsection*{2.4 $\varepsilon$-$\delta$ definition of a Limit}
 
 \begin{definition}[Limit]
-  If $\lim_{x \to a} f(x) = L$, then for any $\varepsilon > 0$, there exists $\delta > 0$ s.t. for any $x \in (a - \delta, a) \cup (a, a + \delta)$, $f(x) \in (L - \varepsilon, L + \varepsilon)$.
+  If $\displaystyle\lim_{x \to a} f(x) = L$, then for any $\varepsilon > 0$, there exists $\delta > 0$ s.t. for any $x \in (a - \delta, a) \cup (a, a + \delta)$, $f(x) \in (L - \varepsilon, L + \varepsilon)$.
 \end{definition}
 
 Alternatively,
 
 \begin{definition}[Limit]
-  If $\lim_{x \to a} f(x) = L$, then for any $\varepsilon > 0$, there exists $\delta > 0$ s.t. for any $| f (x) - L| < \varepsilon$ whenever $0 < |x - a| < \delta$ 
+  If $\displaystyle\lim_{x \to a} f(x) = L$, then for any $\varepsilon > 0$, there exists $\delta > 0$ s.t. for any $| f (x) - L| < \varepsilon$ whenever $0 < |x - a| < \delta$.
+\end{definition}
+
+\subsubsection*{2.6 Limit Laws}
+
+\begin{theorem}[Limit Laws]
+  Let $c \in R$ be a constant and suppose the limits $\lim_{x \to a} f (x)$ and $\lim_{x \to a} g (x)$ exist. Then
+  \begin{enumerate}[(i)]
+  \item $\displaystyle\lim_{x \to a}( f (x) \pm g(x)) = \lim_{x \to a} f (x) \pm \lim_{x \to a} g(x)$
+  \item $\displaystyle\lim_{x \to a}(c f (x)) = c \lim_{x \to a} f (x)$
+  \item $\displaystyle\lim_{x \to a}( f (x)g(x)) = \lim_{x \to a} f (x) \lim_{x \to a} g(x)$
+  \item $\displaystyle\lim_{x \to a} f (x) g(x) = \lim_{x \to a} f (x) \lim_{x \to a} g(x)$ , provided that $\displaystyle\lim_{x \to a} g(x) \neq 0$
+  \item See (i).
+  \item $\displaystyle\lim_{x \to a} x^n = (\lim_{x \to a} x)^n$
+  \item $\displaystyle\lim_{x \to a} \sqrt{f(x)} = \sqrt{\lim_{x \to a} f(x)}$
+  \item $\displaystyle\lim_{x \to a} \frac{a(x)b(x)}{c(x)b(x)} = \lim_{x \to a} \frac{a(x)}{c(x)}$
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Operations on infinity]
+  For $x \in \Real$,
+  \[
+    \infty + x = \infty
+  \]\[
+    -\infty + x = -\infty
+  \]\[
+    x * \infty = \begin{cases}
+      \infty & \text{if } x > 0 \\
+      -\infty & \text{if } x < 0
+    \end{cases}
+  \]\[
+    x * -\infty = \begin{cases}
+      -\infty & \text{if } x > 0 \\
+      \infty & \text{if } x < 0.
+    \end{cases}
+  \]\[
+    \frac{x}{\pm\infty} = 0 
+  \]
+\end{theorem}
+
+\begin{definition}[Indeterminate forms]
+  The following forms are indeterminate and you cannot evaluate them.
+  \[
+    \frac{0}{0}, \frac{\pm\infty}{\pm\infty}, 0*\pm\infty, \infty - \infty
+  \]
 \end{definition}
 
 \subsubsection*{2.12 Squeeze Theorem}
 
-\begin{theorem}[Squeeze Theorem]
+\begin{namedtheorem}[Squeeze Theorem]
   Let $f$ , $g$, and $h$ be defined for all $x \neq a$ over an open interval containing $a$. If
   $$
-    f (x) \leq g(x) \leq h(x)
+    f(x) \leq g(x) \leq h(x)
   $$
   for all $x \neq a$ in an open interval containing $a$ and
   $$
   \lim_{x \to a} f (x) = L = \lim_{x \to a} h(x)
   $$
-  where $L \in R$, then $\lim_{x \to a} g(x) = L$.
-\end{theorem}
+  where $L \in \Real$, then $\lim_{x \to a} g(x) = L$.
+\end{namedtheorem}
 
 \subsection*{3 Continuity}
 
 \begin{definition}[Continuity at a point]
-  Function $f$ is continuous at point $a$ if $\lim_{x \to a} f (x) = f (a)$.
+  Function $f$ is continuous at point $a$ if $\displaystyle\lim_{x \to a} f (x) = f (a)$.
 \end{definition}
 
 \begin{definition}
-  $f$ has a \textbf{removable discontinuity} if $\lim_{x \to a} f (x) = L \in \Real$ (in this case either $f (a)$ is undefined, or $f (a)$ is defined by $L \neq f (a)$).
+  $f$ has a \textbf{removable discontinuity} if $\displaystyle\lim_{x \to a} f (x) = L \in \Real$ (in this case either $f (a)$ is undefined, or $f (a)$ is defined by $L \neq f (a)$).
 \end{definition}
 \begin{definition}
-  $f$ has a \textbf{jump discontinuity} if $\lim_{x \to a^-} f (x) = L_1 \in \Real$ and $\lim_{x \to a^+} f (x) = L_2 \in \Real$ but $L1 \neq L2$.
+  $f$ has a \textbf{jump discontinuity} if $\displaystyle\lim_{x \to a^-} f (x) = L_1 \in \Real$ and $\displaystyle\lim_{x \to a^+} f (x) = L_2 \in \Real$ but $L1 \neq L2$.
 \end{definition}
 \begin{definition}
-  $f$ has an \textbf{infinite discontinuity} at $a$ if $\lim_{x \to a^-} f (x) = \pm\infty$ or $\lim_{x \to a^+} f (x) = \pm\infty$
+  $f$ has an \textbf{infinite discontinuity} at $a$ if $\displaystyle\lim_{x \to a^-} f (x) = \pm\infty$ or $\displaystyle\lim_{x \to a^+} f (x) = \pm\infty$
 \end{definition}
 
-\begin{theorem}[Intermediate Value Theorem]
+\begin{namedtheorem}[Intermediate Value Theorem]
   If $f$ is continuous on $[a, b]$, then for any real number $L$ between $f (a)$ and $f (b)$ there exists at least one $c \in [a, b]$ such that $f (c) = L$. In other
   words, if $f$ is continuous on $[a, b]$, then the graph must cross the horizontal line $y = L$ at least once
   between the vertical lines $x = a$ and $x = b$.
-\end{theorem}
+\end{namedtheorem}
+
+\begin{namedtheorem}[Aura Theorem]
+  If $f(x)$ is continuous and $f(a)$ is positive, then there exists an open interval containing $a$ such that for all $x$ in the interval, $f(x)$ is positive.
+
+  If $f(x)$ is continuous and $f(a)$ is negative, then there exists an open interval containing $a$ such that for all $x$ in the interval, $f(x)$ is negative.
+\end{namedtheorem}
+
+\begin{namedtheorem}[Bolzano's Theorem]
+  Let $f$ be a continuous function defined on $[a, b]$. If $0$ is between $f (a)$ and $f (b)$, then there exists $x \in [a, b]$ such that $f (x) = 0$.
+\end{namedtheorem}
 
 \subsection*{4 Derivatives}
+
+The derivative is the instantaneous rate of change, and the slope of the tangent line to the point.
+
+\begin{definition}[Derivative ($f'(a)$)]
+  \[
+    f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x - a} = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+  \]
+\end{definition}
+
+\begin{theorem}[Tangent line to a point]
+  The equation of the tangent line to the point $(a, f(a))$ is
+  \[
+    y = f'(a)(x-a) + f(a)
+  \]
+\end{theorem}
