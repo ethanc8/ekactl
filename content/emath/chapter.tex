@@ -1,5 +1,71 @@
 \chapter{Mathematics}
 
+\section{Notation}
+
+$\deg~p(x)$ means the degree of polynomial $p$.
+
+$\text{LC}~p(x)$ means the leading coefficient of polynomial $p$.
+
+\section{Rational functions}
+
+For a rational function $f(x) = \frac{p(x)}{q(x)}$, cancel out any common factors, then:
+
+\begin{itemize}
+	\item When $\deg~p(x) = \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = \frac{\text{LC}~p(x)}{\text{LC}~q(x)}$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) < \deg~q(x)$:
+	\begin{itemize}
+		\item HA: $y = 0$
+		\item x-intercept: roots of $p(x)$
+		\item VA: roots of $q(x)$
+	\end{itemize}
+	\item When $\deg~p(x) > \deg~q(x)$:
+	\begin{itemize}
+		\item HA: none
+		\item slant asymptote: $\frac{p(x)}{q(x)}$ excluding remainder
+		\item VA: roots of $q(x)$
+	\end{itemize}
+\end{itemize}
+
+\section{Polynomials}
+
+\subsection{Linear equations}
+
+\[\begin{aligned}
+	\text{Slope-intercept form:}&~y = mx + b \\
+	\text{Point-slope form:}&~y - y_1 = m(x - x_1)~\text{for point $(x, y)$} \\
+	\text{Standard form:}&~ax + by = c
+\end{aligned}\]
+
+
+\subsection{Quadratic equations}
+
+\[\begin{aligned}
+	\text{Standard form:}&~y = ax^2 + bx + c \\
+	\text{Vertex form:}&~y = a(x-h)^2 + k~\text{for vertex $(h, k)$} \\
+	\text{Sum of roots:}&~\frac{-b}{a} \\
+	\text{Product of roots:}&~\frac{c}{a} \\
+\end{aligned}\]
+
+\subsection{Higher-degree polynomials}
+In a polynomial
+\[
+	a_n x^n + a_{n-1} x^{n-1} + \dotsb + a_1 x + a_0 = 0
+\]
+, with roots
+\[
+	r_1, r_2, r_3, \dotsc , r_n
+\]
+then:
+\[\begin{aligned}
+	r_1 + r_2 + r_3 + \dotsb + r_n = \sum_{k=1}{n} r_k = -\frac{a_{n-1}}{a_n}
+\end{aligned}\]
+
+\columnbreak
+
 
 \section{Sequences and Series}
 

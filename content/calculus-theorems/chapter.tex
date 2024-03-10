@@ -190,7 +190,7 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
 
 \begin{definition}[Derivative ($f'(a)$)]
   \[
-    f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x - a} = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+    \frac{d}{da} f(a) = f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x - a} = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
   \]
 \end{definition}
 
@@ -198,5 +198,56 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
   The equation of the tangent line to the point $(a, f(a))$ is
   \[
     y = f'(a)(x-a) + f(a)
+  \]
+\end{theorem}
+
+\subsubsection*{Derivative Rules}
+
+\begin{theorem}[Difference Rule]
+  \[
+    \frac{d}{dx}(f(x) - g(x)) = \frac{d}{dx}f(x) - \frac{d}{dx}g(x)
+  \]
+\end{theorem}
+
+\begin{theorem}[Sum Rule]
+  \[
+    \frac{d}{dx}(f(x) + g(x)) = \frac{d}{dx}f(x) + \frac{d}{dx}g(x)
+  \]
+\end{theorem}
+
+\begin{theorem}[Constant Multiple Rule]
+  \[
+    \frac{d}{dx}(cf(x)) = c\frac{d}{dx}f(x)
+  \]
+\end{theorem}
+
+\begin{theorem}[Product Rule]
+  \[
+    \frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)
+  \]
+\end{theorem}
+
+\begin{theorem}[Quotient Rule]
+  \[
+    \frac{d}{dx}\frac{f(x)}{g(x)} = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}
+  \]
+\end{theorem}
+
+\begin{theorem}[Power Rule]
+  \[
+    \frac{d}{dx} x^n = nx^{n-1}
+  \]
+\end{theorem}
+
+\begin{theorem}[Chain Rule]
+  \[
+    \frac{d}{dx}f(g(x)) = f'(g(x))g'(x)
+  \]
+\end{theorem}
+
+\begin{theorem}[Other useful derivatives]
+  \[
+    sin'(x) = cos(x)
+    cos'(x) = -sin'(x)
   \]
 \end{theorem}
