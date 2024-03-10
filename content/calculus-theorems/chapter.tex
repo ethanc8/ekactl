@@ -80,6 +80,33 @@
   For every two real numbers $a$ and $b$ with $a < b$, there exists a rational number $r$ satisfying $a < r < b$.
 \end{theorem}
 
+\subsubsection*{1.5 Nested Intervals Theorem}
+
+\begin{namedtheorem}[Nested Intervals Theorem] \leavevmode \\
+  If $I_n = [a_n, b_n] = \{x \in R : a_n \leq x \leq b_n\}$ s.t. $a_n \leq a_{n + 1}$ and $b_{n+1} \leq b_n$ for $n \in \Natural$, so that $I_1 \subseteq I_2 \subseteq I_3 \subseteq I_4 \subseteq \ldots$, then $\displaystyle \bigcap_{n=1}^{\infty}I_n \neq \emptyset$.
+
+  If $\inf \{b_n - a_n\} = 0$, then $\displaystyle \bigcap_{n=1}^{\infty}I_n \{x\}$, where $x = \sup \{a_n\} = inf \{ b_n \}$.
+\end{namedtheorem}
+
+\subsubsection*{1.6 Capture Theorem}
+
+\begin{namedtheorem}[Capture Theorem] If $A$ is a nonempty subset of $\Real$, then:
+  \begin{enumerate}[(i)]
+    \item If $A$ is bounded above, then any open interval containing $\sup A$ contains an element of $A$.
+    \item Similarly, if $A$ is bounded below, then any open interval containing $\inf A$ contains an element of $A$.
+  \end{enumerate}
+\end{namedtheorem}
+
+\subsubsection*{1.7 Binary Search}
+
+If we binary-search for $x$ over $I_1 = [a_1, b_1]$ for $a_1, b_1 \in \Rational$, 
+we define $I_n$ s.t. either $I_n := [a_{n-1}, \frac{a_{n-1} + b_{n-1}}{2}]$ or 
+$I_n := [\frac{a_{n-1} + b_{n-1}}{2}, a_{n+1}]$, and we define $a_n := \inf I_n$ 
+and $b_n := \sup I_n$. We define $A$ to be the set of all $a_n$, and $B$ to be 
+the set of all $b_n$. 
+
+Then, the size of $I_n = \frac{b_1 - a_1}{2^n} = b_n - a_n$, and $\displaystyle \bigcap_{n=1}^{\infty}I_n \{x\}$, where $x = \sup \{a_n\} = inf \{ b_n \}$.
+
 \subsection*{2 Limits}
 
 \subsubsection*{2.4 $\varepsilon$-$\delta$ definition of a Limit}
