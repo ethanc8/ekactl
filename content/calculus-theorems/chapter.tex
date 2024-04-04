@@ -272,6 +272,7 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
   \[
     \frac{d}{dx} x^n = nx^{n-1}
   \]
+  for $n \in \Real$
 \end{theorem}
 
 \begin{theorem}[Chain Rule]
@@ -280,9 +281,22 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
   \]
 \end{theorem}
 
-\begin{theorem}[Other useful derivatives]
-  \[
-    \sin'(x) = \cos(x) \qquad
-    \cos'(x) = -\sin'(x)
-  \]
+\begin{theorem}[Derivatives of exponentials and logs]
+  \[\begin{aligned}
+    \frac{d}{dx} e^x &= e^x &
+    \frac{d}{dx} \ln x &= \frac{1}{x} \\
+    \frac{d}{dx} a^x &= a^x \ln(a)&
+    \frac{d}{dx} \log_a x &= \frac{1}{x\ln(a)}
+  \end{aligned}\]
+\end{theorem}
+
+\begin{theorem}[Derivatives of trig functions]
+  \[\begin{aligned}
+    \sin'(x) &= \cos(x) &
+    \cos'(x) &= -\sin(x) \\
+    \sec'(x) &= \sec(x)\tan(x) &
+    \csc'(x) &= -\csc(x)\cot(x) \\
+    \tan'(x) &= \sec(x)^2 &
+    \cot'(x) &= -\csc(x)^2
+  \end{aligned}\]
 \end{theorem}
