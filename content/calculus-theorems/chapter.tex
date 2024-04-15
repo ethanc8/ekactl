@@ -277,7 +277,14 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
 
 \begin{theorem}[Chain Rule]
   \[
-    \frac{d}{dx}f(g(x)) = f'(g(x))g'(x)
+    \frac{d}{dx}f(g(x)) = f'(g(x))g'(x) \qquad \frac{dy}{dx} = \frac{dy}{db}\frac{db}{dx}
+  \]
+\end{theorem}
+
+\begin{theorem}[Derivative of inverse functions]
+  Let $x \in \Real$ and $f$ be a differentiable, one-to-one function at $x$. Then if $f'(x) \neq 0$, then
+  \[
+    (f^{-1})'(f(x)) = \frac{1}{f'(x)}
   \]
 \end{theorem}
 
@@ -298,5 +305,13 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
     \csc'(x) &= -\csc(x)\cot(x) \\
     \tan'(x) &= \sec(x)^2 &
     \cot'(x) &= -\csc(x)^2
+  \end{aligned}\]
+  \[\begin{aligned}
+    \arcsin'(x) &= \frac{1}{\sqrt{1-x^2}} &
+    \arccos'(x) &= -\frac{1}{\sqrt{1-x^2}} \\
+    \arcsec'(x) &= \frac{1}{|x|\sqrt{x^2-1}} &
+    \arccsc'(x) &= -\frac{1}{|x|\sqrt{x^2-1}} \\
+    \arctan'(x) &= \frac{1}{1+x^2} &
+    \arccot'(x) &= -\frac{1}{1+x^2}
   \end{aligned}\]
 \end{theorem}
