@@ -315,3 +315,34 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
     \arccot'(x) &= -\frac{1}{1+x^2}
   \end{aligned}\]
 \end{theorem}
+
+\subsection*{5 Derivative Applications}
+
+\subsubsection*{5.7 Mean Value Theorem}
+
+\begin{theorem}[Mean Value Theorem]
+  If the function $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there exists $c \in (a, b)$ s.t.
+  \[
+    f'(c) = \frac{f(b) - f(a)}{b - a} = \frac{\Delta f(x)}{\Delta x} \text{ on } [a, be]
+  \]
+\end{theorem}
+
+\begin{theorem}[Some colloraries to the MVT]
+  If $f(x)$ is differentiable on $I$, then:
+  \begin{itemize}
+    \item $f'(x) > 0$ for $x \in I$ $\iff$ $f(x)$ is strictly increasing for $x \in I$.
+    \item $f'(x) \geq 0$ for $x \in I$ $\iff$ $f(x)$ is increasing or constant for $x \in I$.
+    \item $f'(x) = 0$ for $x \in I$ $\iff$ $f(x)$ is constant for $x \in I$.
+    \item $f'(x) \leq 0$ for $x \in I$ $\iff$ $f(x)$ is decreasing or constant for $x \in I$.
+    \item $f'(x) < 0$ for $x \in I$ $\iff$ $f(x)$ is strictly decreasing for $x \in I$.
+  \end{itemize}
+\end{theorem}
+
+\subsubsection*{Antiderivative}
+
+\begin{definition}[Antiderivative]
+  The antiderivative $F$ of a function $f$ is the function such that $F'(x) = f(x)$.
+  \[
+    F(x) = \int f(x) dx
+  \]
+\end{definition}
