@@ -349,3 +349,51 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
     F(x) = \int f(x) dx
   \]
 \end{definition}
+
+\subsubsection*{5.3, 5.10, 5.11}
+
+\begin{definition}[Critical point of $f$]
+  A number $c$ in the domain of $f$ where either $f'(c) \in {0, \text{DNE}}$
+\end{definition}
+
+\begin{definition}[Stationary point of $f$]
+  A number $c$ in the domain of $f$ where either $f'(c) = 0$
+\end{definition}
+
+\begin{namedtheorem}[Fermat's Theorem]
+  The local maxima and minima of $f$ are critical points of $f$.
+\end{namedtheorem}
+
+\begin{theorem}[Method to find absolute minima and maxima]
+  Store the critical points of $f$ in the array $C$. Then, the absolute maximum is $\max {f(c) : c \in C}$ and the absolute minimum is $\min {f(c) : c \in C}$.
+\end{theorem}
+
+\begin{theorem}[First Derivative Test]
+  If $f$ is continuous over $I$, and $c \in I$ is a critical point of $f$, and $f$ is differentiable over $I \setminus {c}$, then:
+
+  \begin{itemize}
+    \item If $f'(x)$ is decreasing at $c$, then $f(c)$ is a local max.
+    \item If $f'(x)$ is increasing at $c$, then $f(c)$ is a local min.
+    \item If $f'(x)$ has the same sign before and after $c$, then $f(c)$ is neither a local max nor a local min.
+  \end{itemize}
+\end{theorem}
+
+\begin{definition}[Concavity]
+  $f$ is concave up on $I$ if the tangent line to $f$ at each point in $I$ is lower than the graph of $f$.
+
+  $f$ is concave down on $I$ if the tangent line to $f$ at each point in $I$ is higher than the graph of $f$.
+\end{definition}
+
+\begin{theorem}[Test for Concavity]
+  If $f''(x) > 0$ for all $x \in I$, then $f$ is concave up on $I$.
+
+  If $f''(x) < 0$ for all $x \in I$, then $f$ is concave down on $I$.
+\end{theorem}
+
+\begin{theorem}[Second Derivative Test]
+  If $f''$ is continuous on an interval containing $c$, where $c$ is the $x$-value of a stationary point of $f$. Then,
+  \begin{itemize}
+    \item If $f''(c) > 0$, then $f(c)$ is a local max.
+    \item If $f''(c) < 0$, then $f(c)$ is a local min.
+  \end{itemize}
+\end{theorem}
