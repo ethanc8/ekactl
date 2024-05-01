@@ -135,14 +135,15 @@ Alternatively,
   \item $\displaystyle\lim_{x \to a} \sqrt{f(x)} = \sqrt{\lim_{x \to a} f(x)}$
   \item $\displaystyle\lim_{x \to a} \frac{a(x)b(x)}{c(x)b(x)} = \lim_{x \to a} \frac{a(x)}{c(x)}$
   \end{enumerate}
+  These laws also apply to one-sided limits.
 \end{theorem}
 
 \begin{theorem}[Operations on infinity]
   For $x \in \Real$,
   \[
-    \infty + x = \infty
-  \]\[
-    -\infty + x = -\infty
+    \infty + x = \infty \qquad
+    -\infty + x = -\infty \qquad
+    \frac{x}{\pm\infty} = 0 
   \]\[
     x * \infty = \begin{cases}
       \infty & \text{if } x > 0 \\
@@ -153,8 +154,6 @@ Alternatively,
       -\infty & \text{if } x > 0 \\
       \infty & \text{if } x < 0.
     \end{cases}
-  \]\[
-    \frac{x}{\pm\infty} = 0 
   \]
 \end{theorem}
 
@@ -165,6 +164,9 @@ Alternatively,
   \]
 \end{definition}
 
+\begin{theorem}[L'Hopital's Rule]
+  If $f$ and $g$ are differentiable and $g'(x) \neq 0$ on an open interval $I$ that surrounds $a$, and $\displaystyle\lim_{x \to a}\frac{f(x)}{g(x)} \in \{\frac{0}{0}, \pm\frac{\infty}{\infty}\}$, then $\displaystyle\lim_{x \to a}\frac{f(x)}{g(x)} = \frac{f'(x)}{g'(x)}$.
+\end{theorem}
 \subsubsection*{Other theorems}
 
 \begin{namedtheorem}[Composite Function Theorem]
@@ -208,14 +210,14 @@ Alternatively,
 \end{namedtheorem}
 
 \begin{namedtheorem}[Aura Theorem]
-  If $f(x)$ is continuous and $f(a)$ is positive, then there exists an open interval containing $a$ such that for all $x$ in the interval, $f(x)$ is positive.
-
-  If $f(x)$ is continuous and $f(a)$ is negative, then there exists an open interval containing $a$ such that for all $x$ in the interval, $f(x)$ is negative.
+  If $f(x)$ is continuous and $f(a) \neq 0$, then there exists an open interval containing $a$ such that for all $x$ in the interval, $\text{sgn}(f(x)) = \text{sgn}(f(a))$.
 \end{namedtheorem}
 
-\begin{namedtheorem}[Bolzano's Theorem]
-  Let $f$ be a continuous function defined on $[a, b]$. If $0$ is between $f (a)$ and $f (b)$, then there exists $x \in [a, b]$ such that $f (x) = 0$.
-\end{namedtheorem}
+% It's just an application of IVT.
+
+% \begin{namedtheorem}[Bolzano's Theorem]
+%   Let $f$ be a continuous function defined on $[a, b]$. If $0$ is between $f (a)$ and $f (b)$, then there exists $x \in [a, b]$ such that $f (x) = 0$.
+% \end{namedtheorem}
 
 \pagebreak
 
