@@ -344,15 +344,6 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
   \end{itemize}
 \end{theorem}
 
-\subsection*{Antiderivative}
-
-\begin{definition}[Antiderivative]
-  The antiderivative $F$ of a function $f$ is the function such that $F'(x) = f(x)$.
-  \[
-    F(x) = \int f(x) dx
-  \]
-\end{definition}
-
 \subsection*{5.3, 5.10, 5.11, 5.16 Extrema}
 
 \begin{definition}[Critical point of $f$]
@@ -408,3 +399,56 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
 \begin{namedtheorem}[Trimm's Single Extremum Theorem]
   If $f$ is continuous on an interval $I$, and $f$ has a single local extremum (max or min), then that extremum is a global max or min.
 \end{namedtheorem}
+
+\columnbreak
+
+\section*{5 Integrals}
+
+\subsection*{Antiderivative}
+
+\begin{definition}[Antiderivative / Indefinite Integral]
+  The antiderivative $F$ of a function $f$ is the function such that $F'(x) = f(x)$.
+  \[
+    F(x) = \int f(x) dx
+  \]
+\end{definition}
+
+\begin{theorem}[Antiderivative plus a constant]
+  If $F$ is the antiderivative of a function $f$, then $G(x) = F(x) + c$ where $c \in \Real$ is also an antiderivative.
+\end{theorem}
+
+\begin{definition}[Integral]
+  \[
+    (f_1 [a, b]) \mapsto \int_a^b f(x)dx \in \Real
+  \]
+  such that the Properties of the Integral are true.
+\end{definition}
+
+If $a > b$, then $\int_a^b f := -\int_b^a f$.
+
+Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])$ be the set of continuous functions, and $\mathcal{B}([a,b])$ be the set of bounded functions on $[a, b]$. Then
+\[
+  \mathcal{C}([a,b]) \subset \mathcal{R}([a,b]) \subset \mathcal{B}([a,b])
+\]
+
+\begin{theorem}[Properties of the Integral]
+  The integral is defined such that the following are true:
+  \begin{enumerate}[start=0,label={(I\arabic*)}]
+    \item Every continuous function is integrable.
+    \item If $f(x) = c$, then $\int_a^b f(x) dx = c(b - a)$
+    \item If $f_1(x) \leq f_2(x)$, then $\int_a^b f_1(x)dx \leq \int_a^b f_2(x)dx$.
+    \item For any $a$, $b$, $c$, $\displaystyle \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+  Let $f \in \mathcal{R}([a, b])$ be some integrable function, where $a, b \in \Real$. Let $\mathcal{F}(x) = \int_a^x f$ for $x \in [a, b]$. Then:
+  \begin{enumerate}[(a)]
+    \item $\mathcal{F}$ is continuous for every $c \in [a, b]$.
+    \item If $f$ is continuous at $c \in [a. b]$, then $\mathcal{F}$ is diffentiable at $c$, and $\mathcal{F}'(c) = f(c)$.
+    \item If $f$ is continuous on $[a, b]$, and $F$ is an antiderivative of $f$, then $\int_a^b f = F(b) - F(a)$, or
+      \[
+        \int_a^b f(x) dx = F(x) \bigg\rvert_a^b = F(b) - F(a)
+      \]
+  \end{enumerate}
+\end{theorem}
