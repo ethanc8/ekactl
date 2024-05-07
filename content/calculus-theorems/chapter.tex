@@ -424,6 +424,8 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
   such that the Properties of the Integral are true.
 \end{definition}
 
+The definite integral takes in a function and a range $[a, b]$, and returns a number. The indefinite integral takes in a function and returns an infinitely large set of functions (the antiderivatives).
+
 If $a > b$, then $\int_a^b f := -\int_b^a f$.
 
 Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])$ be the set of continuous functions, and $\mathcal{B}([a,b])$ be the set of bounded functions on $[a, b]$. Then
@@ -451,4 +453,25 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
         \int_a^b f(x) dx = F(x) \bigg\rvert_a^b = F(b) - F(a)
       \]
   \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Substitution Rule]
+  If $g$ is a function that has a continuous derivative on an interval, another function $f$ is continuous on the range of $g$, and $F$ is an antiderivative of $f$ on the range of $g$, then
+  \[
+    \int f(g(x)) g'(x) dx = F(g(x)) + C
+  \]
+  For $a, b \in \Real$,
+  \[
+    \int_a^b f(g(x))g'(x)dx = \int_{g(a)}^{g(b)} f(u) du = F(g(b)) - F(g(a))
+  \]
+  Let $u := g(x)$. Then, if $du = E (g'(x) dx)$, where $E \in \Real$, then 
+  \[
+    \int E f(u) du = E \int f(u) du = F(u) + C
+  \]
+\end{theorem}
+
+\begin{theorem}[Anti-Power Rule]
+  \[
+    \int x^a = \frac{x^{a + 1}}{a + 1}
+  \]
 \end{theorem}
