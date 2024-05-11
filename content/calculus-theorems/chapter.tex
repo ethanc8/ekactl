@@ -102,11 +102,11 @@
 \begin{theorem}[Binary Search (Bisection Method)]
 If we binary-search for $x$ over $I_1 = [a_1, b_1]$ for $a_1, b_1 \in \Rational$, 
 we define $I_n$ s.t. either $I_n := [a_{n-1}, \frac{a_{n-1} + b_{n-1}}{2}]$ or 
-$I_n := [\frac{a_{n-1} + b_{n-1}}{2}, a_{n+1}]$, and we define $a_n := \inf I_n$ 
+$I_n := [\frac{a_{n-1} + b_{n-1}}{2}, a_{n-1}]$, and we define $a_n := \inf I_n$ 
 and $b_n := \sup I_n$. We define $A$ to be the set of all $a_n$, and $B$ to be 
-the set of all $b_n$. 
+the set of all $b_n$.
 
-Then, the size of $I_n = \frac{b_1 - a_1}{2^n} = b_n - a_n$, and $\displaystyle \bigcap_{n=1}^{\infty}I_n \{x\}$, where $x = \sup \{a_n\} = inf \{ b_n \}$.
+Then, the size of $I_n = \frac{b_1 - a_1}{2^n} = b_n - a_n$, and $\displaystyle \bigcap_{n=1}^{\infty}I_n \{x\}$, where $x = \sup \{a_n\} = \inf \{ b_n \}$.
 \end{theorem}
 
 \section*{2 Limits}
