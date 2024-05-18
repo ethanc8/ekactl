@@ -478,3 +478,18 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
     \int f(x) + g(x) dx &= \int f(x) dx + \int g(x) dx \\
   \end{aligned}\]
 \end{theorem}
+
+\begin{theorem}[Integration By Parts]
+  If $f$ and $g$ are integrable functions, then
+  \[
+    \int f(x) g'(x) dx = f(x) g(x) + \int f(x) g(x) dx
+  \]
+  Equivalently, if $u$ and $v$ are integrable functions of $x$, then
+  \[
+    \int udv = uv - \int vdu
+  \]
+  Additionally, if $f'$ and $g'$ are continuous, then
+  \[
+    \int_a^b f(x) g'(x) dx = f(b)g(b) - f(a)g(a) + \int_a^b g(x) f'(x) dx
+  \]
+\end{theorem}
