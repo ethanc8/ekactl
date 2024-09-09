@@ -638,7 +638,24 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \subsection*{Approximate Integration}
 
 \begin{definition}[Left-endpoint approximation]
-  Take $x_i^* = x_{i-1}$. Then the left-endpoint 
+  Take $x_i^* = x_{i-1} = a + \frac{(i-1)(b-a)}{n}$. Then the left-endpoint approximation of the function $f(x)$ is
+  \[
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-1)(b-a)}{n}) \frac{b-a}{n}
+  \]
+\end{definition}
+
+\begin{definition}[Midpoint approximation]
+  Take $x_i^* = x_{i-1} = a + \frac{(i-\frac{1}{2})(b-a)}{n}$. Then the midpoint approximation of the function $f(x)$ is
+  \[
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-\frac{1}{2})(b-a)}{n}) \frac{b-a}{n}
+  \]
+\end{definition}
+
+\begin{definition}[Right-endpoint approximation]
+  Take $x_i^* = x_{i-1} = a + \frac{(i)(b-a)}{n}$. Then the right-endpoint approximation of the function $f(x)$ is
+  \[
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i)(b-a)}{n}) \frac{b-a}{n}
+  \]
 \end{definition}
 
 \subsection*{Volumes}
