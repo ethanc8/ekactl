@@ -32,9 +32,11 @@
 
 \theoremstyle{ethantheorem}
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{procedure}{Procedure}
 
 \theoremstyle{ethannamedtheorem}
 \newtheorem*{namedtheorem}{Theorem}
+\newtheorem*{namedprocedure}{Procedure}
 
 \theoremstyle{ethandefinition}
 \newtheorem*{definition}{Definition}
@@ -513,3 +515,138 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
     \int \csc(x) dx &= -\ln |\cot(x) + \csc(x)| + C
   \end{aligned}\]
 \end{theorem}
+
+
+% If m is odd, then $m=2k+1$ for some integer k. Rewrite
+%   \[
+%     \sin^m (x) = \sin^{2k+1}x = \sin^{2k}x \sin x = (\sin^2 x)^k \sinx=(1-\cos^2 x)k \sin x
+%   \]
+%   Then
+%   \[
+%     \int \sin^m (x) \cos^m (x) dx = \int (1-\cos^2 x)k \sin (x) \cos^m (x) = - \int (1 - u^2)^k u^n du
+%   \]
+  
+%   where $u=\cos x$ and $du=-\sin x dx$.
+
+\begin{procedure}[Integral of Powers of Sine and Cosine]
+  Consider $\int \sin^m (x) \cos^n (x) dx$, where m,n are nonnegative integers.
+  
+  If m is odd, then $m=2k+1$ for some integer k. Then
+  \[
+    \int \sin^m (x) \cos^m (x) dx = - \int (1 - u^2)^k u^n du
+  \]
+  
+  where $u=\cos x$ and $du=-\sin x dx$.
+  
+  If n is odd, then $m=2k+1$ for some integer k. Then
+  \[
+    \int \sin^m (x) \cos^m (x) dx = \int u^m (1 - u^2)^k du
+  \]
+  
+  where $u=\sin x$ and $du=\cos x dx$.
+
+  If both m and n are even, use the power--reducing identities
+  \[
+    \cos^2x = \frac{1+\cos (2x)}{2} \quad \text{and}\quad \sin^2x = \frac{1-\cos(2x)}2
+  \]
+  to reduce the degree of the integrand. Expand the result and apply this procedure again.
+\end{procedure}
+
+\begin{theorem}[Multiplications of Sinusoidal Functions]
+  \[\begin{aligned}
+    \int \sin(mx) \cos(nx) dx &= -\frac{\cos((n + m) x)}{2 (n + m)} - \frac{\cos((m - n) x)}{2 (m - n)} \\
+    \int \sin(mx) \sin(nx) dx &= \frac{\sin((m - n) x)}{2 (m - n)} - \frac{\sin((n + m) x)}{2 (n + m)} \\
+    \int \cos(mx) \cos(nx) dx &= \frac{\sin((n + m) x)}{2 (n + m)} + \frac{\sin((m - n) x)}{2 (m - n)}
+  \end{aligned}\]
+\end{theorem}
+
+\begin{theorem}[Tangent/Secant Reduction Formulas]
+  \begin{align*}
+    \int\sec^n x\,dx &= \frac{1}{n-1}\sec^{n-2}x \tan x+\frac{n-2}{n-1}\int\sec^{n-2}x\,dx \\
+    \int\csc^n x\,dx &= -\frac{1}{n-1}\csc^{n-2}x \cot x+\frac{n-2}{n-1}\int\csc^{n-2}x\,dx \\
+    \int\tan^n x\,dx &= \frac{1}{n-1}\tan^{n-1}x-\int\tan^{n-2}x\,dx \\
+    \int\cot^n x\,dx &= -\frac{1}{n-1}\cot^{n-1}x-\int\cot^{n-2}x\,dx \\
+  \end{align*}
+\end{theorem}
+
+\begin{procedure}[Trig Substitution]
+  \begin{center}
+    \begin{tabular}{L L L} 
+      % \hline
+      \text{Orig expression} & \text{Substitution} & \text{Pythagorean identity} \\ 
+      \hline
+      \sqrt{a^2 - x^2} & x := a \sin(\theta) & 1 - \sin^2(\theta) = \cos^2(\theta) \\
+      \sqrt{a^2 + x^2} & x := a \tan(\theta) & 1 + \tan^2(\theta) = \sec^2(\theta) \\
+      \sqrt{x^2 - a^2} & x := a \sec(\theta) & \sec^2(\theta) - 1 = \tan^2(\theta)
+      % \hline
+    \end{tabular}
+  \end{center}
+\end{procedure}
+
+\subsection*{Partial Fraction Decomposition}
+
+\begin{theorem}
+  Any polynomial $Q(x)$ with real coefficients can be factored over the reals as a product of two types of factors:
+  \begin{itemize}
+    \item linear factors (of the form $ax+b$)
+    \item irreducible quadratic factors (of the form $ax^2 + bxx + c$, where $b^2-4ac < 0$)
+  \end{itemize}
+\end{theorem}
+
+\begin{definition}[Proper rational function]
+  A rational function $\frac{P(x)}{Q(x)}$ where $\deg P < \deg Q$.
+\end{definition}
+
+\begin{theorem}
+  Any rational function can be converted into a proper rational function plus a polynomial by continually long-dividing by the denominator.
+\end{theorem}
+
+\begin{theorem}
+  Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function, where the denominator $Q(x)$ has been factored into linear and irreducible quadratic factors. $R(x)$ can be written as a sum of partial fractions, where each factor in the denominator gives rise to terms in the partial fraction decomposition:
+  \begin{itemize}
+    \item For each factor of the form $(ax+b)^k$ in the denominator, add $\displaystyle \sum_{i=1}^k \frac{A_i}{(ax+b)^i}$ to the partial fraction decomposition.
+    \item For each factor of the form $(ax^2 + bx + c)^k$ in the denominator, add $\displaystyle \sum_{i=1}^k \frac{A_i x + B_i}{(ax^2 + bx + c)^i}$ to the partial fraction decomposition.
+  \end{itemize}
+\end{theorem}
+
+\subsection*{Riemann Sums}
+
+\begin{definition}[Elementary function]
+  A function which is a polynomial, rational function, power function ($x^a$), exponential function ($a^x$), logarithmic functions, trigonometric and inverse trigonometric functions, or an addition, subtraction, multiplication, division, and composition of the above.
+\end{definition} 
+
+\begin{definition}[Riemann sum]
+  Let $f : [a, b] arrow \Real$ be any bounded function and let $P$ be a partition of $[a, b]$.
+  \begin{itemize}
+    \item A choice of a point ${x_i^*} \in [x_{i-1}, x_{i}]$ for all $i \in [1, n]$ is called a \textit{tagging} of $P$, which we denote by $\tau = {x_1^*, ..., x_n^*}$.
+    \item A pair $(P, \tau)$ is called a \textit{tagged partition}.
+    \item Given a bounded function $f : [a, b] arrow \Real$ and a tagged partition $(P, \tau)$ of $[a, b]$, the sum 
+    \[
+      R(f, P, \tau) = \sum_{i=1}^{n} f(x_i^*)(x_i - x_{i-1})
+    \]
+    is called the \textit{Riemann sum} of $f$ for $(P, \tau)$.
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}
+  If $f$ is integrable on $[a, b]$, then for every $\varepsilon > 0$ there exists $\delta > 0$ s.t. if $P$ is a partition of $[a, b]$ with $|P| := \max{x_i - x_{i-1}} < \delta$ and $\tau = \{x_i^*\}$, then 
+  \[
+    | R(f, P, \tau) - \int_a^b f(x) dx | < \varepsilon
+  \] 
+\end{theorem}
+
+\subsection*{Approximate Integration}
+
+\begin{definition}[Left-endpoint approximation]
+  Take $x_i^* = x_{i-1}$. Then the left-endpoint 
+\end{definition}
+
+\subsection*{Volumes}
+
+\begin{theorem}[Disk Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+  \[
+    V = \int_a^b \pi (f(x))^2 dx
+  \]
+\end{theorem}
+
+
