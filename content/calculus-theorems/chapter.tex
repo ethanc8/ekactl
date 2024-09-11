@@ -642,12 +642,9 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
   \[
     \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-1)(b-a)}{n}) \frac{b-a}{n}
   \]
-\end{definition}
-
-\begin{definition}[Midpoint approximation]
-  Take $x_i^* = x_{i-1} = a + \frac{(i-\frac{1}{2})(b-a)}{n}$. Then the midpoint approximation of the function $f(x)$ is
+  The error bound is
   \[
-    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-\frac{1}{2})(b-a)}{n}) \frac{b-a}{n}
+    E_n^L \leq \max\{|f'(x)|\}_{x \in [a, b]} \frac{(b-a)^2}{2n}
   \]
 \end{definition}
 
@@ -656,14 +653,58 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
   \[
     \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i)(b-a)}{n}) \frac{b-a}{n}
   \]
+  The error bound is
+  \[
+    E_n^R \leq \max\{|f'(x)|\}_{x \in [a, b]} \frac{(b-a)^2}{2n}
+  \]
 \end{definition}
+
+\begin{definition}[Midpoint approximation]
+  Take $x_i^* = x_{i-1} = a + \frac{(i-\frac{1}{2})(b-a)}{n}$. Then the midpoint approximation of the function $f(x)$ is
+  \[
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-\frac{1}{2})(b-a)}{n}) \frac{b-a}{n}
+  \]
+  The error bound is
+  \[
+    E_n^M \leq \max\{|f''(x)|\}_{x \in [a, b]} \frac{(b-a)^3}{24n^2}
+  \]
+\end{definition}
+
+\begin{definition}[Trapezoidal approximation]
+  Then the trapezoidal approximation of the function $f(x)$ is
+  \[
+    \int_a^b f(x) dx \approx \frac{b-a}{2n} (f(a) + 2 \sum_{i=1}^{n-1} f(a + \frac{(i)(b-a)}{n}) + f(b))
+  \]
+  The error bound is
+  \[
+    E_n^T \leq \max\{|f''(x)|\}_{x \in [a, b]} \frac{(b-a)^3}{12n^2}
+  \]
+\end{definition}
+
+\begin{definition}[Simpson's approximation]
+  For even $n$ (greater values of $n$ give more precise more accuracy):
+  \[
+    % \int_a^b f(x) dx \approx 
+    \frac{b-a}{3n} \left(f(a) + \sum_{i=1}^{n-1} (3 - (-1)^i) f\left(a + \frac{(i)(b-a)}{n}\right) + f(b)\right)
+  \]
+  The error bound is
+  \[
+    E_n^S \leq \max\{|f''(x)|\}_{x \in [a, b]} \frac{(b-a)^5}{180n^4}
+  \]
+\end{definition}
+
+\section*{8 Integral Applications}
 
 \subsection*{Volumes}
 
-\begin{theorem}[Disk Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+\begin{theorem}[Disk Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
   \[
     V = \int_a^b \pi (f(x))^2 dx
   \]
 \end{theorem}
 
-
+\begin{theorem}[Washer Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the graph of $g(x)$. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+  \[
+    V = \int_a^b \pi ((f(x))^2 - (g(x))^2) dx
+  \]
+\end{theorem}
