@@ -689,13 +689,18 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
   \]
   The error bound is
   \[
-    E_n^S \leq \max\{|f''(x)|\}_{x \in [a, b]} \frac{(b-a)^5}{180n^4}
+    E_n^S \leq \max\{|f''''(x)|\}_{x \in [a, b]} \frac{(b-a)^5}{180n^4}
   \]
 \end{definition}
 
 \section*{8 Integral Applications}
 
 \subsection*{Volumes}
+
+Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axis at $x$, then the volume of the solid is
+\[
+  V = \int_a^b A(x) dx
+\]
 
 \begin{theorem}[Disk Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
   \[
@@ -706,5 +711,11 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \begin{theorem}[Washer Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the graph of $g(x)$. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
   \[
     V = \int_a^b \pi ((f(x))^2 - (g(x))^2) dx
+  \]
+\end{theorem}
+
+\begin{theorem}[Cylindrical Shells Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+  \[
+    V = \int_a^b 2\pi x (f(x)) dx
   \]
 \end{theorem}
