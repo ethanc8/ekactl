@@ -719,3 +719,40 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
     V = \int_a^b 2\pi x (f(x)) dx
   \]
 \end{theorem}
+
+\subsection*{Other things}
+
+\begin{theorem}[Arc length of a curve]
+  The arc length of the curve $f(x)$ on $[a, b]$, when $f'(x)$ exists and is continuous on $[a, b]$, is
+  \[
+    \int_a^b \sqrt{1 + \left(f'(x)\right)^2} dx
+  \]
+\end{theorem}
+
+\begin{theorem}[Surface area of a solid of revolution]
+  Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the surface area of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+  \[
+    S = \int_a^b 2\pi f(x) \sqrt{1 + \left(f'(x)\right)^2} dx
+  \]
+\end{theorem}
+
+\begin{theorem}[Mass of a thin rod]
+  Let there be a rod whose left end is located at $x = a$ and whose right end is located at $x = b$, and which is on the $x$-axis. Let $\rho(x)$ be the linear density at the point $x = a$. Then the mass of the rod is
+  \[
+    M = \int_a^b \rho(x) \,dx
+  \]
+\end{theorem}
+
+\begin{theorem}[Mass of a thin disk]
+  Let there be a disk of radius $R$ whose center is at the origin of the $xy$-plane. Let the mass be distributed in a rotationally-symmetric way. Let $\rho(r)$ be the radial density at the radius $r$. Then the mass of the disk is 
+  \[
+    M = \int_0^R 2\pi r \rho(r) dr
+  \]
+\end{theorem}
+
+\begin{theorem}[Work]
+  If an object moves along the $x$-axis from $a$ to $b$, and $F(x)$ is the force applied to the object when the object is at the point $x$ on the $x$-axis, then the work is
+  \[
+    \int_a^b F(x) \,dx
+  \]
+\end{theorem}
