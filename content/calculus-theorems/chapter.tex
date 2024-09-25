@@ -528,46 +528,70 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
   
 %   where $u=\cos x$ and $du=-\sin x dx$.
 
-\begin{procedure}[Integral of Powers of Sine and Cosine]
-  Consider $\int \sin^m (x) \cos^n (x) dx$, where m,n are nonnegative integers.
+% \begin{procedure}[Integral of Powers of Sine and Cosine]
+%   Consider $\int \sin^m (x) \cos^n (x) dx$, where m,n are nonnegative integers.
   
-  If m is odd, then $m=2k+1$ for some integer k. Then
-  \[
-    \int \sin^m (x) \cos^m (x) dx = - \int (1 - u^2)^k u^n du
-  \]
+%   If m is odd, then $m=2k+1$ for some integer k. Then
+%   \[
+%     \int \sin^m (x) \cos^m (x) dx = - \int (1 - u^2)^k u^n du
+%   \]
   
-  where $u=\cos x$ and $du=-\sin x dx$.
+%   where $u=\cos x$ and $du=-\sin x dx$.
   
-  If n is odd, then $m=2k+1$ for some integer k. Then
-  \[
-    \int \sin^m (x) \cos^m (x) dx = \int u^m (1 - u^2)^k du
-  \]
+%   If n is odd, then $m=2k+1$ for some integer k. Then
+%   \[
+%     \int \sin^m (x) \cos^m (x) dx = \int u^m (1 - u^2)^k du
+%   \]
   
-  where $u=\sin x$ and $du=\cos x dx$.
+%   where $u=\sin x$ and $du=\cos x dx$.
 
-  If both m and n are even, use the power--reducing identities
-  \[
-    \cos^2x = \frac{1+\cos (2x)}{2} \quad \text{and}\quad \sin^2x = \frac{1-\cos(2x)}2
-  \]
-  to reduce the degree of the integrand. Expand the result and apply this procedure again.
+%   If both m and n are even, use the power--reducing identities
+%   \[
+%     \cos^2x = \frac{1+\cos (2x)}{2} \quad \text{and}\quad \sin^2x = \frac{1-\cos(2x)}2
+%   \]
+%   to reduce the degree of the integrand. Expand the result and apply this procedure again.
+% \end{procedure}
+
+% \begin{theorem}[Multiplications of Sinusoidal Functions]
+%   \[\begin{aligned}
+%     \int \sin(mx) \cos(nx) dx &= -\frac{\cos((n + m) x)}{2 (n + m)} - \frac{\cos((m - n) x)}{2 (m - n)} \\
+%     \int \sin(mx) \sin(nx) dx &= \frac{\sin((m - n) x)}{2 (m - n)} - \frac{\sin((n + m) x)}{2 (n + m)} \\
+%     \int \cos(mx) \cos(nx) dx &= \frac{\sin((n + m) x)}{2 (n + m)} + \frac{\sin((m - n) x)}{2 (m - n)}
+%   \end{aligned}\]
+% \end{theorem}
+
+% \begin{theorem}[Tangent/Secant Reduction Formulas]
+%   \begin{align*}
+%     \int\sec^n x\,dx &= \frac{1}{n-1}\sec^{n-2}x \tan x+\frac{n-2}{n-1}\int\sec^{n-2}x\,dx \\
+%     \int\csc^n x\,dx &= -\frac{1}{n-1}\csc^{n-2}x \cot x+\frac{n-2}{n-1}\int\csc^{n-2}x\,dx \\
+%     \int\tan^n x\,dx &= \frac{1}{n-1}\tan^{n-1}x-\int\tan^{n-2}x\,dx \\
+%     \int\cot^n x\,dx &= -\frac{1}{n-1}\cot^{n-1}x-\int\cot^{n-2}x\,dx \\
+%   \end{align*}
+% \end{theorem}
+
+\begin{procedure}[Integrals of Powers of Trig Functions] \ \\
+  To solve $\int \sin^n(x) \,dx$ where $n$ is even, substitute $\sin^2 (x) = \tfrac{1}{2} (1 - \cos(2x))$.
+
+  To solve $\int \sin^n(x) \,dx$ where $n$ is odd, substitute $\sin^2 (x) = 1 - \cos^2 (x)$ and perform u-sub with $u := \cos^2 (x)$ and $du = -\sin(x) \,dx$.
+
+  To solve $\int \cos^n(x) \,dx$ where $n$ is even, substitute $\cos^2 (x) = \tfrac{1}{2} (1 + \cos(2x))$.
+
+  To solve $\int \sin^n(x) \,dx$ where $n$ is odd, substitute $\cos^2 (x) = 1 - \sin^2 (x)$ and perform u-sub with $u := \sin^2 (x)$ and $du = \cos(x) \,dx$.
+
+  To solve $\int \tan^n(x) \,dx$, substitute $\tan^2 (x) = \sec^2 (x) - 1$. If $n$ is odd, perform u-sub with $u := \sec(x)$ and $du = \sec(x)\tan(x)\,dx$.
+
+  To solve $\int \cot^n(x) \,dx$, substitute $\cot^2 (x) = \csc^2 (x) - 1$. If $n$ is odd, perform u-sub with $u := \csc(x)$ and $du = -\csc(x)\cot(x)\,dx$.
+
+  To solve $\int \sec^n(x) \,dx$ where $n$ is even, substitute $\sec^2(x) = \tan^2(x) + 1$, but ensure that $\sec^2(x)\,dx$ remains. Then perform u-sub with $u := \tan(x)$ and $du = \sec^2(x)\,dx$.
+
+  To solve $\int \sec^n(x) \,dx$ where $n$ is odd, substitute $\sec^n(x) = \frac{1}{\cos^n(x)} \frac{\cos(x)}{\cos(x)}$. Then substitute $\cos^2(x) = (1 + u)(1 - u)$ and u-sub with $u := \sin(x)$ and $du = \cos(x) dx$. Then perform partial fraction decomposition.
+
+  To solve $\int \csc^n(x) \,dx$ where $n$ is even, substitute $\csc^2(x) = \csc^2(x) + 1$, but ensure that $\sec^2(x)\,dx$ remains. Then perform u-sub with $u := \cot(x)$ and $du = -\csc^2(x)\,dx$.
+
+  To solve $\int \csc^n(x) \,dx$ where $n$ is odd, substitute $\csc^n(x) = \frac{1}{\sin^n(x)} \frac{\sin(x)}{\sin(x)}$. Then substitute $\sin^2(x) = (1 + u)(1 - u)$ and u-sub with $u := \cos(x)$ and $du = -\sin(x) dx$. Then perform partial fraction decomposition.
+
+  Remember that $\int \sec^2(x) \,dx = \tan(x)$ and $\int \csc^2(x) \,dx = -\cot(x)$. 
 \end{procedure}
-
-\begin{theorem}[Multiplications of Sinusoidal Functions]
-  \[\begin{aligned}
-    \int \sin(mx) \cos(nx) dx &= -\frac{\cos((n + m) x)}{2 (n + m)} - \frac{\cos((m - n) x)}{2 (m - n)} \\
-    \int \sin(mx) \sin(nx) dx &= \frac{\sin((m - n) x)}{2 (m - n)} - \frac{\sin((n + m) x)}{2 (n + m)} \\
-    \int \cos(mx) \cos(nx) dx &= \frac{\sin((n + m) x)}{2 (n + m)} + \frac{\sin((m - n) x)}{2 (m - n)}
-  \end{aligned}\]
-\end{theorem}
-
-\begin{theorem}[Tangent/Secant Reduction Formulas]
-  \begin{align*}
-    \int\sec^n x\,dx &= \frac{1}{n-1}\sec^{n-2}x \tan x+\frac{n-2}{n-1}\int\sec^{n-2}x\,dx \\
-    \int\csc^n x\,dx &= -\frac{1}{n-1}\csc^{n-2}x \cot x+\frac{n-2}{n-1}\int\csc^{n-2}x\,dx \\
-    \int\tan^n x\,dx &= \frac{1}{n-1}\tan^{n-1}x-\int\tan^{n-2}x\,dx \\
-    \int\cot^n x\,dx &= -\frac{1}{n-1}\cot^{n-1}x-\int\cot^{n-2}x\,dx \\
-  \end{align*}
-\end{theorem}
 
 \begin{procedure}[Trig Substitution]
   \begin{center}
@@ -755,4 +779,23 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \[
     \int_a^b F(x) \,dx
   \]
+\end{theorem}
+
+\begin{definition}[Average value of a function]
+  If $f$ is continuous on $[a, b]$, then the average value of $f$ on $[a, b]$ is
+  \[
+    f_{\text{avg}} := \lim_{n \to \inf} \frac{1}{b - a} \int_a^b f(x) \,dx
+  \]
+\end{definition}
+
+\begin{theorem}[Mean Value Theorem for Integrals]
+  If $f$ is continuous on $[a, b]$, then there exists $c \in [a, b]$ such that
+  \[
+    f(c) = f_{\text{avg}} = \frac{1}{b-a} \int_a^b f(x) \,dx
+  \]
+  Equivalently,
+  \[
+    \int_a^b f(x) \,dx = f(c)(b - a)
+  \]
+  If $f$ is positive on $[a, b]$, then there is a number $c$ such that the rectangle with base $[a, b]$ and height $f(c)$ has the same area as $\int_a^b f(x) \,dx$.
 \end{theorem}
