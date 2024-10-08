@@ -738,9 +738,9 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \]
 \end{theorem}
 
-\begin{theorem}[Cylindrical Shells Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $x$-axis is given by
+\begin{theorem}[Cylindrical Shells Method] Let $f(x)$ be a continuous, nonnegative function defined on $[a, b]$, and $R$ be the region bounded above by the graph of $f(x)$ and below by the $x$-axis. Then, the volume of the solid of revolution formed by revolving $R$ around the $y$-axis is given by
   \[
-    V = \int_a^b 2\pi x (f(x)) dx
+    V = \int_a^b 2\pi x f(x) dx
   \]
 \end{theorem}
 
@@ -799,3 +799,90 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \]
   If $f$ is positive on $[a, b]$, then there is a number $c$ such that the rectangle with base $[a, b]$ and height $f(c)$ has the same area as $\int_a^b f(x) \,dx$.
 \end{theorem}
+
+\section{Improper Integrals}
+
+\begin{definition}[Improper Integrals with Infinite Bounds] \ \\
+  \begin{enumerate}
+    \item[(a)] If $\int_a^t f(x)$ exists for every $t \geq a$, then we define
+    \[
+      \int_a^\infty f(x) dx := \lim_{t \to \infty} \int_a^t f(x) dx
+    \]
+    provided that this limit exists and is finite.
+
+    \item[(b)] If $\int_t^b f(x) dx$ exists for every $t \leq b$, then we define
+    \[
+      \int_{-\infty}^b f(x)dx := \lim_{t \to -\infty} \int_t^b f(x)dx
+    \]
+    provided that this limit exists and is finite.
+  \end{enumerate}
+
+  $\int_a^\infty f(x)dx$ and $\int_{-\infty}^b f(x)dx$ are \textit{convergent} if the corresponding limit exists and \textit{divergent} if the limit doesn't exist.
+
+  \begin{enumerate}
+    \item[(c)] If both $\int_a^\infty f(x)dx$ and $\int_{-\infty}^b f(x)dx$ are convergent, then we define
+    \begin{align*}
+      \int_{-\infty}^{\infty} f(x)dx &= \int_{-\infty}^a f(x) dx + \int_a^\infty f(x) dx \\
+                              &= \lim_{s \to -\infty} \int_s^a f(x) dx + \lim_{t \to \infty} \int_a^t f(x) dx
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Improper Integrals with Discontinuous Integrand] \ \\
+  \begin{enumerate}
+    \item[(a)] If $f$ is continuous on $[a, b)$ and is discontinuous at $b$, then define
+    \[
+      \int_a^b f(x) dx := \lim_{t \to b^-} \int_a^t f(x) dx
+    \]
+    provided that this limit exists and is finite.
+
+    \item[(b)] If $f$ is continuous on $(a, b]$ and is discontinuous at $a$, then define
+    \[
+      \int_a^b f(x)dx := \lim_{t \to a^+} \int_t^b f(x)dx
+    \]
+    provided that this limit exists and is finite.
+  \end{enumerate}
+
+  $\int_a^\infty f(x)dx$ and $\int_{-\infty}^b f(x)dx$ are \textit{convergent} if the corresponding limit exists and \textit{divergent} if the limit doesn't exist.
+
+  \begin{enumerate}
+    \item[(c)] If $f$ has a discontinuity at $c$, where $a < c < b$, and both $\int_a^c f(x) dx$ and $\int_c^b f(x) dx$ are convergent, then we define
+    \begin{align*}
+      \int_a^b f(x)dx &= \int_a^c f(x) dx + \int_c^b f(x) dx \\
+                                &= \lim_{s \to c^-} \int_a^s f(x) dx + \lim_{t \to c^+} \int_c^b f(x) dx
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Comparison Test]
+  Suppose $f$ and $g$ are continuous functions with $f(x) \geq g(x) \geq 0$ for $x \geq a$.
+  \begin{itemize}
+    \item[(a)] If $\int_a^\infty f(x)dx$ is convergent, then $\int_a^\infty g(x)dx$ is convergent.
+    \item[(b)] If $\int_a^\infty g(x)dx$ is divergent, then $\int_a^\infty f(x)dx$ is divergent.
+  \end{itemize}
+  Additionally,
+  \begin{itemize}
+    \item[(a)] If $\int_{-\infty}^b f(x)dx$ is convergent, then $\int_{-\infty}^b g(x)dx$ is convergent.
+    \item[(b)] If $\int_{-\infty}^b g(x)dx$ is divergent, then $\int_{-\infty}^b f(x)dx$ is divergent.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Limit Comparison Test]
+  Suppose $f(x)$ and $g(x)$ are positive continuous functions defined on $[a, \infty)$ such that $\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)} = c$ for some positive real number $c$. Then $\int_a^\infty f(x) dx$ converges iff $\int_a^\infty g(x) dx$.
+\end{theorem}
+
+\section{Differential Equations}
+
+\begin{definition}[Differential equation] An equation involving an unknown function $y = f(x)$ and one or more of its derivatives.
+\end{definition}
+
+\begin{definition}[Solution to a differential equation] A function $y = f(x)$ that satisfies the differential equation when $f$ and its derivatives are substituted into the equation.
+\end{definition}
+
+% \begin{procedure}[Making a direction field] This procedure can be used to approximately graph a differential equation, even if an explicit solution cannot be found.
+  
+%   Factor the equation in terms of $y' = f'(x)$. At each $x,y$-value on a grid of a graph, evaluate $y'$ and draw a short line with the slope $y'$ at the $x,y$-value.
+% \end{procedure}
+
+\begin{procedure}[Euler's Method] This procedure numerically approximates a solution to a differential equation.
+\end{procedure}
