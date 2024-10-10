@@ -425,3 +425,58 @@
 \newcommand{\bigo}[1] {\ensuremath{\mathcal{O} \left( #1 \right)}}
 
 \newcommand{\hardcolumnbreak}{\vfill\null\columnbreak}
+
+% Begin Ethan definitions
+\newcommand\meter[0]{\text{m}}
+\newcommand\watt[0]{\text{W}}
+\newcommand\Joule[0]{\text{J}}
+\newcommand\second[0]{\text{s}}
+\newcommand\decibel[0]{\text{dB}}
+\newcommand\kilogram[0]{\text{kg}}
+
+\newcommand{\dotp}{\boldsymbol{\cdot}}
+\newcommand{\crossp}{\times}
+\newcommand{\proj}{\text{proj}}
+
+\newtheoremstyle{ethantheorem}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%    
+
+\newtheoremstyle{ethannamedtheorem}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmnumber{#2 }\thmnote{#3}}%   
+
+\newtheoremstyle{ethandefinition}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{\textit{#1}}\thmnumber{ #2}\thmnote{\textit{ of }\textbf{#3}}}%    
+
+\theoremstyle{ethantheorem}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{procedure}{Procedure}
+
+\theoremstyle{ethannamedtheorem}
+\newtheorem*{namedtheorem}{Theorem}
+\newtheorem*{namedprocedure}{Procedure}
+
+\theoremstyle{ethandefinition}
+\newtheorem*{definition}{Definition}
+
+% End Ethan definitions

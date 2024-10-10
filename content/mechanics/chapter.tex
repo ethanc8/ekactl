@@ -1,0 +1,131 @@
+\chapter{Mechanics}
+
+\section{Miscellaneous}
+
+\[
+	\text{\% error} = \frac{\text{observed} - \text{theoretical}}{\text{theoretical}} * 100\%
+\]
+
+\section{Kinematics}
+
+\[
+	x(t) = \frac{a}{2}t^2 + v_0 t + x_0 \qquad
+	v(t) = v_0 + at
+\]\[
+	v^2 = v_0^2 + 2a\Delta x \qquad
+	\Delta x = \frac{v_0 + v}{2} * \Delta t
+\]
+
+\section{Forces}
+
+\[
+	F_\text{net} = ma
+\]
+
+$F_T$ represents tension. It always points in the direction on which the rope pulls on the object.
+
+$F_N$ represents normal force. It takes the direction and magnitude necessary to prevent the object from passing through the surface that creates the normal force.
+
+\subsection{Friction}
+
+\[
+	f_s \leq \mu_s F_N
+\]
+
+The static friction takes the direction and magnitude necessary to prevent the object from moving in the component parallel to the surface, until the magnitude reaches $\mu_s F_N$. Upon reaching $\mu_s F_N$, the static friction is replaced by kinetic friction and the object starts moving:
+
+\[
+	k_s = \mu_k F_N
+\]
+
+\subsection{Centripetal force}
+
+The centripetal force always points towards the center of the circle representing the object's path, and therefore is perpendicular to the velocity. It is just another name for the net force in the centripetal direction. The centripetal acceleration is what causes the object to rotate.
+
+\[
+	F_c = ma_c = m \frac{v^2}{r} \qquad a_c = \frac{v^2}{r}
+\]
+
+\section{Work and Energy}
+
+\[
+	W = \int_a^b F(\vec{r}) \cdot d\vec{r}
+\]
+
+In one dimension:
+
+\[
+	W = \int_a^b F(x) dx
+\]
+
+\subsection{Spring force}
+
+
+
+\section{Simple Harmonic Motion}
+
+The object is at rest at the \textbf{equilibrium position}. $x = 0$ when the object is at equilibrium, and $x$ represents the distance and direction from the equilibrium. When you pull it to one direction, the \textbf{restoring force} pulls the object back toward the equilibrium position. It oscillates back and forth, between $x = -A$ and $x = A$, where $A$ is the \textbf{amplitude}. The \textbf{period} is the amount of time to complete one oscillation, and the \textbf{frequency} is the amount of oscillations that happen in one second (or some other time unit).
+
+\subsection{Spring force}
+
+\[
+	a(t) = - \frac{k}{m} x(t)
+\]
+
+\begin{align*}
+	x(t) &= A \cos(\omega t + \phi) \\
+	v(t) &= -A\omega \sin(\omega t + \phi) \\
+	a(t) &= -A \omega^2 \cos(\omega t)
+\end{align*}
+
+\section{Simple Harmonic Motion (old)}
+
+\[
+	x = A \cos(\omega t + \varphi) \quad
+	v = -\omega A \cos(\omega t + \varphi) \quad
+	a = -\omega^2 A \cos(\omega t + \varphi)
+\]
+\[
+	x_{\max} = A \qquad
+	v_{\max} = \omega A \qquad
+	a_{\max} = \omega^2 A \qquad
+	F_{\max} = m\omega^2 A
+\]
+
+\subsection{Springs and Slinkies}
+
+$x$ represents the distance from the equilibrium.
+
+If you put a mass on top of the slinky, $\Delta x_\text{eq}$ represents the difference between the original equilibrium and the new equilibrium.
+
+\[
+	F_s = kx = ma \qquad
+	F_{s_{\max}} = k\Delta x_\text{eq} = 9.8 \Delta m
+\]
+\[
+	f = \frac{1}{2\pi}\sqrt{\frac{k}{m}} \qquad 
+	T = 2\pi\sqrt{\frac{m}{k}} \qquad 
+	\omega = 2\pi f = \sqrt{\frac{m}{k}}
+\]
+\[
+	SPE = \frac{1}{2} kx^2 \qquad
+	KE = \frac{1}{2} mv^2
+\]
+\[
+	TME = \frac{1}{2} kx^2 + \frac{1}{2} mv^2 = \frac{1}{2} kA^2 = \frac{1}{2} mv_{\max}^2
+\]
+
+\subsection{Springs in parallel and series}
+
+% Converted from https://en.wikipedia.org/wiki/Series_and_parallel_springs using https://mediawiki2latex.wmflabs.org/
+
+\begin{tabular}{|>{\RaggedRight}p{0.38225\linewidth}|>{\RaggedRight}p{0.23286\linewidth}|>{\RaggedRight}p{0.23286\linewidth}|} \hline 
+	{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Quantity}&{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}In Series}&{\bfseries \hspace*{0pt}\ignorespaces{}\hspace*{0pt}In Parallel} %\endhead  
+	% \\ \hline \multicolumn{4}{|>{\RaggedRight}p{0.97143\linewidth}|}{\hspace*{0pt}\ignorespaces{}\hspace*{0pt}}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Equivalent spring constant&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle {\frac {1}{k_{\mathrm {eq} }}}={\frac {1}{k_{1}}}+{\frac {1}{k_{2}}}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle k_{\mathrm {eq} }=k_{1}+k_{2}}$}
+	% \\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Equivalent compliance&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle c_{\mathrm {eq} }=c_{1}+c_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle {\frac {1}{c_{\mathrm {eq} }}}={\frac {1}{c_{1}}}+{\frac {1}{c_{2}}}}$}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Deflection (elongation)&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{\itshape {${\displaystyle x_{\mathrm {eq} }=x_{1}+x_{2}}$}}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{\itshape {${\displaystyle x_{\mathrm {eq} }=x_{1}=x_{2}}$}}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Force&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle F_{\mathrm {eq} }=F_{1}=F_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle F_{\mathrm {eq} }=F_{1}+F_{2}}$}
+	\\ \hline \hspace*{0pt}\ignorespaces{}\hspace*{0pt}Stored energy&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle E_{\mathrm {eq} }=E_{1}+E_{2}}$}&\hspace*{0pt}\ignorespaces{}\hspace*{0pt}{${\displaystyle E_{\mathrm {eq} }=E_{1}+E_{2}}$}\\ \hline 
+\end{tabular}
+
