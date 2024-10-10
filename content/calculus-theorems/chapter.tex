@@ -623,7 +623,7 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \begin{definition}[Left-endpoint approximation]
   Take $x_i^* = x_{i-1} = a + \frac{(i-1)(b-a)}{n}$. Then the left-endpoint approximation of the function $f(x)$ is
   \[
-    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-1)(b-a)}{n}) \frac{b-a}{n}
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f\left(a + \frac{(i-1)(b-a)}{n}\right) \frac{b-a}{n}
   \]
   The error bound is
   \[
@@ -634,7 +634,7 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \begin{definition}[Right-endpoint approximation]
   Take $x_i^* = x_{i-1} = a + \frac{(i)(b-a)}{n}$. Then the right-endpoint approximation of the function $f(x)$ is
   \[
-    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i)(b-a)}{n}) \frac{b-a}{n}
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f\left(a + \frac{(i)(b-a)}{n}\right) \frac{b-a}{n}
   \]
   The error bound is
   \[
@@ -645,7 +645,7 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \begin{definition}[Midpoint approximation]
   Take $x_i^* = x_{i-1} = a + \frac{(i-\frac{1}{2})(b-a)}{n}$. Then the midpoint approximation of the function $f(x)$ is
   \[
-    \int_a^b f(x) dx \approx \sum_{i=1}^n f(a + \frac{(i-\frac{1}{2})(b-a)}{n}) \frac{b-a}{n}
+    \int_a^b f(x) dx \approx \sum_{i=1}^n f\left(a + \frac{(i-\frac{1}{2})(b-a)}{n}\right) \frac{b-a}{n}
   \]
   The error bound is
   \[
@@ -656,7 +656,7 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \begin{definition}[Trapezoidal approximation]
   Then the trapezoidal approximation of the function $f(x)$ is
   \[
-    \int_a^b f(x) dx \approx \frac{b-a}{2n} (f(a) + 2 \sum_{i=1}^{n-1} f(a + \frac{(i)(b-a)}{n}) + f(b))
+    \int_a^b f(x) dx \approx \frac{b-a}{2n} \left(f(a) + 2 \sum_{i=1}^{n-1} f\left(a + \frac{(i)(b-a)}{n}\right) + f(b)\right)
   \]
   The error bound is
   \[
