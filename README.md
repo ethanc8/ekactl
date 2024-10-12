@@ -1,5 +1,7 @@
 # ekactl
 
+[View PDF](kactl.pdf)
+
 ## Dependencies
 
 ```bash
