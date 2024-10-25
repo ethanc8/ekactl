@@ -875,3 +875,29 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
     \frac{d^2P}{dt^2} = k^2P \left(1 - \frac{P}{M}\right) \left(1 - \frac{2P}{M}\right)
   \]
 \end{definition}
+
+\section{Sequences and Series}
+
+\begin{definition}[Sequence] A \textbf{sequence} is an ordered list of real numbers (\textbf{elements}) $a_1, a_2, a_3, ...$. It can also be considered a function $a: \Natural \rightarrow \Real$.
+\end{definition}
+
+\begin{definition}[Convergence] A sequance converges if $\lim_{n \to \infty} a_n$ exists.
+\end{definition}
+
+\begin{theorem} The Limit Laws and Squeeze Theorem also applies to limits of sequences.
+\end{theorem}
+
+\begin{theorem}[Convergence Test] If the series $\sum_{i = 1}^n a_i$ is convergent, then $\lim_{i \to \infty} a_i = 0$.
+\end{theorem}
+
+\begin{theorem}[Divergence Test] If $\lim_{i \to \infty} a_i \neq 0$, then $\sum_{i = 1}^n a_i$ diverges.
+\end{theorem}
+
+\begin{theorem}[Integral Test] If $f$ is a continuous positive decreasing function for $x \geq 1$ and $a_n = f(n)$ for $n \in \Natural$, then
+  \[
+    \sum_{n = 1}^\infty a_n \qquad \text{and} \qquad \int_1^\infty f(x) \,dx
+  \]
+    either both converge or both diverge.
+\end{theorem}
+
+
