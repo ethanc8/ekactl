@@ -152,8 +152,29 @@ To find the velocity of the center of mass, replace $\vec{r}_i$ with $\vec{v}_i$
 \subsection{Density}
 
 \begin{align*}
-	\text{3D: density} \qquad & \rho = \frac{M}{v} & (\frac{\kilogram}{\meter^3}) \\
-	\text{2D: surface density} \qquad & \sigma = \frac{M}{A} & (\frac{\kilogram}{\meter^2}) \\
+	\text{3D: density} \qquad & \rho = \frac{M}{v} = \frac{dm}{dV} & (\frac{\kilogram}{\meter^3}) \\
+	\text{2D: surface density} \qquad & \sigma = \frac{M}{A} = \frac{dm}{dA} & (\frac{\kilogram}{\meter^2}) \\
 	\text{1D: linear density} \qquad & \lambda = \frac{M}{L} = \frac{dm}{dx} & (\frac{\kilogram}{\meter}) \\
 \end{align*}
 
+\section{Momentum/Impulse}
+
+\begin{definition}[Momentum] \textbf{Momentum} ($\vec{p}$) is defined as:
+	\[
+		\vec{p} = m \vec{v} \qquad (\Newton \second = \kilogram \frac{\meter}{\second})
+	\]
+\end{definition}
+
+\begin{definition}[Impulse] \textbf{Impulse} is the integral of force over time. By the Impulse-Momentum Theorem, it is also the change in momentum.
+	\[
+		\vec{J} = \int \vec{F} dt = \Delta p = \vec{F}_\text{net,avg} \Delta t
+	\]
+	Additionally,
+	\[
+		\vec{F}_\text{net} = \frac{dp}{dt}
+	\]
+\end{definition}
+
+\begin{theorem}[Conservation of momentum]
+	Momentum is conserved when there are no external forces acting upon the object.
+\end{theorem}
