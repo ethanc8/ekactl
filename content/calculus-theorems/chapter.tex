@@ -884,7 +884,7 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{definition}[Convergence] A sequance converges if $\lim_{n \to \infty} a_n$ exists.
 \end{definition}
 
-\begin{theorem} The Limit Laws and Squeeze Theorem also applies to limits of sequences.
+\begin{theorem} The Limit Laws and Squeeze Theorem also apply to limits of sequences.
 \end{theorem}
 
 \begin{theorem}[Convergence Test] If the series $\sum_{i = 1}^n a_i$ is convergent, then $\lim_{i \to \infty} a_i = 0$.
@@ -900,4 +900,15 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
     either both converge or both diverge.
 \end{theorem}
 
+\begin{theorem}[Comparison Test for Series] If $\sum a_n$ and $\sum b_n$ are series with positive terms:
+  \begin{itemize}
+    \item If $\sum b_n$ is convergent and $a_n \leq b_n$ for all $n$, then $\sum a_n$ is also convergent.
+    \item If $\sum b_n$ is divergent and $a_n \geq b_n$ for all $n$, then $\sum a_n$ is also convergent.
+  \end{itemize}
+\end{theorem}
 
+\begin{theorem}[Well-known series] \ \\
+  $\sum \frac{1}{n^p}$ (the \textbf{$p$-series}) converges if $p > 1$ and diverges if $p \leq 1$.
+
+  $\sum ar^{n-1}$ (the \textbf{harmonic series}) converges if $|r| < 1$ and diverges if $|r| \geq 1$.
+\end{theorem}
