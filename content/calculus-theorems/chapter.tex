@@ -887,6 +887,15 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem} The Limit Laws and Squeeze Theorem also apply to limits of sequences.
 \end{theorem}
 
+\begin{theorem} If $\{ a_n \}$ is convergent, then it is bounded.
+\end{theorem}
+
+\begin{theorem}[Bounded Monotonic Sequence Theorem] Every bounded monotonic sequence converges. If $\{ a_n \}$ is increasing, then $\displaystyle\lim_{n \to \infty} a_n = \sup \{ a_n : n \geq 1 \}$. If $\{ a_n \}$ is decreasing, then $\displaystyle\lim_{n \to \infty} a_n = \inf \{ a_n : n \geq 1 \}$.
+\end{theorem}
+
+\begin{definition}[Series] The \textbf{$n$th partial sum} of $\{ a_i \}_{i=1}^n$ is $s_n := \sum_{i = 1}^n a_n$. Then the \textbf{series} is $\sum_{i = 1}^\infty a_i := \lim_{n \to \infty} a_i$
+\end{definition}
+
 \begin{theorem}[Convergence Test] If the series $\sum_{i = 1}^n a_i$ is convergent, then $\lim_{i \to \infty} a_i = 0$.
 \end{theorem}
 
@@ -910,5 +919,45 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem}[Well-known series] \ \\
   $\sum \frac{1}{n^p}$ (the \textbf{$p$-series}) converges if $p > 1$ and diverges if $p \leq 1$.
 
-  $\sum ar^{n-1}$ (the \textbf{harmonic series}) converges if $|r| < 1$ and diverges if $|r| \geq 1$.
+  $\sum ar^{n-1}$ (the \textbf{geometric series}) converges if $|r| < 1$ and diverges if $|r| \geq 1$.
 \end{theorem}
+
+\begin{definition}[Alternating series] A series $\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^n b_n \text{ or } \sum_{n=1}^\infty (-1)^{n - 1} b_n$ where $b_n > 0$.
+\end{definition}
+
+\begin{theorem}[Alternating Series Test] If the alternating series $\sum_{n=1}^\infty (-1)^{n - 1} b_n$ satisfies
+  \begin{enumerate}
+    \item[(i)] $b_{n + 1} \leq b_n$ for all $n$, and
+    \item[(ii)] $\displaystyle\lim_{n \to \infty} b_n = 0$,
+  \end{enumerate}
+  then the series is convergent.
+\end{theorem}
+
+\begin{theorem}[Alternating Series Estimation Theorem] If $s = \sum_{n=1}^\infty (-1)^{n - 1} b_n$ is a series that satisfies the conditions of the Alternating Series Test, then
+  \[
+    |R_n| := |s - s_n| \leq b_{n + 1}
+  \]
+\end{theorem}
+
+\begin{definition}[Absolute convergence] A series $\sum_{n = 1}^\infty a_n$ \textbf{converges absolutely} if the series of absolute values $\sum_{n = 1}^\infty |a_n|$ converges.
+\end{definition}
+
+\begin{definition}[Conditional convergence] A series \textbf{converges conditionally} if it converges but does not converge absolutely.
+\end{definition}
+
+\begin{theorem}[Rearrangement of terms of absolutely convergent series] The terms of an absolutely convergent series can be rearranged without affecting the value/sum of the series.
+\end{theorem}
+
+\begin{theorem}[Absolute convergence implies convergence] If a series converges absolutely, then it converges.
+\end{theorem}
+
+\begin{theorem}[Ratio Test]
+  \begin{itemize}
+    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} < 1$, then the series ${\sum\limits}_{n=1}^\infty a_n$ converges absolutely and therefore converges.
+    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} > 1$ or ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} = \infty$, then the series ${\sum\limits}_{n=1}^\infty a_n$ diverges.
+    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} = 1$, the Ratio Test is inconclusive.
+  \end{itemize}
+\end{theorem}
+
+% TODO: Root Test
+
