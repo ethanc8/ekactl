@@ -893,7 +893,7 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem}[Bounded Monotonic Sequence Theorem] Every bounded monotonic sequence converges. If $\{ a_n \}$ is increasing, then $\displaystyle\lim_{n \to \infty} a_n = \sup \{ a_n : n \geq 1 \}$. If $\{ a_n \}$ is decreasing, then $\displaystyle\lim_{n \to \infty} a_n = \inf \{ a_n : n \geq 1 \}$.
 \end{theorem}
 
-\begin{definition}[Series] The \textbf{$n$th partial sum} of $\{ a_i \}_{i=1}^n$ is $s_n := \sum_{i = 1}^n a_n$. Then the \textbf{series} is $\sum_{i = 1}^\infty a_i := \lim_{n \to \infty} a_i$
+\begin{definition}[Series] The \textbf{$n$th partial sum} of $\{ a_i \}_{i=1}^n$ is $s_n := \sum_{i = 1}^n a_n$. Then the \textbf{series} is $\sum_{i = 1}^\infty a_i := \lim_{n \to \infty} s_n$
 \end{definition}
 
 \begin{theorem}[Convergence Test] If the series $\sum_{i = 1}^n a_i$ is convergent, then $\lim_{i \to \infty} a_i = 0$.
@@ -919,7 +919,7 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem}[Well-known series] \ \\
   $\sum \frac{1}{n^p}$ (the \textbf{$p$-series}) converges if $p > 1$ and diverges if $p \leq 1$.
 
-  $\sum ar^{n-1}$ (the \textbf{geometric series}) converges if $|r| < 1$ and diverges if $|r| \geq 1$.
+  $\sum ar^{n-1}$ (the \textbf{geometric series}) converges if $|r| < 1$ and diverges if $|r| \geq 1$. If it converges, $\displaystyle\sum_{n=1}^\infty ar^{n-1} = \frac{a}{1-r}$
 \end{theorem}
 
 \begin{definition}[Alternating series] A series $\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^n b_n \text{ or } \sum_{n=1}^\infty (-1)^{n - 1} b_n$ where $b_n > 0$.
@@ -951,13 +951,20 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem}[Absolute convergence implies convergence] If a series converges absolutely, then it converges.
 \end{theorem}
 
-\begin{theorem}[Ratio Test]
+\begin{theorem}[Ratio Test] \ \\
   \begin{itemize}
-    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} < 1$, then the series ${\sum\limits}_{n=1}^\infty a_n$ converges absolutely and therefore converges.
-    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} > 1$ or ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} = \infty$, then the series ${\sum\limits}_{n=1}^\infty a_n$ diverges.
-    \item If ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} = 1$, the Ratio Test is inconclusive.
+    \item If ${\lim\limits}_{1 \to \infty} \left|\frac{a_n + 1}{a_n}\right| < 1$, then the series ${\sum\limits}_{n=1}^\infty a_n$ converges absolutely and therefore converges.
+    \item If ${\lim\limits}_{1 \to \infty} \left|\frac{a_n + 1}{a_n}\right| > 1$ or ${\lim\limits}_{1 \to \infty} \frac{a_n + 1}{a_n} = \infty$, then the series ${\sum\limits}_{n=1}^\infty a_n$ diverges.
+    \item If ${\lim\limits}_{1 \to \infty} \left|\frac{a_n + 1}{a_n}\right| = 1$, the Ratio Test is inconclusive.
   \end{itemize}
 \end{theorem}
 
-% TODO: Root Test
+\begin{theorem}[Root Test] \ \\
+  \begin{itemize}
+    \item If ${\lim\limits}_{1 \to \infty} \sqrt{\left|a_n\right|} < 1$, then the series ${\sum\limits}_{n=1}^\infty a_n$ converges absolutely and therefore converges.
+    \item If ${\lim\limits}_{1 \to \infty} \sqrt{\left|a_n\right|} > 1$ or ${\lim\limits}_{1 \to \infty} \sqrt{\left|a_n\right|} = \infty$, then the series ${\sum\limits}_{n=1}^\infty a_n$ diverges.
+    \item If ${\lim\limits}_{1 \to \infty} \sqrt{\left|a_n\right|} = 1$, the Ratio Test is inconclusive.
+  \end{itemize}
+\end{theorem}
+
 
