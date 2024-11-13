@@ -206,3 +206,18 @@ $\Delta \theta$ is called angular displacement.
 \[
 	\vec{T} = \vec{r} \crossp \vec{F} \qquad |T| = |r| |F| \sin \theta
 \]
+
+\subsection{Rotational inertia}
+
+Where $r$ represents the distance between the axis of rotation and the object, $m$ represents mass, $I$ represents rotational inertia, and $K$ represents rotational kinetic energy:
+
+\[
+	I = mr^2 \qquad I_\text{total} := \sum m_i r_i^2 = \int r^2 dm \qquad K = \frac{1}{2} I \omega^2
+\]
+
+\begin{theorem}[Parallel Axis Theorem]
+	If $d$ is the distance between the axis through the center of mass and the desired axis of rotation parallel to the axis through the center of mass, then the rotational inertia through the desired axis of rotation is
+	\[
+		I_{\text{II}} = I_{\text{cm}} + Md^2
+	\]
+\end{theorem}
