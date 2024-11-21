@@ -1,6 +1,7 @@
 \chapter{Calculus Theorems}
 
 \section*{1 Completeness}
+\addcontentsline{toc}{section}{1 Completeness}
 % \subsection*{1.3 Completeness}
 
 \begin{theorem}[Completeness of the Real Numbers]
@@ -71,6 +72,7 @@ Then, the size of $I_n = \frac{b_1 - a_1}{2^n} = b_n - a_n$, and $\displaystyle 
 \end{theorem}
 
 \section*{2 Limits}
+\addcontentsline{toc}{section}{2 Limits}
 
 % \subsection*{2.4 $\varepsilon$-$\delta$ definition of a Limit}
 
@@ -157,6 +159,7 @@ Alternatively,
 \end{namedtheorem}
 
 \section*{3 Continuity}
+\addcontentsline{toc}{section}{3 Continuity}
 
 \begin{definition}[Continuity at a point]
   Function $f$ is continuous at point $a$ if $\displaystyle\lim_{x \to a} f (x) = f (a)$.
@@ -191,6 +194,7 @@ Alternatively,
 \pagebreak
 
 \section*{4 Derivatives}
+\addcontentsline{toc}{section}{4 Derivatives}
 
 The derivative is the instantaneous rate of change, and the slope of the tangent line to the point.
 
@@ -292,6 +296,7 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
 \end{theorem}
 
 \section*{5 Derivative Applications}
+\addcontentsline{toc}{section}{5 Derivative Applications}
 
 \subsection*{5.7 Mean Value Theorem}
 
@@ -379,7 +384,8 @@ The derivative is the instantaneous rate of change, and the slope of the tangent
 
 \columnbreak
 
-\section*{5 Integrals}
+\section*{6 Integrals}
+\addcontentsline{toc}{section}{6 Integrals}
 
 \subsection*{Antiderivative}
 
@@ -685,6 +691,7 @@ Let $\mathcal{R}([a,b])$ be the set of integrable functions, $\mathcal{C}([a,b])
 \end{definition}
 
 \section*{8 Integral Applications}
+\addcontentsline{toc}{section}{8 Integral Applications}
 
 \subsection*{Volumes}
 
@@ -767,7 +774,8 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   If $f$ is positive on $[a, b]$, then there is a number $c$ such that the rectangle with base $[a, b]$ and height $f(c)$ has the same area as $\int_a^b f(x) \,dx$.
 \end{theorem}
 
-\section{Improper Integrals}
+\section*{9 Improper Integrals}
+\addcontentsline{toc}{section}{9 Improper Integrals}
 
 \begin{definition}[Improper Integrals with Infinite Bounds] \ \\
   \begin{enumerate}
@@ -838,7 +846,8 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   Suppose $f(x)$ and $g(x)$ are positive continuous functions defined on $[a, \infty)$ such that $\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)} = c$ for some positive real number $c$. Then $\int_a^\infty f(x) dx$ converges iff $\int_a^\infty g(x) dx$.
 \end{theorem}
 
-\section{Differential Equations}
+\section*{10 Differential Equations}
+\addcontentsline{toc}{section}{10 Differential Equations}
 
 \begin{definition}[Differential equation] An equation involving an unknown function $y = f(x)$ and one or more of its derivatives.
 \end{definition}
@@ -884,7 +893,8 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \]
 \end{definition}
 
-\section{Sequences and Series}
+\section*{11 Sequences and Series}
+\addcontentsline{toc}{section}{11 Sequences and Series}
 
 \begin{definition}[Sequence] A \textbf{sequence} is an ordered list of real numbers (\textbf{elements}) $a_1, a_2, a_3, ...$. It can also be considered a function $a: \Natural \rightarrow \Real$.
 \end{definition}
@@ -1000,4 +1010,86 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \end{itemize}
 \end{theorem}
 
+\section*{12 Power Series}
+\addcontentsline{toc}{section}{12 Power Series}
+
+\begin{definition}[Power series]
+  A power series centered at $a$ is a series of the form
+  \[
+    \sum_{k = 0}^\infty c_k (x - a)^k = c_0 + c_1(x - a) + c_2(x-a)^2 + \cdots
+  \]
+  where $x$ is a variable, $a$ is a fixed real number called the \textit{center} of the series, and the $c_k$s are constants called the \textit{coefficients} of the series.
+\end{definition}
+
+\begin{theorem}
+  For a power series $\sum_{k = 0}^\infty c_k (x - a)^k$, there are only three possibilities:
+  \begin{enumerate}
+    \item[(i)] The series converges only when $x = a$.
+    \item[(ii)] The series converges for all $x$.
+    \item[(iii)] There is a positive number $R$ such that the series converges if $|x - a| < R$ and diverges if $|x - a| > R$. $R$ is called the \textbf{radius of convergence}.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Suppose $\sum_{n = 0}^\infty c_n (x - a)^n$ has radius of convergence $R > 0$. Then $f(x) = \sum_{n = 0}^\infty c_n (x - a)^n$ is differentiable (and therefore continuous and integrable) on $(a - R, a + R)$, and
+  \begin{enumerate}
+    \item[(i)] $\displaystyle f'(x) = \sum_{n = 0}^\infty \frac{d}{dx} c_n (x - a)^n = \sum_{n = 0}^\infty n c_n (x - a)^{n - 1}$
+    \item[(ii)] $\displaystyle \int f(x) dx = \sum_{n = 0}^\infty \int c_n (x - a)^n = C + \sum_{n = 0}^\infty c_n \frac{(x - a)^{n + 1}}{n + 1}$
+  \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Taylor series] The \textbf{Taylor series} of a function $f$ centered at $a$ is
+  \[
+    \sum_{n = 0}^\infty \frac{f^{(n)}(a)}{n!} (x - a)^n
+  \]
+\end{definition}
+
+\begin{definition}[Maclaurin series] The \textbf{Maclaurin series} of a function $f$ is the Taylor series of $f$ centered at $a$:
+  \[
+    \sum_{n = 0}^\infty \frac{f^{(n)}(0)}{n!} x^n
+  \]
+\end{definition}
+
+\begin{theorem}
+  If $f$ has a power series representation centered at $a$, then that power series is equivalent to the Taylor series of $f$ centered at $a$.
+\end{theorem}
+
+\begin{theorem}[Basic Maclaurin Series]
+  \begin{align*}
+    e^x &= \sum_{n = 0}^\infty \frac{x^n}{n!} & \text{for $x \in \Real$} \\
+    \sin(x) &= \sum_{n = 0}^\infty (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} & \text{for $x \in \Real$} \\
+    \cos(x) &=\sum_{n = 0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} & \text{for $x \in \Real$} \\
+    \ln(1 + x) &= \sum_{n = 0}^\infty (-1)^n \frac{x^{n + 1}}{n + 1} & \text{for $|x| < 1$} \\
+    \arctan(x) &= \sum_{n = 0}^\infty (-1)^n \frac{x^{2n + 1}}{2n + 1} & \text{for $|x| < 1$} \\
+  \end{align*}
+\end{theorem}
+
+\begin{definition}[Taylor polynomial] The $n$th-degree Taylor polynomial of $f$ at $a$ is
+  \[
+    \sum_{k = 0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k
+  \]
+\end{definition}
+
+\begin{theorem}[Taylor's Theorem] If $f$ has $(n + 1)$ continuous derivatives on an open interval $I$ ccontaining $a$, then for all $x$ in $I$,
+  \[
+      f(x) = T_n(x) + R_n(x),
+  \]
+  where $T_n$ is the $n$th-order Taylor polynomial for $f$ with center $a$ and the remainder is
+  \[
+      R_n(x) = \frac{f^{(n + 1)}(c)}{(n + 1)!}(x - a)^{n + 1}
+  \]
+  for some point $c$ between $x$ and $a$. This form of $R_n$ is also called \textbf{Lagrange error bound} or the \textbf{Lagrange form of the remainder}.
+\end{theorem}
+
+\begin{theorem} If $R_n$ converges to 0, then $f(x) = \sum_{k = 0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k$.
+\end{theorem}
+
+\section*{13 Polar}
+\addcontentsline{toc}{section}{13 Polar}
+
+\begin{theorem} If $r$ is a function of $\theta$ on the $xy$-plane, then
+  \[
+    \frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}
+  \]
+\end{theorem}
 
