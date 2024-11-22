@@ -58,9 +58,11 @@ In one dimension:
 	W = \int_a^b F(x) dx
 \]
 
-\subsection{Spring force}
-
-
+\begin{namedtheorem}[Work-energy theorem] The work is the change in kinetic energy: 
+	\[
+		W = \Delta K
+	\]
+\end{namedtheorem}
 
 \section{Simple Harmonic Motion}
 
@@ -179,7 +181,9 @@ To find the velocity of the center of mass, replace $\vec{r}_i$ with $\vec{v}_i$
 	Momentum is conserved when there are no external forces acting upon the object.
 \end{theorem}
 
-\section{Rotational kinematics}
+\section{Rotational motion}
+
+\subsection{Rotational kinematics}
 
 $\vec{\theta}$, angle, is the rotational equivalent of position.
 
@@ -193,7 +197,7 @@ $\Delta \theta$ is called angular displacement.
 \text{Acceleration} = a &= R \alpha \\
 \end{align*}
 
-\subsection{Constant acceleration}
+\subsubsection{Constant acceleration}
 
 \begin{align*}
 	\omega_f &= \omega_0 + \alpha t \\
@@ -204,7 +208,7 @@ $\Delta \theta$ is called angular displacement.
 \subsection{Torque}
 
 \[
-	\vec{T} = \vec{r} \crossp \vec{F} \qquad |T| = |r| |F| \sin \theta
+	\vec{\tau} = \vec{r} \crossp \vec{F} \qquad |\tau| = |r| |F| \sin \theta
 \]
 
 \subsection{Rotational inertia}
@@ -215,9 +219,23 @@ Where $r$ represents the distance between the axis of rotation and the object, $
 	I = mr^2 \qquad I_\text{total} := \sum m_i r_i^2 = \int r^2 dm \qquad K = \frac{1}{2} I \omega^2
 \]
 
-\begin{theorem}[Parallel Axis Theorem]
+\begin{namedtheorem}[Parallel Axis Theorem]
 	If $d$ is the distance between the axis through the center of mass and the desired axis of rotation parallel to the axis through the center of mass, then the rotational inertia through the desired axis of rotation is
 	\[
 		I_{\text{II}} = I_{\text{cm}} + Md^2
 	\]
-\end{theorem}
+\end{namedtheorem}
+
+\subsection{Newton's Second Law}
+
+\[
+	\sum \tau = I \alpha
+\]
+
+\subsection{Rotational kinetic energy}
+
+\begin{definition}[Rotational kinetic energy]
+	\[
+		K_{\text{rot}} = \frac{1}{2} I \omega^2
+	\]
+\end{definition}
