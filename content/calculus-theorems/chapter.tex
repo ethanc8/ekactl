@@ -1090,6 +1090,37 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 \begin{theorem} If $r$ is a function of $\theta$ on the $xy$-plane, then
   \[
     \frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}
+    \qquad \text{and} \qquad
+    \frac{d^2 y}{d x^2} = \frac{\frac{d}{d\theta} \left(\frac{dy}{dx}\right)}{\frac{dx}{d\theta}}
   \]
 \end{theorem}
+
+\begin{theorem}[Arc length] If $r$ is a function of $\theta$ on the $xy$-plane, then
+  \[
+    L = \int_a^b \sqrt{\left(\frac{dx}{d\theta}\right)^2 + \left(\frac{dy}{d\theta}\right)^2} \,d\theta
+  \]
+  and therefore
+  \[
+    L = \int_a^b \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} \,d\theta
+  \]
+\end{theorem}
+
+\section*{14 Vectors}
+\addcontentsline{toc}{section}{13 Polar}
+
+\[
+  \frac{d}{dt} \vec{r}(t) = \begin{matrix}
+    x'(t) \\
+    y'(t) \\
+    z'(t)
+  \end{matrix}
+\]
+
+\[
+  \int \vec{r}(t) dt = \begin{matrix}
+    \int x(t) dt \\
+    \int y(t) dt \\
+    \int z(t) dt
+  \end{matrix}
+\]
 
