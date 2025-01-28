@@ -1,0 +1,171 @@
+\chapter{Linear Algebra}
+
+\section*{1 Linear equations}
+
+Let $F = \Real$ or $F = \Complex$.
+
+\begin{definition}[Linear equation]
+  An equation that can be written in the form
+  \[
+      \sum_k a_k x_k = y
+  \]
+  where all $a_k \in F$ and $y \in F$.
+\end{definition}
+
+\begin{definition}[Solution to a linear equation]
+  The solution to a linear equation is a set $\{ s_k \}$ such that $\sum_k a_k s_k = y$, i.e. substituting $x_k = s_k$ results in the equation being true.
+\end{definition}
+
+\begin{definition}[Linear system]
+  A set of linear equations.
+
+  Let $m$ be the number of linear equations in the system. Let $n$ be the number of variables in the system. Then the $j$th equation can be written as
+  \[
+    \sum_{k = 1}^n A_{jk} x_k = y_j
+  \]
+
+  Let:
+  \[
+    A = \begin{bmatrix}
+      A_{11} & \cdots & A_{1n} \\
+      \vdots &        & \vdots \\
+      A_{m1} & \cdots & A_{mn} \\
+    \end{bmatrix}
+    \quad
+    X = \begin{bmatrix}
+      x_1 \\
+      \vdots \\
+      x_n \\
+    \end{bmatrix}
+    \quad
+    Y = \begin{bmatrix}
+      y_1 \\
+      \vdots \\
+      y_m \\
+    \end{bmatrix}
+  \]
+
+  Then the system can be written as $AX = Y$.
+\end{definition}
+
+\begin{definition}[Consistent linear system] A system that has at least one solution.
+\end{definition}
+
+\begin{definition}[Linear combination]
+  The linear combination of the equations of a linear system is a linear equation formed by multiplying each equation by $c_j$ where $c_j \in F$.
+
+  This linear combination can be written as
+  \[
+    \sum_{j = 1}^m \sum_{k = 1}^n c_j A_{jk} x_k = \sum_{j = 1}^m y_j
+  \]
+\end{definition}
+
+\begin{theorem}
+  All solutions of a linear system are solutions to the linear combination of the equations of the system.
+\end{theorem}
+
+\begin{definition}[Equivalent linear systems] Two systems are equivalent if they have the same set of solutions.
+\end{definition}
+
+\begin{theorem} Two systems are equivalent if each equation in each system is a linear combination of the equations in the other system.
+\end{theorem}
+
+\subsection{Matrices and rows}
+
+\begin{definition}[Elementary row operations]
+  The elementary row operations are:
+
+  \begin{definition}[Scaling]
+    $R_i \mapsto cR_i$ where $c$ is a nonzero scalar.
+  \end{definition}
+
+  \begin{definition}[Replacement]
+    $R_i \mapsto R_i + cR_j$ where $c$ is a scalar.
+  \end{definition}
+
+  \begin{definition}[Interchange]
+    Swap $R_i$ and $R_j$.
+  \end{definition}
+\end{definition}
+
+\begin{theorem}[Elementary row operations are invertible] For any elementary row operation $e$, there exists an elementary row operation $e^{-1}$ such that $e^{-1}(e(A)) = A$ for any matrix $A$.
+\end{theorem}
+
+\begin{definition}[Row equivalence] Two matrices are row-equivalent if each can be derived from the other using a finite number of elementary row operations.
+\end{definition}
+
+\begin{definition}[Row echelon form (REF)] A matrix is in REF if it satisfies:
+  \begin{enumerate}
+    \item[1.] All nonzero rows are above all rows of all zeros.
+    \item[2.] Each leading entry of a row is in a column to the right of the leading entry of the row above it.
+    \item[3.] All entries in a column below a leading entry are zeros.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Reduced row echelon form (RREF)] A matrix is in RREF if it is in REF and additionally satisfies:
+  \begin{enumerate}
+    \item[4.] The leading entry in each nonzero row is 1.
+    \item[5.] Each leading 1 is the only nonzero entry in its column
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Pivot position] A location $A_{ij}$ where $\text{RREF}(A)_{ij}$ is a leading 1.
+\end{definition}
+
+\begin{definition}[Pivot column] A column which contains a pivot position.
+\end{definition}
+
+\begin{definition}[Pivot] A nonzero number at a pivot position.
+\end{definition}
+
+\begin{procedure}[Gauss-Jordan elimination]
+  \begin{procedure}[Gaussian elimination]
+    Iterate through the pivot columns of $A$ from left to right. For each pivot column, use elementary row operations to ensure that the pivot position is nonzero and that all entries in the column below the pivot position are zero. This produces $\text{REF}(A)$.
+  \end{procedure}
+
+  \begin{procedure}[Jordan elimination]
+    Iterate through the pivot columns of $\text{REF}(A)$ from right to left. For each pivot column, use elementary row operations to ensure that all other entries in the column other than the pivot are zero and that the pivot is equal to 1. This produces $\text{RREF}(A)$.
+  \end{procedure}
+\end{procedure}
+
+\subsection{Homogeneous linear systems}
+
+\begin{definition}[Homogeneous linear system] A system where $y_0 = y_1 = \cdots = y_m = 0$. It can be written as $AX = 0$.
+\end{definition}
+
+\begin{theorem}[Trivial solution] For any homogeneous system, $x_0 = x_1 = \cdots = x_n = 0$ is a solution to the system. Therefore, all homogeneous systems are consistent.
+\end{theorem}
+
+\begin{theorem}
+  \begin{enumerate}
+    \item[(a)] If there are less equations than there are variables ($m < n$), then $AX = 0$ has an infinite number of solutions.
+    \item[(b)] If there are an equal number of equations and variables, then $A$ is row-equivalent to the $n \times n$ identity iff $AX = 0$ has only the trivial solution.
+    \item[(c)] If there are more equations than there are variables ($m > n$), then 
+    \[
+      \text{RREF}(A) = \begin{bmatrix}
+        1 & 0 & \cdots & 0 \\
+        0 & 1 & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & 1 \\
+        0 & 0 & 0 & 0 \\
+        \vdots & \vdots & \vdots & \vdots \\
+        0 & 0 & 0 & 0 \\
+      \end{bmatrix}
+    \] iff $AX = 0$ has only the trivial solution.
+  \end{enumerate}
+\end{theorem}
+
+\begin{procedure}[Solution] To solve a homogeneous system, perform Gauss-Jordan elimination on $A$ so that $R = \text{RREF}(A)$. Then solve $RX = 0$. The variables which are not in pivot columns are free variables and may be set to any value, typically denoted $u_1, u_2, \ldots$.
+\end{procedure}
+
+\subsection{Inhomogeneous linear systems}
+
+\begin{procedure}[Solution] To solve an homogeneous system, perform Gauss-Jordan elimination on $A' = [A|Y]$ so that $R' = [R|Z] = \text{RREF}(A')$. Then solve $RX = Z$. Note that not all inhomogeneous systems are solvable (consistent).
+\end{procedure}
+
+
+
+
+
+
+
