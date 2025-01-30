@@ -1,8 +1,9 @@
 \chapter{Linear Algebra}
 
-\section*{1 Linear equations}
-
 Let $F = \Real$ or $F = \Complex$.
+
+\section*{1 Linear equations}
+\addcontentsline{toc}{section}{1 Linear equations}
 
 \begin{definition}[Linear equation]
   An equation that can be written in the form
@@ -109,7 +110,7 @@ Let $F = \Real$ or $F = \Complex$.
   \end{enumerate}
 \end{definition}
 
-\begin{definition}[Pivot position] A location $A_{ij}$ where $\text{RREF}(A)_{ij}$ is a leading 1.
+\begin{definition}[Pivot position] A location $A_{ij}$ where $\RREF(A)_{ij}$ is a leading 1.
 \end{definition}
 
 \begin{definition}[Pivot column] A column which contains a pivot position.
@@ -120,11 +121,11 @@ Let $F = \Real$ or $F = \Complex$.
 
 \begin{procedure}[Gauss-Jordan elimination]
   \begin{procedure}[Gaussian elimination]
-    Iterate through the pivot columns of $A$ from left to right. For each pivot column, use elementary row operations to ensure that the pivot position is nonzero and that all entries in the column below the pivot position are zero. This produces $\text{REF}(A)$.
+    Iterate through the pivot columns of $A$ from left to right. For each pivot column, use elementary row operations to ensure that the pivot position is nonzero and that all entries in the column below the pivot position are zero. This produces $\REF(A)$.
   \end{procedure}
 
   \begin{procedure}[Jordan elimination]
-    Iterate through the pivot columns of $\text{REF}(A)$ from right to left. For each pivot column, use elementary row operations to ensure that all other entries in the column other than the pivot are zero and that the pivot is equal to 1. This produces $\text{RREF}(A)$.
+    Iterate through the pivot columns of $\REF(A)$ from right to left. For each pivot column, use elementary row operations to ensure that all other entries in the column other than the pivot are zero and that the pivot is equal to 1. This produces $\RREF(A)$.
   \end{procedure}
 \end{procedure}
 
@@ -142,7 +143,7 @@ Let $F = \Real$ or $F = \Complex$.
     \item[(b)] If there are an equal number of equations and variables, then $A$ is row-equivalent to the $n \times n$ identity iff $AX = 0$ has only the trivial solution.
     \item[(c)] If there are more equations than there are variables ($m > n$), then 
     \[
-      \text{RREF}(A) = \begin{bmatrix}
+      \RREF(A) = \begin{bmatrix}
         1 & 0 & \cdots & 0 \\
         0 & 1 & \cdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
@@ -155,17 +156,77 @@ Let $F = \Real$ or $F = \Complex$.
   \end{enumerate}
 \end{theorem}
 
-\begin{procedure}[Solution] To solve a homogeneous system, perform Gauss-Jordan elimination on $A$ so that $R = \text{RREF}(A)$. Then solve $RX = 0$. The variables which are not in pivot columns are free variables and may be set to any value, typically denoted $u_1, u_2, \ldots$.
+\begin{procedure}[Solution] To solve a homogeneous system, perform Gauss-Jordan elimination on $A$ so that $R = \RREF(A)$. Then solve $RX = 0$. The variables which are not in pivot columns are free variables and may be set to any value, typically denoted $u_1, u_2, \ldots$.
 \end{procedure}
 
 \subsection{Inhomogeneous linear systems}
 
-\begin{procedure}[Solution] To solve an homogeneous system, perform Gauss-Jordan elimination on $A' = [A|Y]$ so that $R' = [R|Z] = \text{RREF}(A')$. Then solve $RX = Z$. Note that not all inhomogeneous systems are solvable (consistent).
+\begin{procedure}[Solution] To solve an homogeneous system, perform Gauss-Jordan elimination on $A' = [A|Y]$ so that $R' = [R|Z] = \RREF(A')$. Then solve $RX = Z$. Note that not all inhomogeneous systems are solvable (consistent).
 \end{procedure}
 
+% TODO: Add matmul
 
+\columnbreak
 
+\section*{2 Fields}
+\addcontentsline{toc}{section}{2 Fields}
 
+\subsection{Real and complex numbers}
+
+\begin{definition}[Field properties]
+  The following properties:
+
+\begin{theorem}[Properties of addition]
+  For all $x, y, z \in F$:
+  \begin{itemize}
+    \item[(A1)] Commutativity: $x + y = y + x$ 
+    \item[(A2)] Associativity: $(x + y) + z = x + (y + z)$
+    \item[(A3)] Identity: $\exists 0 \in \Real$ s.t. $0 + x = x$
+    \item[(A4)] Additive inverse: For $x \in F$, $\exists -x \in F$ s.t. $x + (-x) = 0$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Properties of multiplication]
+  For all $x, y, z \in F$:
+  \begin{itemize}
+    \item[(M1)] Commutativity: $xy = yx$ 
+    \item[(M2)] Associativity: $(xy)z = x(yz)$
+    \item[(M3)] Identity: $\exists 1 \in \Real$ s.t. $1x = x$ and $1 \neq 0$
+    \item[(M4)] Additive inverse: For $x \in F \setminus \{ 0 \}$, $\exists x^{-1} \in F$ s.t. $xx^{-1} = 1$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Distributive property] \ \\
+  \begin{itemize}
+    \item[(D)] $x(y + z) = xy + xz$ for all $x, y, z \in F$.
+  \end{itemize}
+\end{theorem}
+\end{definition}
+
+\begin{definition}[Field]
+  A set $F$ which defines the following two operations:
+  \begin{itemize}
+    \item Addition: an operation that maps $x, y \in F \Rightarrow c \in F$ and satisfies the properties of addition
+    \item Multiplication: an operation that maps $x, y \in F \Rightarrow c \in F$ and satisfies the properties of multiplication
+  \end{itemize}
+  for which the distributive property also holds.
+\end{definition}
+
+\begin{theorem}
+  $\Real$ and $\Complex$ are fields.
+\end{theorem}
+
+\begin{definition}[Complex number]
+  A number which can be defined by a pair of real numbers $a, b$ where the value of the number is equal to $a + bi$.
+\end{definition}
+
+\begin{theorem}[Useful things about complex numbers]
+  Let $z = a + bi$ and $w = c + di$ be complex numbers. Then:
+  \begin{itemize}
+    \item $z + w = (a + c) + (b + d)i$
+    \item $zw = (ac - bd) + (bc + ad)i$
+  \end{itemize}
+\end{theorem}
 
 
 
