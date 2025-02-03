@@ -211,6 +211,8 @@ Let $F = \Real$ or $F = \Complex$.
 \end{theorem}
 \end{definition}
 
+\subsection{Fields}
+
 \begin{definition}[Field]
   A set $F$ which defines the following two operations:
   \begin{itemize}
@@ -256,6 +258,35 @@ Let $F = \Real$ or $F = \Complex$.
   \]
 \end{definition}
 
+\subsection*{2.3 Vector spaces}
+\addcontentsline{toc}{subsection}{2.3 Vector spaces}
 
+\begin{definition}[Vector space] A vector space over $F$ is a set $V$ with the following operations:
+  \begin{itemize}
+    \item \textbf{Vector addition}: $u \in V, v \in V \mapsto (u + v) \in V$, which satisfies the properties of addition
+    \item \textbf{Scalar multiplication}: $\alpha \in F, v \in V \mapsto \alpha v \in V$, which satisfies the properties of multiplication
+  \end{itemize}
+\end{definition}
+
+\begin{theorem} $F^n$ is a vector space.
+\end{theorem}
+
+\begin{definition}[$F^\omega$] The set of all sequences of elements of $F$:
+  \[
+    F^\omega := \{ (x_1, x_2, \ldots) : x_k \in F \text{ for } k \in \Natural \}
+  \]
+  where addition and scalar multiplication are defined similarly to $F^n$:
+  \begin{align*}
+    a + b &:= (a_1 + b_1, \ldots, a_n + b_n) \\
+    \alpha x &:= (\alpha x_1, \ldots, \alpha x_n)
+  \end{align*}
+\end{definition}
+
+\begin{definition}[$F^{m,n}$] The set of all $m \times n$ matrices with entries in $F$, where addition and scalar multiplication are defined as:
+  \begin{align*}
+    (A + B)_{ij} &:= A_{ij} + B_{ij} \\
+    (\alpha A)_{ij} &:= \alpha A_{ij}
+  \end{align*}
+\end{definition}
 
 
