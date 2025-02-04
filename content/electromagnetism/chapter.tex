@@ -18,11 +18,17 @@
 
 % TODO: Conduction and induction
 
-\subsection{Coulomb's Law}
+\subsection{Electric fields}
+
+\begin{definition}[Permittivity of free space ($\varepsilon_0$)]
+  \[
+    \varepsilon_0 \approx 8.85 * 10^{-12} \frac{\Coulomb^2}{\Newton \meter^2}
+  \]
+\end{definition}
 
 \begin{definition}[Coulomb's constant ($k$)]
   \[
-    k \approx 8.99 * 10^9 \, \frac{\Newton \meter^2}{\Coulomb^2}
+    k = \frac{1}{4\pi\varepsilon_0} \approx 8.99 * 10^9 \, \frac{\Newton \meter^2}{\Coulomb^2}
   \]
 \end{definition}
 
@@ -32,4 +38,21 @@
     |F_e| = \frac{k |q_1| |q_2|}{r^2}
   \]
 \end{namedlaw}
+
+\begin{definition}[Electric field]
+  The vector field $E$, which applies to all objects.
+
+  The electric field points away from positive charges and towards negative charges.
+\end{definition}
+
+\begin{law}
+  The electrostatic force on a stationary point charge $q$ is $F_e = Eq$, where $E$ is the strength and direction of the electric field.
+\end{law}
+
+\begin{law}[by Coulomb's Law]
+  The electric field strength at distance $r$ from a point charge $Q$ is
+  \[
+    |E| = \frac{kQ}{r^2}.
+  \]
+\end{law}
 
