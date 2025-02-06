@@ -33,7 +33,7 @@ See the properties of fields in the LinAlg notes for definitions of addition and
   The vector from the end of $\vec{A}$ to the end of $\vec{B}$ when their starts are in the same location.
 
   \[
-    \vec{AB} = \vec{B} - \vec{A}
+    \longvec{AB} = \vec{B} - \vec{A}
   \]
 \end{definition}
 
@@ -168,7 +168,7 @@ The most useful notation for a line is in parametric form:
 \end{theorem}
 
 \begin{procedure}[Equation of plane containing three points]
-  If $A, B, C \in \Real^3$ are points on our plane, then we can find the normal vector by performing $n = \vec{AB} \crossp \vec{AC} = (B - A) \crossp (C - A)$ (since $\vec{AB}$ and $\vec{AC}$ are vectors on the plane).
+  If $A, B, C \in \Real^3$ are points on our plane, then we can find the normal vector by performing $n = \longvec{AB} \crossp \longvec{AC} = (B - A) \crossp (C - A)$ (since $\longvec{AB}$ and $\longvec{AC}$ are vectors on the plane).
 \end{procedure}
 
 \begin{theorem}[Parametric equation for a plane in $\Real^3$]
@@ -180,10 +180,21 @@ The most useful notation for a line is in parametric form:
 
 \subsection{Distance}
 
+(Section 1.5 of Colley (2012))
+
 \begin{procedure}[Distance between point and line]
   Let $P$ be the point, and $A + Lt$ be the line. Then the distance is
   \[
-    |\overrightarrow{AP} - \proj_L \overrightarrow{AP}| = \vec{P}
+    |\longvec{AP} - \proj_L \longvec{AP}| = \vec{P}
+  \]
+\end{procedure}
+
+\begin{procedure}[Distance between parallel planes]
+  Let $\Pi_1$ and $\Pi_2$ be the two planes.
+
+  If $n$ is normal to both planes, and $P_1 \in \Pi_1$ and $P_2 \in \Pi_2$, then the answer is
+  \[
+    |\proj_n \longvec{P_1 P_2}
   \]
 \end{procedure}
 
