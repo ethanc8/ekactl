@@ -33,9 +33,9 @@
 \end{definition}
 
 \begin{namedlaw}[Coulomb's Law]
-  If two objects with charges $q_1$ and $q_2$ are near each other, then the magnitude of the electrostatic force between the two objects is
+  If stationary point or spherical charges $q_1$ and $q_2$ are near each other but not touching, then the magnitude of the electrostatic force between the two objects is
   \[
-    |F_e| = \frac{k |q_1| |q_2|}{r^2}
+    |F_e| = \frac{k |q_1| |q_2|}{r^2} = \frac{|q_1| |q_2|}{4 \pi \varepsilon_0 r^2}
   \]
 \end{namedlaw}
 
@@ -46,13 +46,48 @@
 \end{definition}
 
 \begin{law}
-  The electrostatic force on a stationary point charge $q$ is $F_e = Eq$, where $E$ is the strength and direction of the electric field.
+  The electrostatic force on a stationary point or spherical charge $q$ is $F_e = Eq$, where $E$ is the strength and direction of the electric field.
 \end{law}
 
 \begin{law}[by Coulomb's Law]
-  The electric field strength at distance $r$ from a point charge $Q$ is
+  The electric field at distance $r$ due to a stationary point or spherical charge $Q$ is
   \[
-    |E| = \frac{kQ}{r^2}.
+    E = \frac{kQ}{r^2} = \frac{Q}{4\pi\varepsilon_0 r^2}
   \]
+
+  The electric field at distance $r$ due to a charged object whose total charge is $\int dq$ is
+  \[
+    E = \int \frac{k \,dq}{r^2} = \int \frac{dq}{4 \pi \varepsilon_0 r^2}
+  \]
+  where $r$'s tail is at the charge and points towards the point for which we want to calculate $E$.
 \end{law}
+
+\begin{definition}[Charge density]
+  \begin{align*}
+    \text{3D: density} \qquad & \rho = \frac{Q}{v} = \frac{dq}{dV} & (\frac{\Coulomb}{\meter^3}) \\
+    \text{2D: surface density} \qquad & \sigma = \frac{Q}{A} = \frac{dq}{dA} & (\frac{\Coulomb}{\meter^2}) \\
+    \text{1D: linear density} \qquad & \lambda = \frac{Q}{L} = \frac{dq}{dx} & (\frac{\Coulomb}{\meter}) \\
+  \end{align*}
+\end{definition}
+
+\subsection{Electric flux}
+
+\begin{definition}[Electric flux ($\Phi$)]
+  The flux through a surface with area vector $\vec{A}$ is
+  \[
+    \int \vec{E} \dotp d\vec{A}
+  \]
+  where $\vec{E}$ is the electric field that passes through the surface, and the area vector's magnitude is the area and direction is normal/perpendicular to the surface.
+\end{definition}
+
+\begin{definition}[Net flux]
+  The flux through any surface that encloses a charge.
+\end{definition}
+
+\begin{namedtheorem}[Gauss's Law]
+  The net flux is equivalent to the enclosed charge divided by the permittivity of free space, and can be equated to the flux through the surface:
+  \[
+    \Phi_{\text{net}} = \frac{q}{\varepsilon_0} = 4\pi k q = \oint \vec{E} \dotp d\vec{A}
+  \]
+\end{namedtheorem}
 

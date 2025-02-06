@@ -293,3 +293,52 @@ If $\sum F = 0$ and $\sum \tau \neq 0$, then the object is accelerating in its r
 If $\sum F \neq 0$ and $\sum \tau = 0$, then the object is linearly accelerating but is not accelerating rotationally.
 
 If $\sum F \neq 0$ and $\sum \tau \neq 0$, then the object is in complex motion.
+
+\subsection{Gravitation}
+
+Using the equations which are similar to electrostatics:
+
+\begin{definition}[Gravitational constant]
+	\[
+		G \approx 6.67 * 10^{-11} \frac{\Newton \meter^2}{\kilogram^2}
+	\]
+\end{definition}
+
+\begin{definition}[Gravitational field]
+  The vector field $g$, which applies to all objects.
+
+  The electric field points towards masses.
+
+	$g$ is also the acceleration caused by gravity.
+\end{definition}
+
+\begin{namedlaw}[Newton's law of universal gravitation]
+  If stationary point or spherical masses $m_1$ and $m_2$ are near each other but not touching, then the magnitude of the gravitational force between the two objects is
+  \[
+    |F_g| = \frac{G m_1 m_2}{r^2}
+  \]
+\end{namedlaw}
+
+\begin{law}
+  The gravitational force on a stationary point or spherical mass $g$ is $F_g = mg$, where $g$ is the strength and direction of the gravitational field.
+\end{law}
+
+\begin{law}[by Newton's law of universal gravitation]
+  The gravitational field at distance $r$ due to a stationary point or spherical charge $m$ is
+  \[
+    g = \frac{GM}{r^2}.
+  \]
+
+  The gravitational field at distance $r$ due to a massive object whose total mass is $\int dm$ is
+  \[
+    g = \int \frac{k \,dm}{r^2}
+  \]
+  where $r$'s tail is at the charge and points towards the point for which we want to calculate $g$.
+\end{law}
+
+\begin{namedtheorem}[Gauss's Law]
+  The net flux is proportional to the enclosed mass, and can be equated to the flux through the surface:
+  \[
+    \Phi_{\text{net}} = - 4\pi G M = \oint \vec{g} \dotp d\vec{A}
+  \]
+\end{namedtheorem}

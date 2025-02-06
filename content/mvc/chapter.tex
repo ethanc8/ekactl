@@ -1,5 +1,9 @@
 \chapter{Multivariable Calculus}
 
+\textbf{Colley (2012)} refers to \textit{Vector Calculus, Fourth Edition} by Susan Jane Colley.
+
+\subsection{$\Real^n$}
+
 \begin{definition}[Two-dimensional real-coordinate space ($\Real^2$)] 
   \[
     \Real^2 = \{ (x, y) : x, y \in \Real \}
@@ -16,8 +20,170 @@
 
 \begin{definition}[Standard basis vectors] The standard basis vectors of a space are the unit vectors that go along the axes of the space. All vectors in that space can be expressed as sums of scalar multiples of the standard basis vectors of that space.
 
-The standard basis vectors of $\Real_2$ are $\ihat$ and $\jhat$, also called $\mathbf{e_1}$ and $\mathbf{e_2}$.
+The standard basis vectors of $\Real^2$ are $\ihat$ and $\jhat$, also called $\mathbf{e_1}$ and $\mathbf{e_2}$.
 
-The standard basis vectors of $\Real_3$ are $\ihat$, $\jhat$, and $\khat$, also called $\mathbf{e_1}$, $\mathbf{e_2}$, and $\mathbf{e_3}$.
+The standard basis vectors of $\Real^3$ are $\ihat$, $\jhat$, and $\khat$, also called $\mathbf{e_1}$, $\mathbf{e_2}$, and $\mathbf{e_3}$.
 \end{definition}
+
+\subsection{Vectors}
+
+See the properties of fields in the LinAlg notes for definitions of addition and scalar multiplication.
+
+\begin{definition}[Displacement vector]
+  The vector from the end of $\vec{A}$ to the end of $\vec{B}$ when their starts are in the same location.
+
+  \[
+    \vec{AB} = \vec{B} - \vec{A}
+  \]
+\end{definition}
+
+\subsection{Dot and cross products}
+
+\begin{definition}[Dot product]
+  Where $a, b \in \Real^n$ and $\theta$ is the angle between $a$ and $b$:
+  \[
+    a \dotp b = \sum a_i b_i = |a| |b| \cos \theta
+  \]
+\end{definition}
+
+\begin{theorem}[Properties of dot product]
+  For $\vec{a}, \vec{b}, \vec{c} \in \Real^n$ and $k \in \Real$:
+  \begin{itemize}
+    \item $\vec{a} \dotp \vec{a} = |\vec{a}|^2$
+    \item $\vec{a} \dotp \vec{a} = 0$ iff $\vec{a} = 0$
+    \item Commutativity: $\vec{a} \dotp \vec{b} = \vec{b} \dotp \vec{a}$
+    \item Distributivity: $\vec{a} \dotp (\vec{b} + \vec{c}) = \vec{a} \dotp \vec{b} + \vec{a} \dotp \vec{c}$
+    \item Distributivity: $(k \vec{a}) \dotp b = k(\vec{a} \dotp \vec{b}) = a \dotp (k \vec{b})$
+    \item $\vec{a} \dotp \vec{b} = 0$ iff $a \perp b$, $a = 0$, or $b = 0$.
+  \end{itemize}
+\end{theorem}
+
+\begin{definition}[Cross product]
+  For $\vec{a}, \vec{b} \in \Real^3$, the unique vector $a \crossp b$ satisfying
+  \begin{itemize}
+    \item $|a \crossp b|$ is the area of the parallelogram spanned by $a$ and $b$
+    \item $a \crossp b = 0$ iff $a \parallel b$, $a = 0$, or $b = 0$.
+    \item $a \crossp b$ is orthogonal to $a$ and $b$.
+    \item $(a, b, a \crossp b)$ is right-handed (if the coordinate system is right-handed)
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}[Properties of cross product]
+  For $a, b, c \in \Real^3$ and $k \in \Real$:
+  \begin{itemize}
+    \item $a \crossp b = (-b) \crossp a$
+    \item $a \crossp (b + c) = a \crossp b + a \crossp c$
+    \item $(a + b) \crossp c = a \crossp c + b \crossp c$
+    \item $k(a \crossp b) = (ka) \crossp b = a \crossp (kb)$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Calculation of cross product]
+  Where $a, b \in \Real^n$ and $\theta$ is the angle between $a$ and $b$:
+  \begin{align*}
+    a \crossp b &= \begin{bmatrix}
+      a_2 b_3 - a_3 b_2 \\
+      a_3 b_1 - a_1 b_3 \\
+      a_1 b_2 - a_2 b_1 \\
+    \end{bmatrix} = \begin{vmatrix}
+      \ihat & \jhat & \khat \\
+      a_1 & a_2 & a_3 \\
+      b_1 & b_2 & b_3
+    \end{vmatrix} \\
+    &= \ihat \begin{vmatrix}
+      a_2 & a_3 \\
+      b_2 & b_3
+    \end{vmatrix}
+    + \jhat \begin{vmatrix}
+      a_1 & a_3 \\
+      b_1 & b_3
+    \end{vmatrix}
+    + \khat \begin{vmatrix}
+      a_1 & a_2 \\
+      b_1 & b_2
+    \end{vmatrix}
+  \end{align*}
+  \[
+    |a \crossp b| = |a| |b| \sin \theta
+  \]
+\end{theorem}
+
+\subsection{Lines}
+
+The most useful notation for a line is in parametric form:
+
+\begin{definition}[Parametric form of a line]
+  Where $r_0 \in \Real^3$ is a point on the line, and $t \in \Real^3$:
+  \[
+    r(t) = r_0 + vt
+  \]
+
+  $t$ is called the \textbf{direction vector}.
+\end{definition}
+
+\begin{theorem}
+  Two lines are parallel iff their direction vectors are scalar multiples of each other.
+\end{theorem}
+
+\begin{definition}[Skew lines]
+  Two lines are skew iff they do not intersect but are not parallel, i.e. they lie in different parallel planes.
+\end{definition}
+
+\begin{procedure}[Finding the intersection of two lines]
+  Given lines with parametric equations
+  \[
+    r_1(t) = a_1 + v_1 t \qquad r_2(t) = a_2 + v_2 t
+  \]
+  solve the system of equations
+  \[
+    a_1 + v_1 t_1 = a_2 + v_2 t_2
+  \]
+  for $t_1$ or $t_2$, then plug it in to the appropriate equation.
+
+  (Break up the equation into its $x$, $y$, and $z$ components, or whichever is appropriate for your coordinate space.)
+\end{procedure}
+
+\subsection{Planes}
+
+(Section 1.5 of Colley (2012))
+
+\begin{definition}[Plane]
+  A plane $\Pi$ is determined uniquely by a point $P$ in the plane and a normal vector $n$.
+
+  A plane is the set of points $A$ in space such that $\vec{AP}$ is perpendicular to $n$.
+\end{definition}
+
+\begin{theorem}[Scalar equation for a plane in $\Real^3$]
+  If $n \in \Real^3$ is the \textbf{normal vector} to the plane (vector perpendicular to the plane), and $P \in \Real^3$ is a point on the plane:
+
+  \[
+    n_x (x - P_x) + n_y (x - P_y) + n_z (z - P_z) = 0
+  \]
+
+  or equivalently:
+
+  \[
+    n_x x + n_y y + n_z z = n_x P_x + n_y P_y + n_z P_z
+  \]
+\end{theorem}
+
+\begin{procedure}[Equation of plane containing three points]
+  If $A, B, C \in \Real^3$ are points on our plane, then we can find the normal vector by performing $n = \vec{AB} \crossp \vec{AC} = (B - A) \crossp (C - A)$ (since $\vec{AB}$ and $\vec{AC}$ are vectors on the plane).
+\end{procedure}
+
+\begin{theorem}[Parametric equation for a plane in $\Real^3$]
+  If $a, b \in \Real^3$ are nonparallel nonzero vectors on the plane, and $P \in \Real^3$ is a point on the plane, then the parametric equation for the plane is:
+  \[
+    x(s, t) = P + sa + tb
+  \]
+\end{theorem}
+
+\subsection{Distance}
+
+\begin{procedure}[Distance between point and line]
+  Let $P$ be the point, and $A + Lt$ be the line. Then the distance is
+  \[
+    |\overrightarrow{AP} - \proj_L \overrightarrow{AP}| = \vec{P}
+  \]
+\end{procedure}
 
