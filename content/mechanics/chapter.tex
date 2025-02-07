@@ -294,7 +294,7 @@ If $\sum F \neq 0$ and $\sum \tau = 0$, then the object is linearly accelerating
 
 If $\sum F \neq 0$ and $\sum \tau \neq 0$, then the object is in complex motion.
 
-\subsection{Gravitation}
+\section{Gravitation}
 
 Using the equations which are similar to electrostatics:
 
@@ -331,10 +331,24 @@ Using the equations which are similar to electrostatics:
 
   The gravitational field at distance $r$ due to a massive object whose total mass is $\int dm$ is
   \[
-    g = \int \frac{k \,dm}{r^2}
+    g = \int \frac{G \,dm}{r^2}
   \]
-  where $r$'s tail is at the charge and points towards the point for which we want to calculate $g$.
+  where $r$'s tail is at the mass and points towards the point for which we want to calculate $g$.
 \end{law}
+
+\subsection{Gravitational flux}
+
+\begin{definition}[Gravitational flux ($\Phi$)]
+  The flux through a surface with area vector $\vec{A}$ is
+  \[
+    \Phi = \int \vec{g} \dotp d\vec{A}
+  \]
+  where $\vec{g}$ is the gravitational field that passes through the surface, and the area vector's magnitude is the area and direction is normal/perpendicular to the surface.
+\end{definition}
+
+\begin{definition}[Net flux]
+  The flux through any surface that encloses a charge.
+\end{definition}
 
 \begin{namedtheorem}[Gauss's Law]
   The net flux is proportional to the enclosed mass, and can be equated to the flux through the surface:
