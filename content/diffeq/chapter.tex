@@ -64,3 +64,32 @@ An ODE involves the derivative of the dependent variable with respect to a singl
 \begin{theorem}[Existence and Uniqueness]
     If $f$ is continuous, then the function $f$ as previously defined has at least one solution on the interval of continuity. If at least one solution exists and $\frac{\partial^{}f}{\partial^{}y}$ is continuous on the same interval, the solution is unique.
 \end{theorem}
+
+\subsection{Autonomous Equations}
+
+\begin{definition}[Autonomous Equation]
+    An autonomous equation is an equation where the derivative of the dependent variable can be expressed as a function of the dependent variable alone, assuming continuity.
+\end{definition}
+
+An example of an autonomous equation is
+
+\[
+    \frac{dy}{dx} = f(y) + g(x)
+\]
+
+Whereas
+
+\[
+    \frac{dy}{dx} = f(y)g(x)
+\]
+
+Is not autonomous.
+
+Since $f(y)$ is independent of $x$, the resulting slope field has translational symmetry across the $x$-axis. A snapshot of the slope field through a vertical line $x = x_0$ is called a \textit{phase line}. A line where the direction of the slopes is indicated with arrows either going down or up is called a \textit{one-dimensional phase portrait} of the autonomous ODE.
+
+At $y$ values where $f(y) = 0$, when the slope is zero, those points are called \textit{equilibrium points} or \textit{stationary points}.
+\begin{enumerate}
+    \item If surrounding solutions approach $y = y_0$ asymptomatically then the equilibrium point is \textit{asymptomatically stable} or an \textit{attractor}.
+    \item If surrounding solutions move away from $y = y_0$ then the equilibrium point is \textit{unstable} or a \textit{repeller}.
+    \item If surrounding solutions approach from one side and repel from another then the equilibrium point is \textit{semi-stable}.
+\end{enumerate}
