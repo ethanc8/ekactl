@@ -93,3 +93,30 @@ At $y$ values where $f(y) = 0$, when the slope is zero, those points are called 
     \item If surrounding solutions move away from $y = y_0$ then the equilibrium point is \textit{unstable} or a \textit{repeller}.
     \item If surrounding solutions approach from one side and repel from another then the equilibrium point is \textit{semi-stable}.
 \end{enumerate}
+
+\subsection{Bifurcations}
+
+A differential equation that depends on a parameter \textit{bifurcates} if there is a qualitative change in the solutions as parameter changes, meaning that the phase line changes.
+
+We can see this change in phase line by plotting the parameter and the solution of the differential equation. The resulting graph would look like an array of phase lines. Each point on the phase lines is called a \textit{bifurcation point}.
+
+% Issue: caption does appear
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=50mm]{content/diffeq/images/bifurcation_0.png}
+    \caption{Graph of $f_\mu(y) = y^2 - 2y + \mu$ for $\mu < 1$, $\mu = 1$, and $\mu > 1$.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=50mm]{content/diffeq/images/bifurcation_1.png}
+    \caption{Corresponding phase portraits for $\frac{dy}{dx} = y^2 - 2y + \mu$.}
+\end{figure}
+
+The typical way to visualize bifurcations is through \textit{bifurcation diagrams}. The parabola on the following figure is called a \textit{bifurcation line}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=50mm]{content/diffeq/images/bifurcation_2.png}
+    \caption{Bifurcation diagram for $\frac{dy}{dx} = y^2 - 2y + \mu$.}
+\end{figure}
