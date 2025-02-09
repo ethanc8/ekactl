@@ -120,3 +120,61 @@ The typical way to visualize bifurcations is through \textit{bifurcation diagram
     \includegraphics[width=50mm]{content/diffeq/images/bifurcation_2.png}
     \caption{Bifurcation diagram for $\frac{dy}{dx} = y^2 - 2y + \mu$.}
 \end{figure}
+
+\subsection{Separable Equations}
+
+\begin{definition}[Separable first-order ODE]
+    An ODE is separable if it can be expressed as 
+    \[
+        \frac{dy}{dx} = g(x)h(y)
+    \]
+    where $g$ and $h$ are continuous.
+\end{definition}
+
+We can simplify the process of solving a separable equations by defining the following where $H(y)$ and $G(x)$ are antiderivatives of $\frac{1}{h(y)}$ and $g(x)$, respectively, and $c \in \Real$ is an arbitrary constant.
+
+\[
+    H(y) = G(x) + c
+\]
+
+which can then be expressed as
+
+\[
+    \int \frac{1}{h(y)} dy = \int g(x) dx
+\]
+
+\subsection{Implicitly-Defined Solutions}
+
+Sometimes a separable equation can't be solved for $y$ explicitly. Let's define $F(x,y)$ as
+
+\[
+    F(x,y) \coloneq H(y) - G(x) - c
+\]
+
+so that
+
+\[
+    F(x,y) = 0
+\]
+
+The equation above implicitly defines $y$ as a function of $x$ only if it follows the \textit{Implicit Function Theorem} from Multivariable Calculus.
+
+\begin{theorem}[Implicit Function Theorem]
+    If $F$ is defined on a disc containing $(x_0, y_0)$, where
+
+    \begin{enumerate}
+        \item $F(x,y) = 0$
+        \item $\frac{\partial^{}F}{\partial^{}x}$ and $\frac{\partial^{}F}{\partial^{}y}$ are continuous on the disc
+        \item $\frac{\partial^{}F}{\partial^{}x} \ne 0$
+    \end{enumerate}
+
+    then the equation $F(x,y) = 0$ defines $y$ as a function of $x$ on some open set containing the point $(x_0, y_0)$.
+\end{theorem}
+
+\subsection{Singular Solutions}
+
+\begin{definition}[Singular Solution]
+    A solution is singular if it cannot be obtained by any choice of $c$ in the solution equation of the separable ODE.
+\end{definition}
+
+When either $h(y)$ or $g(x)$ are equal to $0$ inside a separable equation, then they would be valid solutions, but may not show up in the integration method for finding solutions as defined in the Separable Equations section. If that is the case, then those solutions are unique.
