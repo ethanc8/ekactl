@@ -178,3 +178,37 @@ The equation above implicitly defines $y$ as a function of $x$ only if it follow
 \end{definition}
 
 When either $h(y)$ or $g(x)$ are equal to $0$ inside a separable equation, then they would be valid solutions, but may not show up in the integration method for finding solutions as defined in the Separable Equations section. If that is the case, then those solutions are unique.
+
+\subsection{Orthogonal Trajectories}
+
+An \textit{orthogonal trajectory} of a family of curves is a curve that intersects each curve of the family orthogonally.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=50mm]{content/diffeq/images/orthogonal_0.png}
+    \caption{An example of an orthogonal trajectory.}
+\end{figure}
+
+For example,
+
+\[
+    x^2 + y^2 = r^2
+\]
+
+and
+
+\[
+    y = mx
+\]
+
+are orthogonal trajectories of each other.
+
+To find orthogonal trajectories in an question in terms of $x$, $y$, and another constant variable:
+
+\begin{enumerate}
+    \item Take derivative of both sides in respect to $x$
+    \item Solve for $\frac{dy}{dx}$ from previous equation
+    \item Use the original equation to eliminate the constant and write an expression that only depends on $x$ and $y$
+    \item The previous equation is a slope $m(x,y)$; find the orthogonal slope at point $(x,y)$
+    \item Solve the differential equation $\frac{dy}{dx} = m(x,y)$ to find the family of orthogonal trajectories
+\end{enumerate}
