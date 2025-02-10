@@ -268,7 +268,7 @@ Let $F = \Real$ or $F = \Complex$.
   \end{itemize}
 \end{definition}
 
-\begin{theorem}[Properties of addition]
+\begin{definition}[Properties of addition]
   For all $u, v, w \in V$:
   \begin{itemize}
     \item[(A1)] Commutativity: $u + v = v + u$ 
@@ -276,19 +276,22 @@ Let $F = \Real$ or $F = \Complex$.
     \item[(A3)] Identity: $\exists 0 \in \Real$ s.t. $0 + u = u$
     \item[(A4)] Additive inverse: For $u \in F$, $\exists -u \in F$ s.t. $u + (-u) = 0$
   \end{itemize}
-\end{theorem}
+\end{definition}
 
-\begin{theorem}[Properties of scalar multiplication]
+\begin{definition}[Properties of scalar multiplication]
   For all $\alpha, \beta \in F$, $v, w \in V$:
   \begin{itemize}
-    \item[(M1)] Associativity: $(\alpha\beta)v = \alpha(\beta v)$ 
-    \item[(M2)] Distributivity over scalar addition: $(\alpha + \beta) v = \alpha v + \beta v$
-    \item[(M3)] Distributivity over vector additon: $\alpha(v + w) = \alpha v + \alpha w$
-    \item[(M4)] Multiplicative identity: $1v = v$
+    \item[(S1)] Associativity: $(\alpha\beta)v = \alpha(\beta v)$ 
+    \item[(S2)] Distributivity over scalar addition: $(\alpha + \beta) v = \alpha v + \beta v$
+    \item[(S3)] Distributivity over vector additon: $\alpha(v + w) = \alpha v + \alpha w$
+    \item[(S4)] Multiplicative identity: $1v = v$
   \end{itemize}
-\end{theorem}
+\end{definition}
 
 \begin{theorem} $F^n$ is a vector space.
+\end{theorem}
+
+\begin{theorem} All inverses and identities are unique in a vector space.
 \end{theorem}
 
 \begin{definition}[$F^\omega$] The set of all sequences of elements of $F$:
@@ -309,4 +312,47 @@ Let $F = \Real$ or $F = \Complex$.
   \end{align*}
 \end{definition}
 
+\subsection{Subspaces}
 
+\begin{definition}[Subspace]
+  Let V be any vector space, and let W be a subset of V. Define vector addition and scalar multiplication on W by restricting the corresponding operations of V to W. If W is a vector space with respect to the restricted operations of V , then W is said to be a subspace of V.
+\end{definition}
+
+\begin{definition}[Closed]
+  An operation is closed under a set if applying the operation to elements of the set always results in an element of the set.
+\end{definition}
+
+\begin{definition}[Subspace]
+  A subspace of a vector space $V$ is a subset $W$ of $V$ which contains the zero vector and is closed under addition and scalar multiplication.
+\end{definition}
+
+\begin{theorem}
+  A subset $W$ of a vector space $V$ is a subspace iff
+  \begin{itemize}
+    \item[(i)] $W$ is nonempty
+    \item[(ii)] $\alpha \in F$ and $w_1, w_2 \in W$ implies $\alpha w_1 + w_2 \in W$
+  \end{itemize}
+
+  Typically, we prove (i) by proving that $0 \in W$.
+\end{theorem}
+
+\subsection{Subspaces of $F^n$}
+
+\begin{theorem}[Subspaces of $\Real^n$]
+  $\Real^n$ contains the following subspaces:
+  \begin{itemize}
+    \item $\{ 0 \}$
+    \item $\Real^n$
+    \item Any line through the origin
+    \item Any plane through the origin
+    \item etc
+  \end{itemize}
+\end{theorem}
+
+\begin{definition}[Spanning]
+  For vectors to span a space is for it to be sufficient to be able to reach any point in the space using the vectors.
+\end{definition}
+
+\begin{definition}[Independence]
+  If a vector can be made out of other vectors, then the vector is independent
+\end{definition}
