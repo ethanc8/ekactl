@@ -264,9 +264,29 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{definition}[Vector space] A vector space over $F$ is a set $V$ with the following operations:
   \begin{itemize}
     \item \textbf{Vector addition}: $u \in V, v \in V \mapsto (u + v) \in V$, which satisfies the properties of addition
-    \item \textbf{Scalar multiplication}: $\alpha \in F, v \in V \mapsto \alpha v \in V$, which satisfies the properties of multiplication
+    \item \textbf{Scalar multiplication}: $\alpha \in F, v \in V \mapsto \alpha v \in V$, which satisfies the properties of scalar multiplication
   \end{itemize}
 \end{definition}
+
+\begin{theorem}[Properties of addition]
+  For all $u, v, w \in V$:
+  \begin{itemize}
+    \item[(A1)] Commutativity: $u + v = v + u$ 
+    \item[(A2)] Associativity: $(u + v) + w = u + (v + w)$
+    \item[(A3)] Identity: $\exists 0 \in \Real$ s.t. $0 + u = u$
+    \item[(A4)] Additive inverse: For $u \in F$, $\exists -u \in F$ s.t. $u + (-u) = 0$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Properties of scalar multiplication]
+  For all $\alpha, \beta \in F$, $v, w \in V$:
+  \begin{itemize}
+    \item[(M1)] Associativity: $(\alpha\beta)v = \alpha(\beta v)$ 
+    \item[(M2)] Distributivity over scalar addition: $(\alpha + \beta) v = \alpha v + \beta v$
+    \item[(M3)] Distributivity over vector additon: $\alpha(v + w) = \alpha v + \alpha w$
+    \item[(M4)] Multiplicative identity: $1v = v$
+  \end{itemize}
+\end{theorem}
 
 \begin{theorem} $F^n$ is a vector space.
 \end{theorem}
