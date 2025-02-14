@@ -198,6 +198,31 @@ The most useful notation for a line is in parametric form:
   \]
 \end{procedure}
 
+\subsection{Cylindrical and spherical coordinates}
+
+\begin{definition}[Cylindrical coordinate]
+  An ordered pair $(r, \theta, z)$ where $r$ is the distance between the point and the $z$-axis, $\theta$ is the angle counterclockwise from the positive $x$-axis along the $xy$-plane, and $z$ is the position on the $z$-axis.
+\end{definition}
+
+\begin{definition}[Spherical coordinate]
+  An ordered pair $(\rho, \phi, \theta)$, where $\rho$ is the distance between the point and the origin, $\phi$ is the angle clockwise from the positive $z$-axis going downwards towards the $xy$-plane, and $\theta$ is the angle counterclockwise from the positive $x$-axis along the $xy$-plane.
+
+  Typically we use the following restrictions:
+  \[
+    \rho > 0 \qquad 0 \leq \theta \leq 2\pi \qquad 0 \leq \phi \leq \pi
+  \]
+\end{definition}
+
+\begin{theorem}[Useful formulas]
+  \[
+    r = \rho \sin \phi \qquad z = \rho \cos \phi \qquad
+  \]\[
+    x = \rho \sin \phi \cos \theta \qquad y = \rho \sin \phi \sin \theta
+  \]\[
+    r^2 = x^2 + y^2 \qquad x = r \cos \theta \qquad y = r \sin \theta
+  \]
+\end{theorem}
+
 \subsection{Limits, derivatives}
 
 \begin{definition}[Limit]
