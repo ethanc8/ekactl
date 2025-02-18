@@ -389,3 +389,16 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{theorem}
   If $U$ and $W$ are subspaces of $V$, then $U + W$ is the smallest subspace of $V$ containing both $U$ and $W$.
 \end{theorem}
+
+\begin{definition}[Direct sum]
+  If $V_1, \ldots, V_n$ are subspaces of $V$ such that each element of $\bigplus_{k = 1}^n V_k = V_1 + \cdots + V_n$ can be written uniquely as $\sum_{k = 1}^n v_k = v_1 + \cdots + v_n$ where $v_k \in V_k$, then $\bigplus_{k = 1}^n V_k$ is a \textbf{direct sum} and can be written as $\bigdirectsum_{k = 1}^n V_k = V_1 \directsum \cdots \directsum V_n$.
+\end{definition}
+
+\begin{theorem}
+  Let $V_1, \ldots, V_n$ be subspaces of $V$. Then they are direct sums iff the only way to write $0 = v_1 + \cdots + v_n$ is to take $v_1 = \cdots = v_n = 0$.
+\end{theorem}
+
+\begin{theorem}
+  If $U$ and $W$ are subspaces of $V$, then $U + W$ is a direct sum iff $U \intersection W = \{ 0 \}$. This does not generalize to higher numbers of subspaces.
+\end{theorem}
+

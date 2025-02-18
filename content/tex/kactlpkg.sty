@@ -37,6 +37,7 @@
 % \usepackage{fontspec}
 \usepackage{floatrow}
 \usepackage{caption}
+\usepackage{scalerel}
 
 % Add some common math operators
 \DeclareMathOperator{\arcsec}{arcsec}
@@ -456,6 +457,16 @@
 \newcommand{\khat}{\hat{k}}
 
 \newcommand{\longvec}{\overrightarrow}
+
+\newcommand{\union}{\cup}
+\newcommand{\bigunion}{\bigcup}
+\newcommand{\intersection}{\cap}
+\newcommand{\bigintersection}{\bigcap}
+
+\newcommand{\directsum}{\oplus}
+\newcommand{\bigdirectsum}{\bigoplus}
+
+\DeclareMathOperator*{\bigplus}{\scalerel*{+}{\sum}}
 
 \newtheoremstyle{ethantheorem}%                % Name
   {}%                                     % Space above
