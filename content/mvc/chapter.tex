@@ -242,8 +242,33 @@ The most useful notation for a line is in parametric form:
 \end{definition}
 
 \begin{definition}[Partial derivative]
-  The partial derivative of $f$ with respect to the $i$th variable is
+  The partial derivative of $f(\vec{x})$ with respect to the $i$th variable is
   \[
-    f_{a_i} = 
+    \frac{\partial f(\vec{x})}{\partial x_i} = \lim_{h \to 0} \frac{f\left(\begin{bmatrix}
+      x_0 \\
+      \vdots \\
+      x_i + h \\
+      \vdots \\
+      x_n
+    \end{bmatrix}\right) - f\left(\vec{x}\right)}{h}
+  \]
+
+  This is equivalent to letting $F(x_i) = f(\vec{x})$ and finding $F'(x_i)$.
+\end{definition}
+
+\begin{definition}[Gradient]
+  \[
+    \grad f(\vec{x}) = \begin{bmatrix}
+      \frac{\partial f(x)}{\partial x_1} \\
+      \vdots \\
+      \frac{\partial f(x)}{\partial x_n}
+    \end{bmatrix}
+  \]
+\end{definition}
+
+\begin{definition}[Linear approximation]
+  The \textbf{linear approximation} or \textbf{tangent plane} to a function at a point is expressed by
+  \[
+    L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
   \]
 \end{definition}
