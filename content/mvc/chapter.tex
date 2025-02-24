@@ -2,6 +2,8 @@
 
 \textbf{Colley (2012)} refers to \textit{Vector Calculus, Fourth Edition} by Susan Jane Colley.
 
+\section{Vectors, lines, planes}
+
 \subsection{$\Real^n$}
 
 \begin{definition}[Two-dimensional real-coordinate space ($\Real^2$)] 
@@ -200,6 +202,10 @@ The most useful notation for a line is in parametric form:
 
 \subsection{Cylindrical and spherical coordinates}
 
+\textbf{Trimm WS:} 5.6, 5.7 \\
+\textbf{Brummet WS:} 08, MVCWUP:Feb3(29-33) \\
+\textbf{Colley (2012):} 1.7
+
 \begin{definition}[Cylindrical coordinate]
   An ordered pair $(r, \theta, z)$ where $r$ is the distance between the point and the $z$-axis, $\theta$ is the angle counterclockwise from the positive $x$-axis along the $xy$-plane, and $z$ is the position on the $z$-axis.
 \end{definition}
@@ -223,11 +229,29 @@ The most useful notation for a line is in parametric form:
   \]
 \end{theorem}
 
-\subsection{Limits, derivatives}
+\section{Functions, limits, differentiation}
+
+\subsection{Multivariable functions}
+
+\textbf{Trimm WS:} 3.1, 3.2 \\
+\textbf{Brummet WS:} MVCWUP:Feb4(35-41) \\
+\textbf{Colley (2012):} 2.1
+
+\subsection{Limits}
+
+\textbf{Trimm WS:} 3.3, DiffEq-1.0 \\
+\textbf{Brummet WS:} 09, MVCWUP:Feb11(42-46) \\
+\textbf{Colley (2012):} 2.2
 
 \begin{definition}[Limit]
   $\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L}$ if for all $\varepsilon > 0$, there exists $\delta > 0$ s.t. if $0 < |\vec{x} - \vec{a}| < \delta$ then $|f(\vec{a}) - \vec{L}| < \varepsilon$.
 \end{definition}
+
+\subsection{Differentiation}
+
+\textbf{Trimm WS:} 3.4, 3.5, 3.7, DiffEq-1.0 \\
+\textbf{Brummet WS:} 11, 12.5, MVCWUP:Feb12/22(48-54) \\
+\textbf{Colley (2012):} 2.3, 2.4
 
 \begin{definition}[Partial derivative with respect to $x$]
   The partial derivative of $f(x, y)$ with respect to $x$ is
@@ -256,6 +280,12 @@ The most useful notation for a line is in parametric form:
   This is equivalent to letting $F(x_i) = f(\vec{x})$ and finding $F'(x_i)$.
 \end{definition}
 
+\subsection{Miscellaneous differentiation things}
+
+\textbf{Trimm WS:} ??? \\
+\textbf{Brummet WS:} 11, 12, MVCWUP:Feb24(57) \\
+\textbf{Colley (2012):} ???
+
 \begin{definition}[Gradient]
   \[
     \grad f(\vec{x}) = \begin{bmatrix}
@@ -270,5 +300,96 @@ The most useful notation for a line is in parametric form:
   The \textbf{linear approximation} or \textbf{tangent plane} to a function at a point is expressed by
   \[
     L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
+  \]
+
+  In $\Real^3$, this is equivalent to
+  \[
+    L(x, y) = f(a, b) + f_x(a, b) (x - a) + f_y(a, b) (y - b)
+  \]
+\end{definition}
+
+\subsection{Implicit surfaces}
+
+\begin{definition}[Implicit surface]
+  A surface in $\Real^3$ defined by an equation which is not solved for $x$, $y$, nor $z$.
+
+  We often express it as
+  \[
+    F(x, y, z) = 0,
+  \]
+  in which case the surface is the set of points which satisfy $F(x, y, z) = 0$.
+\end{definition}
+
+\begin{theorem}
+  The gradient $\grad F(\vec{x})$ is the normal vector to the tangent plane to the implicit surface defined by $F(\vec{x}) = k$, where $k$ is a constant.
+
+  Equivalently, if $x_0$ is a point on the level set $S = \{ x \in X : F(x) = k \}$ where $F : X \subseteq \Real^n \Rightarrow \Real$, then the vector $\grad F(x_0)$ is perpendicular to $S$.
+\end{theorem}
+
+\subsection{Chain rule}
+
+\textbf{Trimm WS:} 3.8, 6.5, DiffEq-1.0 \\
+\textbf{Brummet WS:} 12, MVCWUP:Feb24(58-61) \\
+\textbf{Colley (2012):} 2.5
+
+\begin{definition}[Jacobian]
+  If $f: X \subseteq \Real^n \Rightarrow \Real^m$ is a vector-valued function, then the Jacobian is
+  \[
+    Df\left(\begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      \vdots \\
+      x_n
+    \end{bmatrix}\right) = \begin{bmatrix}
+      \grad f_1 \\
+      \grad f_2 \\
+      \vdots \\
+      \grad f_m
+    \end{bmatrix} = \begin{bmatrix}
+      \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \hdots & \frac{\partial f_1}{x_n} \\
+      \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \hdots & \frac{\partial f_2}{x_n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \hdots & \frac{\partial f_m}{x_n} \\
+    \end{bmatrix}
+  \]
+\end{definition}
+
+\begin{theorem}[Multivariable chain rule]
+  Suppose $X \subseteq \Real^m$ and $T \subseteq \Real^n$ are open and $f : X \Rightarrow \Real^p$ and
+  $r : T \Rightarrow \Real^m$ are defined so that the range $r \subseteq X$. If $x$ is
+  differentiable at $t_0 \in T$ and f is differentiable at $x_0 = r(t_0)$, then
+  the composite $f \compose r$ is differentiable at $t_0$, and we have
+  \[
+    \frac{dF}{dt} = \grad f(x_0) \dotp r'(t_0)
+  \]
+  Equivalently,
+  \[
+    D(f \compose r)(t_0) = Df(x_0) Dr(t_0)
+  \]
+
+  In $\Real^3$,
+  \[
+    \frac{dF}{dt} = \frac{\partial F}{\partial x} \frac{dx}{dt} + \frac{\partial F}{\partial y} \frac{dy}{dt} + \frac{\partial F}{\partial z} \frac{dz}{dt}
+  \]
+\end{theorem}
+
+\subsection{Paths}
+
+\textbf{Trimm WS:} ??? \\
+\textbf{Brummet WS:} MVCWUP:Feb24(55-56) \\
+\textbf{Colley (2012):} ???
+
+\begin{definition}[Path]
+  A path in $\Real^n$ is a function $x : I \Rightarrow \Real^n$, where $I$ is a set of scalars. If $I = [a, b]$, then the endpoints of the path are $f(a)$ and $f(b)$.
+\end{definition}
+
+\begin{definition}[Tangent vector]
+  Given a path $r : \Real \Rightarrow \Real^3$, the tangent vector to said path at some point $P$ is given by $r'(t)$, provided that $r'(t) \neq 0$. In $\Real^3$,
+  \[
+    r'(t) = \lim_{h \to 0} \frac{r(t + h) - r(t)}{h} = \begin{bmatrix}
+      \frac{dx}{dt} \\
+      \frac{dy}{dt} \\
+      \frac{dz}{dt}
+    \end{bmatrix}
   \]
 \end{definition}
