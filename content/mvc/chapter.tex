@@ -263,16 +263,19 @@ Colley [2.2]}
   $\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L}$ if for all $\varepsilon > 0$, there exists $\delta > 0$ s.t. if $0 < |\vec{x} - \vec{a}| < \delta$ then $|f(\vec{a}) - \vec{L}| < \varepsilon$.
 \end{definition}
 
+\begin{definition}[Continuity]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$ and let $\vec{a} \in X$. Then $f$ is continuous at point $\vec{a}$ iff
+  \[
+    \lim_{\vec{x} \to \vec{a}} f(\vec{x}) = f(\vec{a})
+  \]
+  If $f$ is continuous at all $\vec{a} \in X$, then we say that $f$ is continuous.
+\end{definition}
+
 \subsection{Differentiation}
 
-\refresources{Trimm [3.4, 3.5, 3.7, DiffEq-1.0] \\
+\refresources{Trimm [3.4, DiffEq-1.0] \\
 Brummet [11, 12.5, MVCWUP:Feb12/22(48-54)] \\
-Colley [2.3, 2.4]}
-
-
-\textbf{Trimm WS:} 3.4, 3.5, 3.7, DiffEq-1.0 \\
-\textbf{Brummet WS:} 11, 12.5, MVCWUP:Feb12/22(48-54) \\
-\textbf{Colley (2012):} 2.3, 2.4
+Colley [2.3]}
 
 \begin{definition}[Partial derivative with respect to $x$]
   The partial derivative of $f(x, y)$ with respect to $x$ is
@@ -308,18 +311,6 @@ Colley [2.3, 2.4]}
       \vdots \\
       \frac{\partial f(x)}{\partial x_n}
     \end{bmatrix}
-  \]
-\end{definition}
-
-\begin{definition}[Linear approximation]
-  The \textbf{linear approximation} or \textbf{tangent plane} to a function at a point is expressed by
-  \[
-    L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
-  \]
-
-  In $\Real^3$, this is equivalent to
-  \[
-    L(x, y) = f(a, b) + f_x(a, b) (x - a) + f_y(a, b) (y - b)
   \]
 \end{definition}
 
@@ -407,3 +398,60 @@ Colley [2.5]}
     \end{bmatrix}
   \]
 \end{definition}
+
+\begin{definition}[Derivative of vector-valued function]
+  Let $f : T \subseteq \Real \Rightarrow \Real^m$. Then
+  \[
+    f'(t) = \begin{bmatrix}
+      f_1'(t) \\
+      f_2'(t) \\
+      \vdots \\
+      f_m'(t) \\
+    \end{bmatrix}
+  \]
+\end{definition}
+
+\subsection{Differentiability}
+
+\begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real$)]
+  The \textbf{linear approximation} or \textbf{tangent plane ($\Real^3$) or hyperplane} to a function at a point is expressed by
+  \[
+    L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
+  \]
+
+  In $\Real^3$, this is equivalent to
+  \[
+    L(x, y) = f(a, b) + f_x(a, b) (x - a) + f_y(a, b) (y - b)
+  \]
+\end{definition}
+
+\begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real^m$)]
+  The \textbf{linear approximation} to a vector-valued function at a point is expressed by
+  \[
+    L(\vec{x}) = f(\vec{a}) + Df(\vec{a})(\vec{x} - \vec{a})
+  \]
+\end{definition}
+
+\begin{definition}[Differentiability]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. $f$ is differentiable at $a$ iff all of its partial derivatives exist and 
+  \[
+    \lim_{\vec{x} \to \vec{a}} \frac{f(\vec{x}) - L(\vec{x})}{|\vec{x} - \vec{a}|} = 0
+  \]
+  where $L(\vec{x})$ is the linear approximation to $f$ at $\vec{a}$
+\end{definition}
+
+\subsection{Directional derivative}
+
+\begin{definition}[Directional derivative]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. If $\vec{v}$ is any unit vector in $X$, then the directional derivative of $f$ at $a$ in the direction of $v$ is
+  \[
+    D_\vec{v} f(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h\vec{v}) - f(\vec{a})}{h}
+  \]
+\end{definition}
+
+\begin{theorem}
+  If $f$ is differentiable at $a$, then
+  \[
+    D_\vec{v} f(\vec{a}) = \grad f(\vec{a}) \dotp \vec{v}
+  \]
+\end{theorem}
