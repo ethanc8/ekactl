@@ -460,3 +460,57 @@ Let $F = \Real$ or $F = \Complex$.
   If one vector in $W$ is a linear combination of the other vectors (including if $0 \in W$), then $W$ is linearly dependent.
 \end{theorem}
   
+\subsection{Basis}
+
+\begin{definition}{Basis}
+  A basis of $V$ is a subset of $V$ which is linearly independent and spans $V$.
+\end{definition}
+
+\begin{definition}[Standard basis of $F^n$]
+  \[
+    \left\{
+      \begin{bmatrix}
+        1 \\
+        0 \\ 
+        \vdots \\
+        0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 \\
+        1 \\ 
+        \vdots \\
+        0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 \\
+        0 \\ 
+        \vdots \\
+        1
+      \end{bmatrix}
+    \right\}
+  \]
+\end{definition}
+
+\begin{definition}[$P_m(F)$]
+\end{definition}
+
+\begin{definition}[Standard basis of $P_m(F)$]
+\end{definition}
+
+\subsection{Dimension}
+
+\begin{namedtheorem}[Plus/minus lemma]
+  Let $S \subseteq V$ (where $V$ is a vector space).
+  \begin{itemize}
+    \item If $S$ is linearly independent, and $v$ is not in the span of $S$, then $S \union \{v\}$ is linearly independent.
+    \item If $v \in \spanoperator(S \setminus \{v\})$, then $\spanoperator(S) = \spanoperator(S \setminus \{v\})$.
+  \end{itemize}
+\end{namedtheorem}
+
+\begin{theorem}
+  Let $V$ be a finite-dimensional vector space and $S \subseteq V$. Then,
+  \begin{itemize}
+    \item If $span(S) = V$, then $S$ contains a subset $B$ which is a basis of $V$
+    \item If $S$ is linearly independent, then $S$ can be extended to a basis of $V$
+  \end{itemize}
+\end{theorem}
