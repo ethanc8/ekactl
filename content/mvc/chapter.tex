@@ -445,13 +445,13 @@ Colley [2.5]}
 \begin{definition}[Directional derivative]
   Let $f : X \subseteq \Real^n \Rightarrow \Real$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. If $\vec{v}$ is any unit vector in $X$, then the directional derivative of $f$ at $a$ in the direction of $v$ is
   \[
-    D_\vec{v} f(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h\vec{v}) - f(\vec{a})}{h}
+    D_{\vec{v}} f(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h\vec{v}) - f(\vec{a})}{h}
   \]
 \end{definition}
 
 \begin{theorem}
   If $f$ is differentiable at $a$, then
   \[
-    D_\vec{v} f(\vec{a}) = \grad f(\vec{a}) \dotp \vec{v}
+    D_{\vec{v}} f(\vec{a}) = \grad f(\vec{a}) \dotp \vec{v}
   \]
 \end{theorem}
