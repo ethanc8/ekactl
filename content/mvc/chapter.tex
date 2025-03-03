@@ -254,6 +254,12 @@ Colley [1.7]}
   \]
 \end{definition}
 
+\begin{definition}[Level curve]
+  Let $f : X \subseteq \Real^2 \Rightarrow \Real$. Then 
+\end{definition}
+
+% TODO: finish this
+
 \subsection{Limits}
 
 \refresources{Trimm [3.3, DiffEq-1.0] Brummet [09, MVCWUP:Feb11(42-46)] \\
@@ -413,6 +419,10 @@ Colley [2.5]}
 
 \subsection{Differentiability}
 
+\refresources{Trimm [3.5] 
+Brummet [13.5] 
+Colley [2.3]}
+
 \begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real$)]
   The \textbf{linear approximation} or \textbf{tangent plane ($\Real^3$) or hyperplane} to a function at a point is expressed by
   \[
@@ -440,7 +450,15 @@ Colley [2.5]}
   where $L(\vec{x})$ is the linear approximation to $f$ at $\vec{a}$
 \end{definition}
 
+\begin{theorem}[Differentiability shortcut]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$ be a vector-valued function. If all partial derivatives $\frac{\partial f_i}{\partial x_j}$ exist and are continuous in a neighborhood of $\vec{a}$ in $X$, then $F$ is differentiable at $\vec{a}$.
+\end{theorem}
+
 \subsection{Directional derivative}
+
+\refresources{Trimm [3.7] 
+Brummet [14] 
+Colley [2.6]}
 
 \begin{definition}[Directional derivative]
   Let $f : X \subseteq \Real^n \Rightarrow \Real$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. If $\vec{v}$ is any unit vector in $X$, then the directional derivative of $f$ at $a$ in the direction of $v$ is
@@ -455,3 +473,9 @@ Colley [2.5]}
     D_{\vec{v}} f(\vec{a}) = \grad f(\vec{a}) \dotp \vec{v}
   \]
 \end{theorem}
+
+\begin{theorem}
+  The gradient is the path of steepest ascent, i.e.
+  \[
+    D_{\widehat{\grad f(\vec{a})}} f(\vec{a})
+  \]
