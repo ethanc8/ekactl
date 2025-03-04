@@ -254,8 +254,22 @@ Colley [1.7]}
   \]
 \end{definition}
 
-\begin{definition}[Level curve]
-  Let $f : X \subseteq \Real^2 \Rightarrow \Real$. Then 
+\begin{definition}[Level set]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real$. The \textbf{level set at height $c$ of $f$} is the set in $\Real^n$ defined by the equation $f(\vec{a}) = c$, where $c$ is a constant. This is equivalent to the set
+  \[
+    \{ \vec{x} \in \Real^n : f(\vec{x}) = c \}
+  \]
+
+  In $\Real^2$, this is also called a \textbf{level curve}.
+\end{definition}
+
+\begin{definition}[Contour set]
+  Let $f : X \subseteq \Real^n \Rightarrow \Real$. The \textbf{contour set at height $c$ of $f$} is the set in $\Real^{n + 1}$ defined by the two equations $z = f(\vec{a})$ and $z = c$, where $c$ is a constant. This is equivalent to the set
+  \[
+    \{ \vec{x} \in \Real^{n + 1} : z = f(\vec{x}) = c \}
+  \]
+
+  If $f : X \subseteq Real^2 \Rightarrow \Real$, this is also called a \textbf{contour curve}. It is equivalent to the level curve, except it is located in $\Real^3$ rather than $\Real^2$.
 \end{definition}
 
 % TODO: finish this
@@ -369,7 +383,7 @@ Colley [2.5]}
 
 \begin{theorem}[Multivariable chain rule]
   Suppose $X \subseteq \Real^m$ and $T \subseteq \Real^n$ are open and $f : X \Rightarrow \Real^p$ and
-  $r : T \Rightarrow \Real^m$ are defined so that the range $r \subseteq X$. If $x$ is
+  $r : T \Rightarrow \Real^m$ are defined so that $T \subseteq X$. If $x$ is
   differentiable at $t_0 \in T$ and f is differentiable at $x_0 = r(t_0)$, then
   the composite $f \compose r$ is differentiable at $t_0$, and we have
   \[
@@ -424,19 +438,19 @@ Brummet [13.5]
 Colley [2.3]}
 
 \begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real$)]
-  The \textbf{linear approximation} or \textbf{tangent plane ($\Real^3$) or hyperplane} to a function at a point is expressed by
+  The \textbf{linear approximation} or \textbf{tangent plane ($\Real^3$) or hyperplane} to the graph of a function $f$ at the point $\vec{a}$ is expressed by
   \[
     L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
   \]
 
-  In $\Real^3$, this is equivalent to
+  In $\Real^3$, this is equivalent to the plane
   \[
-    L(x, y) = f(a, b) + f_x(a, b) (x - a) + f_y(a, b) (y - b)
+    z = L(x, y) = f(a, b) + f_x(a, b) (x - a) + f_y(a, b) (y - b)
   \]
 \end{definition}
 
 \begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real^m$)]
-  The \textbf{linear approximation} to a vector-valued function at a point is expressed by
+  The \textbf{linear approximation} to a vector-valued function $f$ at the point $\vec{a}$ is expressed by
   \[
     L(\vec{x}) = f(\vec{a}) + Df(\vec{a})(\vec{x} - \vec{a})
   \]
@@ -477,5 +491,11 @@ Colley [2.6]}
 \begin{theorem}
   The gradient is the path of steepest ascent, i.e.
   \[
-    D_{\widehat{\grad f(\vec{a})}} f(\vec{a})
+    D_{\widehat{\grad f(\vec{a})}} f(\vec{a}) = \max \{ D_{\vec{v}} f(\vec{a}) : \vec{v} \in \Real^n \}
   \]
+  where $f : X \subseteq \Real^n \Rightarrow \Real$.
+\end{theorem}
+
+\begin{theorem}
+  Let $f : X \subseteq \Real^2 \Rightarrow \Real$, and let $(a, b, c) \in \Real^3$. Then $\grad f(a, b)$ is orthogonal to the level curve at height $c$.
+\end{theorem}
