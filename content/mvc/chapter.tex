@@ -324,6 +324,26 @@ Colley [2.3]}
   This is equivalent to letting $F(x_i) = f(\vec{x})$ and finding $F'(x_i)$.
 \end{definition}
 
+\begin{definition}[Higher-order partial]
+  The result of taking the partial derivative of a partial derivative, which may be higher-order.
+
+  A partial derivative that is not higher-order is called a \textbf{first-order partial}. A partial derivative of a first-order partial is a second-order partial, a partial derivative of a second-order partial is a third-order partial, etc.
+
+  A higher-order partial which is the result of taking the partial with respect to $x_1$, then with respect to $x_2$, then with respect to $x_3, \ldots, x_n$, is denoted by
+  \[
+    f_{x_1 \cdots x_n} = \frac{\partial}{\partial x_n} \cdots \frac{\partial}{\partial x_1} f
+  \]
+
+  $x_1 \cdots x_n$ do not have to be distinct. If $x_1 \cdots x_n$ are not all the same then the higher-order partial is called a \textbf{mixed partial derivative}.
+\end{definition}
+
+\begin{theorem}
+  Let $f : X \in \Real^n \Rightarrow \Real$ whose $k$-th order and lower partials exist and are continuous on $X$. Then its $k$e-th order and lower partials may be evaluated in any order, i.e.
+  \[
+    f_{x_1 \cdots x_n} = f_{x_n \cdots x_1} = f_{x_1 x_3 x_{27} \cdots x_4} = \cdots
+  \]
+\end{theorem}
+
 \begin{definition}[Gradient]
   \[
     \grad f(\vec{x}) = \begin{bmatrix}
