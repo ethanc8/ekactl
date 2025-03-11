@@ -269,7 +269,7 @@ Colley [1.7]}
     \{ \vec{x} \in \Real^{n + 1} : z = f(\vec{x}) = c \}
   \]
 
-  If $f : X \subseteq Real^2 \Rightarrow \Real$, this is also called a \textbf{contour curve}. It is equivalent to the level curve, except it is located in $\Real^3$ rather than $\Real^2$.
+  If $f : X \subseteq \Real^2 \Rightarrow \Real$, this is also called a \textbf{contour curve}. It is equivalent to the level curve, except it is located in $\Real^3$ rather than $\Real^2$.
 \end{definition}
 
 % TODO: finish this
@@ -407,7 +407,7 @@ Colley [2.5]}
   differentiable at $t_0 \in T$ and f is differentiable at $x_0 = r(t_0)$, then
   the composite $f \compose r$ is differentiable at $t_0$, and we have
   \[
-    \frac{dF}{dt} = \grad f(x_0) \dotp r'(t_0)
+    (f \compose r)'(t) = \grad f(x_0) \dotp r'(t_0)
   \]
   Equivalently,
   \[
@@ -481,7 +481,7 @@ Colley [2.3]}
   \[
     \lim_{\vec{x} \to \vec{a}} \frac{f(\vec{x}) - L(\vec{x})}{|\vec{x} - \vec{a}|} = 0
   \]
-  where $L(\vec{x})$ is the linear approximation to $f$ at $\vec{a}$
+  where $L(\vec{x})$ is the linear approximation to $f$ at $\vec{a}$.
 \end{definition}
 
 \begin{theorem}[Differentiability shortcut]
