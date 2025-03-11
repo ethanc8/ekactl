@@ -519,4 +519,27 @@ Let $F = \Real$ or $F = \Complex$.
   Let $V$ be a finite-dimensional vector space spanned by a set of $m$ vectors. Then any linearly independent set of vectors in $V$ is finite and contains no more than $m$ elements.
 \end{theorem}
 
+\section{Unit 4}
+
+\subsection{Linear map}
+
+\begin{definition}[Linear map]
+  Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \Rightarrow W$ with the property that
+  \[
+    T(\alpha v_1 + v_2) = \alpha T(v_1) + T(v_2)
+  \]
+  Equivalently, it is a function with the two properties
+  \begin{align*}
+    T(v_1 + v_2) &= Tv_1 + Tv_2
+    T(\alpha_v) &= \alpha Tv
+  \end{align*}
+  Equivalently, it is a function with the property that
+  \[
+    T(\alpha_1 v_1 + \alpha_2 v_2) = \alpha_1 T v_1 + \alpha_2 T v_2
+  \]
+\end{definition}
+
+\begin{definition}[Linear operator] A function $T : V \Rightarrow V$ which is a linear map.
+\end{definition}
+
 
