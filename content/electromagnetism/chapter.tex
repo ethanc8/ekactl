@@ -70,6 +70,21 @@
   \end{align*}
 \end{definition}
 
+\begin{example}[E-field of a sheet of charge]
+  The magnitude of the E-field caused by a sheet of charge is
+  \[
+    E = \frac{\sigma}{2\varepsilon_0}
+  \]
+  where the E-field points away from the sheet if the charge is positive, and towards the sheet if the charge is negative.
+\end{example}
+
+\begin{example}[E-field of a cylindrical charge]
+  The magnitude of the E-field caused by a cylindrical charge of radius $R$ with negligible end effects, at radius $r$ from its axis, is:
+  \[
+    \frac{R\sigma}{r\varepsilon_0}
+  \]
+\end{example}
+
 \subsection{Electric flux}
 
 \begin{definition}[Electric flux ($\Phi$)]
@@ -138,3 +153,69 @@
 
   (This derives from Coulomb's Law.)
 \end{theorem}
+
+\subsection{Capacitance}
+
+\begin{definition}[Capacitor]
+  At least one charged conductor, usually two.
+
+  Common capacitor shapes:
+  \begin{itemize}
+    \item Parallel plate
+    \item Cylindrical
+    \item Spherical
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Capacitance]
+  Where $Q$ is the magnitude of the charge on one of the plates, and $V$ is the potential difference between two plates:
+
+  \[
+    C = \frac{Q}{V} \qquad \left(\Farad = \frac{\Coulomb}{\Volt}\right)
+  \]
+
+  The capacitance remains constant for a given capacitor regardless of any change in charge or voltage; it only depends on the shape of the capacitor.
+
+  The capacitance is a positive (unsigned) value.
+\end{definition}
+
+\begin{example}[Parallel plate capacitor]
+  The capacitance of a capacitor containing two parallel plates, where each plate has area $A$ and the distance between the plates is $d$, is
+  \[
+    C = \frac{\varepsilon_0 A}{d}
+  \]
+\end{example}
+
+\begin{example}[Spherical shell capacitor]
+  The capacitance of a capacitor containing two concentric spherical shells, where the smaller shell has radius $a$ and the larger has radius $b$, is
+  \[
+    C = \frac{ab}{bk - ak}
+  \]
+\end{example}
+
+\begin{example}[Cylindrical capacitor]
+  The capacitance of a capacitor containing two concentric cylindrical shells with negligible end effects, where the smaller shell has radius $a$ and the larger has radius $b$ and both have length $L$, is
+  \[
+    C = \frac{2 \pi \varepsilon_0 L}{\ln\left(\frac{b}{a}\right)}
+  \]
+\end{example}
+
+\begin{definition}[Dielectric]
+  An object that can be polarized.
+\end{definition}
+
+\begin{definition}[Permittivity]
+  The permittivity of space containing a dielectric is equal to
+  \[
+    K\varepsilon_0
+  \]
+  where $K$ is the dielectric's \textbf{dielectric constant}
+\end{definition}
+
+\begin{definition}[Current ($i$)]
+  The rate at which charges flow through a conductor.
+
+  \[
+    i = \frac{dq}{dt}
+  \]
+\end{definition}
