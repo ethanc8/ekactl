@@ -165,6 +165,11 @@
     \item Cylindrical
     \item Spherical
   \end{itemize}
+
+  The symbol for a capacitor is
+  \begin{circuitikz}
+    \draw (0,0) to [capacitor] (5,0); 
+  \end{circuitikz}
 \end{definition}
 
 \begin{definition}[Capacitance]
@@ -200,6 +205,12 @@
   \]
 \end{example}
 
+\begin{theorem}[Energy stored in a capacitor]
+  \[
+    U_e = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} VQ = \frac{1}{2} C V^2
+  \]
+\end{theorem}
+
 \begin{definition}[Dielectric]
   An object that can be polarized.
 \end{definition}
@@ -212,6 +223,8 @@
   where $K$ is the dielectric's \textbf{dielectric constant}.
 \end{definition}
 
+\subsection{Random circuit stuff}
+
 \begin{definition}[Current ($i$)]
   The rate at which charges flow through a conductor.
 
@@ -219,3 +232,28 @@
     i = \frac{dq}{dt}
   \]
 \end{definition}
+
+\begin{definition}[Battery]
+  A battery has two terminals, a positive and a negative terminal. The positive terminal has higher electric potential than the negative terminal, and the battery creates an E-field between the positive and negative terminal. The potential difference between the positive and negative terminal is called the \textbf{voltage} of the battery, and is represented as $\mathcal{E}$.
+
+  The electric field causes positive current to flow from the positive to negative terminal. Equivalently, negative current flows from the negative to positive terminal, which is the way the actual electrons flow.
+
+  The symbol for a battery is
+  \begin{circuitikz}
+    \draw (0,0) to [battery1=$\,$] (5,0); 
+  \end{circuitikz}
+\end{definition}
+
+\includegraphics[width=8cm]{content/electromagnetism/battery-simple-circuit.jpg}
+
+\subsection{Loop Law}
+
+\begin{namedlaw}[Loop Law]
+  In a circuit, the sum of the signed potential differences along the entire circuit is 0.
+
+  \[
+    \sum \Delta V = 0
+  \]
+
+  In a circuit with a battery, this means that the voltage (unsigned) of the battery is equal to the sum of the other potential differences along the circuit.
+\end{namedlaw}
