@@ -539,43 +539,74 @@ Let $F = \Real$ or $F = \Complex$.
   \]
 \end{definition}
 
+\begin{definition}[$\mathcal{L}$]
+  For any vector spaces $V$ and $W$, $\mathcal{L}(V,W)$ is the set of all linear maps from $V$ to $W$.
+\end{definition}
 
 \begin{definition}[Linear operator] A function $T : V \Rightarrow V$ which is a linear map.
 \end{definition}
 
-% \begin{definition}[Kernel]
-%   The kernel of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
-%   \[
-%     \ker T := \{ v \in V : Tv = 0 \} \subseteq V
-%   \]
-% \end{definition}
+\begin{definition}[Kernel]
+  The kernel of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
+  \[
+    \ker T := \{ v \in V : Tv = 0 \} \subseteq V
+  \]
+\end{definition}
 
-% \begin{theorem} If $T : V \Rightarrow W$, then $\ker T$ is a subspace of $V$.
-% \end{theorem}
+\begin{theorem}[Kernel is subspace of domain] If $T : V \Rightarrow W$, then $\ker T$ is a subspace of $V$.
+\end{theorem}
 
-% \begin{definition}[Injective]
-%   A map of sets $f : A \Rightarrow B$ is \textbf{injective} or \textbf{one-to-one} iff $a_1 \neq a_2$ implies $f(a_1) \neq f(a_2)$, or equivalently iff $f(a_1) = f(a_2)$ implies $a_1 = a_2$.
-% \end{definition}
+\begin{definition}[Injective]
+  A map of sets $f : A \Rightarrow B$ is \textbf{injective} or \textbf{one-to-one} iff $a_1 \neq a_2$ implies $f(a_1) \neq f(a_2)$, or equivalently iff $f(a_1) = f(a_2)$ implies $a_1 = a_2$.
+\end{definition}
 
-% \begin{theorem}[Injective linear map has trivial kernel]
-%   A linear map $T : V \Rightarrow W$ is injective iff $\ker T = \{ 0 \}$.
-% \end{theorem}
+\begin{theorem}[Injective linear map has trivial kernel]
+  A linear map $T : V \Rightarrow W$ is injective iff $\ker T = \{ 0 \}$.
+\end{theorem}
 
-% \begin{definition}[Image]
-%   Let $T : V \Rightarrow W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
-%   \[
-%     \im T := \{ Tv : v \in V \} \subseteq W
-%   \]
-% \end{definition}
+\begin{definition}[Image]
+  Let $T : V \Rightarrow W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
+  \[
+    \im T := \{ Tv : v \in V \} \subseteq W
+  \]
+\end{definition}
 
-% \begin{theorem} If $T : V \Rightarrow W$, then $\im T$ is a subspace of $W$.
-% \end{theorem}
+\begin{theorem}[Image is subspace of codomain] If $T : V \Rightarrow W$, then $\im T$ is a subspace of $W$.
+\end{theorem}
 
-% \begin{namedtheorem}[Fundamental Theorem of Linear Maps]
-%   Let $T : V \Rightarrow W$ be a linear map with $V$ finite-dimensional. Them $\im T$ is finite-dimensional and
-%   \[
-%     \dim V = \dim \ker T + \dim \im T
-%   \]
-% \end{namedtheorem}
+\begin{definition}[Surjective]
+  A map of sets $f : A \Rightarrow B$ is surjectve iff $\im f = B$, or equivalently iff for every $b \in B$ there exists $a \in A$ s.t. $f(a) = b$.
+
+  Iff $f$ is surjective, $f$ \textbf{maps $A$ onto $B$}.
+\end{definition}
+
+\begin{namedtheorem}[Fundamental Theorem of Linear Maps]
+  Let $T : V \Rightarrow W$ be a linear map with $V$ finite-dimensional. Them $\im T$ is finite-dimensional and
+  \[
+    \dim V = \dim \ker T + \dim \im T
+  \]
+\end{namedtheorem}
+
+\begin{theorem}[Corollary to Fundamental Thm]
+  Let $V$ and $W$ be finite-dimensional vector spaces, and let $T : V \Rightarrow W$. Then
+  \begin{itemize}
+    \item If $\dim V > \dim W$, then $T$ is not injective.
+    \item If $\dim V < \dim W$, then $T$ is not surjective.
+  \end{itemize}
+\end{theorem}
+
+\subsection{Systems of linear equations as linear maps}
+
+\begin{definition}[Systems of linear equations as linear maps]
+  For a linear equation mapping vectors in $F^n$ to $F^m$ 
+  \[
+    Ax = y
+  \]
+  we can interpret this as a linear map $T_A : M^{n \times 1}(F) \Rightarrow M^{m \times 1}(F)$ where $T(x) = Ax$.
+\end{definition}
+
+\begin{theorem}
+  $\ker T_A$ is the solution set of the homogeneous system $Ax = 0$.
+\end{theorem}
 
 
