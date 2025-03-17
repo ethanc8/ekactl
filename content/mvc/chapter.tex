@@ -565,18 +565,41 @@ Brummet [15, MVCWUP:69-74(Mar 4-6)]}
 \end{definition}
 
 \begin{definition}[Positive definite]
-  Let $A$ be a matrix. Then $A$ is positive definite iff any of the following equivalent statements are true
-  \begin{itemize}
-    \item All upper left determinants of $A$ are positive
-    \item All eigenvalues of $A$ are positive
-    \item All pivots of $A$ are positive
-    \item For all $v \in \Real^n \setminus \{0\}$, $v^T A v > 0$
-  \end{itemize}
+  Let $A$ be a matrix. Then $A$ is positive definite iff for all $v \in \Real^n \setminus \{0\}$, $v^T A v > 0$.
 \end{definition}
 
-The definition of \textbf{negative definite} is the same except that the determinant/eigenvalue/pivot/$v^T A v$ must be negative, not positive.
+\begin{definition}[Negative definite]
+  Let $A$ be a matrix. Then $A$ is negative definite iff for all $v \in \Real^n \setminus \{0\}$, $v^T A v < 0$.
+\end{definition}
 
 \textbf{positive semidefinite} and \textbf{negative semidefinite} are the same except that the determinant/eigenvalue/pivot/$v^T A v$ could also be 0.
+
+\begin{definition}[Principal minor]
+  The determinant of a submatrix of a matrix.
+\end{definition}
+
+\begin{definition}[Leading principal minor]
+  The $k$th-order leading principal minor is the determinant of the top left submatrix of a matrix, where the 1st-order leading principal minor is the determinant of the 1x1 matrix at its top left corner, the 2nd-order is the determinant of the 2x2 matrix at its top left corner, etc.
+\end{definition}
+
+\begin{theorem}[Equivalent conditions for positive definiteness]
+  Let $A$ be a matrix. Then $A$ is positive definite iff
+  \begin{itemize}
+    \item All leading principal minors of $A$ are positive
+    \item All eigenvalues of $A$ are positive
+    \item All pivots of $A$ are positive
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Equivalent conditions for negative definiteness]
+  Let $A$ be a matrix. Then $A$ is negative definite iff
+  \begin{itemize}
+    \item The $k$th-order leading principal minor is negative if $k$ is odd and positive if $k$ is even
+    \item All eigenvalues of $A$ are negative
+    \item All pivots of $A$ are negative
+    \item $-A$ is positive definite
+  \end{itemize}
+\end{theorem}
 
 \subsection{Local extrema, Second Derivative Test and Taylor series}
 
@@ -621,5 +644,19 @@ Higher-order Taylor polynomials are not very useful.
     \item If the Hessian $Hf(\vec{a})$ is negative definite, then $f$ has a local maximum at $\vec{a}$.
     \item If $\det Hf(\vec{a}) \neq 0$ but $Hf(\vec{a})$ is neither positive nor negative definite, then $f$ has a saddle point at $\vec{a}$.
   \end{itemize}
+
+  Equivalently if $X \subseteq \Real^2$, let
+  \[
+    D := f_{xx}(\vec{a}) f_{yy}(\vec{a}) - \left(f_{xy}(\vec{a})\right)^2 = \det Hf_(\vec{a})
+  \]
+  Then
+  \begin{itemize}
+    \item If $D > 0$ and $f_{xx}(\vec{a}) > 0$, then $f$ has a local minimum at $\vec{a}$.
+    \item If $D > 0$ and $f_{xx}(\vec{a}) < 0$, then $f$ has a local maximum at $\vec{a}$.
+    \item If $D < 0$, then $f$ has a saddle point at $\vec{a}$.
+    \item If $D = 0$ the test is inconclusive.
+  \end{itemize}
+
+  (Note that if $f_{xx}(vec{a}) = 0$ then $D \leq 0$.)
 \end{theorem}
 
