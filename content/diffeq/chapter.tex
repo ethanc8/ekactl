@@ -367,6 +367,11 @@ Using $L$, $n$th-order linear equations can be written as
     Ly = 0 \qquad \text{and} \qquad Ly = g(x)
 \]
 
+The operator is also linear so it has the property
+\[
+    L(c_1f(x) + c_2g(x)) = c_1Lf(x) + c_2Lg(x)
+\]
+
 \begin{theorem}[Superposition Principle for Homogeneous Linear Equations]
     Let $y_1, \ldots, y_k$ be solution of $Ly = 0$ on interval $I$. Then the linear combination
     \[
@@ -389,3 +394,40 @@ By this theorem, every homogeneous $n$th-order linear equation has a solution of
     \]
     then the set is \textit{linearly independent}.
 \end{definition}
+
+\begin{definition}[Wronskian]
+    Given that each function in $f_1, \ldots, f_n$ is at least $n - 1$ times differentiable, the determinant
+    \[
+        W(f_1, f_2, \ldots, f_n) = \begin{vmatrix}
+            f_1 & f_2 & \cdots & f_n \\
+            f_1' & f_2' & \cdots & f_n' \\
+            \vdots & \vdots & & \vdots \\
+            f_1^{(n - 1)} & f_2^{(n - 1)} & \cdots & f_n^{(n - 1)}
+        \end{vmatrix}
+    \]
+    is called the \textit{Wronskian} of the functions.
+\end{definition}
+
+The set of solutions $y_1, y_2, \ldots, y_n$ on interval $I$ for a homogeneous equation is linearly independent only if $W(y_1, y_2, \ldots, y_n) \ne 0$ on $I$.
+
+This linearly independent set of solutions is called the \textit{fundamental set of solutions} on the specified interval.
+
+\begin{theorem}[Existence of a Fundamental Set]
+    If functions $a_i$, $g$ are continuous on some common interval $I$, and $a_n(x) \ne 0$ on $I$, then there exists a fundamental set of solutions of the homogeneous linear $n$th-order differential equation.
+\end{theorem}
+
+Given that $y_1, y_2, \ldots, y_n$ is the fundamental set of solutions for the homogeneous equation on $I$, then its general solution is
+\[
+    y = c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
+\]
+where $c_i$ are arbitrary real constants.
+
+Any function $y_p$, free of arbitrary parameters, that satisfies the nonhomogeneous equation, is said to be the \textit{particular solution} of the equation.
+
+The general solution of the $n$th-order nonhomogeneous equation is of the form
+\[
+    y(x) = y_p(x) + c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
+\]
+where $y_p$ is the particular solution and $y_1, \ldots, y_n$ are a fundamental set of solutions of the associated homogeneous equation.
+
+\subsection{Reduction of Order}
