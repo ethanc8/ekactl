@@ -312,17 +312,32 @@ Let $F = \Real$ or $F = \Complex$.
   \end{align*}
 \end{definition}
 
-\begin{theorem}[Vector space of functions]
+\begin{definition}[Vector space of functions]
   Let $V$ be a vector space, $S$ be a set, and
   \[
     V^S = \{ f : S \rightarrow V \}
   \]
-  (the set of all functions that map members of $S$ to members of $V$). Then $V^S$ is a vector space, if we define
+  (the set of all functions that map members of $S$ to members of $V$). Then $V^S$ is a vector space, if we define for all $p, q \in V^S$, $s \in F$,
 
   \[
     (f + g)(s) = f(s) + g(s) \qquad (\alpha f)(s) = \alpha (f(s))
   \]
-\end{theorem}
+\end{definition}
+
+\begin{definition}[Polynomial]
+  A function $p : F \Rightarrow F$ is a polynomial of degree $n$ iff there exist $c_0, \ldots c_n \in F$ such that
+  \[
+    p(x) = c_0 + c_1 x + c_2 x^2 + \cdots c_n x^n = \sum_{k=0}^n c_k x^k
+  \]
+
+  $\mathcal{P}(F)$ is the set of all polynomials of any degree with coefficients in $F$. $\mathcal{P}_n(F)$ is the set of all polynomials of degree $n$ with coefficients in $F$.
+
+  $\mathcal{P}(F)$ and $\mathcal{P}_n(F)$ are vector spaces if we define for all $p, q \in \mathcal{P}_n(F)$, $s \in F$,
+
+  \[
+    (p + q)(s) = p(s) + q(s) \qquad (\alpha p)(s) = \alpha (p(s))
+  \]
+\end{definition}
 
 \subsection{Subspaces}
 
@@ -524,30 +539,79 @@ Let $F = \Real$ or $F = \Complex$.
 \subsection{Linear map}
 
 \begin{definition}[Linear map]
-  Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \Rightarrow W$ with the property that
+  Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \Rightarrow W$ with the two properties
+  \begin{align*}
+    T(v_1 + v_2) &= Tv_1 + Tv_2 && \text{(additivity)} \\
+    T(\alpha_v) &= \alpha Tv && \text{(homogeneity)}
+  \end{align*}
+  Equivalently, it is a function with the property that 
   \[
     T(\alpha v_1 + v_2) = \alpha T(v_1) + T(v_2)
-  \]
-  Equivalently, it is a function with the two properties
-  \begin{align*}
-    T(v_1 + v_2) &= Tv_1 + Tv_2
-    T(\alpha_v) &= \alpha Tv
-  \end{align*}
+  \]  
   Equivalently, it is a function with the property that
   \[
     T(\alpha_1 v_1 + \alpha_2 v_2) = \alpha_1 T v_1 + \alpha_2 T v_2
   \]
 \end{definition}
 
-\begin{definition}[$\mathcal{L}$]
-  For any vector spaces $V$ and $W$, $\mathcal{L}(V,W)$ is the set of all linear maps from $V$ to $W$.
-\end{definition}
+\textbf{Note:} Not all elementary linear functions $y = mx + b$ are linear maps! All linear maps in $F^1$ are of the form $y = mx$.
 
 \begin{definition}[Linear operator] A function $T : V \Rightarrow V$ which is a linear map.
 \end{definition}
 
+\begin{definition}[$\linearmaps$]
+  For any vector spaces $V$ and $W$, $\linearmaps(V,W)$ is the set of all linear maps from $V$ to $W$.
+
+  $\linearmaps(V) := \linearmaps(V,V)$.
+
+  $\linearmaps(V,W)$ is also called $\text{Hom}(V,W)$.
+\end{definition}
+
+\begin{namedlemma}[Linear Map Lemma]
+  Let $V$ be a finite-dimensional vector space and $W$ be a vector space. Suppose $\{ v_1, \ldots v_n \}$ is a basis of $V$ and $w_1 \ldots w_n \in W$. Then there exists a unique linear map $T : V \Rightarrow W$ such that
+  \[
+    Tv_k = w_k
+  \]
+  for each $k \in \{1, \ldots, n\}$.
+
+  \textbf{Note:} This means that there exists a unique linear map that maps a basis to any vectors we wish, and that a linear map is uniquely determined by its output on a basis.
+\end{namedlemma}
+
+\begin{lemma} If $T : V \Rightarrow W$ is a linear map, then $T(0) = 0$.
+\end{lemma}
+
+\begin{theorem}[$\linearmaps(V,W)$ is a vector space]
+  If we define
+  \begin{align*}
+    (S + T)(v) &:= S + T \\ 
+    (\alpha T)(v) &:= \alpha T(v)
+  \end{align*}
+  for $S, T \in \linearmaps(V,W)$, $\alpha \in F$, then $\linearmaps(V,W)$ is a vector space and is a subspace of $V^W$.
+\end{theorem}
+
+\begin{definition}[Product of linear maps]
+  If $T \in \linearmaps(U, V)$ and $S \in \linearmaps(V, W)$, then we define the product $ST \in \linearmaps(V, W)$ by $ST := S \compose T$.
+\end{definition}
+
+\begin{theorem}[$\linearmaps(V)$ is a unital associative F-algebra]
+  The product of linear maps on $V$ has the following properties:
+  \begin{itemize}
+    \item \textbf{Bilinearity}: For all $S, T_1, T_2 \in \linearmaps(V)$, $\alpha \in F$,
+    \begin{itemize}
+      \item $S(T_1 + T_2) = ST_1 + ST_2$
+      \item $(S_1 + S_2)T = S_1 T + S_2 T$
+      \item $(\alpha S)T = \alpha(ST) = S(\alpha T)$
+    \end{itemize}
+    \item \textbf{Associativity}: $(RS)T = R(ST)$ for all $R, S, T \in \linearmaps(V)$
+    \item \textbf{Identity} (\textit{unital}): $IT = TI = T$ for all $T \in \linearmaps(V)$, where $I$ is the identity map $x \mapsto x$.
+  \end{itemize}
+  It is an \textit{F-algebra} because it is a vector space over a field equipped with bilinear multiplication.
+\end{theorem}
+
+\subsection{Kernel}
+
 \begin{definition}[Kernel]
-  The kernel of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
+  The \textbf{kernel} or \textbf{null space} of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
   \[
     \ker T := \{ v \in V : Tv = 0 \} \subseteq V
   \]
@@ -564,6 +628,8 @@ Let $F = \Real$ or $F = \Complex$.
   A linear map $T : V \Rightarrow W$ is injective iff $\ker T = \{ 0 \}$.
 \end{theorem}
 
+\subsection{Image}
+
 \begin{definition}[Image]
   Let $T : V \Rightarrow W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
   \[
@@ -579,6 +645,8 @@ Let $F = \Real$ or $F = \Complex$.
 
   Iff $f$ is surjective, $f$ \textbf{maps $A$ onto $B$}.
 \end{definition}
+
+\subsection{Fundamental Theorem}
 
 \begin{namedtheorem}[Fundamental Theorem of Linear Maps]
   Let $T : V \Rightarrow W$ be a linear map with $V$ finite-dimensional. Them $\im T$ is finite-dimensional and
@@ -609,4 +677,5 @@ Let $F = \Real$ or $F = \Complex$.
   $\ker T_A$ is the solution set of the homogeneous system $Ax = 0$.
 \end{theorem}
 
+% TODO: more matrix stuff
 
