@@ -679,3 +679,26 @@ Let $F = \Real$ or $F = \Complex$.
 
 % TODO: more matrix stuff
 
+\subsection{Isomorphisms}
+
+\begin{definition}[Bijective]
+  Injective and surjective.
+\end{definition}
+
+\begin{definition}[Isomorphism]
+  Let $V$ and $W$ be vector spaces over $F$. An \textbf{isomorphism from $V$ to $W$} is a bijective linear map $T : V \Rightarrow W$. Iff there exists an isomorphism from $V$ to $W$, $V$ and $W$ are \textbf{isomorphic}, which is denoted by $V \cong W$.
+\end{definition}
+
+\begin{lemma}
+  $\mathcal{P}_n(F) \cong F^{n+1}$.
+\end{lemma}
+
+\begin{theorem}[Isomorphism is an equivalence relation]
+  \begin{itemize}
+    \item \textbf{Reflexive}: For any vector space $V$, $\text{id}_V : V \Rightarrow V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
+    \item \textbf{Symmetric}: If $T : V \Rightarrow W$ is an isomorphism, then $T^{-1} : W \Rightarrow V$ is also an isomorphism. Thus, $V \cong W$ implies $W \cong V$.
+    \item \textbf{Transitive}: If $T_1 : U \Rightarrow V$ and $T_2 : V \Rightarrow W$ are isomorphisms, then $T_2 T_1 : U \Rightarrow W$ is an isomorphism. Thus, $U \cong V$ and $V \cong W$ implies $U \cong W$
+  \end{itemize}
+  Therefore, isomorphism is an equivalence relation on the collection of all vector spaces over $F$.
+\end{theorem}
+
