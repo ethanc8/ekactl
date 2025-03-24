@@ -555,6 +555,10 @@ Brummet [15, MVCWUP:69-74(Mar 4-6)]}
   Let $C$ be the set of all critical points of $f$. Then, the absolute maximum is $\max \{f(\vec{c}) : \vec{c} \in C\}$ and the absolute minimum is $\min \{f(\vec{c}) : \vec{c} \in C\}$.
 \end{theorem}
 
+\begin{theorem}[Method to find absolute minima and maxima with a constraint]
+  Let $C$ be the set of all critical points of $f$. Let $S$ be the union of $C$ and the boundary of the constraint (the constraint constrains the domain on which we are finding absolute minima and maxima). Then, the absolute maximum is $\max \{f(\vec{c}) : \vec{c} \in C\}$ and the absolute minimum is $\min \{f(\vec{c}) : \vec{c} \in C\}$.
+\end{theorem}
+
 \subsection{Some linalg stuff}
 
 \begin{definition}[Matrix multiplication]
@@ -658,5 +662,13 @@ Higher-order Taylor polynomials are not very useful.
   \end{itemize}
 
   (Note that if $f_{xx}(vec{a}) = 0$ then $D \leq 0$.)
+\end{theorem}
+
+\subsection{Lagrange multiplier}
+
+\begin{theorem}
+  If $f(\vec{x}_0) = c$ is an extreme value (absolute max or min) of $f$ on $g$ (the constraint is $\{ \vec{x} : g(\vec{x}) = k \}$) and $\grad g(\vec{x}_0) \neq 0$, then at $\vec{x}_0$, the level set $\{ \vec{x} : f(\vec{x}) = c \}$ is tangent to $g(\vec{x}) = k$.
+
+  Equivalently, if $f(\vec{x}_0) = c$ is an extreme value (absolute max or min) of $f$ on $g$ and $\grad g(\vec{x}_0) \neq 0$, then $\grad f(\vec{x}_0) = \lambda \grad g(\vec{x}_0)$, where $\lambda \in \Real$ is called the \textbf{Lagrange multiplier}.
 \end{theorem}
 
