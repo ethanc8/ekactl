@@ -1,3 +1,8 @@
+% quiz
+% - H1 reduction of order solving for general sol.
+% - H3 find general sol. by method of undetermined coeff.
+% - H4 find general sol.(?) by variation of parameters
+
 \chapter{Differential Equations}
 
 A \textit{differential equation} is an equation involving a quantity and one or more of its derivatives.
@@ -424,10 +429,32 @@ where $c_i$ are arbitrary real constants.
 
 Any function $y_p$, free of arbitrary parameters, that satisfies the nonhomogeneous equation, is said to be the \textit{particular solution} of the equation.
 
-The general solution of the $n$th-order nonhomogeneous equation is of the form
-\[
-    y(x) = y_p(x) + c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
-\]
-where $y_p$ is the particular solution and $y_1, \ldots, y_n$ are a fundamental set of solutions of the associated homogeneous equation.
+\begin{theorem}
+    The general solution of the $n$th-order nonhomogeneous equation is of the form
+    \[
+        y(x) = y_p(x) + c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
+    \]
+    where $y_p$ is the particular solution and $y_1, \ldots, y_n$ are a fundamental set of solutions of the associated homogeneous equation.
+\end{theorem}
 
 \subsection{Reduction of Order}
+
+Reduction of order is a method of substitution to reduce a homogeneous second order equation to a first order equation. This can be used to find a second nontrivial solution using the first and create a fundamental set of solutions.
+\[
+    y_2(x) = y_1(x) \int \frac{e^{-\int P(x)dx}}{y_1^2(x)}dx
+\]
+where the original equation is in the standard form
+\[
+    y'' + P(x)y' + Q(x)y = 0
+\]
+
+\subsection{Reduction of order for nonhomogeneous equations}
+
+The equation
+\[
+    y_p(x) = y_1(x) \left[ \int \frac{e^{-\int P(x)dx}}{(y_1(x))^2} \left[ \int e^{\int P(x)dx} y_1(x) R(x)dx + c_1 \right] dx + c_2 \right]
+\]
+can be used to find the particular solution needed for general equation of the nonhomogeneous standard equation
+\[
+    y'' + P(x)y' + Q(x)y = R(x)
+\]
