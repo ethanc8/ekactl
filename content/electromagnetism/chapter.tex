@@ -223,15 +223,7 @@
   where $K$ is the dielectric's \textbf{dielectric constant}.
 \end{definition}
 
-\subsection{Random circuit stuff}
-
-\begin{definition}[Current ($i$)]
-  The rate at which charges flow through a conductor.
-
-  \[
-    i = \frac{dq}{dt}
-  \]
-\end{definition}
+\subsection{Miscellaneous circuit stuff}
 
 \begin{definition}[Battery]
   A battery has two terminals, a positive and a negative terminal. The positive terminal has higher electric potential than the negative terminal, and the battery creates an E-field between the positive and negative terminal. The potential difference between the positive and negative terminal is called the \textbf{voltage} of the battery, and is represented as $\mathcal{E}$.
@@ -276,3 +268,64 @@ If a set of capacitors were replaced by a single capacitor without changing any 
   \end{align*}
 \end{example}
 
+\subsection{Current and resistance}
+
+\begin{definition}[Current / amperage ($i$ or $I$)]
+  The rate at which charges flow through a conductor.
+
+  \[
+    i = I = \frac{dq}{dt} \qquad \left(\Ampere = \frac{\Coulomb}{\second}\right)
+  \]
+\end{definition}
+
+\begin{definition}[Junction]
+  A place in a circuit at which the current can change.
+\end{definition}
+
+\begin{law}[Junction Rule]
+  \[
+    \sum I_\text{into} = \sum I_\text{out}
+  \]
+\end{law}
+
+\begin{definition}[Current density]
+  \[
+    J = \frac{i}{A}
+  \]
+\end{definition}
+
+\begin{definition}[Resistance ($R$)]
+  \[
+    R = \frac{V}{i} \qquad \left( \Ohm = \frac{\Volt}{\Ampere} \right)
+  \]
+
+  The resistance is a property of the conducting object.
+\end{definition}
+
+\begin{definition}[Resistivity]
+  \[
+    \rho = \frac{E}{J} \qquad
+  \]
+
+  The resistivity is a property of the conducting material.
+\end{definition}
+
+\begin{lemma}
+  \[
+    R = \frac{\rho \lambda}{A}
+  \]
+\end{lemma}
+
+\begin{law}
+  \[
+    q = Ne
+  \]
+  where $N$ is the number of charge carriers.
+\end{law}
+
+\begin{definition}[Drift speed]
+  \[
+    v_\text{drift} = \frac{J}{ne}
+  \]
+  where $n = \frac{N}{\text{Volume}}$
+\end{definition}
