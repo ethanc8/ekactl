@@ -689,16 +689,74 @@ Let $F = \Real$ or $F = \Complex$.
   Let $V$ and $W$ be vector spaces over $F$. An \textbf{isomorphism from $V$ to $W$} is a bijective linear map $T : V \Rightarrow W$. Iff there exists an isomorphism from $V$ to $W$, $V$ and $W$ are \textbf{isomorphic}, which is denoted by $V \cong W$.
 \end{definition}
 
-\begin{lemma}
-  $\mathcal{P}_n(F) \cong F^{n+1}$.
-\end{lemma}
+\begin{definition}[Identity map]
+  The identity map $\identitymap_V : V \Rightarrow V$ is defined such that
+  \[
+    \identitymap_V(v) = v \qquad \text{for $V \in V$}
+  \]
+\end{definition}
 
 \begin{theorem}[Isomorphism is an equivalence relation]
   \begin{itemize}
-    \item \textbf{Reflexive}: For any vector space $V$, $\text{id}_V : V \Rightarrow V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
+    \item \textbf{Reflexive}: For any vector space $V$, $\identitymap_V : V \Rightarrow V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
     \item \textbf{Symmetric}: If $T : V \Rightarrow W$ is an isomorphism, then $T^{-1} : W \Rightarrow V$ is also an isomorphism. Thus, $V \cong W$ implies $W \cong V$.
     \item \textbf{Transitive}: If $T_1 : U \Rightarrow V$ and $T_2 : V \Rightarrow W$ are isomorphisms, then $T_2 T_1 : U \Rightarrow W$ is an isomorphism. Thus, $U \cong V$ and $V \cong W$ implies $U \cong W$
   \end{itemize}
   Therefore, isomorphism is an equivalence relation on the collection of all vector spaces over $F$.
 \end{theorem}
+
+\begin{definition}[Isomorphism class]
+  The isomorphism class $[V]$ of a vector space $V$ is the set of all vector spaces isomorphic to $V$.
+\end{definition}
+
+\begin{lemma}
+  Any two isomorphism classes are disjoint or equal.
+\end{lemma}
+
+\begin{theorem}
+  Two finite-dimensional vector spaces over $F$ are isomorphic iff they have the same dimension.
+
+  Equivalently, any finite-dimensional vector space $V$ over $F$ is isomorphic to $F^{\dim V}$.
+\end{theorem}
+
+\begin{theorem}
+  If $V$ and $W$ are finite-dimensional vector spaces of the same dimension and $T : V \Rightarrow W$ is a linear map, then if $T$ is injective or surjective, it is an isomorphism.
+\end{theorem}
+
+\begin{lemma}
+  $\mathcal{P}_n(F) \cong F^{n+1}$.
+\end{lemma}
+
+\subsection{Coordinates}
+
+For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $V$, where $V$ is an $n$-dimensional vector space over $F$.
+
+\begin{definition}[Linear combination map (basis isomorphism)]
+  The \textbf{linear combination map} or \textbf{basis isomorphism} is the isomorphism $L_B : F^n \Rightarrow V$ defined by
+  \[
+    L_B(\vec{x}) = x_1 v_1 + \cdots + x_n v_n
+  \]
+\end{definition}
+
+\begin{definition}[Coordinate isomorphism]
+  The \textbf{coordinate isomorphism} is the isomorphism $L_B^{-1} : V \Rightarrow 
+  F^n$.
+
+  This means that for any vector space, its vectors can be expressed as vectors in $F^n$.
+\end{definition}
+
+\begin{definition}[Coordinate vector]
+  Let $v$ be a vector in $V$. Then the coordinate vector $[v]_B \in F^n$ is defined as 
+  \[
+    [v]_B := L_B^{-1}(v)
+  \]
+
+  Equivalently, it is the vector such that
+  \[
+    L_B([v]_B) = v
+  \]
+\end{definition}
+
+% TODO: 4.5 sections 2, 3, 4
+% TODO: 4.6, 4.7
 
