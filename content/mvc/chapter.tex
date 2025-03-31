@@ -672,3 +672,52 @@ Higher-order Taylor polynomials are not very useful.
   Equivalently, if $f(\vec{x}_0) = c$ is an extreme value (absolute max or min) of $f$ on $g$ and $\grad g(\vec{x}_0) \neq 0$, then $\grad f(\vec{x}_0) = \lambda \grad g(\vec{x}_0)$, where $\lambda \in \Real$ is called the \textbf{Lagrange multiplier}.
 \end{theorem}
 
+\section{Integration}
+
+\subsection{Double integrals}
+
+\refresources{Colley [5.1, 5.2] Paul's Notes [15.1, 15.2, 15.3] \\
+Brummet [08, MVCWUP:Feb3(29-33)]}
+
+% Some of these equations were copied from Paul's Notes.
+
+\begin{definition}[Double integral]
+  The double integral of $f : X \subseteq \Real^2 \Rightarrow \Real$ over the rectangle $R$ is
+  \[
+    \iint_{R}{{f\left( {x,y} \right)\,dA}} = \mathop {\lim }_{n,\,\,m \to \infty } \sum_{i = 1}^n {\sum_{j = 1}^m {f\left( {x_i^*,y_j^*} \right)\,\Delta A} }
+  \]
+
+  Generally, the double integral of $f$ over the region $R$ is
+  \[
+    \iint_{R}{{f\left( {x,y} \right)\,dA}} = \mathop {\lim }_{n \to \infty } \sum_{(x_i^*, y_j^*) \in R} {f\left( {x_i^*,y_j^*} \right)\,\Delta A}
+  \]
+  (choose $n$ points $(x_i^*, y_j^*)$ in $R$, then sum each $f\left( {x_i^*,y_j^*} \right)\,\Delta A$)
+\end{definition}
+
+\begin{theorem}[Fubini's Theorem]
+  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is continuous on $[a, b] \times [c, d]$, then
+  \[
+    \iint\limits_{R}{{f\left( {x,y} \right)\,dA}} = \int_{{\,a}}^{{\,b}}{{\int_{{\,c}}^{{\,d}}{{f\left( {x,y} \right)\,dy}}\,dx}} = \int_{{\,c}}^{{\,d}}{{\int_{{\,a}}^{{\,b}}{{f\left( {x,y} \right)\,dx}}\,dy}}
+  \]
+\end{theorem}
+
+\begin{theorem}
+  If $f(x, y) = g(x) h(y)$ and $R = [a, b] \times [c, d]$, then
+  \[
+    \iint\limits_{R}{{f\left( {x,y} \right)\,dA}} = \iint\limits_{R}{{g\left( x \right)h\left( y \right)\,dA}} = \left( {\int_{{\,a}}^{{\,b}}{{g\left( x \right)\,dx}}} \right)\left( {\int_{{\,c}}^{{\,d}}{{h\left( y \right)\,dy}}} \right)
+  \]
+\end{theorem}
+
+\begin{theorem}[Type I integrals]
+  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is defined on $D = \{ (x, y) : a \leq x \leq b, g_1(x) \leq y \leq g_2(x) \}$, then
+  \[
+    \iint\limits_{D}{{f\left( {x,y} \right)\,dA}} = \int_{{\,a}}^{{\,b}}{{\int_{{{g_{\,1}}\left( x \right)}}^{{{g_{\,2}}\left( x \right)}}{{f\left( {x,y} \right)\,dy}}\,dx}}
+  \]
+\end{theorem}
+
+\begin{theorem}[Type II integrals]
+  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is defined on $D = \{ (x, y) : h_1(y) \leq x \leq h_2(x), c \leq y \leq d \}$, then
+  \[
+    \iint\limits_{D}{{f\left( {x,y} \right)\,dA}} = \int_{{\,c}}^{{\,d}}{{\int_{{h{\,_1}\left( y \right)}}^{{{h_{\,2}}\left( y \right)}}{{f\left( {x,y} \right)\,dx}}\,dy}}
+  \]
+\end{theorem}
