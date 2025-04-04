@@ -283,6 +283,7 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 \end{definition}
 
 \begin{law}[Junction Rule]
+  The sum of the current into a junction equals the sum of the current out of the junction.
   \[
     \sum I_\text{into} = \sum I_\text{out}
   \]
@@ -301,6 +302,12 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
   The resistance is a property of the conducting object.
 \end{definition}
+
+\begin{namedlaw}[Ohm's Law]
+  \[
+    V = iR
+  \]
+\end{namedlaw}
 
 \begin{definition}[Resistivity]
   \[
@@ -329,3 +336,39 @@ If a set of capacitors were replaced by a single capacitor without changing any 
   \]
   where $n = \frac{N}{\text{Volume}}$
 \end{definition}
+
+\begin{theorem}[Power consumed by a resistor]
+  Most of this energy is converted to heat.
+  \[
+    P = IV = I^2 R = \frac{V^2}{R}
+  \]
+\end{theorem}
+
+\begin{lemma}[Resistors in parallel]
+  By the Loop Law,
+  \[
+    V_{eq} = V_1 = \cdots = V_n
+  \]
+
+  By the Junction Rule,
+  \[
+    \frac{\mathcal{E}}{R_{eq}} = i_{\text{total}} = \sum i_i
+  \]
+
+  Therefore by Ohm's Law,
+  \[
+    \frac{1}{R_{eq}} = \sum \frac{1}{R_i}
+  \]
+\end{lemma}
+
+\begin{lemma}[Resistors in series]
+  By the Loop Law,
+  \[
+    V_{eq} = \sum V_i
+  \]
+
+  Therefore by Ohm's Law,
+  \[
+    R_{eq} = \sum R_i
+  \]
+\end{lemma}
