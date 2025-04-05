@@ -154,6 +154,8 @@
   (This derives from Coulomb's Law.)
 \end{theorem}
 
+\section{Circuits}
+
 \subsection{Capacitance}
 
 \begin{definition}[Capacitor]
@@ -372,3 +374,63 @@ If a set of capacitors were replaced by a single capacitor without changing any 
     R_{eq} = \sum R_i
   \]
 \end{lemma}
+
+\subsection{RC circuits}
+
+\begin{definition}[RC circuit]
+  A circuit with a resistor and a capacitor.
+\end{definition}
+
+\begin{definition}[Time constant]
+  For an RC circuit,
+  \[
+    \tau := R_{eq} C_{eq} \qquad (\second)
+  \]
+\end{definition}
+
+\begin{law}[Charging a capacitor]
+  A capacitor can be charged by applying an $\mathcal{EMF}$ such as a battery on both sides of the capacitor, possibly including a resistor or resistors with equivalent resistance $R$.
+
+  Initial and final conditions:
+  \begin{align*}
+    t &= 0 & t &\to \infty \\
+    q_0 &= 0 & q_{\text{max}} &= C\mathcal{E} \\
+    i_0 &= \frac{\mathcal{E}}{R} & i_f &= 0 \\
+  \end{align*}
+
+  Applying the loop law:
+  \[
+    \mathcal{E} - R \frac{dq}{dt} - \frac{q}{c} = 0
+  \]
+
+  Solving the equation, we get:
+  \begin{align*}
+    q(t) &= q_{\text{max}} \left(1 - e^{- \frac{t}{\tau}}\right) \\
+    i(t) &= i_0 e^{- \frac{t}{\tau}}
+  \end{align*}
+\end{law}
+
+\begin{law}[Discharging a capacitor]
+  A capacitor can be discharged by shorting both plates, possibly including a resistor or resistors with equivalent resistance $R$ in between.
+
+  Initial and final conditions:
+  \begin{align*}
+    t &= 0 & t &\to \infty \\
+    q_{\text{max}} &= C\mathcal{E} & q_f &= 0 \\
+    i_0 &= -\frac{\mathcal{E}}{R} & i_f &= 0 \\
+  \end{align*}
+
+  Applying the loop law:
+  \[
+    - R \frac{dq}{dt} - \frac{q}{c} = 0
+  \]
+
+  Solving the equation, we get:
+  \begin{align*}
+    q(t) &= q_{\text{max}} e^{- \frac{t}{\tau}} \\
+    i(t) &= i_0 e^{- \frac{t}{\tau}}
+  \end{align*}
+
+  (ensure $i_0 < 0$)
+\end{law}
+
