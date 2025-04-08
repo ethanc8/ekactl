@@ -447,14 +447,14 @@ where the original equation is in the standard form
 
 The equation
 \[
-    y_p(x) = y_1(x) \left[ \int \frac{e^{-\int P(x)dx}}{(y_1(x))^2} \left[ \int e^{\int P(x)dx} y_1(x) R(x)dx + c_1 \right] dx + c_2 \right]
+    y_p(x) = y_1(x) \left[ \int \frac{e^{-\int P(x)dx}}{(y_1(x))^2} \left[ \int e^{\int P(x)dx} y_1(x) R(x)dx \right] dx \right]
 \]
-can be used to find the particular solution needed for general equation of the nonhomogeneous standard equation
+can be used to find the particular solution needed for general equation, as mentioned in the previous section, of the nonhomogeneous standard equation
 \[
     y'' + P(x)y' + Q(x)y = R(x)
 \]
 
-\subsection{Solving constant coefficient equations}
+\subsection{Solving first-order constant coefficient equations}
 
 To solve a first-order constant coefficient equation, an algebraic method can be used where in
 \[
@@ -463,4 +463,62 @@ To solve a first-order constant coefficient equation, an algebraic method can be
 where $a,b$ are constants. A general solution would be in the form
 \[
     y = e^{-\frac{b}{a}x}
+\]
+
+\subsection{Solving second-order constant coefficient equations}
+
+To solve a second-order constant coefficient equation,
+\[
+    ay'' + by' + cy = 0
+\]
+find the two solutions $m_1$ and $m_2$ in,
+\[
+    am^2 + bm + c = 0
+\]
+using the quadratic formula,
+\[
+    m_1, m_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+If the discriminant $b^2 - 4ac > 0$, the general solution would be,
+\[
+    y = c_1 e^{m_1 x} + c_2 e^{m_2 x}
+\]
+otherwise, if the discriminant is zero (i.e. $m_1 = m_2$), the first solution would be,
+\[
+    y_1 = e^{m_1 x}
+\]
+where the general solution can be found by finding $y_2$ using reduction of order.
+
+If the discriminant is negative and the solution is two conjugates in the form,
+\[
+    m_1 = \alpha + i\beta
+\]
+\[
+    m_2 = \alpha - i\beta
+\]
+Then the fundamental set of solutions can be written using Euler's formula,
+\[
+    y = c_1 e^{\alpha x} \cos(\beta x) + c_2 e^{\alpha x} \sin(\beta x)
+\]
+
+\subsection{Solving higher-order constant coefficient equations}
+
+First, the auxiliary $n$th-degree polynomial equation must be solved,
+\[
+    a_n m^n + a_{n - 1} m^{n - 1} + \cdots + a_1 m^1 + a_0 = 0
+\]
+Then, higher-order constant coefficient equations with real solutions extend the same way where,
+\[
+    y = c_1 e^{m_1 x} + c_2 e^{m_2 x} + \cdots + c_n e^{m_n x}
+\]
+But if any real root would have a multiplicity of $k > 1$, then for each multiplicity,
+\[
+    e^{m_1 x}, xe^{m_1 x}, \ldots, x^{k - 1}e^{m_1 x}
+\]
+are additional linearly independent solutions in the fundamental set. The same pattern extends for complex roots,
+\[
+    e^{\alpha x} \cos(\beta x), xe^{\alpha x} \cos(\beta x), \ldots, x^{k - 1}e^{\alpha x} \cos(\beta x)
+\]
+\[
+    e^{\alpha x} \sin(\beta x), xe^{\alpha x} \sin(\beta x), \ldots, x^{k - 1}e^{\alpha x} \sin(\beta x)
 \]
