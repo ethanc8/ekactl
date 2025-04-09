@@ -613,7 +613,7 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{definition}[Kernel]
   The \textbf{kernel} or \textbf{null space} of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
   \[
-    \ker T := \{ v \in V : Tv = 0 \} \subseteq V
+    \operatorname{null} T = \ker T := \{ v \in V : Tv = 0 \} \subseteq V
   \]
 \end{definition}
 
@@ -633,7 +633,7 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{definition}[Image]
   Let $T : V \Rightarrow W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
   \[
-    \im T := \{ Tv : v \in V \} \subseteq W
+    \operatorname{range} T = \im T := \{ Tv : v \in V \} \subseteq W
   \]
 \end{definition}
 
@@ -746,7 +746,7 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \end{definition}
 
 \begin{definition}[Coordinate vector]
-  Let $v$ be a vector in $V$. Then the coordinate vector $[v]_B \in F^n$ is defined as 
+  Let $v$ be a vector in $V$. Then the coordinate vector $[v]_B \in F^n$ of $v$ is defined as 
   \[
     [v]_B := L_B^{-1}(v)
   \]
@@ -757,6 +757,328 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
   \]
 \end{definition}
 
-% TODO: 4.5 sections 2, 3, 4
-% TODO: 4.6, 4.7
+\begin{definition}[Ordered basis]
+  An ordered basis of a $n$-dimensional vector space $V$ is an $n$-tuple which is an ordering of a basis of $V$.
+\end{definition}
+
+\subsection{Matrix of a linear map}
+
+\begin{definition}[Matrix of a linear map]
+  Let $B_v = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_w = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \Rightarrow W$ be a linear map.
+  
+  Then the matrix of $T$ with respect to $B_v$ and $B_w$ is denoted as
+  \[
+    [T]_{B_w B_v}
+  \]
+  
+  It is the $m \times n$ matrix defined such that its $j$th column is the coordinate vector of $T v_j$ with respect to $B_w$:
+  \[
+    \left([T]_{B_w B_v}\right)_{*j} = [T v_j]_{B_2}
+  \]
+
+  Equivalently, it is the $m \times n$ matrix that satisfies
+  \[
+    T v_j = \sum_{i = 1}^m \left([T]_{B_w B_v}\right)_{ij} w_i
+  \]
+\end{definition}
+
+\begin{lemma}
+  Applying a linear map $T$ to a vector $v$ is equivalent to multiplying the coordinate vector of $v$ by the matrix of $T$:
+  \[
+    [Tv] = [T][v]
+  \]
+\end{lemma}
+
+\begin{definition}[Standard matrix]
+  The matrix of a linear map $T : F^n \Rightarrow F^m$ with respect to the standard bases of $F^n$ and $F^m$.
+\end{definition}
+
+\begin{lemma}
+  \[
+    \dim \linearmaps(V, W) = (\dim V) (\dim W)
+  \]
+\end{lemma}
+
+\begin{lemma}
+  Composing two linear maps $T_1$ and $T_2$ is equivalent to multiplying the matrices of the two linear maps:
+  \[
+    T_1 \compose T_2 = [T_1] [T_2]
+  \]
+\end{lemma}
+
+\begin{definition}[Matrix multiplication]
+  The matrix multiplication of  the $m \times n$ matrix $A$ and the $n \times p$ matrix $B$ is made by dot-producting the rows of the first by the columns of the second:
+  \[
+    \left[AB_{ij}\right] = \left[A_{i*} \dotp B_{*j}\right] = \left[\sum_{k=1}^n a_{ik} b_{kj} \right]
+  \]
+\end{definition}
+
+\subsection{Fundamental matrix spaces}
+
+Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \Rightarrow F^m$.
+
+\begin{definition}[Null space, nullity]
+  The \textbf{null space} of $A$ is the kernel of $T_A$:
+  \[
+    \Nul A := ker T_A = \{x \in F^n : Ax = 0\}
+  \]
+
+  the solution set of the homogeneous linear system $Ax = 0$. 
+
+  \[
+    \nullity A := \dim \Nul A
+  \]
+\end{definition}
+
+\begin{definition}[Column space, rank]
+  The \textbf{column space} of $A$ is the image of $T_A$:
+  \begin{align*}
+    \Col A := \im T_a 
+    &= \{T_A x : x \in F^n \} \\
+    &= \{Ax : x \in F^n \} \\
+    &= \{ \sum{i = 1}^n x_i A_{*i} : x_i \in F \} \\
+    &= \spanoperator \{ A_{*1}, \ldots, A_{*n} \}
+  \end{align*}
+
+  It is the span of the column vectors of the matrix $A$.
+
+  \[
+    \rank A := \dim \Col A
+  \]
+\end{definition}
+
+\begin{lemma}
+  \begin{align*}
+    \rank A &= \text{the number of pivot columns} \\
+    \nullity A &= \text{the number of non-pivot columns}
+  \end{align*}
+  
+  Therefore,
+  \[
+    n = \nullity A + \rank A
+  \]
+\end{lemma}
+
+\begin{procedure}[Finding bases of $\Nul A$ and $\Col A$]
+  \begin{enumerate}
+    \item $R := \RREF(A)$
+    \item The pivot columns of $A$ are a basis of $\Col A$.
+    \item The vectors spanning $Ax = 0$ are a basis of $\Nul A$.
+  \end{enumerate}
+\end{procedure}
+
+\begin{definition}[Transpose of a matrix]
+  If $A$ is an $m \times n$ matrix, then its transpose $A^T$ is the $n \times m$ matrix obtained by interchanging the rows and columns of $A$:
+  \[
+    \left[A^T_{ij}\right] = \left[A_{ji}\right]
+  \]
+\end{definition}
+
+\begin{definition}
+  The row space of $A$ is the span of the row vectors of $A$:
+  \[
+    \Row A := \spanoperator \{ A_{1*}, \ldots, A_{m*} \} = \Col A^T
+  \]
+\end{definition}
+
+\begin{lemma}
+  \[
+    \dim \Row A = \dim \Col A = \rank A
+  \]
+\end{lemma}
+
+\begin{definition}[Left null space]
+  The left null space of $A$ is the null space of $A^T$. It is the solution set of the homogeneous linear system $A^T y = 0$ or equivalently of $y^T A = 0^T$.
+\end{definition}
+
+\subsection{Invertible matrices}
+
+\begin{definition}[Invertible matrix]
+  Let $A$ be an $n \times n$ matrix. If there exists an $n \times n$ matrix $B$ s.t. $AB = BA = I$, then $A$ is \textbf{invertible} and \textbf{non-singular} and $B$ is the \textbf{inverse} of $A$:
+  \[
+    A^{-1} := B
+  \]
+  A matrix which is not invertible is \textbf{non-invertible} and \textbf{singular}.
+\end{definition}
+
+\begin{lemma}
+  The matrix of an isomorphism of finite-dimensional vector spaces is invertible.
+\end{lemma}
+
+\begin{lemma}
+  If a matrix is invertible, it has a unique inverse.
+\end{lemma}
+
+\begin{lemma}
+  Any finite product $A_1 \cdots A_k$ of invertible $n \times n$ matrices is invertible with
+  \[
+    (A_1 \times A_k)^{-1} = A_k^{-1} \cdots A_1^{-1}
+  \]
+\end{lemma}
+
+\begin{definition}[Elementary matrix]
+  An $n \times n$ matrix is an \textbf{elementary matrix} if it can be obtained from the $n \times n$ identity matrix by a single elementary row operation.
+\end{definition}
+
+\begin{theorem}
+  If $e : F^{n,n} \Rightarrow F^{n,n}$ is an elementary row operation and $A \in F^{n,n}$, then
+  \[
+    e(A) = e(I) A
+  \]
+\end{theorem}
+
+\begin{namedtheorem}[Invertible Matrix Theorem]
+  If $A$ is an $n \times n$ matrix, then the following conditions are equivalent:
+  \begin{itemize}
+    \item $A$ is invertible.
+    \item $A$ is row-equivalent to the $n \times n$ identity matrix.
+    \item $A$ is a product of elementary matrices.
+  \end{itemize}
+\end{namedtheorem}
+
+\begin{theorem}
+  If $A$ is an invertible $n \times n$ matrix and $E_k \cdots E_1 A = I$ where each $E_j$ is an elementary matrix, then $E_k \cdots E_1 I = A^{-1}$.
+\end{theorem}
+
+\begin{lemma}
+  If $A$ is row-equivalent to $I$, then $[A | I]$ is row-equivalent to $[I | A^{-1}]$. Otherwise, $A$ doesn't have an inverse.
+\end{lemma}
+
+\begin{procedure}[Computation of $A^{-1}$]
+  Row-reduce the augmented matrix $[A | I]$. If $A$ is row-equivalent to $I$, then $\RREF([A | I]) = [I | A^{-1}]$. Otherwise, $A$ doesn't have an inverse.
+\end{procedure}
+
+\begin{lemma}
+  The linear system $Ax = y$ of $n$ equations with $n$ unknowns has a unique solution iff $A$ is invertible.
+\end{lemma}
+
+\subsection{Change of basis}
+
+\begin{definition}[Change of basis matrix]
+  The \textbf{change of basis matrix} or \textbf{transition matrix} of an $n$-dimensional vector space $V$ with relation to the ordered bases $B$ and $B'$ is the $n \times n$ matrix whose $j$th column is the coordinate vector of the $j$th vector in $B$ with respect to $B'$:
+  \[
+    C_{*j} := [v_j]_{B'}
+  \]
+\end{definition}
+
+\begin{lemma}
+  If $B$ and $B'$ are bases of $V$, $v \in V$, and $C$ is the transition matrix from $B$ to $B'$, then
+  \[
+    [v]_{B'} = C [v]_{B}
+  \]
+
+  $C$ is invertible, so similarly
+  \[
+    [v]_{B} = C^{-1} [v]_{B'}
+  \]
+\end{lemma}
+
+\begin{lemma}
+  If $B$ and $B'$ are bases of $V$, $T \in \linearmaps(V)$, and $C$ is the transition matrix from $B$ to $B'$, then
+  \[
+    [T]_{B'} = C^{-1} [T]_B C
+  \]
+
+  $C$ is invertible, so similarly
+  \[
+    [T]_{B} = C^{-1} [T]_{B'} C
+  \]
+\end{lemma}
+
+\subsection{Similarity}
+
+\begin{definition}[Similar matrices]
+  Two $n \times n$ matrices $A$ and $B$ are similar if there exists an invertible matrix $C$ s.t. $B = C^{-1} A C$.
+
+  Similarity is an equivalence relation on $F^{n,n}$.
+\end{definition}
+
+\begin{definition}[Similarity invariant]
+  A property of a $n \times n$ matrix $A$ which holds for all matrices similar to $A$.
+\end{definition}
+
+\begin{theorem}[Useful similarity invariants]
+  The following properties are similarity invariants:
+  \begin{enumerate}
+    \item invertibility
+    \item nullity
+    \item rank
+  \end{enumerate}
+\end{theorem}
+
+\subsection{Linear functionals}
+
+\begin{definition}[Linear functional]
+  Let $V$ be a vector space over $F$. Then a linear map $T : V \Rightarrow F$ is a \textbf{linear functional} on $V$.
+\end{definition}
+
+\begin{definition}[Dual space]
+  Let $V$ be a vector space over $F$. Then the dual space of $V$ is the vector space of linear functionals on $V$, $V^* := \linearmaps(V, F)$.
+\end{definition}
+
+\begin{definition}[Kronecker delta]
+  \[
+    \delta_{ij} := \begin{cases}
+      1, & \text{if $i = j$} \\
+      0, & \text{if $i \neq j$}
+    \end{cases}
+  \]
+\end{definition}
+
+\begin{definition}[$i$th coordinate function]
+\end{definition}
+\begin{definition}[Dual basis]
+\end{definition}
+\begin{lemma}
+  Let $V$ be an $n$-dimensional vector space and $B = \{v_1, \ldots v_n\}$ be a basis of $V$. Then there for each $i \in \{1, \ldots, n\}$ there exists a unique linear functional $f_i$ (called the \textbf{$i$th coordinate function for $B$}) such that
+  \[
+    f_i(v_j) = \delta_{ij} \qquad \text{for all $j \in \{1, \ldots, n\}$}
+  \]
+
+  For any $v \in V$, we can express $v$ as a linear combination of elements of $B$, where the coefficients are given by $f_i(v)$:
+  \[
+    v = \sum_{j = 1}^n f_j(v) v_j
+  \]
+
+  Additionally, 
+  \[
+    B^* := {f_1, \ldots, f_n}
+  \]
+  is a basis of $V^*$, and is called the \textbf{dual basis} of the basis $B$ of $V$.
+
+  Any linear functional $f : V \Rightarrow F$ can be written uniquely as
+  \[
+    f = \sum_{i = 1}^n f(v_i) f_i
+  \]
+
+  and $f(v)$ can be written as
+  \[
+    f(v) = \sum_{i = 1}^n f(v_i) ([v]_B)_i
+  \]
+\end{lemma}
+
+\subsection{Trace}
+
+\begin{definition}[Trace of a matrix]
+  The trace of an $n \times n$ matrix $A$ is the sum of the diagonal elements of $A$:
+  \[
+    \tr(A) := \sum_{i = 1}^n A_{ii}
+  \]
+
+  $\tr : F^{n,n} \Rightarrow F$ is a linear functional.
+\end{definition}
+
+\begin{theorem}[Properties of the trace]
+  Let $A, B$ be $n \times n$ matrices and $c$ be a scalar. Then
+  \begin{itemize}
+    \item $\tr(A + B) = \tr(A) + \tr(B)$
+    \item $\tr(cA) = c tr(A)$
+    \item $\tr(A^T) = \tr(A)$
+    \item $\tr(AB) = \tr(BA)$ (this generalizes to more than 2 factors)
+    \item The trace is similarity-invariant: if $A$ and $B$ are similar then $\tr(A) = \tr(B)$
+  \end{itemize}
+\end{theorem}
+
+
+
 
