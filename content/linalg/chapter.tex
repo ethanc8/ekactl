@@ -2,8 +2,7 @@
 
 Let $F = \Real$ or $F = \Complex$.
 
-\section*{1 Linear equations}
-\addcontentsline{toc}{section}{1 Linear equations}
+\section{Linear equations}
 
 \begin{definition}[Linear equation]
   An equation that can be written in the form
@@ -169,15 +168,12 @@ Let $F = \Real$ or $F = \Complex$.
 
 \subsection{Inhomogeneous linear systems}
 
-\begin{procedure}[Solution] To solve an homogeneous system, perform Gauss-Jordan elimination on $A' = [A|Y]$ so that $R' = [R|Z] = \RREF(A')$. Then solve $RX = Z$. Note that not all inhomogeneous systems are solvable (consistent).
+\begin{procedure}[Solution] To solve an inhomogeneous system, perform Gauss-Jordan elimination on $A' = [A|Y]$ so that $R' = [R|Z] = \RREF(A')$. Then solve $RX = Z$. Note that not all inhomogeneous systems are solvable (consistent).
 \end{procedure}
-
-% TODO: Add matmul
 
 \columnbreak
 
-\section*{2 Fields}
-\addcontentsline{toc}{section}{2 Fields}
+\section{Fields}
 
 \subsection{Real and complex numbers}
 
@@ -257,6 +253,8 @@ Let $F = \Real$ or $F = \Complex$.
     \alpha x = (\alpha x_1, \ldots, \alpha x_n)
   \]
 \end{definition}
+
+\section{Vector spaces}
 
 \subsection*{2.3 Vector spaces}
 \addcontentsline{toc}{subsection}{2.3 Vector spaces}
@@ -534,7 +532,7 @@ Let $F = \Real$ or $F = \Complex$.
   Let $V$ be a finite-dimensional vector space spanned by a set of $m$ vectors. Then any linearly independent set of vectors in $V$ is finite and contains no more than $m$ elements.
 \end{theorem}
 
-\section{Unit 4}
+\section{Linear maps}
 
 \subsection{Linear map}
 
@@ -542,11 +540,11 @@ Let $F = \Real$ or $F = \Complex$.
   Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \to W$ with the two properties
   \begin{align*}
     T(v_1 + v_2) &= Tv_1 + Tv_2 && \text{(additivity)} \\
-    T(\alpha_v) &= \alpha Tv && \text{(homogeneity)}
+    T(\alpha v) &= \alpha Tv && \text{(homogeneity)}
   \end{align*}
   Equivalently, it is a function with the property that 
   \[
-    T(\alpha v_1 + v_2) = \alpha T(v_1) + T(v_2)
+    T(\alpha v_1 + v_2) = \alpha T v_1 + T v_2
   \]  
   Equivalently, it is a function with the property that
   \[
@@ -677,7 +675,11 @@ Let $F = \Real$ or $F = \Complex$.
   $\ker T_A$ is the solution set of the homogeneous system $Ax = 0$.
 \end{theorem}
 
-% TODO: more matrix stuff
+\begin{theorem}
+  A homogeneous system of linear equations with more variables than equations has nonzero solutions.
+
+  A system of linear equations with more equations than variables has no solution for some choice of constant terms.
+\end{theorem}
 
 \subsection{Isomorphisms}
 
@@ -696,7 +698,7 @@ Let $F = \Real$ or $F = \Complex$.
   \]
 \end{definition}
 
-\begin{theorem}[Isomorphism is an equivalence relation]
+\begin{theorem}[Isomorphism is an equivalence relation] \ \\
   \begin{itemize}
     \item \textbf{Reflexive}: For any vector space $V$, $\identitymap_V : V \to V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
     \item \textbf{Symmetric}: If $T : V \to W$ is an isomorphism, then $T^{-1} : W \to V$ is also an isomorphism. Thus, $V \cong W$ implies $W \cong V$.
@@ -764,21 +766,21 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \subsection{Matrix of a linear map}
 
 \begin{definition}[Matrix of a linear map]
-  Let $B_v = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_w = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \to W$ be a linear map.
+  Let $B_1 = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_2 = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \to W$ be a linear map.
   
-  Then the matrix of $T$ with respect to $B_v$ and $B_w$ is denoted as
+  Then the matrix of $T$ with respect to $B_1$ and $B_2$ is denoted as
   \[
-    [T]_{B_w B_v}
+    [T]_{B_2 B_1}
   \]
   
-  It is the $m \times n$ matrix defined such that its $j$th column is the coordinate vector of $T v_j$ with respect to $B_w$:
+  It is the $m \times n$ matrix defined such that its $j$th column is the coordinate vector of $T v_j$ with respect to $B_2$:
   \[
-    \left([T]_{B_w B_v}\right)_{*j} = [T v_j]_{B_2}
+    \left([T]_{B_2 B_1}\right)_{*j} = [T v_j]_{B_2}
   \]
 
   Equivalently, it is the $m \times n$ matrix that satisfies
   \[
-    T v_j = \sum_{i = 1}^m \left([T]_{B_w B_v}\right)_{ij} w_i
+    T v_j = \sum_{i = 1}^m \left([T]_{B_2 B_1}\right)_{ij} w_i
   \]
 \end{definition}
 
@@ -809,7 +811,7 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \begin{definition}[Matrix multiplication]
   The matrix multiplication of  the $m \times n$ matrix $A$ and the $n \times p$ matrix $B$ is made by dot-producting the rows of the first by the columns of the second:
   \[
-    \left[AB_{ij}\right] = \left[A_{i*} \dotp B_{*j}\right] = \left[\sum_{k=1}^n a_{ik} b_{kj} \right]
+    \left[AB_{ij}\right] = \left[A_{i*} \dotp B_{*j}\right] = \left[\sum_{k=1}^n A_{ik} B_{kj} \right]
   \]
 \end{definition}
 
@@ -820,10 +822,10 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{definition}[Null space, nullity]
   The \textbf{null space} of $A$ is the kernel of $T_A$:
   \[
-    \Nul A := ker T_A = \{x \in F^n : Ax = 0\}
+    \Nul A := \ker T_A = \{x \in F^n : Ax = 0\}
   \]
 
-  the solution set of the homogeneous linear system $Ax = 0$. 
+  which is the solution set of the homogeneous linear system $Ax = 0$. 
 
   \[
     \nullity A := \dim \Nul A
@@ -840,7 +842,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
     &= \spanoperator \{ A_{*1}, \ldots, A_{*n} \}
   \end{align*}
 
-  It is the span of the column vectors of the matrix $A$.
+  which is the span of the column vectors of the matrix $A$.
 
   \[
     \rank A := \dim \Col A
@@ -859,7 +861,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \]
 \end{lemma}
 
-\begin{procedure}[Finding bases of $\Nul A$ and $\Col A$]
+\begin{procedure}[Finding bases of $\Nul A$ and $\Col A$] \ \\
   \begin{enumerate}
     \item $R := \RREF(A)$
     \item The pivot columns of $A$ are a basis of $\Col A$.
@@ -874,7 +876,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \]
 \end{definition}
 
-\begin{definition}
+\begin{definition}[Row space]
   The row space of $A$ is the span of the row vectors of $A$:
   \[
     \Row A := \spanoperator \{ A_{1*}, \ldots, A_{m*} \} = \Col A^T
@@ -912,7 +914,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{lemma}
   Any finite product $A_1 \cdots A_k$ of invertible $n \times n$ matrices is invertible with
   \[
-    (A_1 \times A_k)^{-1} = A_k^{-1} \cdots A_1^{-1}
+    (A_1 \cdots A_k)^{-1} = A_k^{-1} \cdots A_1^{-1}
   \]
 \end{lemma}
 
