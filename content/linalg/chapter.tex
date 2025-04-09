@@ -216,8 +216,8 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{definition}[Field]
   A set $F$ which defines the following two operations:
   \begin{itemize}
-    \item Addition: an operation that maps $x, y \in F \Rightarrow c \in F$ and satisfies the properties of addition
-    \item Multiplication: an operation that maps $x, y \in F \Rightarrow c \in F$ and satisfies the properties of multiplication
+    \item Addition: an operation that maps $x, y \in F \to c \in F$ and satisfies the properties of addition
+    \item Multiplication: an operation that maps $x, y \in F \to c \in F$ and satisfies the properties of multiplication
   \end{itemize}
   for which the distributive property also holds.
 \end{definition}
@@ -315,7 +315,7 @@ Let $F = \Real$ or $F = \Complex$.
 \begin{definition}[Vector space of functions]
   Let $V$ be a vector space, $S$ be a set, and
   \[
-    V^S = \{ f : S \rightarrow V \}
+    V^S = \{ f : S \to V \}
   \]
   (the set of all functions that map members of $S$ to members of $V$). Then $V^S$ is a vector space, if we define for all $p, q \in V^S$, $s \in F$,
 
@@ -325,7 +325,7 @@ Let $F = \Real$ or $F = \Complex$.
 \end{definition}
 
 \begin{definition}[Polynomial]
-  A function $p : F \Rightarrow F$ is a polynomial of degree $n$ iff there exist $c_0, \ldots c_n \in F$ such that
+  A function $p : F \to F$ is a polynomial of degree $n$ iff there exist $c_0, \ldots c_n \in F$ such that
   \[
     p(x) = c_0 + c_1 x + c_2 x^2 + \cdots c_n x^n = \sum_{k=0}^n c_k x^k
   \]
@@ -539,7 +539,7 @@ Let $F = \Real$ or $F = \Complex$.
 \subsection{Linear map}
 
 \begin{definition}[Linear map]
-  Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \Rightarrow W$ with the two properties
+  Let $V$ and $W$ be vector spaces over $F$. A \textbf{linear map} (also called \textbf{linear function} or \textbf{linear transformation}) from $V$ to $W$ is a function $T : V \to W$ with the two properties
   \begin{align*}
     T(v_1 + v_2) &= Tv_1 + Tv_2 && \text{(additivity)} \\
     T(\alpha_v) &= \alpha Tv && \text{(homogeneity)}
@@ -556,7 +556,7 @@ Let $F = \Real$ or $F = \Complex$.
 
 \textbf{Note:} Not all elementary linear functions $y = mx + b$ are linear maps! All linear maps in $F^1$ are of the form $y = mx$.
 
-\begin{definition}[Linear operator] A function $T : V \Rightarrow V$ which is a linear map.
+\begin{definition}[Linear operator] A function $T : V \to V$ which is a linear map.
 \end{definition}
 
 \begin{definition}[$\linearmaps$]
@@ -568,7 +568,7 @@ Let $F = \Real$ or $F = \Complex$.
 \end{definition}
 
 \begin{namedlemma}[Linear Map Lemma]
-  Let $V$ be a finite-dimensional vector space and $W$ be a vector space. Suppose $\{ v_1, \ldots v_n \}$ is a basis of $V$ and $w_1 \ldots w_n \in W$. Then there exists a unique linear map $T : V \Rightarrow W$ such that
+  Let $V$ be a finite-dimensional vector space and $W$ be a vector space. Suppose $\{ v_1, \ldots v_n \}$ is a basis of $V$ and $w_1 \ldots w_n \in W$. Then there exists a unique linear map $T : V \to W$ such that
   \[
     Tv_k = w_k
   \]
@@ -577,7 +577,7 @@ Let $F = \Real$ or $F = \Complex$.
   \textbf{Note:} This means that there exists a unique linear map that maps a basis to any vectors we wish, and that a linear map is uniquely determined by its output on a basis.
 \end{namedlemma}
 
-\begin{lemma} If $T : V \Rightarrow W$ is a linear map, then $T(0) = 0$.
+\begin{lemma} If $T : V \to W$ is a linear map, then $T(0) = 0$.
 \end{lemma}
 
 \begin{theorem}[$\linearmaps(V,W)$ is a vector space]
@@ -611,37 +611,37 @@ Let $F = \Real$ or $F = \Complex$.
 \subsection{Kernel}
 
 \begin{definition}[Kernel]
-  The \textbf{kernel} or \textbf{null space} of a linear map $T : V \Rightarrow W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
+  The \textbf{kernel} or \textbf{null space} of a linear map $T : V \to W$ is the set of vectors in $V$ which $T$ maps to the zero vector of $W$:
   \[
     \operatorname{null} T = \ker T := \{ v \in V : Tv = 0 \} \subseteq V
   \]
 \end{definition}
 
-\begin{theorem}[Kernel is subspace of domain] If $T : V \Rightarrow W$, then $\ker T$ is a subspace of $V$.
+\begin{theorem}[Kernel is subspace of domain] If $T : V \to W$, then $\ker T$ is a subspace of $V$.
 \end{theorem}
 
 \begin{definition}[Injective]
-  A map of sets $f : A \Rightarrow B$ is \textbf{injective} or \textbf{one-to-one} iff $a_1 \neq a_2$ implies $f(a_1) \neq f(a_2)$, or equivalently iff $f(a_1) = f(a_2)$ implies $a_1 = a_2$.
+  A map of sets $f : A \to B$ is \textbf{injective} or \textbf{one-to-one} iff $a_1 \neq a_2$ implies $f(a_1) \neq f(a_2)$, or equivalently iff $f(a_1) = f(a_2)$ implies $a_1 = a_2$.
 \end{definition}
 
 \begin{theorem}[Injective linear map has trivial kernel]
-  A linear map $T : V \Rightarrow W$ is injective iff $\ker T = \{ 0 \}$.
+  A linear map $T : V \to W$ is injective iff $\ker T = \{ 0 \}$.
 \end{theorem}
 
 \subsection{Image}
 
 \begin{definition}[Image]
-  Let $T : V \Rightarrow W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
+  Let $T : V \to W$ be a linear map. The \textbf{image} or \textbf{range} of $T$ is the set of all outputs of T:
   \[
     \operatorname{range} T = \im T := \{ Tv : v \in V \} \subseteq W
   \]
 \end{definition}
 
-\begin{theorem}[Image is subspace of codomain] If $T : V \Rightarrow W$, then $\im T$ is a subspace of $W$.
+\begin{theorem}[Image is subspace of codomain] If $T : V \to W$, then $\im T$ is a subspace of $W$.
 \end{theorem}
 
 \begin{definition}[Surjective]
-  A map of sets $f : A \Rightarrow B$ is surjectve iff $\im f = B$, or equivalently iff for every $b \in B$ there exists $a \in A$ s.t. $f(a) = b$.
+  A map of sets $f : A \to B$ is surjectve iff $\im f = B$, or equivalently iff for every $b \in B$ there exists $a \in A$ s.t. $f(a) = b$.
 
   Iff $f$ is surjective, $f$ \textbf{maps $A$ onto $B$}.
 \end{definition}
@@ -649,14 +649,14 @@ Let $F = \Real$ or $F = \Complex$.
 \subsection{Fundamental Theorem}
 
 \begin{namedtheorem}[Fundamental Theorem of Linear Maps]
-  Let $T : V \Rightarrow W$ be a linear map with $V$ finite-dimensional. Them $\im T$ is finite-dimensional and
+  Let $T : V \to W$ be a linear map with $V$ finite-dimensional. Them $\im T$ is finite-dimensional and
   \[
     \dim V = \dim \ker T + \dim \im T
   \]
 \end{namedtheorem}
 
 \begin{theorem}[Corollary to Fundamental Thm]
-  Let $V$ and $W$ be finite-dimensional vector spaces, and let $T : V \Rightarrow W$. Then
+  Let $V$ and $W$ be finite-dimensional vector spaces, and let $T : V \to W$. Then
   \begin{itemize}
     \item If $\dim V > \dim W$, then $T$ is not injective.
     \item If $\dim V < \dim W$, then $T$ is not surjective.
@@ -670,7 +670,7 @@ Let $F = \Real$ or $F = \Complex$.
   \[
     Ax = y
   \]
-  we can interpret this as a linear map $T_A : M^{n \times 1}(F) \Rightarrow M^{m \times 1}(F)$ where $T(x) = Ax$.
+  we can interpret this as a linear map $T_A : M^{n \times 1}(F) \to M^{m \times 1}(F)$ where $T(x) = Ax$.
 \end{definition}
 
 \begin{theorem}
@@ -686,11 +686,11 @@ Let $F = \Real$ or $F = \Complex$.
 \end{definition}
 
 \begin{definition}[Isomorphism]
-  Let $V$ and $W$ be vector spaces over $F$. An \textbf{isomorphism from $V$ to $W$} is a bijective linear map $T : V \Rightarrow W$. Iff there exists an isomorphism from $V$ to $W$, $V$ and $W$ are \textbf{isomorphic}, which is denoted by $V \cong W$.
+  Let $V$ and $W$ be vector spaces over $F$. An \textbf{isomorphism from $V$ to $W$} is a bijective linear map $T : V \to W$. Iff there exists an isomorphism from $V$ to $W$, $V$ and $W$ are \textbf{isomorphic}, which is denoted by $V \cong W$.
 \end{definition}
 
 \begin{definition}[Identity map]
-  The identity map $\identitymap_V : V \Rightarrow V$ is defined such that
+  The identity map $\identitymap_V : V \to V$ is defined such that
   \[
     \identitymap_V(v) = v \qquad \text{for $V \in V$}
   \]
@@ -698,9 +698,9 @@ Let $F = \Real$ or $F = \Complex$.
 
 \begin{theorem}[Isomorphism is an equivalence relation]
   \begin{itemize}
-    \item \textbf{Reflexive}: For any vector space $V$, $\identitymap_V : V \Rightarrow V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
-    \item \textbf{Symmetric}: If $T : V \Rightarrow W$ is an isomorphism, then $T^{-1} : W \Rightarrow V$ is also an isomorphism. Thus, $V \cong W$ implies $W \cong V$.
-    \item \textbf{Transitive}: If $T_1 : U \Rightarrow V$ and $T_2 : V \Rightarrow W$ are isomorphisms, then $T_2 T_1 : U \Rightarrow W$ is an isomorphism. Thus, $U \cong V$ and $V \cong W$ implies $U \cong W$
+    \item \textbf{Reflexive}: For any vector space $V$, $\identitymap_V : V \to V$ is an isomorphism, i.e. $V \cong V$ for every $V$.
+    \item \textbf{Symmetric}: If $T : V \to W$ is an isomorphism, then $T^{-1} : W \to V$ is also an isomorphism. Thus, $V \cong W$ implies $W \cong V$.
+    \item \textbf{Transitive}: If $T_1 : U \to V$ and $T_2 : V \to W$ are isomorphisms, then $T_2 T_1 : U \to W$ is an isomorphism. Thus, $U \cong V$ and $V \cong W$ implies $U \cong W$
   \end{itemize}
   Therefore, isomorphism is an equivalence relation on the collection of all vector spaces over $F$.
 \end{theorem}
@@ -720,7 +720,7 @@ Let $F = \Real$ or $F = \Complex$.
 \end{theorem}
 
 \begin{theorem}
-  If $V$ and $W$ are finite-dimensional vector spaces of the same dimension and $T : V \Rightarrow W$ is a linear map, then if $T$ is injective or surjective, it is an isomorphism.
+  If $V$ and $W$ are finite-dimensional vector spaces of the same dimension and $T : V \to W$ is a linear map, then if $T$ is injective or surjective, it is an isomorphism.
 \end{theorem}
 
 \begin{lemma}
@@ -732,14 +732,14 @@ Let $F = \Real$ or $F = \Complex$.
 For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $V$, where $V$ is an $n$-dimensional vector space over $F$.
 
 \begin{definition}[Linear combination map (basis isomorphism)]
-  The \textbf{linear combination map} or \textbf{basis isomorphism} is the isomorphism $L_B : F^n \Rightarrow V$ defined by
+  The \textbf{linear combination map} or \textbf{basis isomorphism} is the isomorphism $L_B : F^n \to V$ defined by
   \[
     L_B(\vec{x}) = x_1 v_1 + \cdots + x_n v_n
   \]
 \end{definition}
 
 \begin{definition}[Coordinate isomorphism]
-  The \textbf{coordinate isomorphism} is the isomorphism $L_B^{-1} : V \Rightarrow 
+  The \textbf{coordinate isomorphism} is the isomorphism $L_B^{-1} : V \to 
   F^n$.
 
   This means that for any vector space, its vectors can be expressed as vectors in $F^n$.
@@ -764,7 +764,7 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \subsection{Matrix of a linear map}
 
 \begin{definition}[Matrix of a linear map]
-  Let $B_v = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_w = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \Rightarrow W$ be a linear map.
+  Let $B_v = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_w = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \to W$ be a linear map.
   
   Then the matrix of $T$ with respect to $B_v$ and $B_w$ is denoted as
   \[
@@ -790,7 +790,7 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \end{lemma}
 
 \begin{definition}[Standard matrix]
-  The matrix of a linear map $T : F^n \Rightarrow F^m$ with respect to the standard bases of $F^n$ and $F^m$.
+  The matrix of a linear map $T : F^n \to F^m$ with respect to the standard bases of $F^n$ and $F^m$.
 \end{definition}
 
 \begin{lemma}
@@ -815,7 +815,7 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 
 \subsection{Fundamental matrix spaces}
 
-Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \Rightarrow F^m$.
+Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \to F^m$.
 
 \begin{definition}[Null space, nullity]
   The \textbf{null space} of $A$ is the kernel of $T_A$:
@@ -921,7 +921,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \R
 \end{definition}
 
 \begin{theorem}
-  If $e : F^{n,n} \Rightarrow F^{n,n}$ is an elementary row operation and $A \in F^{n,n}$, then
+  If $e : F^{n,n} \to F^{n,n}$ is an elementary row operation and $A \in F^{n,n}$, then
   \[
     e(A) = e(I) A
   \]
@@ -1009,7 +1009,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \R
 \subsection{Linear functionals}
 
 \begin{definition}[Linear functional]
-  Let $V$ be a vector space over $F$. Then a linear map $T : V \Rightarrow F$ is a \textbf{linear functional} on $V$.
+  Let $V$ be a vector space over $F$. Then a linear map $T : V \to F$ is a \textbf{linear functional} on $V$.
 \end{definition}
 
 \begin{definition}[Dual space]
@@ -1046,7 +1046,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \R
   \]
   is a basis of $V^*$, and is called the \textbf{dual basis} of the basis $B$ of $V$.
 
-  Any linear functional $f : V \Rightarrow F$ can be written uniquely as
+  Any linear functional $f : V \to F$ can be written uniquely as
   \[
     f = \sum_{i = 1}^n f(v_i) f_i
   \]
@@ -1065,7 +1065,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \R
     \tr(A) := \sum_{i = 1}^n A_{ii}
   \]
 
-  $\tr : F^{n,n} \Rightarrow F$ is a linear functional.
+  $\tr : F^{n,n} \to F$ is a linear functional.
 \end{definition}
 
 \begin{theorem}[Properties of the trace]

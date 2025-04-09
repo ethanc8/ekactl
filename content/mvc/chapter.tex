@@ -235,7 +235,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \refresources{Colley [2.1] Trimm [3.1, 3.2] Brummet [MVCWUP:Feb4(35-41)]}
 
 \begin{definition}[Function]
-  All functions $f : X \Rightarrow Y$ are defined by:
+  All functions $f : X \to Y$ are defined by:
   \begin{itemize}
     \item A domain set $X$
     \item A codomain set $Y$
@@ -244,18 +244,18 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \end{definition}
 
 \begin{definition}[Graph]
-  The graph of $f : X \subseteq \Real^n \Rightarrow \Real$ is the set
+  The graph of $f : X \subseteq \Real^n \to \Real$ is the set
   \[
     \{(x_1, \ldots, x_n, f(x)) : x = (x_1, \ldots, x_n)\}
   \]
-  Specifically, for $f : \Real^2 \Rightarrow \Real$ the graph is the set
+  Specifically, for $f : \Real^2 \to \Real$ the graph is the set
   \[
     \{(x, y, z) : (x, y) \in X \text{ and } z = f(x, y)\}
   \]
 \end{definition}
 
 \begin{definition}[Level set]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real$. The \textbf{level set at height $c$ of $f$} is the set in $\Real^n$ defined by the equation $f(\vec{a}) = c$, where $c$ is a constant. This is equivalent to the set
+  Let $f : X \subseteq \Real^n \to \Real$. The \textbf{level set at height $c$ of $f$} is the set in $\Real^n$ defined by the equation $f(\vec{a}) = c$, where $c$ is a constant. This is equivalent to the set
   \[
     \{ \vec{x} \in \Real^n : f(\vec{x}) = c \}
   \]
@@ -264,12 +264,12 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \end{definition}
 
 \begin{definition}[Contour set]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real$. The \textbf{contour set at height $c$ of $f$} is the set in $\Real^{n + 1}$ defined by the two equations $z = f(\vec{a})$ and $z = c$, where $c$ is a constant. This is equivalent to the set
+  Let $f : X \subseteq \Real^n \to \Real$. The \textbf{contour set at height $c$ of $f$} is the set in $\Real^{n + 1}$ defined by the two equations $z = f(\vec{a})$ and $z = c$, where $c$ is a constant. This is equivalent to the set
   \[
     \{ \vec{x} \in \Real^{n + 1} : z = f(\vec{x}) = c \}
   \]
 
-  If $f : X \subseteq \Real^2 \Rightarrow \Real$, this is also called a \textbf{contour curve}. It is equivalent to the level curve, except it is located in $\Real^3$ rather than $\Real^2$.
+  If $f : X \subseteq \Real^2 \to \Real$, this is also called a \textbf{contour curve}. It is equivalent to the level curve, except it is located in $\Real^3$ rather than $\Real^2$.
 \end{definition}
 
 % TODO: finish this
@@ -284,7 +284,7 @@ Colley [2.2]}
 \end{definition}
 
 \begin{definition}[Continuity]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$ and let $\vec{a} \in X$. Then $f$ is continuous at point $\vec{a}$ iff
+  Let $f : X \subseteq \Real^n \to \Real^m$ and let $\vec{a} \in X$. Then $f$ is continuous at point $\vec{a}$ iff
   \[
     \lim_{\vec{x} \to \vec{a}} f(\vec{x}) = f(\vec{a})
   \]
@@ -338,7 +338,7 @@ Brummet [11, 12.5, MVCWUP:Feb12/22(48-54)]}
 \end{definition}
 
 \begin{definition}[$C^k$ function]
-  Where $k$ is a nonnegative integer, a function $f : X \in \Real^n \Rightarrow \Real$ is of order $C^k$ at point $\vec{x} \in X$ iff its $k$-th order and lower partials exist and are continuous at $\vec{x}$. 
+  Where $k$ is a nonnegative integer, a function $f : X \in \Real^n \to \Real$ is of order $C^k$ at point $\vec{x} \in X$ iff its $k$-th order and lower partials exist and are continuous at $\vec{x}$. 
 
   It is of order $C^\infty$ at point $\vec{x}$ iff it is of order $C^k$ at $\vec{x}$ for all $k \in \Natural$.
   
@@ -346,7 +346,7 @@ Brummet [11, 12.5, MVCWUP:Feb12/22(48-54)]}
 \end{definition}
 
 \begin{theorem}
-  Let $f : X \in \Real^n \Rightarrow \Real$ whose $k$-th order and lower partials exist and are continuous on $X$. Then its $k$-th order and lower partials may be evaluated in any order, i.e.
+  Let $f : X \in \Real^n \to \Real$ whose $k$-th order and lower partials exist and are continuous on $X$. Then its $k$-th order and lower partials may be evaluated in any order, i.e.
   \[
     f_{x_1 \cdots x_n} = f_{x_n \cdots x_1} = f_{x_1 x_3 x_{27} \cdots x_4} = \cdots
   \]
@@ -379,7 +379,7 @@ Brummet [11, 12.5, MVCWUP:Feb12/22(48-54)]}
 \begin{theorem}
   The gradient $\grad F(\vec{x})$ is the normal vector to the tangent plane to the implicit surface defined by $F(\vec{x}) = k$, where $k$ is a constant.
 
-  Equivalently, if $x_0$ is a point on the level set $S = \{ x \in X : F(x) = k \}$ where $F : X \subseteq \Real^n \Rightarrow \Real$, then the vector $\grad F(x_0)$ is perpendicular to $S$.
+  Equivalently, if $x_0$ is a point on the level set $S = \{ x \in X : F(x) = k \}$ where $F : X \subseteq \Real^n \to \Real$, then the vector $\grad F(x_0)$ is perpendicular to $S$.
 \end{theorem}
 
 \subsection{Chain rule}
@@ -388,7 +388,7 @@ Brummet [11, 12.5, MVCWUP:Feb12/22(48-54)]}
 Brummet [12, MVCWUP:Feb24(58-61)]}
 
 \begin{definition}[Jacobian]
-  If $f: X \subseteq \Real^n \Rightarrow \Real^m$ is a vector-valued function, then the Jacobian is
+  If $f: X \subseteq \Real^n \to \Real^m$ is a vector-valued function, then the Jacobian is
   \[
     Df\left(\begin{bmatrix}
       x_1 \\
@@ -410,8 +410,8 @@ Brummet [12, MVCWUP:Feb24(58-61)]}
 \end{definition}
 
 \begin{theorem}[Multivariable chain rule]
-  Suppose $X \subseteq \Real^m$ and $T \subseteq \Real^n$ are open and $f : X \Rightarrow \Real^p$ and
-  $r : T \Rightarrow \Real^m$ are defined so that $T \subseteq X$. If $x$ is
+  Suppose $X \subseteq \Real^m$ and $T \subseteq \Real^n$ are open and $f : X \to \Real^p$ and
+  $r : T \to \Real^m$ are defined so that $T \subseteq X$. If $x$ is
   differentiable at $t_0 \in T$ and f is differentiable at $x_0 = r(t_0)$, then
   the composite $f \compose r$ is differentiable at $t_0$, and we have
   \[
@@ -433,11 +433,11 @@ Brummet [12, MVCWUP:Feb24(58-61)]}
 \refresources{Brummet [MVCWUP:Feb24(55-56)]}
 
 \begin{definition}[Path]
-  A path in $\Real^n$ is a function $x : I \Rightarrow \Real^n$, where $I$ is a set of scalars. If $I = [a, b]$, then the endpoints of the path are $f(a)$ and $f(b)$.
+  A path in $\Real^n$ is a function $x : I \to \Real^n$, where $I$ is a set of scalars. If $I = [a, b]$, then the endpoints of the path are $f(a)$ and $f(b)$.
 \end{definition}
 
 \begin{definition}[Tangent vector]
-  Given a path $r : \Real \Rightarrow \Real^3$, the tangent vector to said path at some point $P$ is given by $r'(t)$, provided that $r'(t) \neq 0$. In $\Real^3$,
+  Given a path $r : \Real \to \Real^3$, the tangent vector to said path at some point $P$ is given by $r'(t)$, provided that $r'(t) \neq 0$. In $\Real^3$,
   \[
     r'(t) = \lim_{h \to 0} \frac{r(t + h) - r(t)}{h} = \begin{bmatrix}
       \frac{dx}{dt} \\
@@ -448,7 +448,7 @@ Brummet [12, MVCWUP:Feb24(58-61)]}
 \end{definition}
 
 \begin{definition}[Derivative of vector-valued function]
-  Let $f : T \subseteq \Real \Rightarrow \Real^m$. Then
+  Let $f : T \subseteq \Real \to \Real^m$. Then
   \[
     f'(t) = \begin{bmatrix}
       f_1'(t) \\
@@ -465,7 +465,7 @@ Brummet [12, MVCWUP:Feb24(58-61)]}
 Trimm [3.5] 
 Brummet [13.5]}
 
-\begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real$)]
+\begin{definition}[Linear approximation ($\Real^n \to \Real$)]
   The \textbf{linear approximation} or \textbf{tangent plane ($\Real^3$) or hyperplane} to the graph of a function $f$ at the point $\vec{a}$ is expressed by
   \[
     L(\vec{x}) = f(\vec{a}) + \grad f(\vec{a}) \dotp (\vec{x} - \vec{a})
@@ -477,7 +477,7 @@ Brummet [13.5]}
   \]
 \end{definition}
 
-\begin{definition}[Linear approximation ($\Real^n \Rightarrow \Real^m$)]
+\begin{definition}[Linear approximation ($\Real^n \to \Real^m$)]
   The \textbf{linear approximation} to a vector-valued function $f$ at the point $\vec{a}$ is expressed by
   \[
     L(\vec{x}) = f(\vec{a}) + Df(\vec{a})(\vec{x} - \vec{a})
@@ -485,7 +485,7 @@ Brummet [13.5]}
 \end{definition}
 
 \begin{definition}[Differentiability]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. $f$ is differentiable at $a$ iff all of its partial derivatives exist and 
+  Let $f : X \subseteq \Real^n \to \Real^m$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. $f$ is differentiable at $a$ iff all of its partial derivatives exist and 
   \[
     \lim_{\vec{x} \to \vec{a}} \frac{f(\vec{x}) - L(\vec{x})}{|\vec{x} - \vec{a}|} = 0
   \]
@@ -493,7 +493,7 @@ Brummet [13.5]}
 \end{definition}
 
 \begin{theorem}[Differentiability shortcut]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real^m$ be a vector-valued function. If all partial derivatives $\frac{\partial f_i}{\partial x_j}$ exist and are continuous in a neighborhood of $\vec{a}$ in $X$, then $F$ is differentiable at $\vec{a}$.
+  Let $f : X \subseteq \Real^n \to \Real^m$ be a vector-valued function. If all partial derivatives $\frac{\partial f_i}{\partial x_j}$ exist and are continuous in a neighborhood of $\vec{a}$ in $X$, then $F$ is differentiable at $\vec{a}$.
 \end{theorem}
 
 \subsection{Directional derivative}
@@ -503,7 +503,7 @@ Trimm [3.7]
 Brummet [14]}
 
 \begin{definition}[Directional derivative]
-  Let $f : X \subseteq \Real^n \Rightarrow \Real$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. If $\vec{v}$ is any unit vector in $X$, then the directional derivative of $f$ at $a$ in the direction of $v$ is
+  Let $f : X \subseteq \Real^n \to \Real$, where $X$ is an open subset of $\Real^n$, and let $\vec{a} \in X$. If $\vec{v}$ is any unit vector in $X$, then the directional derivative of $f$ at $a$ in the direction of $v$ is
   \[
     D_{\vec{v}} f(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a} + h\vec{v}) - f(\vec{a})}{h}
   \]
@@ -521,11 +521,11 @@ Brummet [14]}
   \[
     D_{\widehat{\grad f(\vec{a})}} f(\vec{a}) = \max \{ D_{\vec{v}} f(\vec{a}) : \vec{v} \in \Real^n \}
   \]
-  where $f : X \subseteq \Real^n \Rightarrow \Real$.
+  where $f : X \subseteq \Real^n \to \Real$.
 \end{theorem}
 
 \begin{theorem}
-  Let $f : X \subseteq \Real^2 \Rightarrow \Real$, and let $(a, b, c) \in \Real^3$. Then $\grad f(a, b)$ is orthogonal to the level curve at height $c$.
+  Let $f : X \subseteq \Real^2 \to \Real$, and let $(a, b, c) \in \Real^3$. Then $\grad f(a, b)$ is orthogonal to the level curve at height $c$.
 \end{theorem}
 
 \section{Extrema}
@@ -536,11 +536,11 @@ Brummet [14]}
 Brummet [15, MVCWUP:69-74(Mar 4-6)]}
 
 \begin{theorem}[Quasi-First Derivative Test]
-  If $f : X \subseteq \Real^n \Rightarrow \Real$ has a local maximum or minimum at $\vec{a}$ and the first order partial derivatives exist, then $\grad f \dotp \vec{a} = 0$, or equivalently all the partials are equal to 0.
+  If $f : X \subseteq \Real^n \to \Real$ has a local maximum or minimum at $\vec{a}$ and the first order partial derivatives exist, then $\grad f \dotp \vec{a} = 0$, or equivalently all the partials are equal to 0.
 \end{theorem}
 
 \begin{namedtheorem}[Extreme Value Theorem]
-  Let $X$ be a closed and bounded subset of $\Real^n$ and suppose $f : X \Rightarrow \Real^n$ is continuous. Then $f$ attains an absolute maximum and an absolute minimum somewhere on $X$.
+  Let $X$ be a closed and bounded subset of $\Real^n$ and suppose $f : X \to \Real^n$ is continuous. Then $f$ attains an absolute maximum and an absolute minimum somewhere on $X$.
 \end{namedtheorem}
 
 \begin{definition}[Critical point of $f$]
@@ -611,7 +611,7 @@ Brummet [15, MVCWUP:69-74(Mar 4-6)]}
 Brummet [16, 17, MVCWUP:75-80(Mar 13-14)]}
 
 \begin{definition}[Hessian matrix]
-  The Hessian matrix $Hf$ of a function $f : X \subseteq \Real^n \Rightarrow \Real$ is the matrix of second-order partials
+  The Hessian matrix $Hf$ of a function $f : X \subseteq \Real^n \to \Real$ is the matrix of second-order partials
   \[
     \left[Hf_{ij}\right] = \left[\frac{\partial^2 f}{\partial x_i \partial x_j}\right]
   \]
@@ -632,7 +632,7 @@ The \textbf{first-order Taylor polynomial} is just the linear approximation
 \]
 
 \begin{definition}[Second-order Taylor polynomial]
-  The second degree Taylor polynomial for a function $f \in \Real^n \Rightarrow \Real$ at point $\vec{a}$ evaluated at point $\vec{x}$, where $\vec{h} := \vec{x} - \vec{a}$, is:
+  The second degree Taylor polynomial for a function $f \in \Real^n \to \Real$ at point $\vec{a}$ evaluated at point $\vec{x}$, where $\vec{h} := \vec{x} - \vec{a}$, is:
   \begin{align*}
     T_2(\vec{x}) &= f(\vec{a}) + \sum_{i = 1}^n f_{x_i}(\vec{a}) h_i + \frac{1}{2} \sum_{i,j=1}^n f_{x_i x_j}(\vec{a}) h_i h_j \\
     &= f(\vec{a}) + \grad f(\vec{a}) \dotp \vec{h} + \frac{1}{2} \vec{h}^T Hf(\vec{a}) \vec{h}
@@ -642,7 +642,7 @@ The \textbf{first-order Taylor polynomial} is just the linear approximation
 Higher-order Taylor polynomials are not very useful.
 
 \begin{theorem}[Second Derivative Test]
-  Let $X$ be an open subset of $\Real^n$ and $f : X \Rightarrow \Real$ whose 2nd-order and lower partials exist and are continuous on $X$ (f is of class $C^2$). Let $\vec{a} \in X$ be a critical point of $f$. Then
+  Let $X$ be an open subset of $\Real^n$ and $f : X \to \Real$ whose 2nd-order and lower partials exist and are continuous on $X$ (f is of class $C^2$). Let $\vec{a} \in X$ be a critical point of $f$. Then
   \begin{itemize}
     \item If the Hessian $Hf(\vec{a})$ is positive definite, then $f$ has a local minimum at $\vec{a}$.
     \item If the Hessian $Hf(\vec{a})$ is negative definite, then $f$ has a local maximum at $\vec{a}$.
@@ -682,7 +682,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 % Some of these equations were copied from Paul's Notes.
 
 \begin{definition}[Double integral]
-  The double integral of $f : X \subseteq \Real^2 \Rightarrow \Real$ over the rectangle $R$ is
+  The double integral of $f : X \subseteq \Real^2 \to \Real$ over the rectangle $R$ is
   \[
     \iint_{R}{{f\left( {x,y} \right)\,dA}} = \mathop {\lim }_{n,\,\,m \to \infty } \sum_{i = 1}^n {\sum_{j = 1}^m {f\left( {x_i^*,y_j^*} \right)\,\Delta A} }
   \]
@@ -695,7 +695,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \end{definition}
 
 \begin{theorem}[Fubini's Theorem]
-  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is continuous on $[a, b] \times [c, d]$, then
+  If $f : X \subseteq \Real^2 \to \Real$ is continuous on $[a, b] \times [c, d]$, then
   \[
     \iint\limits_{R}{{f\left( {x,y} \right)\,dA}} = \int_{{\,a}}^{{\,b}}{{\int_{{\,c}}^{{\,d}}{{f\left( {x,y} \right)\,dy}}\,dx}} = \int_{{\,c}}^{{\,d}}{{\int_{{\,a}}^{{\,b}}{{f\left( {x,y} \right)\,dx}}\,dy}}
   \]
@@ -709,14 +709,14 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \end{theorem}
 
 \begin{theorem}[Type I integrals]
-  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is defined on $D = \{ (x, y) : a \leq x \leq b, g_1(x) \leq y \leq g_2(x) \}$, then
+  If $f : X \subseteq \Real^2 \to \Real$ is defined on $D = \{ (x, y) : a \leq x \leq b, g_1(x) \leq y \leq g_2(x) \}$, then
   \[
     \iint\limits_{D}{{f\left( {x,y} \right)\,dA}} = \int_{{\,a}}^{{\,b}}{{\int_{{{g_{\,1}}\left( x \right)}}^{{{g_{\,2}}\left( x \right)}}{{f\left( {x,y} \right)\,dy}}\,dx}}
   \]
 \end{theorem}
 
 \begin{theorem}[Type II integrals]
-  If $f : X \subseteq \Real^2 \Rightarrow \Real$ is defined on $D = \{ (x, y) : h_1(y) \leq x \leq h_2(x), c \leq y \leq d \}$, then
+  If $f : X \subseteq \Real^2 \to \Real$ is defined on $D = \{ (x, y) : h_1(y) \leq x \leq h_2(x), c \leq y \leq d \}$, then
   \[
     \iint\limits_{D}{{f\left( {x,y} \right)\,dA}} = \int_{{\,c}}^{{\,d}}{{\int_{{h{\,_1}\left( y \right)}}^{{{h_{\,2}}\left( y \right)}}{{f\left( {x,y} \right)\,dx}}\,dy}}
   \]
