@@ -1081,6 +1081,52 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \end{itemize}
 \end{theorem}
 
+\subsection{Transpose}
+
+\begin{definition}[Transpose of linear map]
+  Let $V$ and $W$ be vector spaces over $F$, and let $T \in \linearmaps(V, W)$. The \textbf{transpose of $T$} or \textbf{dual map of $T$} is the linear map $T^* = T^T \in \linearmaps(W^*, V^*)$ defined for each $f \in W^*$ by
+  \[
+    T^*(f) = T^T(f) := f \compose T
+  \]
+
+  That is, for each linear functional $f \in W^*$, $T^T(f)$ is the linear functional in $V^*$ defined by (for each $v \in V$)
+  \[
+    T^T(f)(v) = f(Tv)
+  \]
+\end{definition}
+
+\begin{theorem}[Properties of the transpose]
+  For all linear maps $T_1$, $T_2$, $T$ and $\alpha \in F$,
+  \begin{itemize}
+    \item $(T_1 + T_2)^T = \alpha T_1^T + T_2^T$ (the map $T \mapsto T^T$ is linear)
+    \item $(T_1 \compose T_2)^T = T_2^T + T_1^T$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Matrix of transpose is transpose of matrix]
+  The matrix of $T^T$ is the transpose of the matrix of $T$:
+  \[
+    [T^T]_{B_W^* B_V^*} = \left([T]_{B_V B_W}\right)^T
+  \]
+\end{theorem}
+
+\begin{lemma}
+  Let $V$ and $W$ be finite-dimensional vector spaces, $T \in \linearmaps(V, W)$ and $g \in W^*$. Choose ordered bases $B_V = (v_1, \ldots, v_n)$ and $B_W = (w_1, \ldots, w_m)$ for $V$ and $W$, respectively, and let $B_V^* = (f_1, \ldots, f_n)$ and $B_W^* = (g_1, \ldots, g_m)$ be the corresponding dual bases of $V^*$ and $W^*$. Let $S = (1)$ be the standard ordered basis of $F$. Then
+  \[
+    [T^T g]_{B_v^*,S} = [g]_{B_W^*, S} [T]_{V, W}
+  \]
+\end{lemma}
+
+\begin{lemma}
+  Let $V$ and $W$ be finite-dimensional vector spaces, $T \in \linearmaps(V, W)$, $T^T \in \linearmaps(W^*, V^*)$. Then:
+  \begin{itemize}
+    \item \[
+      \rank T^T = \rank T \leq min \{ \dim V, \dim W \}
+    \]
+    \item $T$ is injective iff $T^T$ is surjective
+    \item $T$ is surjective iff $T^T$ is injective
+  \end{itemize}
+\end{lemma}
 
 
 
