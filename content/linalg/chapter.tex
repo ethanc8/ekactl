@@ -766,21 +766,21 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
 \subsection{Matrix of a linear map}
 
 \begin{definition}[Matrix of a linear map]
-  Let $B_1 = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_2 = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \to W$ be a linear map.
+  Let $B_V = (v_1, \ldots, v_n)$ be a basis of $V$ and $B_W = (w_1, \ldots, w_m)$ be a basis of $W$. Let $T : V \to W$ be a linear map.
   
-  Then the matrix of $T$ with respect to $B_1$ and $B_2$ is denoted as
+  Then the matrix of $T$ with respect to $B_V$ and $B_W$ is denoted as
   \[
-    [T]_{B_2 B_1}
+    [T]_{B_W B_V}
   \]
   
-  It is the $m \times n$ matrix defined such that its $j$th column is the coordinate vector of $T v_j$ with respect to $B_2$:
+  It is the $m \times n$ matrix defined such that its $j$th column is the coordinate vector of $T v_j$ with respect to $B_W$:
   \[
-    \left([T]_{B_2 B_1}\right)_{*j} = [T v_j]_{B_2}
+    \left([T]_{B_W B_V}\right)_{*j} = [T v_j]_{B_W}
   \]
 
   Equivalently, it is the $m \times n$ matrix that satisfies
   \[
-    T v_j = \sum_{i = 1}^m \left([T]_{B_2 B_1}\right)_{ij} w_i
+    T v_j = \sum_{i = 1}^m \left([T]_{B_W B_V}\right)_{ij} w_i
   \]
 \end{definition}
 
