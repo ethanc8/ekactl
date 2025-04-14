@@ -815,6 +815,18 @@ For the following definitions, let $B := \{ v_1, \ldots, v_n \}$ be a basis of $
   \]
 \end{definition}
 
+% https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/02%3A_Matrices/2.04%3A_Properties_of_Matrix_Multiplication
+\begin{theorem}[Properties of matrix multiplication]
+  Let $A$, $B$, $C$ be matrices and $r$ and $s$ be scalars in $F$. Then
+  \begin{align*}
+      A\left( rB+sC\right) &= r\left( AB\right) +s\left( AC\right) \\
+      \left( B+C\right) A &=BA+CA \\
+      A\left( BC\right) &=\left( AB\right) C
+  \end{align*}
+
+  Effectively, matrix multiplication is distributive and associative. It is not always commutative.
+\end{theorem}
+
 \subsection{Fundamental matrix spaces}
 
 Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \to F^m$.
@@ -861,10 +873,11 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \]
 \end{lemma}
 
-\begin{procedure}[Finding bases of $\Nul A$ and $\Col A$] \ \\
+\begin{procedure}[Finding bases of $\Nul A$, $\Col A$, $\Row A$] \ \\
   \begin{enumerate}
     \item $R := \RREF(A)$
     \item The pivot columns of $A$ are a basis of $\Col A$.
+    \item The pivot rows of $B$ are a basis of $\Row A$. (row space is preserved under row operations)
     \item The vectors spanning $Ax = 0$ are a basis of $\Nul A$.
   \end{enumerate}
 \end{procedure}
@@ -986,6 +999,10 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
     [T]_{B} = C^{-1} [T]_{B'} C
   \]
 \end{lemma}
+
+\begin{procedure}[Finding the transition matrix]
+  Given bases $B$ and $B'$, row-reduce the augmented matrix $\left[\left[w_i\right] | \left[v_i\right]\right]$, whose first $n$ columns are the coordinate vectors $\left[w_i\right]$ of the vectors of $B'$ and whose last $n$ columns are the coordinate vectors $\left[v_i\right]$ of the vectors of $B$. Then the transition matrix from $B$ to $B'$ is the right-hand side of $\RREF \left(\left[\left[w_i\right] | \left[v_i\right]\right] \right)$.
+\end{procedure}
 
 \subsection{Similarity}
 
@@ -1121,12 +1138,21 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   Let $V$ and $W$ be finite-dimensional vector spaces, $T \in \linearmaps(V, W)$, $T^T \in \linearmaps(W^*, V^*)$. Then:
   \begin{itemize}
     \item \[
-      \rank T^T = \rank T \leq min \{ \dim V, \dim W \}
+      \rank T^T = \rank T \leq \min \{ \dim V, \dim W \}
     \]
     \item $T$ is injective iff $T^T$ is surjective
     \item $T$ is surjective iff $T^T$ is injective
   \end{itemize}
 \end{lemma}
 
+% TODO: Finish
 
+% \section{Multilinear algebra and determinants}
+
+% \begin{definition}[Bilinear form]
+%   Let $V$ be a vector space over $F$. A \textbf{bilinear form} on $V$ is a function $B : V \times V \to F$ which is linear in each variable separately when the other variable is held constant. That is, for all $v_1, v_2, v \in V$ and $\alpha B(v, v_1) + B(v, v_2)$, 
+%   \[
+%     B(\alpha v_1 + v_2, v) = \alpha B(v_1, v) + B(v_2, v)
+%   \]
+% \end{definition}
 
