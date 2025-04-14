@@ -650,3 +650,62 @@ Therefore the general solution and final answer will be
 \[
     y = c_1 e^{-x} + c_2 e^{-2x} + 7 - 6x + 2x^2
 \]
+
+\subsection{Variation of parameters for second-order equations}
+
+\begin{theorem}[Cramer's Rule]
+    Let $A$ be an invertible $n \times n$ matrix. For any $b \in \Real^n$, the linear system $Ax = b$ has the unique solution
+    \[
+        x_i = \frac{\det A_i(b)}{\det A}, i = 1, 2, \ldots, n
+    \]
+    where $A_i(b)$ is the matrix obtained from $A$ by replacing the $i$th column of $A$ by the vector $b$.
+\end{theorem}
+
+Using variation of parameters, the particular solution of nonhomogeneous linear equation in the form $y'' + P(x)y' + Q(x)y = R(x)$ can be found by
+\[
+    y_p(x) = y_1(x) \int \frac{-y_2(x) R(x)}{W}dx + y_2(x) \int \frac{y_1(x) R(x)}{W}dx
+\]
+where $W$ is the wronskian
+\[
+    W(y_1, y_2) = \begin{vmatrix}
+        y_1 & y_2 \\
+        y_1' & y_2'
+    \end{vmatrix}
+\]
+So the general solution is
+\[
+    y = c_1 y_1(x) + c_2 y_2(x) + y_p
+\]
+
+\subsection{Variation of parameters for higher-order equations}
+
+TODO
+
+\subsection{Cauchy-Euler Equation}
+
+\begin{definition}[Cauchy-Euler Equation]
+    An equation in the form
+    \[
+        a_n x^n y^n + a_{n - 1} x^{n - 1} y^{n - 1} + \cdots + a_1 x y' + a_0 = g(x)
+    \]
+    on $(0, \infty)$ where $a_n$ coefficients are constant, is known as a \textit{Cauchy-Euler equation}. To find solutions on $(-\infty, 0)$, substitute $u = -x$.
+\end{definition}
+
+You can solve Cauchy-Euler equations with the substitution $x = e^t$, which reduces it to an equation with constant coefficients, then substitute it back with $t = \ln(x)$.
+\[
+    z(t) = e^t
+\]
+\[
+    y'(x) = y'(e^t) e^t = z'(t)
+\]
+\[
+    y''(x) = y''(e^t) e^{2t} = z''(t)
+\]
+So
+\[
+    a_2 x^2 y'' + a_1 x y' + a_0 = g(x)
+\]
+Turns into
+\[
+    a_2 z''(t) + a_1 z'(t) + a_0 = g(e^t)
+\]
