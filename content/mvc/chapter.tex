@@ -723,5 +723,35 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \end{theorem}
 
 \begin{theorem}[Reversing the order of integration]
-  Sketch the bounds of the region of integration, then just redo the equation from scratch.
+  Sketch the bounds of the region of integration, then just redo the bounds from scratch.
+\end{theorem}
+
+\begin{theorem}[Converting double integrals to polar]
+  \[
+    \int_a^b \int_c^d f \,dx \,dy = \int_\alpha^\beta \int_\gamma^\delta f \,r \,dr \,d\theta
+  \]
+
+  $a, b, c, d, \alpha, \beta, \gamma, \delta$ may be constants or may depend on the variables. To find the new bounds sketch the bounds and redo the bounds.
+\end{theorem}
+
+\begin{definition}[Triple integral]
+  The triple integral of $f$ over the region $R$ is
+  \[
+    \iiint_{R} f \,dA = \lim_{n \to \infty} \sum_{(x_i^*, y_j^*, z_k^*) \in R} {f\left( {x_i^*,y_j^*, z_k^*} \right)\,\Delta A}
+  \]
+  (choose $n$ points $(x_i^*, y_j^*, z_k^*)$ in $R$, then sum each $f\left( {x_i^*,y_j^*, z_k^*} \right)\,\Delta A$)
+\end{definition}
+
+\subsection{General change of variables}
+
+\begin{theorem}[General change of variables]
+  Given a function $f : \Real^n \to \Real^m$ which takes in an argument in the coordinate system $X$, and $T_{XU} : \Real^n \to \Real^n$ is a transformation from coordinates in $X$ to coordinates in $U$,
+  \[
+    {\int \! \cdots \! \int_R} f(\vec{x}) \,dx_1 \cdots dx_n = {\int \! \cdots \! \int_R} f(T_{XU} (\vec{u})) \left| \det DT_{XU}^{-1} \right| \,du_1 \cdots du_n
+  \]
+
+  where $\left| \det DT_{XU}^{-1} \right|$ is the absolute determinant of the Jacobian of $T_{XU}^{-1}$ (the transformation from coordinates in $U$ to coordinates in $X$), which is also denoted by
+  \[
+    \left| \frac{\partial(x_1, \ldots, x_n)}{\partial(u_1, \ldots, u_n)} \right|
+  \]
 \end{theorem}
