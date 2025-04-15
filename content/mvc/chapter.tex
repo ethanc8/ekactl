@@ -754,4 +754,32 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   \[
     \left| \frac{\partial(x_1, \ldots, x_n)}{\partial(u_1, \ldots, u_n)} \right|
   \]
+
+  It can also be computed more easily by taking the inverse of $DT_{XU}$:
+  \[
+    \left| \det DT_{XU}^{-1} \right| = \left| \frac{1}{\det DT_{XU}} \right|
+  \]
 \end{theorem}
+
+\begin{example}[Cartesian to spherical]
+  Converting from Cartesian coordinates to spherical coordinates in $\Real^3$:
+  \[
+    \begin{bmatrix}
+      x \\
+      y \\
+      z \\
+    \end{bmatrix} = T_{XP}^{-1}\left(\begin{bmatrix}
+      \rho \\
+      \phi \\
+      \theta
+    \end{bmatrix}\right) = \begin{bmatrix}
+      \rho \sin \phi \cos \theta \\
+      \rho \sin \phi \sin \theta \\
+      \rho \cos \phi
+    \end{bmatrix}
+  \]
+  so then the absolute Jacobian determinant is
+  \[
+    \left| \det T_{XP}^{-1} \right| = \rho^2 \sin \phi
+  \]
+\end{example}
