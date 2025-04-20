@@ -320,7 +320,7 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
 \begin{definition}[Resistivity]
   \[
-    \rho = \frac{E}{J} \qquad
+    \rho = \frac{E}{J} \qquad \left( \Ohm \meter \right)
   \]
 
   The resistivity is a property of the conducting material.
@@ -335,16 +335,21 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
 \begin{law}
   \[
-    q = Ne
+    Q = Nq
   \]
-  where $N$ is the number of charge carriers.
+  where $N$ is the number of charge carriers and $q$ is the charge of each charge carrier.
+
+  If the charge carrier is an electron (as usual), then
+  \[
+    Q = Ne
+  \]
 \end{law}
 
 \begin{definition}[Drift speed]
   \[
-    v_\text{drift} = \frac{J}{ne}
+    v_\text{drift} = \frac{J}{nq}
   \]
-  where $n = \frac{N}{\text{Volume}}$
+  where $n = \frac{N}{\text{Volume}}$ (the charge carrier density), and $q$ is the charge of each charge carrier ($q = e$ if the charge carrier is an electron).
 \end{definition}
 
 \begin{theorem}[Power consumed by a resistor]
@@ -441,4 +446,42 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
   (ensure $i_0 < 0$)
 \end{law}
+
+\subsection{Magnetism}
+
+\begin{definition}[Magnetic field ($\vec{B}$)]
+  The field lines exit through the north pole of the magnet and enter through the south pole of the magnet. They always form a closed loop.
+
+  A magnetic field is caused by a moving charged particle, and is perpendicular to the velocity of a particle, as described by the right hand rule - if the velocity $\vec{v}$ is represented by the right-hand thumb, then curling the rest of the fingers will give the direction of the $\vec{B}$-field.
+\end{definition}
+
+\begin{definition}[Permanent magnet]
+  A magnet (north and south pole) which stays magnetic without a current or other external force being applied.
+
+  It is caused when the electron spins within the magnet are all aligned.
+\end{definition}
+
+\begin{definition}[Solenoid]
+  A coiled conducting wire.
+
+  If a current is run through the solenoid, it becomes an \textbf{electromagnet}.
+\end{definition}
+
+\begin{definition}[Magnetic force]
+  \[
+    \vec{F}_B = q \vec{v} \crossp \vec{B}
+  \]
+  therefore
+  \[
+    |F_B| = q |v| |B| \sin \theta
+  \]
+\end{definition}
+
+\begin{lemma}[Magnetic force on a straight wire]
+  Given a wire of length $l$ (define $\vec{l}$ to be the vector whose magnitude is the length of the wire and whose direction is the direction of the current), with current $i$ passing through it, in a uniform external magnetic field $\vec{B}_{\text{ext}}$,
+  \[
+    \vec{F}_B = i \vec{l} \crossp \vec{B}_{\text{ext}}
+  \]
+\end{lemma}
+
 
