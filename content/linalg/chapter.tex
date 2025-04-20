@@ -1145,14 +1145,203 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \end{itemize}
 \end{lemma}
 
-% TODO: Finish
+\section{Multilinear algebra and determinants}
 
-% \section{Multilinear algebra and determinants}
+\subsection{Bilinear forms}
 
-% \begin{definition}[Bilinear form]
-%   Let $V$ be a vector space over $F$. A \textbf{bilinear form} on $V$ is a function $B : V \times V \to F$ which is linear in each variable separately when the other variable is held constant. That is, for all $v_1, v_2, v \in V$ and $\alpha B(v, v_1) + B(v, v_2)$, 
-%   \[
-%     B(\alpha v_1 + v_2, v) = \alpha B(v_1, v) + B(v_2, v)
-%   \]
-% \end{definition}
+\begin{definition}[Bilinear form]
+  Let $V$ be a vector space over $F$. A \textbf{bilinear form} on $V$ is a function $B : V \times V \to F$ which is linear in each variable separately when the other variable is held constant. That is, for all $v_1, v_2, v \in V$ and $\alpha B(v, v_1) + B(v, v_2)$, 
+  \[
+    B(\alpha v_1 + v_2, v) = \alpha B(v_1, v) + B(v_2, v)
+  \]
+  and
+  \[
+    B(v, \alpha v_1 + v_2) = \alpha B(v, v_1) + B(v, v_2)
+  \]
+\end{definition}
+
+\begin{lemma}
+  If $V$ is a vector space over $F$ and $f, g \in \linearmaps(V, F)$, then $B(u, v) := f(u) g(v)$ is a bilinear form on $V$.
+\end{lemma}
+
+\begin{definition}
+  $V^{(2)}$ denotes the set of all bilinear forms on $V$.
+\end{definition}
+
+\begin{lemma}
+  $V^{(2)}$ is a subspace of $V \times V \to F$.
+\end{lemma}
+
+\begin{definition}[Matrix of a bilinear form]
+  Let $B$ be a bilinear form on $V$ and let $\vec{e} = (e_1, \ldots e_n)$ be an ordered basis of $V$. Then the matrix of $B$ with respect to $\vec{e}$ is the matrix $[B]$ defined by:
+  \[
+    [B]_{ij} = B(e_i, e_j)
+  \]
+\end{definition}
+
+\begin{theorem}
+  If $B$ is a bilinear form on $V$, $[B]$ is its matrix with respect to the ordered basis $\vec{e}$, $v, w \in F$, and $[v]$ and $[w]$ are the coordinate vectors of $v$ and $w$ with respect to the ordered basis $\vec{e}$, then
+  \[
+    B(v, w) = [v]^T [B] [w]
+  \]
+\end{theorem}
+
+\subsection{Symmetric bilinear forms}
+
+\begin{definition}[Symmetric bilinear form]
+  A bilinear form $B \in V^{(2)}$ is symmetric iff $B(u, w) = B(w, u)$ for all $u, w \in V$. The set of all symmetric bilinear forms on $V$ is denoted by $V^{(2)}_{\text{sym}}$.
+\end{definition}
+
+\begin{definition}[Symmetric matrix]
+  An $n \times n$ matrix $A$ is symmetric iff $A^T = A$.
+\end{definition}
+
+\begin{theorem}
+  If $B \in V^{(2)}$, then the following conditions are equivalent.
+  \begin{itemize}
+    \item $B$ is a symmetric bilinear form on $V$.
+    \item $[B]$ is a symmetric matrix for every basis of $V$.
+    \item $[B]$ is a symmetric matrix for some basis of $V$.
+    \item $[B]$ is a diagonal matrix for some basis of $V$.
+  \end{itemize}
+\end{theorem}
+
+\subsection{Alternating bilinear forms}
+
+\begin{definition}[Alternating bilinear form]
+  A bilinear form $B \in V^{(2)}$ is alternating if
+  \[
+    B(u, w) = -B(w, u)
+  \]
+  for all $u, w \in V$. The set of alternating bilinear forms on $V$ is denoted by $V^{(2)}_{\text{alt}}$.
+\end{definition}
+
+\begin{definition}[Antisymmetric matrix]
+  A matrix $A$ is antisymmetric iff $A^T = -A$.
+\end{definition}
+
+\begin{theorem}
+  If $B \in V^{(2)}$, then the following conditions are equivalent.
+  \begin{itemize}
+    \item $B$ is an alternating bilinear form on $V$.
+    \item $[B]$ is an antisymmetric matrix for every basis of $V$.
+    \item $B(v, v) = 0$ for all $v \in V$
+  \end{itemize}
+\end{theorem}
+
+\begin{lemma}
+  $V^{(2)} = V^{(2)}_{\text{sym}} \directsum V^{(2)}_{\text{alt}}$, and $V^{(2)}_{\text{sym}}$ and $V^{(2)}_{\text{sym}}$ are subspaces of $V^{(2)}$.
+\end{lemma}
+
+\subsection{Multilinear forms}
+
+\begin{definition}
+  \[
+    V^m := \underbrace{V \times V \times \cdots \times V}_{\text{$m$ times}}
+  \]
+\end{definition}
+
+\begin{definition}[Multilinear form]
+  An $m$-linear form on $V$ is a map which is linear in each entry when all other entries are held fixed.
+
+  The set of $m$-linear forms on $V$ is denoted by $V^{(m)}$.
+\end{definition}
+
+\subsection{Alternating multilinear forms}
+
+\begin{definition}[Alternating multilinear form]
+  An $m$-linear form $M$ is alternating iff
+  \[
+    M(v_1, \ldots, v_i, \ldots, v_j, \ldots v_m) = -M(v_1, \ldots, v_j, \ldots, v_i, \ldots v_m)
+  \]
+  for all $i, j$. 
+\end{definition}
+
+\begin{lemma}
+  $M \in V^{(m)}$ is alternating iff $v_i = v_j$ implies $M(v_1, \ldots, v_m) = 0$ for all $i \neq j \in [1, m]$.
+\end{lemma}
+
+\begin{lemma}
+  If $M \in V^{(m)}_{\text{alt}}$ and $\{ v_1, \ldots, v_m \}$ is linearly dependent, then $M(v_1, \ldots, v_m) = 0$.
+\end{lemma}
+
+\begin{lemma}
+  If $m > \dim V$, then $\dim V^{(m)}_{\text{alt}} = 0$.
+\end{lemma}
+
+\subsection{Permutations}
+
+\begin{definition}[Permutation]
+  A permutation of the set $A = \{1, 2, \ldots, m\}$ is a bijection $\sigma : A \to A$ (equivalently, a reordering of the ordered list $A$). It is often denoted by a matrix
+  \[
+    \begin{bmatrix}
+      1 & 2 & \cdots & m \\
+      \sigma(1) & \sigma(2) & \cdots & \sigma(m)
+    \end{bmatrix}
+  \]
+  where the inputs form the first row and the corresponding outputs form the second row.
+\end{definition}
+
+\begin{definition}[Group]
+  A group is a set $G$ which contains a binary operation $\dotp$ such that
+  \begin{itemize}
+    \item \textbf{Identity}: There exists an identity element $I \in G$ such that $a \dotp I = a$
+    \item \textbf{Inverse}: There exists an inverse $a^{-1}$ for each $a \in G$ such that $a \dotp a^{-1} = I$
+    \item \textbf{Associativity}: $(a \dotp b) \dotp c = a \dotp (b \dotp c)$
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}
+  The set $S_m$ of all permutations of $A = \{1, 2, \ldots, m\}$ is a group under composition. The identity element is the trivial permutation $x \mapsto x$:
+  \[
+    \begin{bmatrix}
+      1 & 2 & \cdots & m \\
+      1 & 2 & \cdots & m
+    \end{bmatrix}
+  \]
+
+  The inverse of a permutation is denoted $\sigma^{-1}$, and the composition of two permutations is denoted $\tau \compose \sigma = \tau \sigma$.
+\end{theorem}
+
+\begin{definition}[Cyclic permutation, $r$-cycle]
+  A \textbf{cyclic permutation} or \textbf{$r$-cycle} is a permutation defined by and denoted by a list $(a_1 \; a_2 \; \cdots \; a_r)$ where the $a_i$ are distinct, such that $\sigma(a_i) = a_{i + 1}$ for $i \in [1, r]$, $\sigma(a_r) = a_1$, and $\sigma(a_l) = a_l$ for $l > r$.
+
+  A 2-cycle is also called a \textbf{transposition}.
+\end{definition}
+
+\begin{definition}[Disjoint cycles]
+  Cycles which share no elements in commmon.
+\end{definition}
+
+\begin{theorem}
+  Any permutation $\sigma$ can be written as a composition of disjoint transpositions.
+\end{theorem}
+
+\begin{definition}[Even, odd, sign]
+  A permutation $\sigma$ is \textbf{even} and $\sgn(\sigma) = +1$ iff it is a product of an even number of disjoint transpositions.
+
+  It is \textbf{odd} and $\sgn(\sigma) = -1$ iff it is a product of an odd number of disjoing transpositions.
+\end{definition}
+
+\begin{procedure}[Writing a permutation as a series of disjoint cycles]
+  Take any element $a$ of the input set $A$, and apply $\sigma$ repeatedly until $a = \sigma \cdots \sigma(a)$. Then we have cycle $a \mapsto \sigma(a) \mapsto \cdots \mapsto \sigma \cdots \sigma(a) = a$. Repeat for all remaing elements that are not part of this cycle.
+\end{procedure}
+
+\begin{procedure}[Writing a permutation as a series of disjoint transpositions]
+  Apply the above procedure to the permutation. Then for each of the disjoint cycles in the series that are not transpositions, apply that procedure to each of those cycles until they are transpositions (2-cycles).
+\end{procedure}
+
+\begin{lemma}
+  $\sgn(\tau \sigma) = \sgn(\tau) \sgn(\sigma)$ for all $\tau, \sigma \in S_m$.
+\end{lemma}
+
+\begin{lemma}
+  An $r$-cycle is an even permutation iff $r$ is odd, and an odd permutation iff $r$ is even.
+\end{lemma}
+
+\begin{procedure}[Determining the sign of a permutation]
+  Decompose the permutation into a product of disjoint cycles. Then the parity (oddness/evenness) of the permutation is the number of cycles of even length in its decomposition.
+\end{procedure}
+
+% Do 5.3 section 4 once Trimm does it with us.
 
