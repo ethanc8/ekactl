@@ -783,3 +783,23 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
     \left| \det T_{XP}^{-1} \right| = \rho^2 \sin \phi
   \]
 \end{example}
+
+\section{Vector fields}
+
+\subsection{Vector fields}
+
+\begin{definition}[Vector field]
+  A vector field in $\Real^n$ is a mapping $F : X \subseteq \Real^n \to \Real^n$.
+\end{definition}
+
+\begin{definition}[Flow line]
+  A flow line of a vector field $F : X \subseteq \Real^n \to \Real^n$ is a differentiable path $\vec{x} : I \to \Real^n$ (where $I$ is an interval on $\Real$) such that
+  \[
+    \vec{x}'(t) = F(\vec{x}(t))
+  \]
+  That is, the velocity vector of $\vec{x}$ at time $t$ is given by the value of the vector field $F$ at the point on $x$ at time $t$.
+\end{definition}
+
+\begin{procedure}[Approximating flow line]
+  Begin at a vector along the flow line. Then the next vector on the vector field in the direction pointed to by this vector is approximately along the flow line. So you can draw a curve through the vectors following the arrows.
+\end{procedure}
