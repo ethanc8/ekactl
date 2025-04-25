@@ -22,13 +22,13 @@
 
 \begin{definition}[Permittivity of free space ($\varepsilon_0$)]
   \[
-    \varepsilon_0 \approx 8.85 * 10^{-12} \frac{\Coulomb^2}{\Newton \meter^2}
+    \varepsilon_0 \approx 8.85 * 10^{-12} \frac{\Coulomb^2}{\Newton \metre^2}
   \]
 \end{definition}
 
 \begin{definition}[Coulomb's constant ($k$)]
   \[
-    k = \frac{1}{4\pi\varepsilon_0} \approx 8.99 * 10^9 \, \frac{\Newton \meter^2}{\Coulomb^2}
+    k = \frac{1}{4\pi\varepsilon_0} \approx 8.99 * 10^9 \, \frac{\Newton \metre^2}{\Coulomb^2}
   \]
 \end{definition}
 
@@ -64,9 +64,9 @@
 
 \begin{definition}[Charge density]
   \begin{align*}
-    \text{3D: density} \qquad & \rho = \frac{Q}{v} = \frac{dq}{dV} & (\frac{\Coulomb}{\meter^3}) \\
-    \text{2D: surface density} \qquad & \sigma = \frac{Q}{A} = \frac{dq}{dA} & (\frac{\Coulomb}{\meter^2}) \\
-    \text{1D: linear density} \qquad & \lambda = \frac{Q}{L} = \frac{dq}{dx} & (\frac{\Coulomb}{\meter}) \\
+    \text{3D: density} \qquad & \rho = \frac{Q}{v} = \frac{dq}{dV} & (\frac{\Coulomb}{\metre^3}) \\
+    \text{2D: surface density} \qquad & \sigma = \frac{Q}{A} = \frac{dq}{dA} & (\frac{\Coulomb}{\metre^2}) \\
+    \text{1D: linear density} \qquad & \lambda = \frac{Q}{L} = \frac{dq}{dx} & (\frac{\Coulomb}{\metre}) \\
   \end{align*}
 \end{definition}
 
@@ -90,7 +90,7 @@
 \begin{definition}[Electric flux ($\Phi$)]
   The flux through a surface with area vector $\vec{A}$ is
   \[
-    \Phi = \int \vec{E} \dotp d\vec{A} \qquad \left(\frac{\Newton \meter^2}{\Coulomb}\right)
+    \Phi = \int \vec{E} \dotp d\vec{A} \qquad \left(\frac{\Newton \metre^2}{\Coulomb}\right)
   \]
   where $\vec{E}$ is the electric field that passes through the surface, and the area vector's magnitude is the area and direction is normal/perpendicular to the surface.
 \end{definition}
@@ -320,7 +320,7 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
 \begin{definition}[Resistivity]
   \[
-    \rho = \frac{E}{J} \qquad \left( \Ohm \meter \right)
+    \rho = \frac{E}{J} \qquad \left( \Ohm \metre \right)
   \]
 
   The resistivity is a property of the conducting material.
@@ -484,4 +484,44 @@ If a set of capacitors were replaced by a single capacitor without changing any 
   \]
 \end{lemma}
 
+\begin{definition}[Permeability of free space]
+  \[
+    \mu_0 = 4\pi * 10^{-7} \qquad \frac{\Tesla \metre^2}{\Ampere}
+  \]
+\end{definition}
 
+\begin{namedlaw}[Biot-Savart Law]
+  The B-field at point $P$ caused by a point current part of a longer current-carrying object is
+  \[
+    d\vec{B} = \frac{\mu_0 i}{4 \pi} \frac{d\vec{s} \crossp \hat{r}}{r^2}
+  \]
+  where $d\vec{s}$ is the length of the point current and $\hat{r}$ is the unit vector of the vector from the point current to $P$.
+\end{namedlaw}
+
+\begin{namedlaw}[Ampère's Law]
+  The B-field along an Amperian loop (a closed loop) is related to the enclosed current by
+  \[
+    \oint \vec{B} \dotp d\vec{s} = \mu_0 i_{\text{enc}}
+  \]
+
+  where $d\vec{s}$ represents the length of a infinitesimally small segment of the Amperian loop and $i_{\text{enc}}$ represents the current enclosed by the Amperian loop. ($\vec{B}$ is measured at each point along the Amperian loop.)
+\end{namedlaw}
+
+\begin{example}[B-field due to a straight wire]
+  The B-field due to a straight wire carrying current $i$, measured at a distance $r$ from the center of the wire, is
+  \[
+    B = \frac{\mu_0 i}{2 \pi r}
+  \]
+
+  Within the straight wire with a radius of $R$, at a distance $r$ from the center of the wire,
+  \[
+    B = \frac{\mu_0 i r}{2 \pi R^2}
+  \]
+\end{example}
+
+\begin{example}[B-field inside a solenoid]
+  The B-field along the central axis inside a solenoid with $n$ loops of wire per unit length carrying current $i$, is
+  \[
+    B_0 = \mu_0 n i
+  \]
+\end{example}
