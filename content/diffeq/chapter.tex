@@ -709,3 +709,216 @@ Turns into
 \[
     a_2 z''(t) + a_1 z'(t) + a_0 = g(e^t)
 \]
+
+\subsection{Ordinary and singular points}
+
+In the standard second-order homogeneous equation
+\[
+    y'' + P(x)y' + Q(x)y = 0
+\]
+A point $x_0$ is an \textit{ordinary point} if both $P(x)$ and $Q(x)$ are analytic at $x_0$.
+
+A function $f$ is analytic at a point $x_0$ if it can be represented by a power series in $x - x_0$ with a positive or infinite radius of convergence. For example functions like $e^x$ or $\sin(x)$ that can be represented with a Taylor series are analytic at any $x_0 \in \Real$.
+
+All points that are not ordinary are \textit{singular points} of the equation.
+
+\begin{theorem}[Existence of Power Series Solutions]
+    If $x_0$ is an ordinary point, there exists a fundamental set of solutions in the form of power series centered at $x_0$, each of which converges at least on $|x - x_0| < R$, where $R$ is the distance in complex plane from $x_0$ to the nearest singular point.
+\end{theorem}
+
+For example in the equation
+\[
+    (x^2 - 1)y'' + 2xy' + 6y = 0
+\]
+At ordinary point $x = 0$, $R = 1$ since $x_0 = \pm i$ are the singular points and distance between $x$ and $x_0$ is $1$.
+
+\subsection{Power series solutions}
+
+A simple equation
+\[
+    y' - y = 0
+\]
+can be represented with power series with
+\[
+    y = \sum_{n = 0}^{\infty} c_n x^n
+\]
+\[
+    y' = \sum_{n = 1}^{\infty} n c_n x^{n - 1}
+\]
+\[
+    \sum_{n = 1}^{\infty} n c_n x^{n - 1} - \sum_{n = 0}^{\infty} c_n x^n = 0
+\]
+These series can be combined into
+\[
+    \sum_{n = 0}^{\infty} ((n + 1)c_{n + 1} - c_n)x^n = 0
+\]
+which implies that
+\[
+    (n + 1)c_{n + 1} - c_n = 0, n \geq 0
+\]
+that can be rearranged into
+\[
+    c_{n + 1} = \frac{c_n}{n + 1}
+\]
+and converted to non-recursive form
+\[
+    c_n = \frac{c_0}{n!}
+\]
+The result can be plugged back in, meaning that the final solution is
+\[
+    y = c_0 \sum_{n = 0}^{\infty} \frac{x^n}{n!} = c_0 e^x
+\]
+
+
+
+
+
+
+
+%% TODO
+
+
+
+
+
+
+
+
+
+\subsection{Laplace Transform}
+
+The Laplace transform can be defined as,
+\[
+    \mathscr{L}\{f(t)\} = \int_0^\infty e^{-st} f(t) dt
+\]
+given that $t \ge 0$ and the integral converges. The result should be a function of $s$. Typically, transformed functions are denoted with their corresponding capital letter, for example,
+\[
+    \mathscr{L}\{f(t)\} = F(s)
+\]
+
+Common Laplace transforms include,
+\begin{flalign*}
+    & \mathscr{L}\{1\} = \frac{1}{s} \\
+    & \mathscr{L}\{t^n\} = \frac{n!}{s^{n + 1}} \\
+    & \mathscr{L}\{e^{at}\} = \frac{1}{s - a} \\
+    & \mathscr{L}\{\sin(kt)\} = \frac{k}{s^2 + k^2} \\
+    & \mathscr{L}\{\cos(kt)\} = \frac{s}{s^2 + k^2}
+\end{flalign*}
+
+Since Laplace transform is a linear function, it satisfies the following,
+\[
+    \mathscr{L}\{\alpha f(t) + g(t)\} = \alpha \mathscr{L}\{f(t)\} + \mathscr{L}\{g(t)\}
+\]
+To apply a Laplace transform on a piecewise function, simply split the integral into as many parts as necessary.
+
+The Laplace transform is 1 to 1 on set of functions that are continuous on $[0, \infty)$ and does not grow faster than $Me^{ct}$
+
+\subsection{Solving ODE IVPs with Laplace transform}
+
+The Laplace transform can be used on derivatives as well,
+\[
+    \mathscr{L}\{f'(t)\} = s \mathscr{L}\{f(t)\} - f(0)
+\]
+\[
+    \mathscr{L}\{f''(t)\} = s^2 \mathscr{L}\{f(t)\} - sf(0) - f'(0)
+\]
+Which can be used to solve linear ODE IVPs. For instance,
+\[
+    a_2 y'' + a_1 y' + a_0 y = g(t)
+\]
+\[
+    y(0) = y_0, \qquad y'(0) = y_0'
+\]
+
+By taking Laplace transform of both sides, the solution of the equation would be,
+\[
+    y(t) = \mathscr{L}^{-1} \left\{ \frac{G(s) + a_2 y_0 s + a_2 y_0' + a_1 y_0}{a_2 s^2 + a_1 s + 1} \right\}
+\]
+
+\subsection{Laplace transform translations}
+
+\begin{theorem}[First Translation Theorem]
+    If $\mathscr{L}\{f(t)\} = F(s)$ and $a \in \Real$, then,
+    \[
+        \mathscr{L}\{e^{at}f(t)\} = F(s - a)
+    \]
+    Which can also be denoted by,
+    \[
+        \mathscr{L}\{e^{at}f(t)\} = \left. \mathscr{L}\{f(t)\} \right\rvert_{s \to s - a}
+    \]
+\end{theorem}
+
+The unit step function can be defined as,
+\[
+    \mathscr{U}(t - a) = \begin{cases}
+        0, & 0 \leq t \leq a, \\
+        1, & t \geq a
+    \end{cases}
+\]
+
+\begin{theorem}[Second Translation Theorem]
+    Given the function,
+    \[
+        f(t - a)\mathscr{U}(t - a) = \begin{cases}
+            0, & 0 \leq t \leq a, \\
+            f(t - a), & t \geq a
+        \end{cases}
+    \]
+    And if $a > 0$, then,
+    \[
+        \mathscr{L}\{f(t - a)\mathscr{U}(t - a)\} = e^{-as}F(s)
+    \]
+\end{theorem}
+
+The theorem can also be applied in inverse form,
+\[
+    \mathscr{L}^{-1}\{e^{-as}F(s)\} = f(t - a)\mathscr{U}(t - a)
+\]
+
+\subsection{Derivatives of a transform}
+
+\[
+    \mathscr{L}\{tf(t)\} = -\frac{d}{ds} \mathscr{L}\{f(t)\}
+\]
+Which can be extended to,
+\[
+    \mathscr{L}\{t^n f(t)\} = (-1)^n \frac{d^n}{ds^n} \mathscr{L}\{f(t)\}
+\]
+
+\subsection{The convolution theorem}
+
+If $f$ and $g$ are piecewise continuous functions on the interval $[0,\infty)$, then the convolution of $f$ and $g$, denoted $f * g$, is the function,
+\[
+    f * g = \int_0^t f(\tau) g(t - \tau) d\tau
+\]
+Note that convolution is a commutative operation.
+
+\begin{theorem}[Convolution Theorem]
+    If $f,g$ fit convolution criteria and are of exponential order, then,
+    \[
+        \mathscr{L}\{f * g\} = F(s)G(s)
+    \]
+\end{theorem}
+
+\subsection{Transform of an integral}
+
+\[
+    \mathscr{L}\left\{ \int_0^t f(\tau) d\tau \right\} = \frac{F(s)}{s}
+\]
+
+\subsection{Volterra integral equation}
+
+A Volterra integral equation for $f(t)$ is an equation in the form,
+\[
+    f(t) = g(t) + \int_0^t f(\tau) h(t - \tau) d\tau
+\]
+Where $g(t)$ and $h(t)$ are known.
+
+\subsection{Transform of a periodic function}
+
+\begin{theorem}[Transform of a Periodic Function]
+    If $f(t)$ is piecewise continuous on $[0, \infty)$ of exponential order and periodic with period $T$, then,
+    \[
+        \mathscr{L}\{f(t)\} = \frac{1}{1 - e^{-sT}} \int_0^T e^{-st}f(t)dt
+    \]
+\end{theorem}
