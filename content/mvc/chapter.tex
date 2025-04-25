@@ -803,3 +803,33 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \begin{procedure}[Approximating flow line]
   Begin at a vector along the flow line. Then the next vector on the vector field in the direction pointed to by this vector is approximately along the flow line. So you can draw a curve through the vectors following the arrows.
 \end{procedure}
+
+\subsection{Divergence}
+
+% TODO
+
+\subsection{Curl}
+
+% TODO
+
+\subsection{Line integrals}
+
+\begin{definition}[Scalar line integral]
+  If $C$ is a smooth plane curve defined by $x = x(t), y = y(t), a \leq t \leq b$, then
+  \[
+    \int_C f(x, y) \,ds := \int_a^b f(x(t), y(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \,dt
+  \]
+
+  This generalizes to higher dimensions - if $C$ is a smooth curve defined by $\vec{x} = \vec{x}(t), a \leq t \leq b$, where $x \in \Real^n$, then
+  \[
+    \int_C f(\vec{x}) ds = \int_a^b f(\vec{x}(t)) \sqrt{\left(\frac{dx_1}{dt}\right)^2 + \cdots + \left(\frac{dx_n}{dt}\right)^2} \,dt
+  \]
+\end{definition}
+
+\begin{definition}[Line integral of a vector field along a smooth curve]
+  If $F$ is any continuous vector field defined on a smooth curve $C$ defined by $\vec{r}(t), a \leq t \leq b$, then
+  \[
+    \int_C \vec{F} \dotp d\vec{r} = \int_C \vec{F} \dotp \hat{T} ds = \int_a^b \vec{F}(\vec{r}(t)) \dotp \vec{r}'(t) dt
+  \]
+\end{definition}
+
