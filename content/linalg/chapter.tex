@@ -991,13 +991,15 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{lemma}
   If $B$ and $B'$ are bases of $V$, $T \in \linearmaps(V)$, and $C$ is the transition matrix from $B$ to $B'$, then
   \[
-    [T]_{B'} = C^{-1} [T]_B C
+    [T]_{B'} = C [T]_B C^{-1}
   \]
 
   $C$ is invertible, so similarly
   \[
     [T]_{B} = C^{-1} [T]_{B'} C
   \]
+
+  Note that $C^{-1}$ is the matrix formed by the coordinate vectors of the basis vectors of $B'$ with respect to $B$.
 \end{lemma}
 
 \begin{procedure}[Finding the transition matrix]
@@ -1285,7 +1287,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{definition}[Group]
   A group is a set $G$ which contains a binary operation $\dotp$ such that
   \begin{itemize}
-    \item \textbf{Identity}: There exists an identity element $I \in G$ such that $a \dotp I = a$
+    \item \textbf{Identity}: There exists an identity element $e \in G$ such that $a \dotp e = a$
     \item \textbf{Inverse}: There exists an inverse $a^{-1}$ for each $a \in G$ such that $a \dotp a^{-1} = I$
     \item \textbf{Associativity}: $(a \dotp b) \dotp c = a \dotp (b \dotp c)$
   \end{itemize}
@@ -1343,5 +1345,14 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   Decompose the permutation into a product of disjoint cycles. Then the parity (oddness/evenness) of the permutation is the number of cycles of even length in its decomposition.
 \end{procedure}
 
-% Do 5.3 section 4 once Trimm does it with us.
+\subsection{Permutation action on multilinear forms}
 
+\begin{definition}[Group action]
+  Let $G$ be a group and $X$ be a set.
+
+  A \textbf{left group action} of $G$ on $X$ is a mapping $\alpha : G \times X \to X$ which satisfies the following two properties:
+  \begin{itemize}
+    \item \textbf{Identity}: $\alpha(e, x) = x$
+    \item \textbf{Compatibility}: 
+  \end{itemize}
+\end{definition}
