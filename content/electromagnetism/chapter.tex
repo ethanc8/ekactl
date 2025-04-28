@@ -90,7 +90,7 @@
 \begin{definition}[Electric flux ($\Phi$)]
   The flux through a surface with area vector $\vec{A}$ is
   \[
-    \Phi = \int \vec{E} \dotp d\vec{A} \qquad \left(\frac{\Newton \metre^2}{\Coulomb}\right)
+    \Phi_E = \int \vec{E} \dotp d\vec{A} \qquad \left(\frac{\Newton \metre^2}{\Coulomb}\right)
   \]
   where $\vec{E}$ is the electric field that passes through the surface, and the area vector's magnitude is the area and direction is normal/perpendicular to the surface.
 \end{definition}
@@ -525,3 +525,32 @@ If a set of capacitors were replaced by a single capacitor without changing any 
     B_0 = \mu_0 n i
   \]
 \end{example}
+
+\subsection{Magnetic flux}
+
+\begin{definition}[Magnetic flux]
+  The flux through a surface with area vector $\vec{A}$ is
+  \[
+    \Phi_B = \int \vec{B} \dotp d\vec{A} \qquad \left(\Weber = \Tesla \metre^2\right)
+  \]
+  where $\vec{B}$ is the $B$-field that passes through the surface, and the area vector's magnitude is the area and direction is normal/perpendicular to the surface.
+\end{definition}
+
+\begin{namedlaw}[Faraday's Law]
+  The emf induced by a changing magnetic flux through the surface through a closed conductive loop is
+  \[
+    \mathcal{E} = - N \frac{d\Phi_B}{dt}
+  \]
+\end{namedlaw}
+
+\begin{namedlaw}[Lenz's Law]
+  The induced emf opposes the changing magnetic flux.
+\end{namedlaw}
+
+\begin{theorem}
+  An increasing magnetic flux induces a $B$-field in the opposite direction of the changing flux.
+
+  An decreasing magnetic flux induces a $B$-field in the same direction as the changing flux.
+
+  The induced current's direction is determined by the induced $B$-field using the right-hand rule.
+\end{theorem}
