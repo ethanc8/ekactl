@@ -804,13 +804,64 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   Begin at a vector along the flow line. Then the next vector on the vector field in the direction pointed to by this vector is approximately along the flow line. So you can draw a curve through the vectors following the arrows.
 \end{procedure}
 
-\subsection{Divergence}
+\subsection{Divergence and curl}
 
-% TODO
+\begin{definition}[Del operator]
+  In $\Real^3$, del is defined by 
+  \[
+    \del := \begin{bmatrix}
+      \frac{\partial}{\partial x} \\
+      \frac{\partial}{\partial y} \\
+      \frac{\partial}{\partial z}
+    \end{bmatrix}
+  \]
 
-\subsection{Curl}
+  In $\Real^n$, del is defined by
+  \[
+    \del = \begin{bmatrix}
+      \frac{\partial}{\partial x_1} \\
+      \vdots \\
+      \frac{\partial}{\partial x_n}
+    \end{bmatrix}
+  \]
 
-% TODO
+  Del is an operator; it takes in a function and outputs a function.
+\end{definition}
+
+\begin{definition}[Divergence]
+  Let $\vec{F} : X \subseteq \Real^n \to \Real^n$ be a differentiable vector field. Then the divergence of $\vec{F}$ is the scalar field
+  \[
+    \div \vec{F} = \del \dotp \vec{F} = \frac{\partial F_1}{\partial x_1} + \cdots + \frac{\partial F_n}{\partial x_n}
+  \]
+\end{definition}
+
+\begin{lemma}
+  If $\vec{F}$ represents the flow rate of a fluid, then $\div \vec{F}$ represents the net mass flow through each point in the domain of $\vec{F}$:
+  \begin{itemize}
+    \item If $\div \vec{F} > 0$, then more fluid is flowing out than in.
+    \item If $\div \vec{F} < 0$, then more fluid is flowing in than out.
+    \item If $\div \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible}.
+  \end{itemize}
+\end{lemma}
+
+\begin{definition}[Curl]
+  Let $\vec{F} : X \subseteq \Real^n \to \Real^n$ be a differentiable vector field on $\Real^3$. Then the curl of $\vec{F}$ is the vector field
+  \[
+    \curl \vec{F} = \del \crossp \vec{F}
+  \]
+\end{definition}
+
+\begin{definition}[Irrotational]
+  If $\del \crossp \vec{F} = 0$ everywhere on the vector field $\vec{F} : X \subseteq \Real^n \to \Real^n$, then $\vec{F}$ is considered \textbf{irrotational}.
+\end{definition}
+
+\begin{lemma}
+  Let there exist an infinitesimally small sphere at the point $\vec{x} \in X$. Let $\vec{F} : X \subseteq \Real^3 \to \Real^3$ be a vector field that represents the velocity of a fluid at each point in $X$. Then $\curl \vec{F}$ is the unique vector such that
+  \begin{itemize}
+    \item The direction of $\curl \vec{F}$ is along the axis of rotation of the sphere, following the right-hand rule
+    \item The magnitude of $\curl \vec{F}$ is the speed of the rotation of the sphere
+  \end{itemize}
+\end{lemma}
 
 \subsection{Line integrals}
 
@@ -831,5 +882,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   \[
     \int_C \vec{F} \dotp d\vec{r} = \int_C \vec{F} \dotp \hat{T} ds = \int_a^b \vec{F}(\vec{r}(t)) \dotp \vec{r}'(t) dt
   \]
+
+  It represents the work done by moving a particle along the curve $C$, if $F$ is a force field.
 \end{definition}
 

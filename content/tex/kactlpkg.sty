@@ -476,12 +476,17 @@
 
 \newcommand{\gradient}{\nabla}
 \newcommand{\grad}{\nabla}
+\newcommand{\del}{\nabla}
+
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\curl}{curl}
 
 \newcommand{\compose}{\circ}
 
 \DeclareMathOperator*{\bigplus}{\scalerel*{+}{\sum}}
 \DeclareMathOperator{\spanoperator}{span}
-\DeclareMathOperator{\identitymap}{span}
+\DeclareMathOperator{\identitymap}{id}
 
 \newcommand{\linearmaps}{\mathcal{L}}
 
