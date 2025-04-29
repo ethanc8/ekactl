@@ -831,16 +831,16 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \begin{definition}[Divergence]
   Let $\vec{F} : X \subseteq \Real^n \to \Real^n$ be a differentiable vector field. Then the divergence of $\vec{F}$ is the scalar field
   \[
-    \div \vec{F} = \del \dotp \vec{F} = \frac{\partial F_1}{\partial x_1} + \cdots + \frac{\partial F_n}{\partial x_n}
+    \divergence \vec{F} = \del \dotp \vec{F} = \frac{\partial F_1}{\partial x_1} + \cdots + \frac{\partial F_n}{\partial x_n}
   \]
 \end{definition}
 
 \begin{lemma}
-  If $\vec{F}$ represents the flow rate of a fluid, then $\div \vec{F}$ represents the net mass flow through each point in the domain of $\vec{F}$:
+  If $\vec{F}$ represents the flow rate of a fluid, then $\divergence \vec{F}$ represents the net mass flow through each point in the domain of $\vec{F}$:
   \begin{itemize}
-    \item If $\div \vec{F} > 0$, then more fluid is flowing out than in.
-    \item If $\div \vec{F} < 0$, then more fluid is flowing in than out.
-    \item If $\div \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible}.
+    \item If $\divergence \vec{F} > 0$, then more fluid is flowing out than in.
+    \item If $\divergence \vec{F} < 0$, then more fluid is flowing in than out.
+    \item If $\divergence \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible}.
   \end{itemize}
 \end{lemma}
 
