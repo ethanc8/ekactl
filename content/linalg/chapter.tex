@@ -1345,14 +1345,182 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   Decompose the permutation into a product of disjoint cycles. Then the parity (oddness/evenness) of the permutation is the number of cycles of even length in its decomposition.
 \end{procedure}
 
-\subsection{Permutation action on multilinear forms}
+% \subsection{Permutation action on multilinear forms}
 
-\begin{definition}[Group action]
-  Let $G$ be a group and $X$ be a set.
+% \begin{definition}[Group action]
+%   Let $G$ be a group and $X$ be a set.
 
-  A \textbf{left group action} of $G$ on $X$ is a mapping $\alpha : G \times X \to X$ which satisfies the following two properties:
-  \begin{itemize}
-    \item \textbf{Identity}: $\alpha(e, x) = x$
-    \item \textbf{Compatibility}: 
-  \end{itemize}
+%   A \textbf{left group action} of $G$ on $X$ is a mapping $\alpha : G \times X \to X$ (which we denote $g, x \mapsto gx$) which satisfies the following two properties:
+%   \begin{itemize}
+%     \item \textbf{Identity}: $ex = x$, for all $x \in X$, where $e$ is the identity element of $G$.
+%     \item \textbf{Compatibility}: $h(gx) = (hg)x$ for all $g, h \in G$ and $x \in X$.
+%   \end{itemize}
+
+%   A \textbf{right group action} of $G$ on $X$ is a mapping $\alpha : X \times G \to X$ (which we denote $x, g \mapsto xg$) which satisfies the following two properties:
+%   \begin{itemize}
+%     \item \textbf{Identity}: $xe = x$, for all $x \in X$, where $e$ is the identity element of $G$.
+%     \item \textbf{Compatibility}: $x(gh) = (xg)h$ for all $g, h \in G$ and $x \in X$.
+%   \end{itemize}
+% \end{definition}
+
+% \begin{definition}[Orbit]
+%   If there is a left action of $G$ on $X$, then the set
+%   \[
+%     \mathcal{O}_x := \{ gx \in X : g \in G \}
+%   \]
+%   is called the orbit of the element $x \in X$.
+% \end{definition}
+
+% Unfinished, probably unnecessary
+
+\subsection{Determinant}
+
+\begin{definition}
+  $\left[ v_1 \cdots v_n \right]$ is the matrix whose $j$th column is $v_j$.
+  
+  $\left| v_1 \cdots v_n \right|$ is the determinant of said matrix.
 \end{definition}
+
+\begin{definition}[Determinant of a linear operator]
+  For $T \in \linearmaps(V)$, the \textbf{determinant} of $T$ is the unique scalar such that $M_T := M \compose T = (\det T) M$ for all $M \in V_{\text{alt}}^{(\dim V)}$.
+\end{definition}
+
+\begin{definition}[Determinant of a square matrix]
+  Let $n$ be a positive integer, $A$ be an $n \times n$ matrix with entries in $F$, and $T \in \linearmaps(F^n)$ be the operator whose matrix with respect to the standard basis of $F^n$ is $A$. Then the determinant of $A$ is $\det A := \det T$.
+\end{definition}
+
+\begin{lemma}
+  Let $(v_1, \ldots, v_n)$ be an ordered $n$-tuple of column vectors. Then the map $(v_1, \ldots, v_n) \mapsto \left| v_1 \cdots v_n \right|$ is an alternating $n$-linear form on $F^n$.
+\end{lemma}
+
+\begin{lemma}[$O(n!)$ method for calculating determinant]
+  If $A$ is an $n \times n$ matrix,
+  \[
+    \det A = \sum_{\sigma \in S_n} \sgn(\sigma) A_{\sigma(1) 1} \cdots A_{\sigma(n) n}
+  \]
+\end{lemma}
+
+\begin{theorem}[Cofactor method (also $O(n!)$)]
+  Let $A$ be an $n \times n$ matrix. Define $A[i|j]$ to be the result of removing the $i$th row and $j$th column from $A$. Define the \textbf{$ij$-cofactor} of $A$ to be 
+  \[
+    C_{ij} := (-1)^{i + j} \det(A[i|j])
+  \]
+  
+  Then for any row numbered $i$,
+  \[
+    \det A = \sum_{k=1}^n A_{ik} C_{ik}
+  \]
+
+  And for any column numbered $j$,
+  \[
+    \det A = \sum_{k=1}^n A_{kj} C_{kj}
+  \]
+
+  Note that the coefficient $(-1)^{i + j}$ in $C_{ij}$ forms the following pattern:
+  \[
+    \begin{bmatrix}
+      + & - & + & \cdots \\
+      - & + & - & \\
+      + & - & + & \\
+      \vdots & & & \ddots \\
+    \end{bmatrix}
+  \]
+\end{theorem}
+
+\begin{lemma}
+  If $A$ is a triangular matrix with $\lambda_1, \ldots, \lambda_n$ on the diagonal, then $\det A = \lambda_1 \cdots \lambda_n$ ($\det A$ is the product of the elements on the diagonal).
+\end{lemma}
+
+\subsection{Properties of the determinant}
+
+\begin{theorem}[Determinant is multiplicative]
+  \begin{itemize}
+    \item If $S, T \in \linearmaps(V)$, then $\det(ST) = (\det S)(\det T)$.
+    \item If $A$ and $B$ are $n \times n$ matrices, then $\det(AB) = (\det A)(\det B)$.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+  A linear operator $T \in \linearmaps(V)$ is an isomorphism iff $\det T \neq 0$.
+
+  If $T$ is an isomorphism, then $\det(T^{-1}) = (\det T)^{-1}$.
+\end{theorem}
+
+\begin{theorem}
+  The following are equivalent:
+  \begin{itemize}
+    \item $A$ is invertible.
+    \item $\det A \neq 0$.
+    \item The homogeneous system $AX = 0$ has only the unique solution.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Determinant is similarity invariant]
+  Let $T \in \linearmaps(V)$ and $S : W \to V$ be an invertible linear map. Then
+  \[
+    \det(S^{-1} T S) = \det T
+  \]
+\end{theorem}
+
+\begin{theorem}
+  For all $T \in \linearmaps(V)$, $\det T = \det [T]$, where $[T]$ is the matrix of $T$ with respect to any basis of $V$.
+\end{theorem}
+
+\begin{theorem}
+  If $A$ is a square matrix matrix, or if $A \in \linearmaps(V)$, then
+  \[
+    \det(A^T) = \det(A)
+  \]
+\end{theorem}
+
+\begin{theorem}[Effect of row and column operations on the determinant]
+  Let $A$ be an $n \times n$ matrix.
+  \begin{itemize}
+    \item If two rows or columns of $A$ are equal, then $\det A = 0$.
+    \item If $B$ is the result of swapping two rows or columns of $A$, then $\det B = - \det A$.
+    \item If $B$ is the result of multiplying one row or column of $A$ by the scalar $\lambda$, then $\det B = \lambda \det A$
+    \item If $B$ is the result of replacing a column or row by the sum of itself and a scalar multiple of another column or row, then $\det B = \det A$. (this does not apply adding a column to a scalar multiple of a row or vice-versa.)
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Effect of elementary row operations (summary)]
+  Let $A$ be an $n \times n$ matrix.
+  \begin{itemize}
+    \item \textbf{Scaling}: $R_i \mapsto cR_i \implies \det B = - \det A$.
+    \item \textbf{Replacement}: $R_i \mapsto R_i + cR_j \implies \det B = \det A$
+    \item \textbf{Interchange}: $R_i \leftrightarrow R_j \implies \det B = - \det A$
+  \end{itemize}
+\end{theorem}
+
+\begin{procedure}[$O(n^3)$ procedure for finding determinant]
+  Row-reduce the matrix $A$ to row-echelon form ($R := \REF(A)$). Then $\det R$ is the product of the items along the diagonal of $R$. To find $\det A$, apply the above theorems.
+\end{procedure}
+
+\subsection{Cramer's rule}
+
+\begin{definition}[Adjugate matrix]
+  Let $A$ be an $n \times n$ matrix. Then the adjugate matrix of $A$ is the transpose of the matrix of cofactors, i.e.
+  \[
+    \adj A = C^T
+  \]
+
+  where $C$ is defined by
+  \[
+    C_{ij} = (-1)^{i + j} \det(A[i|j])
+  \]
+\end{definition}
+
+\begin{lemma}
+  Let $A$ be an invertible $n \times n$ matrix. Then
+  \[
+    A^{-1} = \frac{1}{\det A} \adj A
+  \]
+\end{lemma}
+
+\begin{theorem}[Cramer's Rule]
+  Let $A$ be an invertible $n \times n$ matrix. For any $\vec{b} \in \Real^n$. the unique solution $\vec{x}$ of the linear system $A\vec{x} = \vec{b}$ has entries given by
+  \[
+    x_i = \frac{\det A_i(\vec{b})}{\det A}
+  \]
+  where $A_i(\vec{b})$ is the result of replacing the $i$th column of $A$ by $\vec{b}$.
+\end{theorem}
