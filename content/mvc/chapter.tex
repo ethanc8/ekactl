@@ -804,6 +804,20 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   Begin at a vector along the flow line. Then the next vector on the vector field in the direction pointed to by this vector is approximately along the flow line. So you can draw a curve through the vectors following the arrows.
 \end{procedure}
 
+\subsection{Conservative vector field}
+
+\begin{definition}[Conservative vector field]
+  A vector field $\vec{F}$ is conservative iff there exists $f : \Real^n \to \Real$ such that $\vec{F} = \grad f$ at all points in $\Real^n$. Then $f$ is called the \textbf{potential function} for $F$.
+\end{definition}
+
+\textbf{Note}: Sometimes in physics, the potential function is defined such that $\vec{F} = - \grad f$ - for example, $\vec{E} = \grad V$ in E&M.
+
+\begin{lemma}
+  A conservative vector field is irrotational.
+
+  If a vector field is irrotational and is defined on a domain with no holes, then it is conservative.
+\end{lemma}
+
 \subsection{Divergence and curl}
 
 \begin{definition}[Del operator]
@@ -840,7 +854,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   \begin{itemize}
     \item If $\divergence \vec{F} > 0$, then more fluid is flowing out than in.
     \item If $\divergence \vec{F} < 0$, then more fluid is flowing in than out.
-    \item If $\divergence \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible}.
+    \item If $\divergence \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible} and \textbf{solenoidal}.
   \end{itemize}
 \end{lemma}
 
