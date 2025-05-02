@@ -554,3 +554,29 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
   The induced current's direction is determined by the induced $B$-field using the right-hand rule.
 \end{theorem}
+
+% TODO: Inductors
+
+\subsection{LC Circuits}
+
+\begin{definition}[LC circuit]
+  A circuit with an inductor and a capacitor.
+\end{definition}
+
+\begin{theorem}
+  \[
+    \omega = \frac{1}{\sqrt{LC}} \qquad f = \frac{1}{2\pi \sqrt{LC}}
+  \]
+
+  The charge and current on one plate of the capacitor is given by
+  \[
+    q(t) = Q \cos(\omega t) \qquad i(t) = q'(t) = -Q \omega \sin(\omega t)
+  \]
+
+  where $Q$ is the maximum charge on one plate of the capacitor.
+
+  The energy in the LC circuit is:
+  \[
+    U_{\text{total}} = \frac{1}{2} \frac{Q^2}{C} = U_e + U_L = \frac{1}{2} \frac{q^2}{C} + \frac{1}{2} Li^2
+  \]
+\end{theorem}
