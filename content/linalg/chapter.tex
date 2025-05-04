@@ -1525,8 +1525,78 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   where $A_i(\vec{b})$ is the result of replacing the $i$th column of $A$ by $\vec{b}$.
 \end{theorem}
 
-% \section{Eigenvalues and eigenvectors}
+\section{Eigenvalues and eigenvectors}
 
-% \subsection{Eigenvalues and eigenvectors}
+\subsection{Eigenvalues and eigenvectors}
 
+\begin{theorem}[Diagonality condition]
+  Let $V$ be a finite-dimensional vector space, $B = (v_1, \ldots, v_n)$ be an ordered basis for $V$, and $T \in \linearmaps(V)$. Then $[T]_B$ is diagonal iff $T(v_i) = \lambda_i v_i$ for all $i$, where $\lambda_i$ is the $i$th element along the diagonal of $[T]_B$.
+\end{theorem}
 
+\begin{definition}[Eigenvalue, eigenvector of a linear operator]
+  Let $V$ be a vector space and $T \in \linearmaps(V)$. An \textbf{eigenvalue} of $T$ is a scalar $\lambda$ s.t. there exists a nonzero vector $v \in V$ s.t.
+  \[
+    T(v) = \lambda v
+  \]
+
+  The vector $v$ is the \textbf{eigenvector} of $T$ associated with the eigen value $\lambda$.
+\end{definition}
+
+\begin{lemma}
+  If $v$ is an eigenvector of $T$ associated with eigenvalue $\lambda$ and if $B$ is a basis of $V$, then
+  \[
+    [T(v)]_B = \lambda [v]_B
+  \]
+\end{lemma}
+
+\begin{definition}[Eigenvalue, eigenvector of a square matrix]
+  An \textbf{eigenvalue} of the $n \times n$ matrix $A$ is a scalar $\lambda$ s.t. there exists a nonzero vector $v \in \Real^n$ s.t.
+  \[
+    Av = \lambda v
+  \]
+
+  The vector $v$ is the \textbf{eigenvector} of $A$ associated with the eigen value $\lambda$.
+\end{definition}
+
+\begin{lemma}
+  Similar matrices have the same eigenvalues.
+
+  Any matrix representing $T \in \linearmaps(V)$ has the same eigenvalues as $T$.
+\end{lemma}
+
+\begin{definition}[Eigenspace]
+  A scalar $\lambda$ is an eigenvalue of $A$ iff $Av = \lambda v$ has a nontrivial solution. This is equivalent to the homogeneous linear system (where $I$ is the $n \times n$ identity matrix)
+  \[
+    (A - \lambda I) v = 0
+  \]
+
+  The set of all solutions to this equation is the \textbf{eigenspace} of $A$ associated to the eigenvalue $\lambda$, which we denote by $E_\lambda$.
+\end{definition}
+
+\begin{lemma}
+  If $A \in \Real^{n \times n}$, then the eigenspace of $A$ corresponding to $\lambda$ is a subspace of $\Real^n$.
+\end{lemma}
+
+\begin{lemma}
+  Let $A$ be an $n \times n$ matrix. Then $\det(\lambda I - A)$ is a monic (leading coefficient 1) polynomial of degree $n$ on $\lambda$.
+\end{lemma}
+
+\begin{definition}
+  For any $n \times n$ matrix $A$, the monic, degree $n$ polynomial $\det(\lambda I - A)$ is the \textbf{characteristic polynomial} of $A$. The equation
+  \[
+    \det(\lambda I - A) = 0
+  \]
+  is the \textbf{characteristic equation} of $A$.
+\end{definition}
+
+\begin{lemma}
+  Similar matrices have the same characteristic equation.
+\end{lemma}
+
+\begin{lemma}
+  The eigenvalues of a triangular matrix are the entries on the main diagonal.
+\end{lemma}
+
+\begin{theorem}[Rational root theorem]
+  Let $p(x) = a_n x^n + a_{n-1} x^{n - 1} + \cdots + a_1 x + a_0$ be a degree-$n$ polynomial with integer coefficients. If $x = \frac{p}{q}$ i a rational root of $p(x)$, then $a_0$ is divisible by $p$ and $a_n$ is divisible by $q$.
+\end{theorem}
