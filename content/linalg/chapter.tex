@@ -1600,3 +1600,55 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{theorem}[Rational root theorem]
   Let $p(x) = a_n x^n + a_{n-1} x^{n - 1} + \cdots + a_1 x + a_0$ be a degree-$n$ polynomial with integer coefficients. If $x = \frac{p}{q}$ i a rational root of $p(x)$, then $a_0$ is divisible by $p$ and $a_n$ is divisible by $q$.
 \end{theorem}
+
+\subsection{Diagonalizable operators}
+
+\begin{definition}[Diagonalizable operator]
+  A linear operator $T \in \linearmaps(V)$ is said to be diagonalizable if there exists a basis consisting of eigenvectors of $T$. Such as basis is called an \textbf{eigenbasis}.
+\end{definition}
+
+\begin{lemma}
+  If $T \in \linearmaps(V)$, then every set of eigenvectors corresponding to distinct eigenvalues of $T$ is linearly independent.
+\end{lemma}
+
+\begin{lemma}
+  If $\dim V = n$ and $T \in \linearmaps(V)$ has $n$ distinct eigenvalues, then $T$ is diagonalizable.
+\end{lemma}
+
+\begin{definition}[Multiplicity of a root of a polynomial]
+  Let $p(x)$ be a polynomial. Then an element $a \in F$ is a root of multiplicity $k$ iff there exists a polynomial $s(x)$ such that $s(a) \neq 0$ and $p(x) = (x - a)^k s(x)$.
+\end{definition}
+
+\begin{definition}[Algebraic multiplicity]
+  The algebraic multiplicity of the eigenvalue $\lambda_k$ is the multiplicity of $\lambda_k$ as a root of the characteristic polynomial of $A$.
+\end{definition}
+
+\begin{definition}[Geometric multiplicity]
+  The geometric multiplicity of the eigenvalue $\lambda_k$ dimension of the eigenspace corresponding to $\lambda_k$.
+\end{definition}
+
+% \begin{lemma}
+%   For all eigenvalues $\lambda_k$, its geometric multiplicity is less than or equal to its algebraic multiplicity.
+% \end{lemma}
+
+% \begin{lemma}
+%   Suppose $T \in \linearmaps(V)$ and $\lambda_1, \ldots, \lambda_n$ are distinct eigenvalues of $T$. Then
+%   \[
+%     E_{\lambda_1} \directsum \cdots \directsum E_{\lambda_m}
+%   \]
+
+%   (the sum of the eigenspaces is a direct sum). Furthermore, if $V$ is finite-dimensional, then
+%   \[
+%     \dim E_{\lambda_1} + \cdots + \dim E_{\lambda_m} \leq \dim V
+%   \]
+% \end{lemma}
+
+\begin{theorem}[Conditions equivalent to diagonalizability]
+  Let $V$ be a finite-dimensional vector space, $T \in \linearmaps(V)$, and $\lambda_1, \ldots, \lambda_n$ be the distinct eigenvalues of $T$. Then the following are equivalent:
+  \begin{itemize}
+    \item $V$ has a basis consisting of eigenvectors of $T$
+    \item $V = E_{\lambda_1} \directsum \cdots \directsum E_{\lambda_m}$
+    \item $\dim V = \dim E_{\lambda_1} + \cdots + \dim E_{\lambda_m}$
+    \item The geometric multiplicity of each eigenvector is equal to its algebraic multiplicity.
+  \end{itemize}
+\end{theorem}
