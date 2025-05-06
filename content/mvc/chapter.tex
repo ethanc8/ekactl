@@ -858,11 +858,20 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   \end{itemize}
 \end{lemma}
 
-\begin{definition}[Curl]
-  Let $\vec{F} : X \subseteq \Real^n \to \Real^n$ be a differentiable vector field on $\Real^3$. Then the curl of $\vec{F}$ is the vector field
+\begin{definition}[Curl ($\Real^3$)]
+  Let $\vec{F} : X \subseteq \Real^3 \to \Real^3$ be a differentiable vector field on $\Real^3$. Then the curl of $\vec{F}$ is the vector field
   \[
     \curl \vec{F} = \del \crossp \vec{F}
   \]
+\end{definition}
+
+\begin{definition}[Curl ($\Real^2$)]
+  Let $\vec{F} : X \subseteq \Real^2 \to \Real^2$ be a differentiable vector field on $\Real^2$. Then the curl of $\vec{F}$ is the scalar field
+  \[
+    \curl \vec{F} = \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y}
+  \]
+
+  This is equivalent to the magnitude of $\del \crossp \vec{F}$, where counterclockwise is positive and clockwise is negative (by right-hand rule).
 \end{definition}
 
 \begin{definition}[Irrotational]
@@ -900,3 +909,29 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   It represents the work done by moving a particle along the curve $C$, if $F$ is a force field.
 \end{definition}
 
+\subsection{Green's Theorem}
+
+\begin{namedtheorem}[Green's Theorem]
+  Let $\partial D$ be a positively oriented, piecewise smooth, simple closed curve in the $xy$-plane, and $D$ be the region bounded by $\partial D$. If $P$ and $Q$ have continuous partial derivatives on an open region containing $D$, then
+  \[
+    \oint_{\partial D} P \,dx + Q \,dy = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \,dA
+  \]
+  Equivalently, if $\vec{F} = x, y \mapsto \begin{bmatrix}
+    P(x, y) \\
+    Q(x, y)
+  \end{bmatrix}$, then
+  \[
+    \oint_{\partial D} \vec{F} \dotp d\vec{r} = \iint_D \curl \vec{F} \,dA
+  \]
+
+  In other words, the circulation of a vector field along a curve is the same as the sum of the curls within the region bounded by the curve.
+\end{namedtheorem}
+
+\begin{definition}[Circulation]
+  The circulation of the vector field $\vec{F}$ around the curve $C$ is 
+  \[
+    \oint_{C} \vec{F} \dotp d\vec{r}
+  \]
+
+  It measures how much $F$ aligns with the curve $C$
+\end{definition}
