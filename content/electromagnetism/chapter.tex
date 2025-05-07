@@ -548,10 +548,10 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 \end{namedlaw}
 
 \begin{namedlaw}[Lenz's Law]
-  The induced emf opposes the changing magnetic flux.
+  The direction of the induced emf (and thus the induced current) is such that the induced magnetic field it produces opposes the change in the magnetic flux that caused it.
 \end{namedlaw}
 
-\begin{theorem}
+\begin{theorem}[by Lenz's Law]
   An increasing magnetic flux induces a $B$-field in the opposite direction of the changing flux.
 
   An decreasing magnetic flux induces a $B$-field in the same direction as the changing flux.
@@ -561,22 +561,87 @@ If a set of capacitors were replaced by a single capacitor without changing any 
 
 \subsection{Inductors}
 
+\begin{definition}
+  A device which stores energy in a magnetic field, based on the current flowing through it.
+\end{definition}
+
 \begin{definition}[Inductance]
+  The inductance of an inductor with $N$ loops, with current $I$ flowing through it, and where $\Phi_B$ is the flux through the surface bounded by one loop of the inductor:
   \[
-    L = \frac{N \Phi_B}{i} \qquad \left( \Henry \frac{\Tesla \metre^2}{\Ampere} \right)
+    L = \frac{N \Phi_B}{I} \qquad \left( \Henry \frac{\Tesla \metre^2}{\Ampere} \right)
   \]
 \end{definition}
 
-% TODO: Finish this
-
 \begin{theorem}[Inductance of a solenoidal inductor]
-  
+  The inductance of a solenoid with $n$ loops of wire per unit length, of length $l$, where $A$ is the area of the surface bounded by one loop of the solenoid, is
+  \[
+    L = \mu_0 n^2 A l
+  \]
 \end{theorem}
 
-\subsection{LC Circuits}
+\begin{theorem}[Constitutive equation]
+  The EMF induced by an inductor is given by 
+  \[
+    \mathcal{E} = - L \frac{di}{dt}
+  \]
+
+  The direction is specified by Lenz's Law.
+\end{theorem}
+
+\begin{theorem}[Energy stored in an inductor]
+  The energy stored in an inductor is
+  \[
+    U_L = \frac{1}{2} LI^2
+  \]
+\end{theorem}
+
+\subsection{RL circuits}
+
+\begin{definition}[RL circuit]
+  A circuit with a resistor and an inductor.
+\end{definition}
+
+\begin{definition}[Inductive time constant]
+  For an RL circuit,
+  \[
+    \tau_L := R_{eq} C_{eq} \qquad (\second)
+  \]
+\end{definition}
+
+\begin{theorem}[Behavior of an RL circuit with a battery]
+  By the Loop Law,
+  \[
+    \mathcal{E} - IR - L \frac{di}{dt} = 0
+  \]
+
+  Solving the diffeq, we get
+  \[
+    I(t) = \frac{\mathcal{E}}{R} \left(1 - e^{- \frac{t}{\tau_L}}\right)
+  \]
+
+  The circuit starts off with no current, and as time goes on the current increases until it reaches its final value $I = \frac{\mathcal{E}}{R}$ at which point the inductor stores its max energy.
+\end{theorem}
+
+\begin{theorem}[Behavior of an RL circuit after the battery is disconnected]
+  By the Loop Law,
+  \[
+    - IR - L \frac{di}{dt} = 0
+  \]
+
+  Solving the diffeq, we get
+  \[
+    I(t) = \frac{\mathcal{E}}{R} e^{- \frac{t}{\tau_L}}
+  \]
+
+  The circuit starts off with current of $I = \frac{\mathcal{E}}{R}$ and ends with no current, at which point the inductor stores no energy.
+\end{theorem}
+
+\subsection{LC circuits}
 
 \begin{definition}[LC circuit]
   A circuit with an inductor and a capacitor.
+
+  This circuit stores energy. At some times the capacitor stores energy, but the capacitor discharges into the inductor until the inductor stores all the energy. Then the inductor releases energy towards the capacitor, causing the capacitor to store all the energy but with the positive and negative side swapped.
 \end{definition}
 
 \begin{theorem}
