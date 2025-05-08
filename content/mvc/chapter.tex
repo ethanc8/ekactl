@@ -935,3 +935,43 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 
   It measures how much $F$ aligns with the curve $C$
 \end{definition}
+
+\section{Surfaces}
+
+\subsection{Parametric surfaces}
+
+\begin{definition}[Parametric/parameterized surface]
+  Let $\vec{X} : D \subseteq \Real^2 \to \Real^3$ be a one-to-one function (except possibly at the boundary of $D$). Then the image of $X$ is called a parameterized surface.
+\end{definition}
+
+\begin{definition}[Normal vector to a parameterized surface]
+  Let $\vec{X} = \begin{bmatrix}
+    u \\
+    v
+  \end{bmatrix} \mapsto \begin{bmatrix}
+    x(u, v) \\
+    y(u, v) \\
+    z(u, v)
+  \end{bmatrix}$ be a parameterization of a surface, and let $\vec{u}$ be a vector in the domain of $\vec{X}$. Then the tangent vector along the $u$-axis is $\vec{X}_u(\vec{u})$, where
+  \[
+    \vec{X}_u = \begin{bmatrix}
+      \frac{\partial x}{\partial u} \\
+      \frac{\partial y}{\partial u} \\
+      \frac{\partial z}{\partial u}
+    \end{bmatrix}
+  \]
+  and similarly the tangent vector along the $v$-axis is $\vec{X}_v(\vec{u})$.
+
+  Then the normal vector to the parameterized surface at the point $\vec{u}$ is
+  \[
+    \vec{N} = \vec{X}_u (\vec{u}) \crossp \vec{X}_v (\vec{v})
+  \]
+\end{definition}
+
+\begin{definition}[Smooth]
+  A paramaterization $\vec{X}$ of a surface is smooth at a point if its normal vector is not equal to 0 at that point.
+
+  A surface is smooth at a point if there exists a paramaterization for that surface which is smooth at that point.
+
+  Note that a smooth surface can have non-smooth paramaterizations.
+\end{definition}
