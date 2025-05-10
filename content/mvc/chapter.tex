@@ -975,3 +975,13 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 
   Note that a smooth surface can have non-smooth paramaterizations.
 \end{definition}
+
+\subsection{Surface integrals}
+
+\begin{definition}[Scalar surface integral]
+  The surface integral over the surface $S$ which is paramaterized by $\vec{X} : D \subseteq \Real^2 \to \Real^3 = (u, v) \to (x, y, z)$ and where $D$ is the domain of $\vec{X}$ is
+  \[
+    \iint_S f \,dS = \iint_D f(\vec{X}(u, v)) \, |\vec{X}_u \crossp \vec{X}_v| \,dA
+  \]
+  ($dS$ is a part of the surface area, $dA$ is a part of the domain)
+\end{definition}
