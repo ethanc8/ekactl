@@ -868,14 +868,18 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
 
 \begin{definition}[Separable Equation] A separable equation is a differential equation where
   \[
-    \frac{dy}{dx} = g(x)f(y)
+    N(y) \frac{dy}{dx} = M(x)
   \]
-  for some function $g(x)$ which depends only on $x$ and $f(y)$ which depends only on $y$.
+  for some function $M(x)$ which depends only on $x$ and $N(y)$ which depends only on $y$.
 \end{definition}
 
 \begin{theorem} For a separable equation,
   \[
-    \int \frac{1}{f(y)} dy = \int g(x) dx
+    \int N(y) \frac{dy}{dx} dx = \int M(x) \,dx
+  \]
+  and therefore
+  \[
+    \int N(y) \,dy = \int M(x) \,dx
   \]
 \end{theorem}
 
@@ -1107,8 +1111,19 @@ Generally, if $A(x)$ is the cross-section of a solid that intersects the $x$-axi
   \]
 \end{theorem}
 
+\begin{theorem}
+  The area of a region bounded by a function $r = R(\theta)$ between $\theta = \alpha$ and $\theta = \beta$ is
+  \[
+    \frac{1}{2} \int_{\alpha}^{\beta} r^2 \,d\theta
+  \]
+  This can be derived using MVC by evaluating
+  \[
+    \int_{\alpha}^{\beta} \int_0^r r \,dr \,d\theta
+  \]
+\end{theorem}
+
 \section*{14 Vectors}
-\addcontentsline{toc}{section}{13 Polar}
+\addcontentsline{toc}{section}{14 Vectors}
 
 \[
   \frac{d}{dt} \vec{r}(t) = \begin{matrix}
