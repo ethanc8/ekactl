@@ -1652,3 +1652,22 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
     \item The geometric multiplicity of each eigenvector is equal to its algebraic multiplicity.
   \end{itemize}
 \end{theorem}
+
+\subsection{Powers of a diagonalizable operator}
+
+\begin{lemma}
+  If $v$ is an eigenvector of $T$ with eigenvalue $\lambda$ and $n$ is a positive integer, then $T^n v = \lambda^n v$.
+\end{lemma}
+
+\begin{lemma}
+  If $T$ is diagonalizable, then there exists an invertible matrix $P$ such that the diagonalization of $T$ is equal to
+  \[
+    P [T] P^{-1}
+  \]
+  (where $[T]$ is with respect to the standard basis)
+
+  Furthermore, for any positive integer $n$,
+  \[
+    [T]^n = P^{-1} D^n P
+  \]
+\end{lemma}
