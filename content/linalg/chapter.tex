@@ -1662,12 +1662,14 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{lemma}
   If $T$ is diagonalizable, then there exists an invertible matrix $P$ such that the diagonalization of $T$ is equal to
   \[
-    D = P [T] P^{-1}
+    D = P^{-1} [T] P
   \]
   (where $[T]$ is with respect to the standard basis)
 
   Furthermore, for any positive integer $n$,
   \[
-    [T]^n = P^{-1} D^n P
+    [T]^n = P D^n P^{-1}
   \]
+
+  One invertible matrix $P$ that satisfies these conditions can be found by placing the eigenvectors as columns of the matrix $P$ from left to right.
 \end{lemma}
