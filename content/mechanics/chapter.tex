@@ -307,7 +307,7 @@ Using the equations which are similar to electrostatics:
 \begin{definition}[Gravitational field]
   The vector field $g$, which applies to all objects.
 
-  The electric field points towards masses.
+  The gravitational field points towards masses.
 
 	$g$ is also the acceleration caused by gravity.
 \end{definition}
@@ -315,8 +315,10 @@ Using the equations which are similar to electrostatics:
 \begin{namedlaw}[Newton's law of universal gravitation]
   If stationary point or spherical masses $m_1$ and $m_2$ are near each other but not touching, then the magnitude of the gravitational force between the two objects is
   \[
-    |F_g| = \frac{G m_1 m_2}{r^2}
+    F_g = -\frac{G m_1 m_2}{r^2}
   \]
+
+	The objects are attracted to each other.
 \end{namedlaw}
 
 \begin{law}
@@ -326,7 +328,7 @@ Using the equations which are similar to electrostatics:
 \begin{law}[by Newton's law of universal gravitation]
   The gravitational field at distance $r$ due to a stationary point or spherical charge $m$ is
   \[
-    g = \frac{GM}{r^2}.
+    g = \frac{Gm}{r^2}.
   \]
 
   The gravitational field at distance $r$ due to a massive object whose total mass is $\int dm$ is
@@ -336,7 +338,65 @@ Using the equations which are similar to electrostatics:
   where $r$'s tail is at the mass and points towards the point for which we want to calculate $g$.
 \end{law}
 
+\subsection{Gravitational potential energy}
+
+\begin{definition}[Gravitational potential energy]
+	The gravitational potential energy on $m_2$ caused by $m_1$ is
+	\[
+		U_g = - \frac{G m_1 m_2}{r}
+	\]
+\end{definition}
+
+\begin{theorem}[Escape speed]
+	The minimum speed required for an object to get infinitely far away from the surface of a planet with radius $R$ and mass $M$ is
+	\[
+		v = \sqrt{\frac{2GM}{R}}
+	\]
+
+	This can be found by equating the initial total energy (kinetic and gravitational) to 0.
+\end{theorem}
+
+\subsection{Orbit}
+
+\begin{theorem}
+	% CED 6.6.A.2.i (copied) 
+	In circular orbits, the system's total
+	mechanical energy, the system's
+	gravitational potential energy, and the
+	satellite's angular momentum and kinetic
+	energy are constant.
+
+	% CED 6.6.A.3 (not copied)
+	The kinetic energy of the orbiting body is
+	\[
+		K_g = - \frac{1}{2} U_g
+	\]
+	and the total energy of the system (orbiting body and massive body) is
+	\[
+		E_{\text{total}} = \frac{1}{2} U_g = - \frac{GMm}{2r}
+	\]
+\end{theorem}
+
+\begin{theorem}
+	% CED 6.6.A.2.ii (copied)
+	In elliptical orbits, the system's total
+	mechanical energy and the satellite's
+	angular momentum are constant, but the
+	system's gravitational potential energy
+	and the satellite's kinetic energy can each
+	change.
+\end{theorem}
+
+\begin{namedlaw}[Kepler's third law]
+	The period $T$ and radius $R$ of the circular orbit of a satellite around a massive object of mass $M$ is given by
+	\[
+		T^2 = \frac{4 \pi^2}{GM} R^2
+	\]
+\end{namedlaw}
+
 \subsection{Gravitational flux}
+
+Note - Newton's shell theorem is obvious from Gauss's Law. The AP exam expects you to know Newton's shell theorem but you can just know Gauss's Law.
 
 \begin{definition}[Gravitational flux ($\Phi$)]
   The flux through a surface with area vector $\vec{A}$ is
