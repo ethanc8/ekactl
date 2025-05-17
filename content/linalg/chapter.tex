@@ -1673,3 +1673,129 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 
   One invertible matrix $P$ that satisfies these conditions can be found by placing the eigenvectors as columns of the matrix $P$ from left to right.
 \end{lemma}
+
+\section{Inner product spaces}
+
+\subsection{Inner product}
+
+\refresources{Trimm 7.1}
+
+\begin{definition}[Positive definite]
+  A map $f : V \times V \to F$ is positive definite iff for any $v \in V$ where $v \neq 0$,
+  \[
+    f(v, v) > 0
+  \]
+  and $f(0, 0) = 0$.
+\end{definition}
+
+\begin{definition}[Inner product on a real vector space]
+  Let $V$ be a real vector space. Then an inner product on $V$ is a positive definite symmetric bilinear form on $V$.
+
+  The inner product of $v, w \in V$ is denoted $(v, w)$.
+\end{definition}
+
+\begin{definition}[Dot product on $\Real^n$]
+  The dot product is the mapping that maps $x, y \in \Real^n$ to the real number
+  \[
+    x \dotp y = \sum_{i=1}^n x_i y_i
+  \]
+
+  It is an inner product on $\Real^n$, and satisfies the following properties for any $v, w, x \in V$:
+  \begin{itemize}
+    \item $(cv + w) \dotp x = cv \dotp x + w \dotp y$
+    \item $v \dotp w = w \dotp v$
+    \item $x \dotp (cv + w) = cx \dotp v + x \dotp w$
+    \item $|v| = \sqrt{v \dotp v}$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Complex conjugate]
+  The complex conjugate of the complex number $a + bi$ is
+  \[
+    \overline{a + bi} = a - bi
+  \]
+\end{definition}
+
+\begin{definition}[Conjugate-linear map]
+  A map $f : V \to W$ where $V$ and $W$ are complex vector spaces is conjugate-linear iff for all $x, y \in V$, $s \in \Complex$,
+  \begin{itemize}
+    \item \textbf{Additivity}: $f(x + y) = f(x) + f(y)$
+    \item \textbf{Conjugate homogeneity}: $f(sx) = \overline{s} f(x)$
+  \end{itemize}
+
+  A conjugate-linear map is a type of \textbf{semilinear map}.
+\end{definition}
+
+\begin{definition}[Sesquilinear map]
+  A map $f : V \times V \to W$ which is linear in the first argument and semilinear in the second argument.
+
+  Iff it is conjugate-linear in the second argument, for all $z_1, z_2 \in \Complex^n$, $c \in C$,
+  \[
+    f(w, cz_1 + z_2) = \overline{c} f(w, z_1) + f(2, z_2)
+  \]
+\end{definition}
+
+\begin{definition}[Inner product on a complex vector space]
+  Let $V$ be a complex vector space. Then an inner product on $V$ is a positive-definite sesquilinear form on $V$.
+\end{definition}
+
+\begin{definition}[Dot product on $\Complex^n$]
+  The dot product is the mapping that maps $z, w \in \Complex^n$ to the complex number
+  \[
+    z \dotp w = \sum_{i=1}^n z_i \overline{w_i}
+  \]
+
+  It is an inner product on $\Complex^n$, and satisfies the following properties for any $v, w, x \in V$:
+  \begin{itemize}
+    \item $(cv + w) \dotp x = cv \dotp x + w \dotp y$
+    \item $v \dotp w = \overline{w \dotp v}$
+    \item $x \dotp (cv + w) = \overline{c}x \dotp v + x \dotp w$
+    \item $|v| = \sqrt{v \dotp v}$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Inner product space]
+  A vector space $V$ together with an inner product on $V$.
+\end{definition}
+
+\subsection{Orthogonality}
+
+\refresources{Trimm 7.1}
+
+For this section, let $V$ be an inner product space.
+
+\begin{definition}[Orthogonality]
+  Two vectors $u, v \in V$ are orthogonal iff $(u, v) = 0$.
+\end{definition}
+
+\begin{lemma}
+  0 is orthogonal to all vectors.
+\end{lemma}
+
+\begin{namedtheorem}[Pythagorean Theorem]
+  If $u, v \in V$ are orthogonal, then
+  \[
+    |u + v|^2 = |u|^2 + |v|^2
+  \]
+\end{namedtheorem}
+
+\begin{theorem}[Orthogonal decomposition]
+  Let $u, v \in V$. Then $u$ can be uniquely decomposed as
+  \[
+    u = u_{\parallel} + u_{\perp}
+  \]
+  where $u_{\parallel} \parallel v$ and $u_{\perp} \perp v$.
+\end{theorem}
+
+\begin{theorem}
+  For all $u, v \in V$,
+  \begin{itemize}
+    \item \textbf{Cauchy-Schwarz inequality}: $|(u, v)| \leq |u| |v|$
+    \item \textbf{Triangle Inequality}: $|u + v| \leq |u| + |v|$
+    \item \textbf{Reverse Triangle Inequality}: $\left| |u| - |v| \right| \leq |u - v|$
+    \item \textbf{Parallelogram Law}: $|u + v|^2 + |u - v|^2 = 2 ( |u|^2 + |v|^2 )$
+  \end{itemize}
+\end{theorem}
+
+
+
