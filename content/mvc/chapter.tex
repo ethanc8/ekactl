@@ -856,6 +856,8 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
     \item If $\divergence \vec{F} < 0$, then more fluid is flowing in than out.
     \item If $\divergence \vec{F} = 0$, then the same amount of fluid flows in as flows out. In this case, $\vec{F}$ is considered \textbf{incompressible} and \textbf{solenoidal}.
   \end{itemize}
+
+  The divergence of a vector field represents how "outgoing" the field is at each point, and how source-like (if positive) or sink-like (if negative) each point is.
 \end{lemma}
 
 \begin{definition}[Curl ($\Real^3$)]
@@ -881,8 +883,8 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \begin{lemma}
   Let there exist an infinitesimally small sphere at the point $\vec{x} \in X$. Let $\vec{F} : X \subseteq \Real^3 \to \Real^3$ be a vector field that represents the velocity of a fluid at each point in $X$. Then $\curl \vec{F}$ is the unique vector such that
   \begin{itemize}
-    \item The direction of $\curl \vec{F}$ is along the axis of rotation of the sphere, following the right-hand rule
-    \item The magnitude of $\curl \vec{F}$ is the speed of the rotation of the sphere
+    \item The direction of $\curl \vec{F}$ is along the axis of rotation of the sphere, following the right-hand rule.
+    \item The magnitude of $\curl \vec{F}$ is the speed of the rotation of the sphere.
   \end{itemize}
 \end{lemma}
 
@@ -909,6 +911,12 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   It represents the work done by moving a particle along the curve $C$, if $F$ is a force field.
 \end{definition}
 
+% TODO: Fundamental Theorem of Line Integrals
+
+% TODO: Path independence
+
+% TODO: Vector fields
+
 \subsection{Green's Theorem}
 
 \begin{namedtheorem}[Green's Theorem]
@@ -933,7 +941,7 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
     \oint_{C} \vec{F} \dotp d\vec{r}
   \]
 
-  It measures how much $F$ aligns with the curve $C$
+  It measures how much $F$ aligns with the curve $C$.
 \end{definition}
 
 \section{Surfaces}
@@ -979,9 +987,76 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
 \subsection{Surface integrals}
 
 \begin{definition}[Scalar surface integral]
-  The surface integral over the surface $S$ which is paramaterized by $\vec{X} : D \subseteq \Real^2 \to \Real^3 = (u, v) \to (x, y, z)$ and where $D$ is the domain of $\vec{X}$ is
+  The surface integral of $f$ over the surface $S$ which is paramaterized by $\vec{X} : D \subseteq \Real^2 \to \Real^3 = (u, v) \to (x, y, z)$ and where $D$ is the domain of $\vec{X}$ is
   \[
     \iint_S f \,dS = \iint_D f(\vec{X}(u, v)) \, |\vec{X}_u \crossp \vec{X}_v| \,dA
   \]
   ($dS$ is a part of the surface area, $dA$ is a part of the domain)
 \end{definition}
+
+\begin{definition}[Scalar surface integral in $\Real^3$ for function of two variables]
+  (This is optional; the definition above can be used to derive this.)
+
+  The surface integral of $f$ over the surface $S$ defined by $z = g(x, y)$, whose domain is $D$, is
+  \[
+    \iint_S f \,dS = \iint_D f(x, y, g(x, y)) \sqrt{\left(\frac{\partial g}{\partial x}\right)^2 + \left(\frac{\partial g}{\partial y}\right)^2 + 1} \,dA
+  \]
+\end{definition}
+
+\begin{definition}[Orientable surface]
+  A smooth, connected surface $S$ is orientable iff it is possible to define a single normal vector at each point of $S$ such that the collection of these normal vectors varies continuously over $S$.
+\end{definition}
+
+\begin{definition}[Closed surface]
+  A surface is closed iff it is the boundary of some solid region $E$.
+\end{definition}
+
+\begin{definition}[Oriented surface]
+  A smooth, orientable surface together with a choice of its orientation.
+
+  If the surface is closed and encloses the region $E$, then it has a \textbf{positive orientation} when we choose the set of its normal vectors to point away from $E$ and a \textbf{negative orientation} when we choose the set of its normal vectors to point towards $E$.
+\end{definition}
+
+\begin{definition}[Vector surface integral, flux]
+  The surface integral or flux of the vector field $\vec{F}$ over the surface $S$ which is paramaterized by $\vec{X} : D \subseteq \Real^2 \to \Real^3 = (u, v) \to (x, y, z)$ and where $D$ is the domain of $\vec{X}$ is
+  \[
+    \iint_S \vec{F} \dotp d\vec{S} = \iint_D F(\vec{X}(u, v)) \dotp (\vec{X}_u \crossp \vec{X}_v) \,du \, dv
+  \]
+\end{definition}
+
+\subsection{Stokes' Theorem}
+
+\begin{definition}[Positive oriented boundary]
+  Given a surface $S$ whose boundary is the curve $C$, the positive orientation of the curve is such that if one were to walk along the curve in that direction, with the vector upwards from the top of their head parallel to the normal vectors of $S$, the surface would be to that person's left. Equivalently, you could choose a normal vector and use the right-hand rule (thumb is the normal vector and the positive orientation is given by the curl of the fingers).
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=50mm]{content/mvc/images/positive-oriented-boundary.png}
+  \end{figure}
+\end{definition}
+
+\begin{namedtheorem}[Stoke's Theorem]
+  Let $S$ be an oriented smooth surface, bounded by a curve $\partial S$, composed of finitely many simple closed smooth differentiable ($C^1$) curves with positive orientation. Let $\vec{F}$ be a differentiable ($C^1$) vector field whose domain includes $S$. Then
+  \[
+    \oint_{\partial S} \vec{F} \dotp d\vec{r} = \iint_S \del \crossp \vec{F} \dotp d\vec{S}
+  \]
+
+  In other words, the circulation of a vector field along a curve is the same as the sum of the curls within the surface bounded by the curve.
+\end{namedtheorem}
+
+\subsection{Gauss's Theorem}
+
+\begin{namedtheorem}[Gauss's Theorem / Divergence theorem]
+  Let $D$ be a solid region in $\Real^3$, bounded by a surface $\partial D$, composed of finitely many smooth closed surfaces with positive orientation. Let $\vec{F}$ be a differentiable ($C^1$) vector field whose domain includes $D$. Then
+  \[
+    \oiint_{\partial D} \vec{F} \dotp d\vec{S} = \iiint_D \del \dotp F dV
+  \]
+
+  In other words, the flux of a vector field through a closed surface is the same as the sum of the divergences of the vector field through the region bounded by the surface.
+
+  This follows from that
+  \begin{itemize}
+    \item The ratio of flux to volume approaches the divergence as the volume becomes smaller.
+    \item If the region is partitioned into smaller regions, the flux of the region is equal to the sum of the flux of the smaller regions (since the flux of the boundary of the two regions cancels out). 
+  \end{itemize}
+\end{namedtheorem}
