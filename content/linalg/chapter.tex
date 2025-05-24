@@ -1093,7 +1093,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   Let $A, B$ be $n \times n$ matrices and $c$ be a scalar. Then
   \begin{itemize}
     \item $\tr(A + B) = \tr(A) + \tr(B)$
-    \item $\tr(cA) = c tr(A)$
+    \item $\tr(cA) = c \tr(A)$
     \item $\tr(A^T) = \tr(A)$
     \item $\tr(AB) = \tr(BA)$ (this generalizes to more than 2 factors)
     \item The trace is similarity-invariant: if $A$ and $B$ are similar then $\tr(A) = \tr(B)$
@@ -1433,7 +1433,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 
 \subsection{Properties of the determinant}
 
-\begin{theorem}[Determinant is multiplicative]
+\begin{theorem}[Determinant is multiplicative] \ \\
   \begin{itemize}
     \item If $S, T \in \linearmaps(V)$, then $\det(ST) = (\det S)(\det T)$.
     \item If $A$ and $B$ are $n \times n$ matrices, then $\det(AB) = (\det A)(\det B)$.
@@ -1467,7 +1467,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \end{theorem}
 
 \begin{theorem}
-  If $A$ is a square matrix matrix, or if $A \in \linearmaps(V)$, then
+  If $A$ is a square matrix, or if $A \in \linearmaps(V)$, then
   \[
     \det(A^T) = \det(A)
   \]
@@ -1486,7 +1486,7 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{theorem}[Effect of elementary row operations (summary)]
   Let $A$ be an $n \times n$ matrix.
   \begin{itemize}
-    \item \textbf{Scaling}: $R_i \mapsto cR_i \implies \det B = - \det A$.
+    \item \textbf{Scaling}: $R_i \mapsto cR_i \implies \det B = c \det A$.
     \item \textbf{Replacement}: $R_i \mapsto R_i + cR_j \implies \det B = \det A$
     \item \textbf{Interchange}: $R_i \leftrightarrow R_j \implies \det B = - \det A$
   \end{itemize}
@@ -1653,6 +1653,18 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \end{itemize}
 \end{theorem}
 
+\begin{procedure}[Diagonalizing a linear operator]
+  Let $T \in \linearmaps(V)$. Choose an ordering $B = (v_1, v_2, \ldots, v_n)$ of the eigenvectors of $T$, corresponding to the eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$. Then $[T]_B$, the diagonalization of $T$, the matrix of $T$ with respect to $B$, is
+  \[
+    \begin{bmatrix}
+      \lambda_1 & 0 & \cdots & 0 \\
+      0 & \lambda_2 & \cdots & 0 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & \cdots & \lambda_n
+    \end{bmatrix}
+  \]
+\end{procedure}
+
 \subsection{Powers of a diagonalizable operator}
 
 \begin{lemma}
@@ -1662,17 +1674,39 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{lemma}
   If $T$ is diagonalizable, then there exists an invertible matrix $P$ such that the diagonalization of $T$ is equal to
   \[
-    D = P^{-1} [T] P
+    D = P [T] P^{-1}
   \]
   (where $[T]$ is with respect to the standard basis)
 
   Furthermore, for any positive integer $n$,
   \[
-    [T]^n = P D^n P^{-1}
+    [T]^n = P^{-1} D^n P
   \]
 
-  One invertible matrix $P$ that satisfies these conditions can be found by placing the eigenvectors as columns of the matrix $P$ from left to right.
+  One example of a $P$ that satisfies this equation is the change-of-basis matrix from the basis of $[T]$ to the basis of $D$
 \end{lemma}
+
+\begin{procedure}[Power of a diagonal matrix]
+  Let $D$ be a diagonal matrix equal to
+  \[
+    \begin{bmatrix}
+      \lambda_1 & 0 & \cdots & 0 \\
+      0 & \lambda_2 & \cdots & 0 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & \cdots & \lambda_n
+    \end{bmatrix}
+  \]
+
+  Then $D^n$ is equal to
+  \[
+    \begin{bmatrix}
+      \lambda_1^n & 0 & \cdots & 0 \\
+      0 & \lambda_2^n & \cdots & 0 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & \cdots & \lambda_n^n
+    \end{bmatrix}
+  \]
+\end{procedure}
 
 \section{Inner product spaces}
 
