@@ -875,9 +875,8 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 
 \begin{procedure}[Finding bases of $\Nul A$, $\Col A$, $\Row A$] \ \\
   \begin{enumerate}
-    \item $R := \RREF(A)$
     \item The pivot columns of $A$ are a basis of $\Col A$.
-    \item The pivot rows of $B$ are a basis of $\Row A$. (row space is preserved under row operations)
+    \item The pivot rows of $\RREF(A)$ are a basis of $\Row A$. (row space is preserved under row operations)
     \item The vectors spanning $Ax = 0$ are a basis of $\Nul A$.
   \end{enumerate}
 \end{procedure}
@@ -905,6 +904,17 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \begin{definition}[Left null space]
   The left null space of $A$ is the null space of $A^T$. It is the solution set of the homogeneous linear system $A^T y = 0$ or equivalently of $y^T A = 0^T$.
 \end{definition}
+
+% WS 4.6, page 5
+% https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/62a9db9eeab190694d40afe4734068ca_MIT18_06SCF11_Ses1.10sum.pdf
+% https://math.stackexchange.com/questions/2582477/how-to-find-the-left-null-space-from-rrefa
+% https://math.stackexchange.com/questions/1612616/how-to-find-null-space-basis-directly-by-matrix-calculation
+
+\begin{procedure}[Finding the left null space without column operations]
+  To find the left null space of the $n \times m$ matrix $A$, make a column vector $b = (b_1, \ldots, b_m)^T$ and calculate $\RREF([A | b])$. Then the basis of the left null space is given by the rows of $\RREF([A | b])$ for which the left side is all zero (where $b_1, \ldots, b_m$ are the basis in which $A$ is expressed in (the basis $B$ for which $A = [T]_B$, which is usually the standard basis)).
+
+  Alternately, calculate $\RREF([A | I])$, then the basis of the left null space is given by the rows of $\RREF([A | I])$ for which the left side is all zero.
+\end{procedure}
 
 \subsection{Invertible matrices}
 
