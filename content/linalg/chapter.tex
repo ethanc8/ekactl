@@ -976,34 +976,41 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   \]
 \end{definition}
 
-\begin{lemma}
-  If $B$ and $B'$ are bases of $V$, $v \in V$, and $C$ is the transition matrix from $B$ to $B'$, then
-  \[
-    [v]_{B'} = C [v]_{B}
-  \]
-
-  $C$ is invertible, so similarly
-  \[
-    [v]_{B} = C^{-1} [v]_{B'}
-  \]
-\end{lemma}
-
-\begin{lemma}
-  If $B$ and $B'$ are bases of $V$, $T \in \linearmaps(V)$, and $C$ is the transition matrix from $B$ to $B'$, then
-  \[
-    [T]_{B'} = C [T]_B C^{-1}
-  \]
-
-  $C$ is invertible, so similarly
-  \[
-    [T]_{B} = C^{-1} [T]_{B'} C
-  \]
-
-  Note that $C^{-1}$ is the matrix formed by the coordinate vectors of the basis vectors of $B'$ with respect to $B$.
-\end{lemma}
-
 \begin{procedure}[Finding the transition matrix]
   Given bases $B$ and $B'$, row-reduce the augmented matrix $\left[\left[w_i\right] | \left[v_i\right]\right]$, whose first $n$ columns are the coordinate vectors $\left[w_i\right]$ of the vectors of $B'$ and whose last $n$ columns are the coordinate vectors $\left[v_i\right]$ of the vectors of $B$. Then the transition matrix from $B$ to $B'$ is the right-hand side of $\RREF \left(\left[\left[w_i\right] | \left[v_i\right]\right] \right)$.
+\end{procedure}
+
+\begin{lemma}[Inverting a transition matrix]
+  \[
+    C_{B' \to B} = C_{B \to B'}^{-1}
+  \]
+
+  Note that $C_{B' \to B}$ is the matrix formed by the coordinate vectors of the basis vectors of $B'$ with respect to $B$.
+\end{lemma}
+
+\begin{lemma}[Changing the basis of a vector]
+  If $B$ and $B'$ are bases of $V$, $v \in V$, and $C_{B \to B'}$ is the transition matrix from $B$ to $B'$, then
+  \[
+    [v]_{B'} = C_{B \to B'} [v]_{B}
+  \]
+\end{lemma}
+
+\begin{lemma}[Changing the basis of a linear map by changing its matrix]
+  If $B$ and $B'$ are bases of $V$, $T \in \linearmaps(V)$, and $C_{B \to B'}$ is the transition matrix from $B$ to $B'$, then
+  \[
+    [T]_{B'} = C_{B \to B'} [T]_B C_{B' \to B}
+  \]
+\end{lemma}
+
+\begin{procedure}[Changing the basis of a linear map by applying the linear map to basis vectors]
+  If $B$ and $B' = (w_1, \ldots, w_n)$ are bases of $V$, $T \in \linearmaps(V)$, and $C_{B \to B'}$ is the transition matrix from $B$ to $B'$, then
+  \[
+    T_{B'} = 
+    \begin{bmatrix}
+      C_{B \to B'} [T]_B [w_1]_B & \cdots & C_{B \to B'} [T]_B [w_n]_B
+    \end{bmatrix}
+  \]
+  (Apply $T$ to each of the basis vectors of $B'$ and then convert $Tw_i$ to the basis $B'$)
 \end{procedure}
 
 \subsection{Similarity}
