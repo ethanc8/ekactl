@@ -911,11 +911,40 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   It represents the work done by moving a particle along the curve $C$, if $F$ is a force field.
 \end{definition}
 
-% TODO: Fundamental Theorem of Line Integrals
+% MVCWUP - Apr 29
 
-% TODO: Path independence
+\begin{definition}[Orientation-preserving reparamaterization]
+  Let $\vec{x} : [a, b] \to \Real^n$ be a piecewise $C^1$ path, and let $\vec{F} : X \subset \Real^n \to \Real^n$ whose domain $X$ contains the image of $\vec{x}$.
 
-% TODO: Vector fields
+  If $\vec{y} : [c, d] \to \Real^n$ is any reparametrization of $\vec{x}$, then
+  \begin{itemize}
+    \item If $\vec{y}$ is \textbf{orientation-preserving}, then $\int_y \vec{F} \,d\vec{s} = \int_x \vec{F} \,d\vec{s}$.
+    \item \item If $\vec{y}$ is \textbf{orientation-reversing}, then $\int_y \vec{F} \,d\vec{s} = 0\int_x \vec{F} \,d\vec{s}$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Path independence]
+  A vector field $\vec{F}$ is path-independent iff for any two paths $C_1$ and $C_2$ which have the same start and end points,
+  \[
+    \int_{C_1} \vec{F} \dotp d\vec{r} = \int_{C_2} \vec{F} \dotp d\vec{r}
+  \]
+\end{definition}
+
+\begin{namedtheorem}[Fundamental Theorem of Line Integrals]
+  Let $C$ be a smooth curve given by the function $\vec{r}(t)$ defined on the interval $t \in [a, b]$. Let $f$ be a differentiable function whose gradient $\grad f$ is continuous on $C$. Then
+  \[
+    \int_C \grad f \dotp d\vec{r} = f(\vec{r}(b)) - f(\vec{r}(a))
+  \]
+
+  In other words, the line integral of a conservative field along a curve is equal to the potential difference between its endpoints.
+
+  This implies that the following statement are equivalent (each implies the others):
+  \begin{itemize}
+    \item The vector field $\vec{F}$ is conservative
+    \item The vector field $\vec{F}$ is path-independent
+    \item $\oint_C \vec{F} \dotp d\vec{r} = 0$ for every closed path $C$.
+  \end{itemize}
+\end{namedtheorem}
 
 \subsection{Green's Theorem}
 
@@ -1044,6 +1073,9 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
   In other words, the circulation of a vector field along a curve is the same as the sum of the curls within the surface bounded by the curve.
 \end{namedtheorem}
 
+% TODO: Meaning of Curl
+% curl is flux through infinitesimally small circle
+
 \subsection{Gauss's Theorem}
 
 \begin{namedtheorem}[Gauss's Theorem / Divergence theorem]
@@ -1060,3 +1092,8 @@ Brummet [08, MVCWUP:Feb3(29-33)]}
     \item If the region is partitioned into smaller regions, the flux of the region is equal to the sum of the flux of the smaller regions (since the flux of the boundary of the two regions cancels out). 
   \end{itemize}
 \end{namedtheorem}
+
+% TODO: MVT for Integrals
+
+% TODO: Meaning of Divergence
+% Divergence is the flux through an infinitesimally small sphere
