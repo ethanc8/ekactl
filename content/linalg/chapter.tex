@@ -1689,18 +1689,16 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
 \end{lemma}
 
 \begin{lemma}
-  If $T$ is diagonalizable, then there exists an invertible matrix $P$ such that the diagonalization of $T$ is equal to
+  If $T$ is diagonalizable, then there exists a basis $D$ such that the diagonalization of $T$ is equal to
   \[
-    D = P [T] P^{-1}
+    [T]_D = C_{e \to D} [T]_e C_{D \to e}
   \]
-  (where $[T]$ is with respect to the standard basis)
+  (where $C_{e \to D}$ is the transition matrix from the standard basis to $D$)
 
   Furthermore, for any positive integer $n$,
   \[
-    [T]^n = P^{-1} D^n P
+    [T]_e^n = C_{D \to e} [T]_D^n C_{e \to D}
   \]
-
-  One example of a $P$ that satisfies this equation is the change-of-basis matrix from the basis of $[T]$ to the basis of $D$
 \end{lemma}
 
 \begin{procedure}[Power of a diagonal matrix]
