@@ -1618,6 +1618,21 @@ Given a matrix $A \in F^{m,n}$, define $T_A := x \mapsto Ax$. Then $T_A : F^n \t
   Let $p(x) = a_n x^n + a_{n-1} x^{n - 1} + \cdots + a_1 x + a_0$ be a degree-$n$ polynomial with integer coefficients. If $x = \frac{p}{q}$ i a rational root of $p(x)$, then $a_0$ is divisible by $p$ and $a_n$ is divisible by $q$.
 \end{theorem}
 
+\begin{procedure}[Computing eigenvalues]
+  Firstly, if the matrix is triangular, then the eigenvalues are the entries on the main diagonal.
+
+  Otherwise, solve the characteristic equation for $\lambda$ to get the eigenvalues:
+  \[
+    \det(\lambda I - A) = 0
+  \]
+
+  Plug each eigenvalue into the equation
+  \[
+    (A - \lambda I) v = 0
+  \]
+  and the solution set is the eigenspace. Pick any vector in the eigenspace to be your eigenvector.
+\end{procedure}
+
 \subsection{Diagonalizable operators}
 
 \begin{definition}[Diagonalizable operator]
